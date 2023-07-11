@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap");
 div.row.widget {
   margin: 15px;
-  background-color: #64b3f8;
+  background-color: #a7d6ff;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0 4px 0 0 #326f95;
@@ -65,6 +67,52 @@ i {
 #weather-icon {
   border-radius: 50%;
   background-color: #ebebeb;
+  width: 112px;
+  padding: 15px;
+  margin: 5px;
+}
+
+.forecast-day {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: repeat(3, auto);
+}
+.forecast-day i {
+  margin: 0;
+}
+
+.forecast-icon {
+  border-radius: 50%;
+  background-color: #ebebeb;
+  width: 72px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.forecast-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+.forecast-temp .high {
+  color: #FF0000;
+}
+.forecast-temp .low {
+  color: #1370c7;
+}
+
+.forecast-wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.forecast-wind .icon {
+  margin: 0;
+}
+
+* {
+  font-family: "Jost", sans-serif;
 }
 
 .far {
@@ -86,7 +134,15 @@ section#menu {
   background-color: #D9D9D9;
 }
 section#menu nav.nav {
-  padding: 10px;
+  padding: 15px;
+}
+section#menu nav.nav div.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section#menu nav.nav div.logo-container h2 {
+  font-family: "Fasthand", cursive;
 }
 section#menu nav.nav a {
   display: flex;
@@ -97,6 +153,11 @@ section#menu nav.nav a {
   transition: 120ms ease-in-out;
   border-radius: 4px;
   margin: 0 10px;
+  border: transparent 1px solid;
+}
+section#menu nav.nav a img {
+  width: 16px;
+  margin-right: 15px;
 }
 section#menu nav.nav a i {
   margin-right: 10px;
@@ -106,17 +167,14 @@ section#menu nav.nav a:hover {
   background-color: #64b3f8;
   color: #ffffff;
   box-shadow: inset 0px -11px 13px 0 rgba(0, 0, 0, 0.1);
+  border: #326f95 1px solid;
 }
 section#menu nav.nav a:active {
   background-color: dodgerblue;
   box-shadow: inset 0px 9px 13px 0 rgba(0, 0, 0, 0.15);
 }
 section#menu nav.nav h1, section#menu nav.nav h2, section#menu nav.nav h3, section#menu nav.nav h4, section#menu nav.nav h5, section#menu nav.nav h6, section#menu nav.nav h7 {
-  margin-bottom: 5px;
-}
-section#menu nav.nav img {
-  width: 16px;
-  margin-right: 15px;
+  margin-bottom: 10px;
 }
 
 section#observations {

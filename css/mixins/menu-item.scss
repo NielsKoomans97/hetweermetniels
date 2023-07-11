@@ -9,7 +9,13 @@
     transition: 120ms ease-in-out;
     border-radius: 4px;
     margin: 0 10px ;
+    border: transparent 1px solid;
 
+    img{
+        width: 16px;
+        margin-right: 15px;
+    }
+    
     i{
         margin-right: 10px;
         font-size: 15px;
@@ -19,6 +25,7 @@
         background-color: map-get($map: $colors, $key: button-hover);
         color: map-get($map: $colors, $key: text-color-hover);
         box-shadow: inset 0px -11px 13px 0 transparentize($color: map-get($colors, text-color), $amount: 0.90);
+        border: map-get($colors,shadow-color) 1px solid;
     }
 
     &:active {

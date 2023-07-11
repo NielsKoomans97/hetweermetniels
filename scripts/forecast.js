@@ -19,74 +19,65 @@ function GetForecast(locationId) {
                 let day = data['days'][i];
                 let forecast_day = forecast_days[i];
 
-                var forecast_icon_container = document.createElement('div');
-                forecast_icon_container.className = 'forecast-icon-container';
-
-                var forecast_icon = document.createElement('img');
-                forecast_icon.setAttribute('src',`https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${day['iconcode']}.png`);
-                forecast_icon.className = 'forecast-icon';
-
-                forecast_icon_container.appendChild(forecast_icon);
-                forecast_day.appendChild(forecast_icon_container);
-
-                var forecast_dayText = document.createElement('h5');
-                var date = new Date(day['date']);
-                var daysInWeek = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag' ];
-                forecast_dayText.innerText = daysInWeek[date.getDay()];
-                forecast_dayText.className = 'forecast-date';
-                forecast_day.appendChild(forecast_dayText);
-
-                var forecast_shadow_container =document.createElement('div');
-                forecast_shadow_container.className = 'forecast-shadow-container';
-
-                var forecast_temp_container = document.createElement('div');
-                forecast_temp_container.className = 'forecast-temp-container';
-
-                var forecast_temp_high  = document.createElement('h6');
-                forecast_temp_high.innerText = `${day['maxtemp']}°C`;
-                forecast_temp_high.className = 'forecast-temp-high';
-                forecast_temp_container.appendChild(forecast_temp_high);
-
-                var forecast_temp_low  = document.createElement('h6');
-                forecast_temp_low.innerText = `${day['mintemp']}°C`;
-                forecast_temp_low.className = 'forecast-temp-low';
-                forecast_temp_container.appendChild(forecast_temp_low);
-
-                forecast_shadow_container.appendChild(forecast_temp_container);
-
-                var forecast_wind_container = document.createElement('div');
-                forecast_wind_container.className = 'forecast-wind-container';
-
-                var forecast_wind_direction = document.createElement('i');
-                forecast_wind_direction.className = 'fas fa-arrow-down forecast-wind-icon';
-                forecast_wind_direction.style = `transform: rotate(${day['winddirectiondegrees']}deg);`;
-                forecast_wind_container.appendChild(forecast_wind_direction);
-
-                var forecast_wind_speed = document.createElement('h6');
-                forecast_wind_speed.className = 'forecast_wind_speed';
-                forecast_wind_speed.innerText = `${day['windspeed']} bft`;
-                forecast_wind_container.appendChild(forecast_wind_speed);
-
-                forecast_shadow_container.appendChild(forecast_wind_container);
-
-                forecast_day.appendChild(forecast_shadow_container);
+                CreateIconElement(forecast_day, day);
+                CreateDateElement(forecast_day, day);
+                CreateTempElement(forecast_day, day);
+                CreateWindElement(forecast_day, day);
             }
         });
 }
 
-function CreateIconElement(day, item){
-    let forecast_icon = document.createElement('div');
-    forecast_icon.className = 'forecast-icon';
+function CreateIconElement(root, day){
+    let icon = document.createElement('img');
 
-    let forecast_icon_img = document.createElement('img');
+    icon.className = 'forecast-icon';
+    icon.setAttribute('src',`https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${day['iconcode']}.png`);
 
-    forecast_icon_img.setAttribute('src',`https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${day['iconcode']}.png`);
-    forecast_icon.appendChild(forecast_icon_img);
-    item.appendChild(forecast_icon);
+    root.appendChild(icon);
 }
 
-function CreateDayElememt(day, item){
-    let forecast_day = document.createElement('h5');
+function CreateDateElement(root, day){
+    var daysInWeek = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag' ];
+    let pDate = new Date(day['date']);
+    let date = document.createElement('h5');
 
-    forecast_day.innerText = day['']
+    date.className = 'forecast-date';
+    date.innerText = daysInWeek[pDate.getDay()];
+
+    root.appendChild(date);
+}
+
+function CreateTempElement(root, day){
+    let tempContainer = document.createElement('div');
+    tempContainer.className = 'forecast-temp';
+
+    let tempHigh = document.createElement('h6');
+    tempHigh.className = 'high';
+    tempHigh.innerText = `${day['maxtemp']}°C`;
+    tempContainer.appendChild(tempHigh);
+
+    let tempLow = document.createElement('h6');
+    tempLow.className = 'low';
+    tempLow.innerText = `${day['mintemp']}°C`;
+    tempContainer.appendChild(tempLow);
+
+    root.appendChild(tempContainer);
+}
+
+function CreateWindElement(root, day){
+    let windContainer = document.createElement('div');
+    windContainer.className = 'forecast-wind';
+
+    let windDirection = document.createElement('i');
+    windDirection.className = 'fas fa-arrow-down icon';
+    windDirection.style = `transform: rotate(${day['winddirectiondegrees']}deg);`;
+
+    let windSpeed = document.createElement('h6');
+    windSpeed.className = 'speed';
+    windSpeed.innerText = `${day['windspeed']} bft`;
+
+    windContainer.appendChild(windDirection);
+    windContainer.appendChild(windSpeed);
+
+    root.appendChild(windContainer);
 }

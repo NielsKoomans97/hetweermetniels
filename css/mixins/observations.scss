@@ -72,6 +72,10 @@ i {
 #weather-icon{
     border-radius: 50%;
     background-color: map-get($map: $colors, $key: background-color-2);
+
+    width: 112px;
+    padding: 15px;
+    margin: 5px;
 }
 
 

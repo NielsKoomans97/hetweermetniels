@@ -24,7 +24,7 @@ function GetObservations(stationId){
             station_name.innerText = `${data['stationname']}`;
             actual_temp.innerText = `${data['temperature']}°`;
             feel_temp.innerText = `${data['feeltemperature']}°`;
-            wind_speed.innerText = `${data['windspeedBft']}`;
+            wind_speed.innerText = `${data['windspeedBft']} bft`;
             wind_icon.style = `transform: rotate(${data['winddirectiondegrees']}deg);`;
             humidity.innerText = `${data['humidity']}%`;
             observation_icon.setAttribute('src',`https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${data['iconcode']}.png`);

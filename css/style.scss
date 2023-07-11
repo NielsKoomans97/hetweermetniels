@@ -1,6 +1,14 @@
 @use 'mixins/menu-item' as *;
 @use 'mixins/observations' as *;
+@use 'mixins/forecast' as *;
 @use 'variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+
+*{
+    font-family: 'Jost', sans-serif;
+}
 
 .far{
     font-weight: 900;
@@ -21,19 +29,24 @@ section#menu{
     background-color: map-get($map: $colors, $key: background-color);
 
     nav.nav{
-        padding: 10px;
+        padding: 15px;
+
+        div.logo-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                font-family: 'Fasthand', cursive;
+            }
+        }
 
         a{
             @include menu-item;
         }
 
         #{$headers} {
-            margin-bottom: 5px;
-        }
-
-        img{
-            width: 16px;
-            margin-right: 15px;
+            margin-bottom: 10px;
         }
     }
 }

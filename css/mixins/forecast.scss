@@ -1,0 +1,46 @@
+@use '../variables' as *;
+
+.forecast-day{
+    display: grid;
+    justify-items: center;
+    grid-template-rows: repeat(3,auto);
+
+    i{
+        margin: 0;
+    }
+}
+
+.forecast-icon{
+    border-radius: 50%;
+    background-color: map-get($map: $colors, $key: background-color-2);
+
+    width: 72px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.forecast-temp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 10px 0;
+
+    .high{
+        color:map-get($map: $colors, $key: temp-max);
+    }
+
+    .low{
+        color:map-get($map: $colors, $key: temp-min);
+    }
+}
+
+.forecast-wind{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .icon{
+        margin: 0;
+    }
+}
