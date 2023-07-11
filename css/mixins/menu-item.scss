@@ -1,9 +1,11 @@
+@use '../variables' as *;
+
 @mixin menu-item {
     display: flex;
     align-items: center;
     padding: 5px 10px;
     text-decoration: none;
-    color: black;
+    color: map-get($map: $colors, $key: text-color);
     transition: 200ms ease-in-out;
 
     i{
@@ -12,11 +14,11 @@
     }
 
     &:hover {
-        background-color: deepskyblue;
-        color: white;
+        background-color: map-get($map: $colors, $key: button-hover);
+        color: map-get($map: $colors, $key: text-color-hover);
     }
 
     &:active {
-        background-color: dodgerblue;
+        background-color: map-get($map: $colors, $key: button-pressed);
     }
 }

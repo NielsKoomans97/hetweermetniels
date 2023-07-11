@@ -1,6 +1,7 @@
 $colors: (
-    button-color: #E0F9FE,
-    button-pressed: #4A7CAA,
+    button-color: transparent,
+    button-pressed: dodgerblue,
+    button-hover: deepskyblue,
     warning-yellow: #FFD600,
     warning-red: #FF3D00,
     warning-green: #96DC24,
@@ -11,6 +12,8 @@ $colors: (
     background-color-2: #ebebeb,
     background-color-3: #fffef5,
     background-color-4: #3a5e874f,
+    text-color: #000000,
+    text-color-hover: #ffffff,
 );
 
 $font: 'Arimo', sans-serif;
