@@ -25,7 +25,7 @@ function GetForecast(locationId) {
                 CreateWindElement(forecast_day, day);
             }
 
-            let dayZero = data['days'][1];
+            let dayZero = data['days'][0];
             const hourlyForecast = document.getElementById('hourly-forecast');
 
             for(let hour of dayZero['hours']){
