@@ -3,11 +3,65 @@
 .forecast-day{
     display: grid;
     justify-items: center;
-    grid-template-rows: repeat(3,auto);
+    grid-template-rows: repeat(3, auto);
 
     i{
         margin: 0;
     }
+
+    .forecast-icon{
+        border-radius: 50%;
+        background-color: map-get($map: $colors, $key: background-color-2);
+    
+        width: 72px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .forecast-temp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        margin: 10px 0;
+    
+        .high{
+            color:map-get($map: $colors, $key: temp-max);
+        }
+    
+        .low{
+            color:map-get($map: $colors, $key: temp-min);
+        }
+    }
+    
+}
+
+.forecast-hour {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 20% 25% 15% 20% ;
+
+    .forecast-icon{
+        border-radius: 50%;
+        background-color: map-get($map: $colors, $key: background-color-2);
+    
+        width: 48px;
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .forecast-temp{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    
+        margin: 10px 0;
+    
+       .hourly{
+            font-weight: 600;
+       }
+    }
+    
 }
 
 .forecast-icon{
@@ -19,27 +73,21 @@
     margin: 5px;
 }
 
-.forecast-temp{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin: 10px 0;
-
-    .high{
-        color:map-get($map: $colors, $key: temp-max);
-    }
-
-    .low{
-        color:map-get($map: $colors, $key: temp-min);
-    }
-}
-
 .forecast-wind{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
+    .icon{
+        margin: 0;
+    }
+}
+
+.forecast-humidity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     .icon{
         margin: 0;
     }

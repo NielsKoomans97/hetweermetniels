@@ -5,6 +5,8 @@ div.row.widget {
   background-color: #a7d6ff;
   padding: 10px;
   border-radius: 6px;
+  overflow-y: scroll;
+  max-height: 61vh;
   box-shadow: 0 4px 0 0 #326f95;
 }
 
@@ -80,6 +82,47 @@ i {
 .forecast-day i {
   margin: 0;
 }
+.forecast-day .forecast-icon {
+  border-radius: 50%;
+  background-color: #ebebeb;
+  width: 72px;
+  padding: 5px;
+  margin: 5px;
+}
+.forecast-day .forecast-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+.forecast-day .forecast-temp .high {
+  color: #cf1212;
+}
+.forecast-day .forecast-temp .low {
+  color: #1370c7;
+}
+
+.forecast-hour {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20% 20% 25% 15% 20%;
+}
+.forecast-hour .forecast-icon {
+  border-radius: 50%;
+  background-color: #ebebeb;
+  width: 48px;
+  padding: 5px;
+  margin: 5px;
+}
+.forecast-hour .forecast-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+}
+.forecast-hour .forecast-temp .hourly {
+  font-weight: 600;
+}
 
 .forecast-icon {
   border-radius: 50%;
@@ -89,25 +132,21 @@ i {
   margin: 5px;
 }
 
-.forecast-temp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px 0;
-}
-.forecast-temp .high {
-  color: #FF0000;
-}
-.forecast-temp .low {
-  color: #1370c7;
-}
-
 .forecast-wind {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .forecast-wind .icon {
+  margin: 0;
+}
+
+.forecast-humidity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.forecast-humidity .icon {
   margin: 0;
 }
 

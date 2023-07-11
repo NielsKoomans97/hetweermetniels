@@ -24,8 +24,25 @@ function GetForecast(locationId) {
                 CreateTempElement(forecast_day, day);
                 CreateWindElement(forecast_day, day);
             }
+
+            let dayZero = data['days'][1];
+            const hourlyForecast = document.getElementById('hourly-forecast');
+
+            for(let hour of dayZero['hours']){
+                let forecast_hour  = document.createElement('div');
+                forecast_hour.className = 'forecast-hour';
+
+                CreateTimeElement(forecast_hour, hour);
+                CreateIconElement(forecast_hour, hour);
+                CreateHourlyTempElement(forecast_hour, hour);        
+                CreateWindElement(forecast_hour, hour);
+                CreateHumidityElement(forecast_hour, hour);
+
+                hourlyForecast.appendChild(forecast_hour);
+            }
         });
 }
+
 
 function CreateIconElement(root, day){
     let icon = document.createElement('img');
@@ -34,6 +51,24 @@ function CreateIconElement(root, day){
     icon.setAttribute('src',`https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${day['iconcode']}.png`);
 
     root.appendChild(icon);
+}
+
+function FixInteger(int){
+    if (int < 10){
+        return `0${int}`;
+    }
+    
+    return int;
+}
+
+function CreateTimeElement(root, day){
+    let pTime = new Date(day['datetime']);
+    let time = document.createElement('h6');
+    
+    time.className = 'forecast-time';
+    time.innerText = `${FixInteger(pTime.getHours())}:${FixInteger(pTime.getMinutes())}`;
+
+    root.appendChild(time);
 }
 
 function CreateDateElement(root, day){
@@ -64,6 +99,18 @@ function CreateTempElement(root, day){
     root.appendChild(tempContainer);
 }
 
+function CreateHourlyTempElement(root, day){
+    let tempContainer = document.createElement('div');
+    tempContainer.className = 'forecast-temp';
+
+    let temp= document.createElement('h4');
+    temp.className = 'hourly';
+    temp.innerText = `${day['temperature']}°C`;
+    
+    tempContainer.appendChild(temp);
+    root.appendChild(tempContainer);
+}
+
 function CreateWindElement(root, day){
     let windContainer = document.createElement('div');
     windContainer.className = 'forecast-wind';
@@ -74,10 +121,26 @@ function CreateWindElement(root, day){
 
     let windSpeed = document.createElement('h6');
     windSpeed.className = 'speed';
-    windSpeed.innerText = `${day['windspeed']} bft`;
+    windSpeed.innerText = `${day['beaufort']} bft`;
 
     windContainer.appendChild(windDirection);
     windContainer.appendChild(windSpeed);
 
     root.appendChild(windContainer);
+}
+
+function CreateHumidityElement(root, day){
+    let humidityContainer = document.createElement('div');
+    humidityContainer.className = 'forecast-humidity';
+
+    let humidityIcon = document.createElement('i');
+    humidityIcon.className = 'fas fa-umbrella icon'
+    
+    let humdity = document.createElement('h6');
+    humdity.className = 'humidity';
+    humdity.innerText = `${day['humidity']}%`;
+
+    humidityContainer.appendChild(humidityIcon);
+    humidityContainer.appendChild(humdity);
+    root.append(humidityContainer);
 }

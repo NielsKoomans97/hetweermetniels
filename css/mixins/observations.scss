@@ -7,6 +7,9 @@ div.row.widget{
     padding: 10px;
     border-radius: 6px;
 
+    overflow-y: scroll;
+    max-height: 61vh;
+
     @include shadow-box;
 }
 

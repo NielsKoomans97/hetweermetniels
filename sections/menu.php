@@ -1,5 +1,5 @@
 <section id="menu" class="col-2">
-    <div class="col-12 justify-content-center">
+    <div class="container">
         <nav class="d-flex flex-column nav">
             <div class="logo-container">
                 <img src="assets/logo.png">
