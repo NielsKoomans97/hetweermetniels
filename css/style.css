@@ -5,7 +5,6 @@ div.row.widget {
   background-color: #a7d6ff;
   padding: 10px;
   border-radius: 6px;
-  overflow-y: scroll;
   max-height: 61vh;
   box-shadow: 0 4px 0 0 #326f95;
 }
@@ -152,10 +151,15 @@ i {
 
 * {
   font-family: "Jost", sans-serif;
+  font-size: 16px;
 }
 
 .far {
   font-weight: 900;
+}
+
+.overflowable {
+  overflow-y: scroll;
 }
 
 br {
@@ -217,8 +221,18 @@ section#menu nav.nav h1, section#menu nav.nav h2, section#menu nav.nav h3, secti
 }
 
 section#observations {
-  max-width: 500px;
   background-color: #ebebeb;
+}
+
+@media (max-width: 2560px) {
+  body section#observations {
+    max-width: 500px;
+  }
+}
+@media (max-width: 1920px) {
+  body section#observations {
+    max-width: 800px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

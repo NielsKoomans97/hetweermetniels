@@ -8,10 +8,15 @@
 
 *{
     font-family: 'Jost', sans-serif;
+    font-size: map-get($map: $font-sizes, $key: regular);
 }
 
 .far{
     font-weight: 900;
+}
+
+.overflowable{
+    overflow-y: scroll;
 }
 
 br{
@@ -52,6 +57,19 @@ section#menu{
 }
 
 section#observations{
-    max-width: 500px;
     background-color: map-get($map: $colors, $key: background-color-2);
+}
+
+body{
+    @media(max-width: 2560px){
+        section#observations{
+            max-width: 500px;
+        }
+    }
+
+    @media(max-width: 1920px){
+        section#observations{
+            max-width: 800px;
+        }
+    }
 }
