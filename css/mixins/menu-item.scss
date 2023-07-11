@@ -1,0 +1,22 @@
+@mixin menu-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: black;
+    transition: 200ms ease-in-out;
+
+    i{
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    &:hover {
+        background-color: deepskyblue;
+        color: white;
+    }
+
+    &:active {
+        background-color: dodgerblue;
+    }
+}

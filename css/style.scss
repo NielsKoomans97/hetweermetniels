@@ -1,0 +1,20 @@
+@use 'mixins/menu-item' as *;
+@use 'variables' as *;
+
+.far{
+    font-weight: 900;
+}
+
+section#menu{
+    height: 100vh;
+
+    background-color: map-get($map: $colors, $key: background-color);
+
+    nav.nav{
+        padding: 10px;
+
+        a{
+            @include menu-item;
+        }
+    }
+}

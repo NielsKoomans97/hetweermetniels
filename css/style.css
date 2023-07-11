@@ -1,0 +1,32 @@
+.far {
+  font-weight: 900;
+}
+
+section#menu {
+  height: 100vh;
+  background-color: #D9D9D9;
+}
+section#menu nav.nav {
+  padding: 10px;
+}
+section#menu nav.nav a {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+  transition: 200ms ease-in-out;
+}
+section#menu nav.nav a i {
+  margin-right: 10px;
+  font-size: 15px;
+}
+section#menu nav.nav a:hover {
+  background-color: deepskyblue;
+  color: white;
+}
+section#menu nav.nav a:active {
+  background-color: dodgerblue;
+}
+
+/*# sourceMappingURL=style.css.map */
