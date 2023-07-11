@@ -1,4 +1,4 @@
-<section id="observations" class="col-3">
+<section id="observations" class="col-md-3">
     <div class="container">
         <?php require 'elements/observation-widget.php'; ?>
         <?php require 'elements/forecast-widget.php'; ?>

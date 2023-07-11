@@ -52,5 +52,6 @@ section#menu{
 }
 
 section#observations{
+    max-width: 500px;
     background-color: map-get($map: $colors, $key: background-color-2);
 }

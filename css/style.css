@@ -217,6 +217,7 @@ section#menu nav.nav h1, section#menu nav.nav h2, section#menu nav.nav h3, secti
 }
 
 section#observations {
+  max-width: 500px;
   background-color: #ebebeb;
 }
 
