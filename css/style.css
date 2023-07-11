@@ -1,9 +1,88 @@
+div.row.widget {
+  margin: 15px;
+  background-color: #64b3f8;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 0 0 #326f95;
+}
+
+div.row.location {
+  padding: 10px;
+  margin: 15px;
+}
+
+div.col-8 {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+  padding: 0;
+}
+
+div.col-4 {
+  padding: 0;
+}
+
+div.col {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+  width: fit-content;
+  margin: 0;
+}
+
+i {
+  font-size: 22px;
+  width: fit-content;
+  margin-right: 25px;
+}
+
+#actual-temperature {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 0 20px;
+}
+
+#temperature-container {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#humidity-container {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#wind-container {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#weather-icon {
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
+
 .far {
   font-weight: 900;
 }
 
+br {
+  margin: 10px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
 section#menu {
   height: 100vh;
+  margin: 0;
   background-color: #D9D9D9;
 }
 section#menu nav.nav {
@@ -14,19 +93,34 @@ section#menu nav.nav a {
   align-items: center;
   padding: 5px 10px;
   text-decoration: none;
-  color: black;
-  transition: 200ms ease-in-out;
+  color: #000000;
+  transition: 120ms ease-in-out;
+  border-radius: 4px;
+  margin: 0 10px;
 }
 section#menu nav.nav a i {
   margin-right: 10px;
   font-size: 15px;
 }
 section#menu nav.nav a:hover {
-  background-color: deepskyblue;
-  color: white;
+  background-color: #64b3f8;
+  color: #ffffff;
+  box-shadow: inset 0px -11px 13px 0 rgba(0, 0, 0, 0.1);
 }
 section#menu nav.nav a:active {
   background-color: dodgerblue;
+  box-shadow: inset 0px 9px 13px 0 rgba(0, 0, 0, 0.15);
+}
+section#menu nav.nav h1, section#menu nav.nav h2, section#menu nav.nav h3, section#menu nav.nav h4, section#menu nav.nav h5, section#menu nav.nav h6, section#menu nav.nav h7 {
+  margin-bottom: 5px;
+}
+section#menu nav.nav img {
+  width: 16px;
+  margin-right: 15px;
+}
+
+section#observations {
+  background-color: #ebebeb;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,78 @@
+@use '../variables' as *;
+
+div.row.widget{
+    margin: 15px;
+
+    background-color: map-get($map: $colors, $key: background-color-3);
+    padding: 10px;
+    border-radius: 6px;
+
+    @include shadow-box;
+}
+
+div.row.location{
+    padding: 10px;
+    margin: 15px;
+
+}
+
+div.col-8 {
+    display: grid;
+    align-items: center;
+
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+
+    padding: 0;
+}
+
+div.col-4{
+    padding: 0
+}
+
+div.col{
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+#{$headers} {
+    width: fit-content;
+    margin: 0;
+}
+
+i {
+    font-size: map-get($map: $icon-sizes, $key: observation-icons);
+    width: fit-content;
+    margin-right: 25px;
+}
+
+#actual-temperature{
+    grid-column: 1;
+    grid-row: 1;
+    padding: 0 20px;
+}
+
+#temperature-container{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#humidity-container{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#wind-container{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#weather-icon{
+    border-radius: 50%;
+    background-color: map-get($map: $colors, $key: background-color-2);
+}
+
+
+

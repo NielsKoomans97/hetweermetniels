@@ -1,13 +1,23 @@
 @use 'mixins/menu-item' as *;
+@use 'mixins/observations' as *;
 @use 'variables' as *;
 
 .far{
     font-weight: 900;
 }
 
+br{
+    margin: 10px 0;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
 section#menu{
     height: 100vh;
-
+    margin: 0;
     background-color: map-get($map: $colors, $key: background-color);
 
     nav.nav{
@@ -16,5 +26,18 @@ section#menu{
         a{
             @include menu-item;
         }
+
+        #{$headers} {
+            margin-bottom: 5px;
+        }
+
+        img{
+            width: 16px;
+            margin-right: 15px;
+        }
     }
+}
+
+section#observations{
+    background-color: map-get($map: $colors, $key: background-color-2);
 }
