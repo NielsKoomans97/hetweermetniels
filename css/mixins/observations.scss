@@ -7,8 +7,6 @@ div.row.widget{
     padding: 10px;
     border-radius: 6px;
 
-    max-height: 61vh;
-
     flex-wrap: nowrap;
 
     @include shadow-box;
@@ -17,7 +15,6 @@ div.row.widget{
 div.row.location{
     padding: 10px;
     margin: 15px;
-
 }
 
 div.col-8 {

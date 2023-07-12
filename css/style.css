@@ -5,7 +5,6 @@ div.row.widget {
   background-color: #a7d6ff;
   padding: 10px;
   border-radius: 6px;
-  max-height: 61vh;
   flex-wrap: nowrap;
   box-shadow: 0 4px 0 0 #326f95;
 }
@@ -102,6 +101,10 @@ i {
   color: #1370c7;
 }
 
+div.hourly-forecast {
+  flex-grow: 1;
+}
+
 .forecast-hour {
   display: grid;
   align-items: center;
@@ -181,6 +184,10 @@ br {
 main {
   display: flex;
   flex-direction: row;
+}
+
+div.d-flex {
+  width: 100%;
 }
 
 section#menu {

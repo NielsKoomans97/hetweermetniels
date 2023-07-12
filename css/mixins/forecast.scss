@@ -32,8 +32,11 @@
         .low{
             color:map-get($map: $colors, $key: temp-min);
         }
-    }
-    
+    } 
+}
+
+div.hourly-forecast{
+    flex-grow: 1;
 }
 
 .forecast-hour {
