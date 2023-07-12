@@ -1,11 +1,22 @@
 @use '../variables' as *;
 
 section#radars{
+    div.radar-container{
+        padding: 15px;
+    }
+
     img{
         width: 100%;
     }
 
+    select#cm_radar{
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
     #blitzortung{
+        padding:10px;
+
         width: 100%;
         flex-grow: 1;
     }
