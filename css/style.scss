@@ -1,6 +1,7 @@
 @use 'mixins/menu-item' as *;
 @use 'mixins/observations' as *;
 @use 'mixins/forecast' as *;
+@use 'mixins/radars' as *;
 @use 'variables' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
@@ -58,6 +59,10 @@ section#menu{
 
 section#observations{
     background-color: map-get($map: $colors, $key: background-color-2);
+}
+
+section#guidance{
+    background-color: map-get($map: $colors, $key: background-color);
 }
 
 body{

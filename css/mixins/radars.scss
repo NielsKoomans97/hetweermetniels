@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+section#radars{
+    img{
+        width: 100%;
+    }
+
+    #blitzortung{
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .d-flex.container{
+        flex-grow: 1;
+    }
+}

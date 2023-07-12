@@ -9,6 +9,8 @@ div.row.widget{
 
     max-height: 61vh;
 
+    flex-wrap: nowrap;
+
     @include shadow-box;
 }
 

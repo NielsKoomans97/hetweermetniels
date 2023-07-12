@@ -6,6 +6,7 @@ div.row.widget {
   padding: 10px;
   border-radius: 6px;
   max-height: 61vh;
+  flex-wrap: nowrap;
   box-shadow: 0 4px 0 0 #326f95;
 }
 
@@ -149,6 +150,17 @@ i {
   margin: 0;
 }
 
+section#radars img {
+  width: 100%;
+}
+section#radars #blitzortung {
+  width: 100%;
+  flex-grow: 1;
+}
+section#radars .d-flex.container {
+  flex-grow: 1;
+}
+
 * {
   font-family: "Jost", sans-serif;
   font-size: 16px;
@@ -222,6 +234,10 @@ section#menu nav.nav h1, section#menu nav.nav h2, section#menu nav.nav h3, secti
 
 section#observations {
   background-color: #ebebeb;
+}
+
+section#guidance {
+  background-color: #D9D9D9;
 }
 
 @media (max-width: 2560px) {
