@@ -1,10 +1,10 @@
 $colors: (
     button-color: transparent,
     button-pressed: dodgerblue,
-    button-hover: #64b3f8,
+    button-hover: #45a2f3,
     warning-yellow: #FFD600,
     warning-red: #FF3D00,
-    warning-green: #96DC24,
+    warning-green: #76b117,
     temp-max: #cf1212,
     temp-min: #1370c7,
     temp-feel: #8A8A8A,
@@ -28,6 +28,7 @@ $font-weights: (
 $font-sizes: (
     menu-link: 16px,
     regular: 16px,
+    hover: 18px,
     temp: 50px,
     temp-feel: 20px,
     temp-forecast: 24px,
@@ -41,4 +42,8 @@ $texts: (i, p, span);
 
 @mixin shadow-box{
     box-shadow: 0 4px 0 0 map-get($map: $colors, $key: shadow-color);
+}
+
+@mixin shadow-box-soft{
+    box-shadow: 0px 6px 11px 0 transparentize(map-get($colors, shadow-color), 0.75);
 }

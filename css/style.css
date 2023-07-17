@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 div.row.widget {
   margin: 15px;
   background-color: #a7d6ff;
   padding: 10px;
   border-radius: 6px;
   flex-wrap: nowrap;
+  overflow: hidden;
   box-shadow: 0 4px 0 0 #326f95;
 }
 
@@ -66,6 +67,7 @@ i {
 }
 
 #weather-icon {
+  box-shadow: 0px 6px 11px 0 rgba(50, 111, 149, 0.25);
   border-radius: 50%;
   background-color: #ebebeb;
   width: 112px;
@@ -82,11 +84,12 @@ i {
   margin: 0;
 }
 .forecast-day .forecast-icon {
+  box-shadow: 0px 6px 11px 0 rgba(50, 111, 149, 0.25);
   border-radius: 50%;
   background-color: #ebebeb;
   width: 72px;
   padding: 5px;
-  margin: 5px;
+  margin: 10px 5px;
 }
 .forecast-day .forecast-temp {
   display: flex;
@@ -96,13 +99,16 @@ i {
 }
 .forecast-day .forecast-temp .high {
   color: #cf1212;
+  font-weight: 600;
 }
 .forecast-day .forecast-temp .low {
   color: #1370c7;
+  font-weight: 600;
 }
 
 div.hourly-forecast {
   flex-grow: 1;
+  overflow: hidden;
 }
 
 .forecast-hour {
@@ -111,6 +117,7 @@ div.hourly-forecast {
   grid-template-columns: 20% 20% 25% 15% 20%;
 }
 .forecast-hour .forecast-icon {
+  box-shadow: 0px 6px 11px 0 rgba(50, 111, 149, 0.25);
   border-radius: 50%;
   background-color: #ebebeb;
   width: 48px;
@@ -153,20 +160,58 @@ div.hourly-forecast {
   margin: 0;
 }
 
+div#guidance-text {
+  padding: 20px;
+}
+div#guidance-text strong {
+  font-weight: 600;
+}
+
+div#announcements {
+  display: grid !important;
+}
+
+i#warning-icon {
+  margin: 5px 0;
+}
+
+div#announcements[data-color=GREEN] {
+  background-color: #76b117;
+}
+
+div#announcements[data-color=RED] {
+  background-color: #FF3D00;
+}
+
+div#announcements[data-color=YELLOW] {
+  background-color: #FFD600;
+}
+
+h5#warning-title {
+  margin: 5px 0;
+}
+
 section#radars div.radar-container {
   padding: 15px;
 }
 section#radars img {
   width: 100%;
+  border-radius: 6px;
 }
 section#radars select#cm_radar {
   margin-bottom: 15px;
-  padding: 5px;
+  background-color: #a7d6ff;
+  padding: 8px;
+  border-radius: 6px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  box-shadow: 0 4px 0 0 #326f95;
 }
 section#radars #blitzortung {
   padding: 10px;
   width: 100%;
   flex-grow: 1;
+  border-radius: 6px;
 }
 section#radars .d-flex.container {
   flex-grow: 1;
@@ -235,9 +280,10 @@ section#menu nav.nav a i {
   font-size: 15px;
 }
 section#menu nav.nav a:hover {
-  background-color: #64b3f8;
+  background-color: #45a2f3;
   color: #ffffff;
   box-shadow: inset 0px -11px 13px 0 rgba(0, 0, 0, 0.1);
+  font-size: 18px;
   border: #326f95 1px solid;
 }
 section#menu nav.nav a:active {
@@ -268,6 +314,15 @@ section#radars {
 @media (max-width: 1920px) {
   body section#observations {
     max-width: 800px;
+  }
+}
+@media (max-width: 1720px) {
+  body main {
+    flex-direction: column;
+  }
+  body section {
+    width: 100vw !important;
+    max-width: none;
   }
 }
 

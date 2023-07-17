@@ -5,7 +5,7 @@
 @use 'variables' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
     font-family: 'Jost', sans-serif;
@@ -84,6 +84,19 @@ body{
     @media(max-width: 1920px){
         section#observations{
             max-width: 800px;
+        }
+
+      
+    }
+
+    @media(max-width: 1720px){
+        main{
+            flex-direction: column;
+        }
+
+        section{
+            width: 100vw !important;
+            max-width: none;
         }
     }
 }

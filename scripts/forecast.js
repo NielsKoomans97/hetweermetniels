@@ -9,6 +9,9 @@ else
     GetForecast(location_id);
 }
 
+GetWeatherReport('nl');
+GetAnnouncements();
+
 function GetForecast(locationId) {
     fetch(`https://forecast.buienradar.nl/2.0/forecast/${locationId}`)
         .then((response) => (response.json()))
@@ -40,6 +43,30 @@ function GetForecast(locationId) {
 
                 hourlyForecast.appendChild(forecast_hour);
             }
+        });
+}
+
+function GetAnnouncements() {
+    const announcements = document.getElementById('announcements');
+    const warningIcon = document.getElementById('warning-icon');
+    const warningTitle = document.getElementById('warning-title');
+    const warningText = document.getElementById('warning-text');
+
+    fetch('https://data.buienradar.nl/1.0/announcements/apps')
+        .then((response) => (response.json()))
+        .then((data) => {
+            announcements.setAttribute('data-color', data['warnings']['color']);
+            warningTitle.innerText = data['warnings']['title'];
+            warningText.innerHTML = data['info']['body'];
+        });
+}
+
+function GetWeatherReport(country){
+    fetch(`https://data.buienradar.nl/1.1/content/weatherreport/${country}/false`)
+        .then((response) => (response.json()))
+        .then((data) => {
+            const guidance = document.getElementById('guidance-text');
+            guidance.innerHTML = data['body'];
         });
 }
 

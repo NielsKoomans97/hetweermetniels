@@ -7,11 +7,21 @@ section#radars{
 
     img{
         width: 100%;
+
+        border-radius: 6px;
     }
 
     select#cm_radar{
         margin-bottom: 15px;
-        padding: 5px;
+
+        background-color: map-get($map: $colors, $key: background-color-3);
+        padding: 8px;
+        border-radius: 6px;
+    
+        flex-wrap: nowrap;
+        overflow: hidden;
+    
+        @include shadow-box;
     }
 
     #blitzortung{
@@ -19,6 +29,8 @@ section#radars{
 
         width: 100%;
         flex-grow: 1;
+
+        border-radius: 6px;
     }
 
     .d-flex.container{
