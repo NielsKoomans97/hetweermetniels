@@ -1,0 +1,15 @@
+@use '../variables' as *;
+
+section.settings{
+    div#overview{
+        display: grid;
+
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, 50%);
+    }
+
+    div#location-settings{
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
