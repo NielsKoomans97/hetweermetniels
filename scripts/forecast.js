@@ -55,9 +55,14 @@ function GetAnnouncements() {
     fetch('https://data.buienradar.nl/1.0/announcements/apps')
         .then((response) => (response.json()))
         .then((data) => {
-            announcements.setAttribute('data-color', data['warnings']['color']);
-            warningTitle.innerText = data['warnings']['title'];
-            warningText.innerHTML = data['info']['body'];
+            if (data['warnings']['color'] == 'GREEN'){
+                announcements.setAttribute('style','display:none');
+            }
+            else{
+                announcements.setAttribute('data-color', data['warnings']['color']);
+                warningTitle.innerText = data['warnings']['title'];
+                warningText.innerHTML = data['info']['body'];
+            }
         });
 }
 
