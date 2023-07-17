@@ -54,6 +54,7 @@ i {
     grid-column: 1;
     grid-row: 1;
     padding: 0 20px;
+    font-size: map-get($map: $font-sizes, $key: temp);
 }
 
 #temperature-container{
