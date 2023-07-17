@@ -85,8 +85,6 @@ body{
         section#observations{
             max-width: 800px;
         }
-
-      
     }
 
     @media(max-width: 1720px){
@@ -96,7 +94,15 @@ body{
 
         section{
             width: 100vw !important;
-            max-width: none;
+            max-width: none !important;
+        }
+
+        #blitzortung{
+           min-height: 400px;
+        }
+
+        section#menu{
+            height: fit-content;
         }
     }
 }

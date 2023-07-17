@@ -322,7 +322,13 @@ section#radars {
   }
   body section {
     width: 100vw !important;
-    max-width: none;
+    max-width: none !important;
+  }
+  body #blitzortung {
+    min-height: 400px;
+  }
+  body section#menu {
+    height: fit-content;
   }
 }
 
