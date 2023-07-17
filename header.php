@@ -12,5 +12,6 @@
     <script src="scripts/cookies.js" defer></script>
     <script src="scripts/observations.js" defer></script>
     <script src="scripts/forecast.js" defer></script>
+    <script src="scripts/locations.js" defer></script>
 </head>
 <body>

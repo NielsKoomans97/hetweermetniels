@@ -1,15 +1,28 @@
 @use '../variables' as *;
 
-section.settings{
+section#settings{
+    div.container{
+        margin: 0;
+    }
+
     div#overview{
-        display: grid;
+        display: grid !important;
 
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: repeat(2, 50%);
+
+        flex-grow: 1;
+        height: 100vh;
     }
 
     div#location-settings{
         grid-column: 1;
         grid-row: 1;
+
+        flex-direction: column;
+    }
+
+    input#location-name{
+        width: 100%;
     }
 }
