@@ -574,6 +574,7 @@ section#menu nav.nav h1, section#menu nav.nav h2, section#menu nav.nav h3, secti
 }
 
 section#observations {
+  max-height: 100vh;
   background-color: #ebebeb;
 }
 
@@ -582,6 +583,7 @@ section#guidance {
 }
 
 section#radars {
+  max-height: 100vh;
   background-color: #ebebeb;
 }
 
