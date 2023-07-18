@@ -19,7 +19,7 @@ function GetForecast(locationId) {
             const forecast_days = document.querySelectorAll('.forecast-day');
 
             for (let i = 0; i < 3; i++) {
-                let day = data['days'][i];
+                let day = data['days'][i + 1];
                 let forecast_day = forecast_days[i];
 
                 CreateIconElement(forecast_day, day);
@@ -74,7 +74,6 @@ function GetWeatherReport(country){
             guidance.innerHTML = data['body'];
         });
 }
-
 
 function CreateIconElement(root, day){
     let icon = document.createElement('img');
