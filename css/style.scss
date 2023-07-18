@@ -63,6 +63,7 @@ section#menu{
 }
 
 section#observations{
+    max-height: 100vh;
     background-color: map-get($map: $colors, $key: background-color-2);
 }
 

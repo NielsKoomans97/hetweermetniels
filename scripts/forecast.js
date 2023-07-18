@@ -56,7 +56,7 @@ function GetAnnouncements() {
         .then((response) => (response.json()))
         .then((data) => {
             if (data['warnings']['color'] == 'GREEN'){
-                announcements.setAttribute('style','display:none');
+                announcements.setAttribute('style','display:none !important');
             }
             else{
                 announcements.setAttribute('data-color', data['warnings']['color']);
