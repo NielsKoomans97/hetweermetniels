@@ -1,0 +1,7 @@
+@use '../partials/mixins' as *;
+
+section#menu{
+    $width: calc(100vw / 5);
+
+    @include section($width);
+}

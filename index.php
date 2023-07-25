@@ -1,7 +1,4 @@
 <?php require 'header.php'; ?>
-<main>
-    <?php require 'sections/menu.php'; ?>
-    <?php require 'sections/observations.php'; ?>
-    <?php require 'sections/guidance.php'; ?>
-    <?php require 'sections/radars.php'; ?>
-</main>
+
+<?= !empty($_GET['path']) ? LoadPage($_GET['path']) : LoadPage('index'); ?>
+
