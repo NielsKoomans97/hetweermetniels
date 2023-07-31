@@ -1,0 +1,40 @@
+@use  '../variables' as *;
+
+@mixin menu-button ($padding, $margin, $border-radius) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    color: black;
+
+    text-decoration: none;
+    padding: $padding;
+    margin: $margin;
+    border-radius: $border-radius;
+
+    font-size: map-get($map: $typo, $key: menu);
+    font-weight: 400;
+
+    transition: all 180ms ease-in-out;
+
+    i{
+        align-self: center;
+
+        margin-right: 10px;
+    }
+
+    &:hover{
+        background-color: map-get($map: $colors, $key: menu-hover);
+        color: map-get($map: $colors, $key: menu-hover-text);
+        box-shadow: 0px 4px 0px 0px map-get($map: $colors, $key: menu-shadow);
+    }
+
+    &:active{
+        color: map-get($map: $colors, $key: menu-active-text);
+        background-color: map-get($map: $colors, $key: menu-shadow);
+        box-shadow: 0px 4px 0px 0px map-get($map: $colors, $key: menu-hover);
+
+        margin-right: 5px;
+    }
+}

@@ -1,0 +1,21 @@
+@use '../partials/mixins' as *;
+@use '../components/links' as *;
+
+section#menu{
+    $width: calc(100vw / 6);
+
+    @include section($width);
+
+    div.col-12{
+        margin: 10px 0;
+    }
+
+    nav a{
+        @include menu-button(5px 10px, 5px, 4px);
+    }
+
+    nav a.secondary-item img{
+       width: 24px;
+       margin-right: 10px;
+    }
+}
