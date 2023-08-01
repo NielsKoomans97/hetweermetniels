@@ -8,7 +8,7 @@ function CreateLink($icon, $link, $class, $id, $value, $clickEvent){
     return "<a href=\"".$link."\" class=\"".$class."\" id=\"".$id."\" onclick=\"".$clickEvent."\"><i class=\"".$icon."\"></i>".$value."</a>";
 }
 
-function CreateMenuItem($favIcon, $link, $id, $value){
+function CreateImgLink($favIcon, $link, $id, $value){
     return "<a href=\"".$link."\" class=\"secondary-item\" id=\"".$id."\"><img src=\"".$favIcon."\"></i>".$value."</a>";
 }
 
