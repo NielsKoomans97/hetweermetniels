@@ -1,8 +1,45 @@
-var location_name = HasCookie('location-name') ? GetCookie('location-name').Value : 'Jouw locatie heeft geen waarde';
-var location_id = HasCookie('location-id') ? parseInt(GetCookie('location-id').Value) : 0;
+//#region backend
+class LocationItem {
+    constructor(locationid, stationid) {
+        this.LocationId = locationid;
+        this.StationId = stationid;
+    }
+}
 
-const locationName = document.getElementById('location-name');
-const locationId = document.getElementById('location-id');
+function ListLocations() {
+    let locations = [];
 
-locationName.placeholder = location_name;
-locationId.innerText = location_id;
+    console.log(GetCookie('locations'));
+    let database = JSON.parse(GetCookie('locations').Value);
+
+    for (let item of database) {
+        locations.push(new LocationItem(item['LocationId'], item['StationId']));
+    }
+
+    return locations;
+}
+
+function SaveLocation(locationid, stationid) {
+    let database = null;
+
+    if (HasCookie('locations')) {
+        database = JSON.parse(GetCookie('locations').Value);
+    }
+    else {
+        database = [];
+    }
+
+    let item = new LocationItem(locationid, stationid);
+
+    database.push(item);
+
+    SaveCookie(new Cookie('locations', JSON.stringify(database)));
+}
+
+function RemoveAllLocations(){
+    if (HasCookie('locations')){
+        SaveCookie(new Cookie('locations',''));
+    }
+}
+//#endregion
+

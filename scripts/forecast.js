@@ -1,17 +1,3 @@
-if (HasCookie('location-id')){
-    var location_id = GetCookie('location-id').Value;
-    GetForecast(location_id);
-}
-else
-{
-    SaveCookie(new Cookie('location-id','2756800'))
-    var location_id = GetCookie('location-id').Value;
-    GetForecast(location_id);
-}
-
-GetWeatherReport('nl');
-GetAnnouncements();
-
 function GetForecast(locationId) {
     fetch(`https://forecast.buienradar.nl/2.0/forecast/${locationId}`)
         .then((response) => (response.json()))

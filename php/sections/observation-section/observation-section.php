@@ -11,6 +11,7 @@
         </div>
         <div class="row">
             <h5 id="station-name"></h5>
+            <select id="stations"></select>
         </div>
     </div>
     <div class="container flex-row">
@@ -26,5 +27,5 @@
         </div>
     </div>
 </section>
-<script src="php\sections\observation-section\scripts\observation-section.js" defer></script>
-<script src="php/sections/observation-section/scripts/forecast.js" defer></script>
+
+

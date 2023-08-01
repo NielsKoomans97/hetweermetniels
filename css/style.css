@@ -204,14 +204,14 @@ section#menu nav a i {
   margin-right: 10px;
 }
 section#menu nav a:hover {
-  background-color: #72caf3;
+  background-color: #719ff5;
   color: #000000;
   box-shadow: 0px 4px 0px 0px #01264d;
 }
 section#menu nav a:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #72caf3;
+  box-shadow: 0px 4px 0px 0px #719ff5;
   margin-right: 5px;
 }
 section#menu nav a.secondary-item img {

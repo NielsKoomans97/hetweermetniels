@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/favicon.ico">
     <title>Het weer met Niels</title>
-    <script src="scripts/cookies.js" defer></script>
-    <script src="scripts/locations.js" defer></script>
+
 </head>
 <body>
 <?php require 'php/components/generator.php'; ?>
