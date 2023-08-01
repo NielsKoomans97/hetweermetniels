@@ -14,6 +14,17 @@ function ListCookies(){
     return cookies;
 }
 
+function ListLocations(){
+    let cookies = ListCookies();
+    let locations = [];
+
+    for(cook of cookies){
+        if (cook.indexOf('locationid') > 0){
+            
+        }
+    }
+}
+
 function GetCookie(query){
     let parts = cookie.split(';');
 
@@ -49,5 +60,12 @@ class Cookie{
     constructor(key,value){
         this.Key = key;
         this.Value = value;
+    }
+}
+
+class Location{
+    constructor(locationid,stationid){
+        this.LocationId = locationid;
+        this.StationId = stationid;
     }
 }
