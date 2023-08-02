@@ -1,7 +1,39 @@
 <?php
 
 function CreateButton($class, $id, $value, $clickEvent){
-    return "<button class=\"".$class."\" id=\"".$id."\" onclick=\"".$clickEvent."\">".$value."</button>";
+    $element = "<button";
+
+    if (!is_null($class)){
+        $element .= " class=\"".$class."\"";
+    }
+
+    if (!is_null($id)){
+        $element .= " id=\"".$id."\"";
+    }
+
+    if (!is_null($clickEvent) && !empty($clickEvent)){
+        $element .= " onclick=\"".$clickEvent."\"";
+    }
+
+    return $element.">".$value."</button>";
+}
+
+function CreateIconButton($icon, $class, $id, $value, $clickEvent){
+    $element = "<button";
+
+    if (!is_null($class)){
+        $element .= " class=\"".$class."\"";
+    }
+
+    if (!is_null($id)){
+        $element .= " id=\"".$id."\"";
+    }
+
+    if (!is_null($clickEvent) && !empty($clickEvent)){
+        $element .= " onclick=\"".$clickEvent."\"";
+    }
+
+    return $element."><i class=\"".$icon."\"></i>".$value."</button>";
 }
 
 function CreateLink($icon, $link, $class, $id, $value, $clickEvent){

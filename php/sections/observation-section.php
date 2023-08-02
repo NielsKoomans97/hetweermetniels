@@ -9,8 +9,7 @@
             </div>
             <img id="observation-icon">
         </div>
-        <div class="row">
-            <h5 id="station-name"></h5>
+        <div class="col" id="location-selector">
             <select id="stations"></select>
         </div>
     </div>

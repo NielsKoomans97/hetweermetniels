@@ -7,9 +7,7 @@ function GetObservations(stationId){
             const wind_speed = document.getElementById('observation-wind');
             const humidity = document.getElementById('observation-humid');
             const observation_icon = document.getElementById('observation-icon');
-            const station_name = document.getElementById('station-name');
 
-            station_name.innerText = `${data['stationname']}`;
             actual_temp.innerText = `${data['temperature']}°`;
             feel_temp.innerText = `${data['feeltemperature']}°`;
             wind_speed.innerText = `${data['windspeedBft']} bft`;

@@ -6,33 +6,31 @@ if (HasCookie('locations')){
 
     for(let item of database){
         let option = document.createElement('option');
-        option.setAttribute('data-locationid',item.LocationId);
-        option.setAttribute('data-stationid',item.StationId);
+        option.setAttribute('data-json', item);
+
+        let parsed = JSON.parse(item);
+        option.innerText = parsed['name'];
+        
         stations.appendChild(option);
     }
 
     stations.selectedIndex = 0;
 }
-else{
-   SaveLocation('2757783','6260');
-}
-
-SaveLocation('2756800','6350');
 
 stations.addEventListener('change', () => {
     var option = stations.options[stations.selectedIndex];
+    let json = JSON.parse(option.getAttribute('data-json'));
 
-    GetObservations(option.getAttribute('data-stationid'));
-    GetForecast(option.getAttribute('data-locationid'));
+    GetObservations(json['weatherstationid']);
+    GetForecast(json['id']);
     GetWeatherReport('nl');
     GetAnnouncements();
 });
 
 var option = stations.options[stations.selectedIndex];
+let json = JSON.parse(option.getAttribute('data-json'));
 
-GetObservations(option.getAttribute('data-stationid'));
-GetForecast(option.getAttribute('data-locationid'));
+GetObservations(json['weatherstationid']);
+GetForecast(json['id']);
 GetWeatherReport('nl');
 GetAnnouncements();
-
-console.log(stations);

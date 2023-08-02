@@ -8,9 +8,9 @@
         </div>
         <div class="col-12" id="main-nav">
             <nav>
-                <?= CreateLink("fa-solid fa-house-chimney", "index.php?page=index", "", "index", "Thuispagina", ""); ?>
-                <?= CreateLink("fa-solid fa-chart-area", "index.php?page=models", "", "models", "Weermodellen", ""); ?>
-                <?= CreateLink("fa-solid fa-user-gear", "index.php?page=settings", "", "settings", "Instellingen", ""); ?>
+                <?= CreateLink("fa-solid fa-house-chimney", "index.php", "", "index", "Thuispagina", ""); ?>
+                <?= CreateLink("fa-solid fa-chart-area", "models.php", "", "models", "Weermodellen", ""); ?>
+                <?= CreateLink("fa-solid fa-user-gear", "settings.php", "", "settings", "Instellingen", ""); ?>
             </nav>
         </div>
         <div class="col-12" id="secondary-nav">

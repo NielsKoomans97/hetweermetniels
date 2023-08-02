@@ -1,25 +1,17 @@
 //#region backend
-class LocationItem {
-    constructor(locationid, stationid) {
-        this.LocationId = locationid;
-        this.StationId = stationid;
-    }
-}
-
 function ListLocations() {
     let locations = [];
 
-    console.log(GetCookie('locations'));
     let database = JSON.parse(GetCookie('locations').Value);
 
     for (let item of database) {
-        locations.push(new LocationItem(item['LocationId'], item['StationId']));
+        locations.push(item);
     }
 
     return locations;
 }
 
-function SaveLocation(locationid, stationid) {
+function SaveLocation(item) {
     let database = null;
 
     if (HasCookie('locations')) {
@@ -28,8 +20,6 @@ function SaveLocation(locationid, stationid) {
     else {
         database = [];
     }
-
-    let item = new LocationItem(locationid, stationid);
 
     database.push(item);
 
@@ -40,6 +30,22 @@ function RemoveAllLocations(){
     if (HasCookie('locations')){
         SaveCookie(new Cookie('locations',''));
     }
+}
+
+function Search(query){   
+    let finalResult = fetch(`https://location.buienradar.nl/1.1/location/search?query=${query}`)
+        .then((response) => (response.json()))
+        .then((data) => {
+            let results = [];
+
+            for(let result of data){
+                results.push(result);
+            }
+
+            return results;
+        });
+
+    return finalResult;
 }
 //#endregion
 

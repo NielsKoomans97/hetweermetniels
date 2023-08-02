@@ -34,6 +34,18 @@ section#observations {
         font-weight: 300;
     }
 
+    div#location-selector{
+        select#stations{
+            float:right;
+            @include widget;
+
+            border-radius: 4px;
+            padding: 5px;
+        }
+    }
+
+
+
     div#forecast {
         @include widget;
 

@@ -1,3 +1,11 @@
+function ClearAll(element) {
+    var delChild = element.lastChild;
+    while (delChild) {
+        element.removeChild(delChild);
+        delChild = element.lastChild;
+    }
+}
+
 function GetForecast(locationId) {
     fetch(`https://forecast.buienradar.nl/2.0/forecast/${locationId}`)
         .then((response) => (response.json()))
@@ -8,6 +16,8 @@ function GetForecast(locationId) {
                 let day = data['days'][i + 1];
                 let forecast_day = forecast_days[i];
 
+                ClearAll(forecast_day);
+
                 CreateIconElement(forecast_day, day);
                 CreateDateElement(forecast_day, day);
                 CreateTempElement(forecast_day, day);
@@ -17,6 +27,8 @@ function GetForecast(locationId) {
             let dayZero = data['days'][0];
             const hourlyForecast = document.getElementById('hourly-forecast');
 
+            ClearAll(hourlyForecast);
+            
             for(let hour of dayZero['hours']){
                 let forecast_hour  = document.createElement('div');
                 forecast_hour.className = 'forecast-hour';
