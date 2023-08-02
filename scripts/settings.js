@@ -9,12 +9,39 @@ function ClearAll(element) {
     }
 }
 
+const savedLocations = document.getElementById('locations');
+const locationItems = ListLocations();
+
+locationItems.forEach(function(savedItem){
+    CreateSavedLocationItem(savedItem, savedLocations);
+});
+
+function CreateSavedLocationItem(item, root) {
+    let parsed = JSON.parse(item);
+    let savedLocation = document.createElement('div');
+    savedLocation.className = 'saved-location';
+
+    let locationName = document.createElement('h6');
+    locationName.innerText = parsed['name'];
+    locationName.className = 'location-name';
+    savedLocation.appendChild(locationName);
+
+    if (parsed['foad'] != null) {
+        let locationFoad = document.createElement('h7');
+        locationFoad.innerText = `${parsed['foad']['name']}, ${parsed['country']}`;
+        locationFoad.className = 'location-foad';
+        savedLocation.appendChild(locationFoad);
+    }
+
+    root.appendChild(savedLocation);
+}
+
 async function SearchLocations() {
     const query = document.getElementById('search-query');
     const resultoverview = document.getElementById('results');
 
     let data = await Search(query.value);
-    
+
     ClearAll(resultoverview);
     data.forEach(function (item) {
         CreateSearchResult(item, resultoverview);
