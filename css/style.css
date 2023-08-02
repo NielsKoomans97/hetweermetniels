@@ -239,12 +239,6 @@ section#settings {
   row-gap: 5px;
 }
 section#settings div.container {
-  display: flex;
-  background: linear-gradient(135deg, #719ff5, #fbf2e0);
-  border-radius: 12px;
-  margin: 5px;
-  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
-  padding: 0 20px;
   padding: 20px;
 }
 section#settings button {
@@ -260,6 +254,7 @@ section#settings button {
   font-size: 16px;
   font-weight: 400;
   transition: all 180ms ease-in-out;
+  flex-wrap: nowrap;
   border: #01264d 1px solid;
   outline: none;
   background-color: #fbf2e0;

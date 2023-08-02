@@ -6,13 +6,13 @@ section#settings {
     row-gap: 5px;
     
     div.container{
-        @include widget;
-
         padding: 20px;
     }
 
     button {
         @include menu-button(6px, 2px, 4px);
+
+        flex-wrap: nowrap;
 
         border: map-get($map: $colors, $key: menu-shadow) 1px solid;
         outline: none;
