@@ -2,10 +2,12 @@
 @use '../partials/mixins' as *;
 
 section#settings {
-    @include section(calc(100vw/5));
+    grid-column: 3 / span 4;
+    @include section(100%);
     row-gap: 5px;
-    
-    div.container{
+    flex-wrap: nowrap;
+
+    div.container {
         padding: 20px;
     }
 
@@ -18,62 +20,77 @@ section#settings {
         outline: none;
 
         background-color: map-get($map: $colors, $key: background-color);
+        justify-content: center;
 
         &:hover {
             border: transparent 1px solid;
         }
     }
 
-    h5.title{
+    h5.title {
         border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
     }
 
-    div#locations{
+    div#locations {
         row-gap: 10px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
+    }
+
+    div.saved-location{
+        padding: 10px;
+        background-color: map-get($map: $colors, $key: background-result);
+        border-radius: 6px;
     }
 
     div#top-bar {
         @include grid(2, 0, 80% 20%, 0);
 
-        input{
+        input {
             margin-right: 15px;
         }
+
+        margin-bottom: 10px;
 
         max-height: 50px;
     }
 
     div#results {
-        @include grid(0, 10, auto, 1);
+        display: grid;
+
+        overflow-y: auto;
+
+        align-items: start;
 
         row-gap: 10px;
-        overflow-y: auto;
     }
 
     div.search-result {
         @include grid(2, 0, 90% 10%, 0);
 
-        padding: 2px;
+        padding: 10px;
 
         align-items: center;
 
+        background-color: map-get($map: $colors, $key: background-result);
+        border-radius: 6px;
+
         h6.location-name {
-            grid-column: 1; 
+            grid-column: 1;
             grid-row: 1;
 
             margin-bottom: 0;
         }
 
-        h7.location-foad {
+        p.location-foad {
             grid-column: 1;
             grid-row: 2;
+            margin: 0;
+
         }
 
         button.add-location {
             grid-column: 2;
             grid-row: span 2;
-
-            justify-content: center;
 
             i {
                 margin: 0;

@@ -12,7 +12,7 @@ function ClearAll(element) {
 const savedLocations = document.getElementById('locations');
 const locationItems = ListLocations();
 
-locationItems.forEach(function(savedItem){
+locationItems.forEach(function (savedItem) {
     CreateSavedLocationItem(savedItem, savedLocations);
 });
 
@@ -57,12 +57,25 @@ function CreateSearchResult(data, root) {
     locationName.className = 'location-name';
     result.appendChild(locationName);
 
+    let locationFoad = document.createElement('p');
+    let country = '';
     if (data['foad'] != null) {
-        let locationFoad = document.createElement('h7');
-        locationFoad.innerText = `${data['foad']['name']}, ${data['country']}`;
-        locationFoad.className = 'location-foad';
-        result.appendChild(locationFoad);
+        country = `${data['foad']['name']}, `;
     }
+    
+    if (data['country'] != null) {
+        country += `${data['country']}`;
+    }
+
+    if (country != ''){
+        locationFoad.innerText = country;
+    }
+    else {
+        locationFoad.innerText = "Ligt ergens in het buitenland";
+    }
+
+    locationFoad.className = 'location-foad';
+    result.appendChild(locationFoad);
 
     let addButton = document.createElement('button');
     addButton.innerHTML = '<i class="fa-solid fa-plus"></i>';

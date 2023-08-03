@@ -1,6 +1,7 @@
 <?php require 'header.php'; ?>
 
 <?php require 'php/sections/observation-section.php'; ?>
+<?php require 'php/sections/report-section.php'; ?>
 <footer>
     <script src="scripts/cookies.js" defer></script>
     <script src="scripts/locations.js" defer></script>

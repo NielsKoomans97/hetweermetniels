@@ -2,7 +2,8 @@
 @use "../partials/mixins" as *;
 
 section#observations {
-    $width: calc(100vw / 5);
+    grid-column: 3 / span 3;
+    $width: 100%;
 
     @include section($width);
 
@@ -36,11 +37,12 @@ section#observations {
 
     div#location-selector{
         select#stations{
-            float:right;
             @include widget;
 
             border-radius: 4px;
             padding: 5px;
+
+            width: 98%;
         }
     }
 
