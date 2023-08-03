@@ -4,8 +4,6 @@ const stations = document.getElementById('stations');
 function LoadLocations() {
     const database = ListLocations();
 
-    console.log(database);
-
     for (let item of database) {
         let option = document.createElement('option');
         option.setAttribute('data-json', item);

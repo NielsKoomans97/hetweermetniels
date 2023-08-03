@@ -1,9 +1,6 @@
 //#region backend
 function ListLocations() {
     let locations = [];
-
-    console.log(ListCookies());
-
     let database = JSON.parse(GetCookie('locations').Value);
 
     for (let item of database) {
