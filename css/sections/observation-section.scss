@@ -160,6 +160,9 @@ section#observations {
 
     @media(max-width:2250px) {
         div#forecast {
+
+            padding: 0;
+
             flex-wrap: wrap;
 
             grid-template-columns: none;
@@ -168,13 +171,12 @@ section#observations {
             div.forecast-day {
                 @include grid(4, 0, auto, 1);
                 align-items: center;
+
+                justify-content: space-evenly;
             }
 
             img.forecast-icon{
-                border-radius: 0;
-
-                border-top-right-radius: 30%;
-                border-bottom-right-radius: 30%;
+                border-radius: 30%;
 
                 margin-right: 15px;
 

@@ -200,6 +200,7 @@ section#observations div#hourly-forecast i {
 }
 @media (max-width: 2250px) {
   section#observations div#forecast {
+    padding: 0;
     flex-wrap: wrap;
     grid-template-columns: none;
     grid-template-rows: repeat(3, 100px);
@@ -208,11 +209,10 @@ section#observations div#hourly-forecast i {
     display: grid;
     grid-template-columns: repeat(4, auto);
     align-items: center;
+    justify-content: space-evenly;
   }
   section#observations div#forecast img.forecast-icon {
-    border-radius: 0;
-    border-top-right-radius: 30%;
-    border-bottom-right-radius: 30%;
+    border-radius: 30%;
     margin-right: 15px;
     height: 64px;
   }
