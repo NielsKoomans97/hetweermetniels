@@ -1,7 +1,7 @@
 @use '../variables' as *;
 
 @mixin section($width) {
-    padding: 10px;
+    padding: 20px;
     height: 100vh;
     width: $width;
     display: flex;
@@ -46,7 +46,7 @@
     border-radius: 12px;
     margin: 5px;
 
-    box-shadow: 0px 4px 0px 0px transparentize(map-get($map: $colors, $key: menu-shadow),.80);
+    box-shadow: 0px 2px 2px 0px transparentize(map-get($map: $colors, $key: menu-shadow),.80);
     padding: 0 20px;
 }
 

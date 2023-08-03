@@ -3,9 +3,13 @@
 
 section#settings {
     grid-column: 3 / span 4;
+    
     @include section(100%);
+
     row-gap: 5px;
     flex-wrap: nowrap;
+
+    background-color: map-get($map: $colors, $key: background-color-2);
 
     div.container {
         padding: 20px;
@@ -45,8 +49,14 @@ section#settings {
     div#top-bar {
         @include grid(2, 0, 80% 20%, 0);
 
+        align-items: center;
+
         input {
             margin-right: 15px;
+            padding: 7px;
+            border-radius: 6px;
+            outline: none;
+            border: none;
         }
 
         margin-bottom: 10px;

@@ -10,10 +10,11 @@ section#observations {
     overflow: hidden;
     flex-wrap: nowrap;
 
+    background-color: map-get($map: $colors, $key: background-color-2);
+
     div#observations {
         @include widget;
-
-        margin: 10px 0;
+        margin-bottom: 20px;
 
         div.col.grid {
             @include grid(2,2,50%,1);
@@ -52,7 +53,6 @@ section#observations {
 
     div#forecast {
         @include widget;
-        margin: 5px 0;
 
         grid-template-columns: repeat(3, calc(100%/3));
 
@@ -109,10 +109,11 @@ section#observations {
 
     div#hourly-forecast {
         @include widget;
-        margin: 5px 0;
 
         flex-direction: column;
         overflow-y: auto;
+
+        margin-bottom: 20px;
 
         height: 100%;
         padding: 10px;
@@ -123,7 +124,7 @@ section#observations {
             align-items: center;
             justify-items: center;
 
-            margin: 5px 0;        
+            margin: 7px 0;        
         }
 
         img.forecast-icon {

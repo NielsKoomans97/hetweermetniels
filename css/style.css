@@ -4,7 +4,7 @@ body {
   justify-content: center;
   font-family: "Jost", sans-serif;
   font-weight: 300;
-  background-color: #fbf2e0;
+  background-color: #e0edfb;
 }
 
 div#logo h5 {
@@ -48,7 +48,7 @@ div#logo h5 {
 
 section#observations {
   grid-column: 3/span 3;
-  padding: 10px;
+  padding: 20px;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -56,15 +56,16 @@ section#observations {
   flex-wrap: wrap;
   overflow: hidden;
   flex-wrap: nowrap;
+  background-color: #e8f5ff;
 }
 section#observations div#observations {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 12px;
   margin: 5px;
-  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
+  box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
-  margin: 10px 0;
+  margin-bottom: 20px;
 }
 section#observations div#observations div.col.grid {
   display: grid;
@@ -89,10 +90,10 @@ section#observations div#location-selector {
 }
 section#observations div#location-selector select#stations {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 12px;
   margin: 5px;
-  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
+  box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
   border-radius: 4px;
   padding: 5px;
@@ -100,12 +101,11 @@ section#observations div#location-selector select#stations {
 }
 section#observations div#forecast {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 12px;
   margin: 5px;
-  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
+  box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
-  margin: 5px 0;
   grid-template-columns: repeat(3, 33.3333333333%);
 }
 section#observations div#forecast div.forecast-day {
@@ -149,14 +149,14 @@ section#observations div#forecast div.forecast-temp h6.low {
 }
 section#observations div#hourly-forecast {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 12px;
   margin: 5px;
-  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
+  box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
-  margin: 5px 0;
   flex-direction: column;
   overflow-y: auto;
+  margin-bottom: 20px;
   height: 100%;
   padding: 10px;
 }
@@ -165,7 +165,7 @@ section#observations div#hourly-forecast div.forecast-hour {
   grid-template-columns: 15% 25% 20% 20% 20%;
   align-items: center;
   justify-items: center;
-  margin: 5px 0;
+  margin: 7px 0;
 }
 section#observations div#hourly-forecast img.forecast-icon {
   width: 46px;
@@ -194,7 +194,7 @@ section#observations div#hourly-forecast i {
 
 section#menu {
   grid-column: 1/span 2;
-  padding: 10px;
+  padding: 20px;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -239,7 +239,7 @@ section#menu nav a.secondary-item img {
 
 section#settings {
   grid-column: 3/span 4;
-  padding: 10px;
+  padding: 20px;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -247,6 +247,7 @@ section#settings {
   flex-wrap: wrap;
   row-gap: 5px;
   flex-wrap: nowrap;
+  background-color: #e8f5ff;
 }
 section#settings div.container {
   padding: 20px;
@@ -267,7 +268,7 @@ section#settings button {
   flex-wrap: nowrap;
   border: #01264d 1px solid;
   outline: none;
-  background-color: #fbf2e0;
+  background-color: #e0edfb;
   justify-content: center;
 }
 section#settings button i {
@@ -296,17 +297,22 @@ section#settings div#locations {
 }
 section#settings div.saved-location {
   padding: 10px;
-  background-color: #efead8;
+  background-color: #d8e3ef;
   border-radius: 6px;
 }
 section#settings div#top-bar {
   display: grid;
   grid-template-columns: 80% 20%;
+  align-items: center;
   margin-bottom: 10px;
   max-height: 50px;
 }
 section#settings div#top-bar input {
   margin-right: 15px;
+  padding: 7px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
 }
 section#settings div#results {
   display: grid;
@@ -319,7 +325,7 @@ section#settings div.search-result {
   grid-template-columns: 90% 10%;
   padding: 10px;
   align-items: center;
-  background-color: #efead8;
+  background-color: #d8e3ef;
   border-radius: 6px;
 }
 section#settings div.search-result h6.location-name {
@@ -341,7 +347,7 @@ section#settings div.search-result button.add-location i {
 }
 
 section#report {
-  padding: 10px;
+  padding: 20px;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -361,20 +367,21 @@ section#report div#announcements i {
 }
 
 section#radar {
-  padding: 10px;
+  padding: 20px;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   grid-column: 12/span 3;
+  background-color: #e8f5ff;
 }
 section#radar select#radar-options {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 12px;
   margin: 5px;
-  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
+  box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
   border-radius: 4px;
   padding: 5px;
