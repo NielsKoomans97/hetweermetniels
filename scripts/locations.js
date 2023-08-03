@@ -2,6 +2,8 @@
 function ListLocations() {
     let locations = [];
 
+    console.log(ListCookies());
+
     let database = JSON.parse(GetCookie('locations').Value);
 
     for (let item of database) {
@@ -46,6 +48,12 @@ function Search(query){
         });
 
     return finalResult;
+}
+
+async function SaveDefaultLocation(){
+    let results = await Search('de bilt');
+    let de_bilt = JSON.stringify(results[0]);
+    SaveLocation(de_bilt);
 }
 //#endregion
 

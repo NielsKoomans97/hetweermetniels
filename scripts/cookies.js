@@ -1,6 +1,7 @@
-const cookie = document.cookie;
+let cookie = document.cookie;
 
 function ListCookies() {
+    cookie = document.cookie;
     let cookies = [];
     let parts = cookie.split(';');
 
@@ -19,6 +20,7 @@ function RemoveAllCookies() {
 }
 
 function GetCookie(query) {
+    cookie = document.cookie;
     let parts = cookie.split(';');
 
     for (part of parts) {
@@ -33,6 +35,7 @@ function GetCookie(query) {
 }
 
 function HasCookie(query) {
+    cookie = document.cookie;
     let parts = cookie.split(';');
 
     for (part of parts) {
