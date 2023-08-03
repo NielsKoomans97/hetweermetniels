@@ -16,6 +16,10 @@ if (HasCookie('locations')){
 
     stations.selectedIndex = 0;
 }
+else{
+    var locations = await Search('de bilt');
+    SaveLocation(locations[0]);
+}
 
 stations.addEventListener('change', () => {
     var option = stations.options[stations.selectedIndex];

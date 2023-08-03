@@ -27,7 +27,7 @@ function CreateSavedLocationItem(item, root) {
     savedLocation.appendChild(locationName);
 
     if (parsed['foad'] != null) {
-        let locationFoad = document.createElement('h7');
+        let locationFoad = document.createElement('p');
         locationFoad.innerText = `${parsed['foad']['name']}, ${parsed['country']}`;
         locationFoad.className = 'location-foad';
         savedLocation.appendChild(locationFoad);

@@ -300,6 +300,11 @@ section#settings div.saved-location {
   background-color: #d8e3ef;
   border-radius: 6px;
 }
+section#settings div.saved-location p.location-foad {
+  border-bottom: #01264d 1px solid;
+  width: fit-content;
+  margin: 0;
+}
 section#settings div#top-bar {
   display: grid;
   grid-template-columns: 80% 20%;
@@ -331,11 +336,13 @@ section#settings div.search-result {
 section#settings div.search-result h6.location-name {
   grid-column: 1;
   grid-row: 1;
-  margin-bottom: 0;
+  margin-bottom: 8px;
 }
 section#settings div.search-result p.location-foad {
   grid-column: 1;
   grid-row: 2;
+  border-bottom: #01264d 1px solid;
+  width: fit-content;
   margin: 0;
 }
 section#settings div.search-result button.add-location {
