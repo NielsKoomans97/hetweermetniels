@@ -59,7 +59,7 @@ section#observations {
 }
 section#observations div#observations {
   display: flex;
-  background: linear-gradient(135deg, #719ff5, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
   border-radius: 12px;
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
@@ -89,7 +89,7 @@ section#observations div#location-selector {
 }
 section#observations div#location-selector select#stations {
   display: flex;
-  background: linear-gradient(135deg, #719ff5, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
   border-radius: 12px;
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
@@ -100,7 +100,7 @@ section#observations div#location-selector select#stations {
 }
 section#observations div#forecast {
   display: flex;
-  background: linear-gradient(135deg, #719ff5, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
   border-radius: 12px;
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
@@ -149,7 +149,7 @@ section#observations div#forecast div.forecast-temp h6.low {
 }
 section#observations div#hourly-forecast {
   display: flex;
-  background: linear-gradient(135deg, #719ff5, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
   border-radius: 12px;
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
@@ -223,14 +223,14 @@ section#menu nav a i {
   margin-right: 10px;
 }
 section#menu nav a:hover {
-  background-color: #719ff5;
+  background-color: #92b7fc;
   color: #000000;
   box-shadow: 0px 4px 0px 0px #01264d;
 }
 section#menu nav a:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #719ff5;
+  box-shadow: 0px 4px 0px 0px #92b7fc;
 }
 section#menu nav a.secondary-item img {
   width: 24px;
@@ -275,14 +275,14 @@ section#settings button i {
   margin-right: 10px;
 }
 section#settings button:hover {
-  background-color: #719ff5;
+  background-color: #92b7fc;
   color: #000000;
   box-shadow: 0px 4px 0px 0px #01264d;
 }
 section#settings button:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #719ff5;
+  box-shadow: 0px 4px 0px 0px #92b7fc;
 }
 section#settings button:hover {
   border: transparent 1px solid;
@@ -371,7 +371,7 @@ section#radar {
 }
 section#radar select#radar-options {
   display: flex;
-  background: linear-gradient(135deg, #719ff5, #fbf2e0);
+  background: linear-gradient(135deg, #92b7fc, #fbf2e0);
   border-radius: 12px;
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
