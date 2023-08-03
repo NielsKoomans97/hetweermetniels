@@ -17,7 +17,7 @@ section#observations {
         margin-bottom: 20px;
 
         div.col.grid {
-            @include grid(2,2,50%,1);
+            @include grid(2, 2, 50%, 1);
             margin: 10px 0;
         }
 
@@ -38,10 +38,10 @@ section#observations {
         font-weight: 300;
     }
 
-    div#location-selector{
+    div#location-selector {
         margin: 5px 0;
 
-        select#stations{
+        select#stations {
             @include widget;
 
             border-radius: 4px;
@@ -124,7 +124,7 @@ section#observations {
             align-items: center;
             justify-items: center;
 
-            margin: 7px 0;        
+            margin: 7px 0;
         }
 
         img.forecast-icon {
@@ -141,20 +141,54 @@ section#observations {
             margin-bottom: 0;
         }
 
-        h6.forecast-time{
+        h6.forecast-time {
             border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
             font-weight: 300;
         }
 
         div.forecast-wind,
-        div.forecast-humidity{
+        div.forecast-humidity {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        i{
+        i {
             margin-bottom: 5px;
         }
+    }
+
+    @media(max-width:2250px) {
+        div#forecast {
+            flex-wrap: wrap;
+
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, calc(300px / 3));
+
+            div.forecast-day {
+                @include grid(4, 0, auto, 1);
+                align-items: center;
+            }
+
+            img.forecast-icon{
+                border-radius: 0;
+
+                border-top-right-radius: 30%;
+                border-bottom-right-radius: 30%;
+
+                margin-right: 15px;
+
+                height: 64px;
+            }
+        }
+
+    }
+
+    @media(max-width:1800px){
+        grid-column: 3 / span 4;
+    }
+
+    @media(max-width: 1420px){
+        grid-column: 3 / span 5;
     }
 }

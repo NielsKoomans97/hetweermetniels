@@ -46,6 +46,13 @@ div#logo h5 {
   font-size: 32px;
 }
 
+@media (max-width: 1170px) {
+  body {
+    grid-template-columns: none;
+    display: flex;
+    flex-direction: column;
+  }
+}
 section#observations {
   grid-column: 3/span 3;
   padding: 20px;
@@ -190,6 +197,35 @@ section#observations div#hourly-forecast div.forecast-humidity {
 }
 section#observations div#hourly-forecast i {
   margin-bottom: 5px;
+}
+@media (max-width: 2250px) {
+  section#observations div#forecast {
+    flex-wrap: wrap;
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 100px);
+  }
+  section#observations div#forecast div.forecast-day {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+  }
+  section#observations div#forecast img.forecast-icon {
+    border-radius: 0;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    margin-right: 15px;
+    height: 64px;
+  }
+}
+@media (max-width: 1800px) {
+  section#observations {
+    grid-column: 3/span 4;
+  }
+}
+@media (max-width: 1420px) {
+  section#observations {
+    grid-column: 3/span 5;
+  }
 }
 
 section#menu {
@@ -371,6 +407,16 @@ section#report div#announcements {
 }
 section#report div#announcements i {
   font-size: 32px;
+}
+@media (max-width: 1800px) {
+  section#report {
+    grid-column: 7/span 5;
+  }
+}
+@media (max-width: 1420px) {
+  section#report {
+    grid-column: 8/span 4;
+  }
 }
 
 section#radar {

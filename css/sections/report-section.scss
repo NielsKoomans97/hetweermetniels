@@ -20,4 +20,12 @@ section#report{
             font-size: map-get($map: $typo, $key: warning-icon);
         }
     }
+
+    @media (max-width:1800px){
+        grid-column: 7 / span 5;
+    }
+
+    @media(max-width: 1420px){
+        grid-column: 8 / span 4;
+    }
 }
