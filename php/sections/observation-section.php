@@ -9,15 +9,16 @@
             </div>
             <img id="observation-icon">
         </div>
-        <div class="col" id="location-selector">
-            <select id="stations"></select>
-        </div>
+
     </div>
-    <div class="container flex-row">
+    <div class="container flex-column">
         <div class="col grid" id="forecast">
             <div class="forecast-day"></div>
             <div class="forecast-day"></div>
             <div class="forecast-day"></div>
+        </div>
+        <div class="col" id="location-selector">
+            <select id="stations"></select>
         </div>
     </div>
     <div class="container flex-grow padding-bottom">
@@ -26,5 +27,3 @@
         </div>
     </div>
 </section>
-
-

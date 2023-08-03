@@ -13,6 +13,8 @@ section#observations {
     div#observations {
         @include widget;
 
+        margin: 10px 0;
+
         div.col.grid {
             @include grid(2,2,50%,1);
             margin: 10px 0;
@@ -36,6 +38,8 @@ section#observations {
     }
 
     div#location-selector{
+        margin: 5px 0;
+
         select#stations{
             @include widget;
 
@@ -48,6 +52,7 @@ section#observations {
 
     div#forecast {
         @include widget;
+        margin: 5px 0;
 
         grid-template-columns: repeat(3, calc(100%/3));
 
@@ -104,6 +109,7 @@ section#observations {
 
     div#hourly-forecast {
         @include widget;
+        margin: 5px 0;
 
         flex-direction: column;
         overflow-y: auto;

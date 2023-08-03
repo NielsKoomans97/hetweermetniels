@@ -64,6 +64,7 @@ section#observations div#observations {
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
+  margin: 10px 0;
 }
 section#observations div#observations div.col.grid {
   display: grid;
@@ -83,6 +84,9 @@ section#observations div#observations img#observation-icon {
 section#observations h5#station-name {
   font-weight: 300;
 }
+section#observations div#location-selector {
+  margin: 5px 0;
+}
 section#observations div#location-selector select#stations {
   display: flex;
   background: linear-gradient(135deg, #719ff5, #fbf2e0);
@@ -101,6 +105,7 @@ section#observations div#forecast {
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
+  margin: 5px 0;
   grid-template-columns: repeat(3, 33.3333333333%);
 }
 section#observations div#forecast div.forecast-day {
@@ -149,6 +154,7 @@ section#observations div#hourly-forecast {
   margin: 5px;
   box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
+  margin: 5px 0;
   flex-direction: column;
   overflow-y: auto;
   height: 100%;
@@ -352,6 +358,33 @@ section#report div#announcements {
 }
 section#report div#announcements i {
   font-size: 32px;
+}
+
+section#radar {
+  padding: 10px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  grid-column: 12/span 3;
+}
+section#radar select#radar-options {
+  display: flex;
+  background: linear-gradient(135deg, #719ff5, #fbf2e0);
+  border-radius: 12px;
+  margin: 5px;
+  box-shadow: 0px 4px 0px 0px rgba(1, 38, 77, 0.2);
+  padding: 0 20px;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+  margin: 0;
+}
+section#radar img#radar-image {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 6px;
 }
 
 /* cyrillic */

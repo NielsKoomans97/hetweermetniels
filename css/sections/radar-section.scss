@@ -1,0 +1,27 @@
+@use '../variables' as *;
+@use '../partials/mixins' as *;
+
+section#radar{
+    $width: 100%;
+    @include section($width);
+
+    grid-column: 12 / span 3;
+
+    select#radar-options{
+        @include widget;
+
+        border-radius: 4px;
+        padding: 5px;
+
+        width: 100%;
+        margin: 0;
+    }
+
+    img#radar-image{
+        width: 100%;
+        margin-top: 15px;
+
+        border-radius: 6px;
+
+    }
+}
