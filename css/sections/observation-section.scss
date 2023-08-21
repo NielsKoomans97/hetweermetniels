@@ -15,10 +15,27 @@ section#observations {
     div#observations {
         @include widget;
         margin-bottom: 20px;
+        align-items: center;
 
         div.col.grid {
             @include grid(2, 2, 50%, 1);
             margin: 10px 0;
+
+            justify-items: flex-start;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                margin: 5px 0;
+            }
+
+            div 
+            i{
+                font-size: map-get($map: $typo, $key: observation-icons);
+                margin-bottom: 5px;
+            }
         }
 
         h5,
@@ -29,8 +46,8 @@ section#observations {
         img#observation-icon {
             background-color: white;
             border-radius: 50%;
+            height: fit-content;
             box-shadow: 0px 5px 20px 0 transparentize($color: #000000, $amount: .85);
-
         }
     }
 

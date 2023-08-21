@@ -19,10 +19,13 @@ nav {
 
 div.container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 div.container.flex-grow {
   flex-grow: 1;
+  overflow: auto;
+}
+div.container.overflow-hidden {
   overflow: hidden;
 }
 div.container.padding-bottom {
@@ -52,6 +55,9 @@ div#logo h5 {
     display: flex;
     flex-direction: column;
   }
+  section {
+    width: 100vw !important;
+  }
 }
 section#observations {
   grid-column: 3/span 3;
@@ -73,12 +79,24 @@ section#observations div#observations {
   box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   padding: 0 20px;
   margin-bottom: 20px;
+  align-items: center;
 }
 section#observations div#observations div.col.grid {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: repeat(2, 50%);
   margin: 10px 0;
+  justify-items: flex-start;
+}
+section#observations div#observations div.col.grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0;
+}
+section#observations div#observations div.col.grid div i {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 section#observations div#observations h5,
 section#observations div#observations h2 {
@@ -87,6 +105,7 @@ section#observations div#observations h2 {
 section#observations div#observations img#observation-icon {
   background-color: white;
   border-radius: 50%;
+  height: fit-content;
   box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.15);
 }
 section#observations h5#station-name {

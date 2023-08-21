@@ -2,10 +2,21 @@
     <div class="container flex-column">
         <div class="col" id="observations">
             <div class="col grid">
-                <h2 id="observation-temp"></h2>
-                <h5 id="observation-feel"></h5>
-                <h5 id="observation-wind"></h5>
-                <h5 id="observation-humid"></h5>
+                <div>
+                    <h2 id="observation-temp"></h2>
+                </div>
+                <div>
+                    <i class="fa-solid fa-hand-dots"></i>
+                    <h5 id="observation-feel"></h5>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <h5 id="observation-wind"></h5>
+                </div>
+                <div>
+                    <i class="fa-solid fa-umbrella"></i>
+                    <h5 id="observation-humid"></h5>
+                </div>
             </div>
             <img id="observation-icon">
         </div>
@@ -21,7 +32,7 @@
             <select id="stations"></select>
         </div>
     </div>
-    <div class="container flex-grow padding-bottom">
+    <div class="container flex-grow padding-bottom overflow-hidden">
         <div class="col" id="hourly-forecast">
 
         </div>
