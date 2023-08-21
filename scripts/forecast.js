@@ -32,9 +32,9 @@ function GetForecast(locationId) {
             for(let hour of dayZero['hours']){
                 let forecast_hour  = document.createElement('div');
                 forecast_hour.className = 'forecast-hour';
-
-                CreateTimeElement(forecast_hour, hour);
+                
                 CreateIconElement(forecast_hour, hour);
+                CreateTimeElement(forecast_hour, hour);
                 CreateHourlyTempElement(forecast_hour, hour);        
                 CreateWindElement(forecast_hour, hour);
                 CreateHumidityElement(forecast_hour, hour);

@@ -1,5 +1,8 @@
 <section id="observations">
     <div class="container flex-column">
+        <div class="col" id="location-selector">
+            <select id="stations"></select>
+        </div>
         <div class="col" id="observations">
             <div class="col grid">
                 <div>
@@ -36,11 +39,11 @@
             <div class="forecast-day"></div>
             <div class="forecast-day"></div>
         </div>
-        <div class="col" id="location-selector">
-            <select id="stations"></select>
-        </div>
+
     </div>
-    <div class="container flex-grow padding-bottom overflow-hidden">
+    <div class="container flex-column flex-grow padding-bottom overflow-hidden">
+        <br>
+        <h3>Vandaag</h3>
         <div class="col" id="hourly-forecast">
 
         </div>
