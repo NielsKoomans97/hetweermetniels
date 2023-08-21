@@ -16,7 +16,7 @@ section#observations {
         @include widget;
         margin-bottom: 20px;
         align-items: center;
-        padding: 0;
+        padding: 0;       
 
         div.col.grid {
             display: grid;
@@ -81,15 +81,16 @@ section#observations {
         @include widget;
 
         background: none;
-        grid-template-columns: repeat(3, calc(100%/3));
+        grid-template-columns: repeat(3, calc(96% / 3));
         padding: 0;
+
+        column-gap: 10px;
 
         div.forecast-day {
             @include grid(0, 4, auto, 1);
 
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
-            margin: 0 5px;
 
             justify-items: center;
         }
@@ -130,8 +131,11 @@ section#observations {
             align-items: center;
             flex-direction: column;
 
+            margin: 5px 0;
+
             h6 {
-                font-weight: 600;
+                font-weight: 500;
+                font-size: map-get($map: $typo, $key: forecast-temperature);
             }
 
             h6.high {
