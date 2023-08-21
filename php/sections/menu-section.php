@@ -1,7 +1,7 @@
 <section id="menu">
     <div class="container flex-column">
-        <div class="col-12" id="logo">
-            <div class="col d-flex flex-column align-items-center">
+        <div class="col-12 d-flex" id="logo">
+            <div id="logo-inner" class="col d-flex flex-column align-items-center">
                 <img src="assets/logo.png">
                 <h5>Het weer met Niels</h5>
             </div>

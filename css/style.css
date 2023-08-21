@@ -80,13 +80,14 @@ section#observations div#observations {
   padding: 0 20px;
   margin-bottom: 20px;
   align-items: center;
+  padding: 0;
 }
 section#observations div#observations div.col.grid {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, 50%);
   margin: 10px 0;
-  justify-items: flex-start;
+  justify-items: center;
 }
 section#observations div#observations div.col.grid div {
   display: flex;
@@ -94,8 +95,10 @@ section#observations div#observations div.col.grid div {
   align-items: center;
   margin: 5px 0;
 }
+section#observations div#observations div.col.grid div h6 {
+  margin: 0;
+}
 section#observations div#observations div.col.grid div i {
-  font-size: 20px;
   margin-bottom: 5px;
 }
 section#observations div#observations h5,
@@ -104,9 +107,9 @@ section#observations div#observations h2 {
 }
 section#observations div#observations img#observation-icon {
   background-color: white;
-  border-radius: 50%;
-  height: fit-content;
-  box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.15);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  height: 100%;
 }
 section#observations h5#station-name {
   font-weight: 300;
@@ -196,7 +199,7 @@ section#observations div#hourly-forecast div.forecast-hour {
 section#observations div#hourly-forecast img.forecast-icon {
   width: 46px;
   background-color: #ffffff;
-  border-radius: 20%;
+  border-radius: 4px;
   padding: 2px;
   box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.15);
 }
@@ -290,6 +293,41 @@ section#menu nav a:active {
 section#menu nav a.secondary-item img {
   width: 24px;
   margin-right: 10px;
+}
+section#menu button#larger-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+  margin: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 180ms ease-in-out;
+  background-color: #e0edfb;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+section#menu button#larger-menu i {
+  align-self: center;
+  margin-right: 10px;
+}
+section#menu button#larger-menu:hover {
+  background-color: #92b7fc;
+  color: #000000;
+  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#menu button#larger-menu:active {
+  color: #ffffff;
+  background-color: #01264d;
+  box-shadow: 0px 4px 0px 0px #92b7fc;
+}
+section#menu button#larger-menu i {
+  margin: 0;
 }
 
 section#settings {
@@ -461,6 +499,7 @@ section#radar select#radar-options {
   margin: 0;
 }
 section#radar img#radar-image {
+  box-shadow: 0px 2px 2px 0px rgba(1, 38, 77, 0.2);
   width: 100%;
   margin-top: 15px;
   border-radius: 6px;

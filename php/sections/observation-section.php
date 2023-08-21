@@ -7,15 +7,23 @@
                 </div>
                 <div>
                     <i class="fa-solid fa-hand-dots"></i>
-                    <h5 id="observation-feel"></h5>
+                    <h6 id="observation-feel"></h6>
                 </div>
                 <div>
                     <i class="fa-solid fa-arrow-down"></i>
-                    <h5 id="observation-wind"></h5>
+                    <h6 id="observation-wind"></h6>
                 </div>
                 <div>
                     <i class="fa-solid fa-umbrella"></i>
-                    <h5 id="observation-humid"></h5>
+                    <h6 id="observation-humid"></h6>
+                </div>
+                <div>
+                    <i class="fa-solid fa-droplet"></i>
+                    <h6 id="observation-rainamt"></h6>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gauge"></i>
+                    <h6 id="observation-pressure"></h6>
                 </div>
             </div>
             <img id="observation-icon">
