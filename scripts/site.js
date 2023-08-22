@@ -1,15 +1,21 @@
 
 const stations = document.getElementById('stations');
+const secondary_links = document.getElementById('nav-items');
 
-async function AddSecondaryLinks(){
+async function AddSecondaryLinks() {
     await fetch("/links.json")
-    .then((response) => (response.JSON())
-    .then((data) => {
-        for(let link of data){
-            let linkBtn = document.createElement('a');
+        .then((response) => (response.json())
+            .then((data) => {
+                for (let link of data) {
+                    let linkBtn = document.createElement('a');
+                   
+                    linkBtn.innerHTML = `<img src=\"${link['Favicon']}\">${link['SiteName']}`
+                    linkBtn.setAttribute('href', link['Url']);
+                    linkBtn.className = "secondary-item";
 
-        }
-    }));
+                    secondary_links.appendChild(linkBtn);
+                }
+            }));
 }
 
 function LoadLocations() {
@@ -57,3 +63,4 @@ stations.addEventListener('change', () => {
 });
 
 Launch();
+AddSecondaryLinks();

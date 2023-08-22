@@ -15,7 +15,7 @@
         </div>
         <div class="col-12" id="secondary-nav">
             <h5>Andere items</h5>
-            <nav>
+            <nav id="nav-items">
                 <?= CreateImgLink("https://cdn.buienradar.nl/resources/images/favicon.png", "https://buienradar.nl", "", "Buienradar"); ?>
                 <?= CreateImgLink("https://www.onweer-online.nl/favicon.ico", "https://onweer-online.nl", "", "Onweer-online"); ?>
                 <?= CreateImgLink("https://primary.jwwb.nl/public/k/k/y/temp-frvufhxnzegthaceduoj/blikseminslag80922-2-1.jpg", "https://www.woutervanbernebeek.nl/weermodel", "", "Wouter van Bernebeek"); ?>
