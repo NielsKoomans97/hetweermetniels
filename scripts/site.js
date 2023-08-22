@@ -1,6 +1,17 @@
 
 const stations = document.getElementById('stations');
 
+async function AddSecondaryLinks(){
+    await fetch("/links.json")
+    .then((response) => (response.JSON())
+    .then((data) => {
+        for(let link of data){
+            let linkBtn = document.createElement('a');
+
+        }
+    }));
+}
+
 function LoadLocations() {
     const database = ListLocations();
 
