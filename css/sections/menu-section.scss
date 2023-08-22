@@ -4,8 +4,11 @@
 section#menu{
     grid-column: 1 / span 2;
     $width: 100%;
+    height: auto !important;
 
     @include section($width);
+
+    flex-wrap: nowrap;
 
     div.col-12{
         margin: 10px 0;
@@ -13,6 +16,10 @@ section#menu{
 
     nav a{
         @include menu-button(5px 10px, 5px, 4px);
+    }
+
+    div#secondary-nav{
+        // display: none !important;
     }
 
     nav a.secondary-item img{

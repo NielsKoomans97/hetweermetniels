@@ -72,7 +72,7 @@ section#settings {
 
     div#results {
         display: grid;
-
+        grid-auto-rows: max-content;
         overflow-y: auto;
 
         align-items: start;

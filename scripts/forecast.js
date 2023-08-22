@@ -163,7 +163,7 @@ function CreateHumidityElement(root, day){
     humidityContainer.className = 'forecast-humidity';
 
     let humidityIcon = document.createElement('i');
-    humidityIcon.className = 'fas fa-umbrella icon'
+    humidityIcon.className = 'fas fa-droplet'
     
     let humdity = document.createElement('h6');
     humdity.className = 'humidity';

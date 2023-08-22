@@ -13,6 +13,10 @@
                 <?= CreateLink("fa-solid fa-user-gear", "settings.php", "", "settings", "Instellingen", ""); ?>
             </nav>
         </div>
+
+    </div>
+    <br>
+    <div class="container flex-column">
         <div class="col-12" id="secondary-nav">
             <h5>Andere items</h5>
             <nav id="nav-items">

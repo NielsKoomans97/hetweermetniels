@@ -61,7 +61,7 @@ div#logo h5 {
 }
 section#observations {
   grid-column: 3/span 3;
-  padding: 20px;
+  padding: 10px 0;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -113,6 +113,39 @@ section#observations div#observations img#observation-icon {
 }
 section#observations h5#station-name {
   font-weight: 300;
+}
+section#observations div#location-selector a#add-location {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  padding: 4px 20px;
+  margin: 5px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 180ms ease-in-out;
+  border: #01264d 1px solid;
+  outline: none;
+}
+section#observations div#location-selector a#add-location i {
+  align-self: center;
+  margin-right: 10px;
+}
+section#observations div#location-selector a#add-location:hover {
+  background-color: #92b7fc;
+  color: #000000;
+  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#observations div#location-selector a#add-location:active {
+  color: #ffffff;
+  background-color: #01264d;
+  box-shadow: 0px 4px 0px 0px #92b7fc;
+}
+section#observations div#location-selector a#add-location i {
+  margin: 0;
 }
 section#observations div#location-selector select#stations {
   display: flex;
@@ -211,11 +244,11 @@ section#observations div#hourly-forecast {
 }
 section#observations div#hourly-forecast div.forecast-hour {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 15% 25% 20% 20% 20%;
   background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 4px;
   align-items: center;
-  justify-items: normal;
+  justify-items: stretch;
   margin: 7px 0;
   min-height: 65px;
 }
@@ -235,7 +268,7 @@ section#observations div#hourly-forecast h4 {
 section#observations div#hourly-forecast h6.forecast-time {
   border-bottom: #01264d 2px solid;
   font-weight: 300;
-  justify-self: flex-start;
+  justify-self: center;
 }
 section#observations div#hourly-forecast div.forecast-wind,
 section#observations div#hourly-forecast div.forecast-humidity {
@@ -247,6 +280,10 @@ section#observations div#hourly-forecast i {
   margin-bottom: 5px;
 }
 @media (max-width: 2250px) {
+  section#observations div#observations img#observation-icon {
+    width: 96px;
+    object-fit: contain;
+  }
   section#observations div#forecast {
     max-height: 300px;
     padding: 0;
@@ -258,7 +295,7 @@ section#observations div#hourly-forecast i {
   }
   section#observations div#forecast div.forecast-day {
     display: grid;
-    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-columns: 15% 35% 30% 20%;
     align-items: center;
     justify-content: space-between;
     margin: 0;
@@ -301,12 +338,14 @@ section#observations div#hourly-forecast i {
 
 section#menu {
   grid-column: 1/span 2;
-  padding: 20px;
+  height: auto !important;
+  padding: 10px 0;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 section#menu div.col-12 {
   margin: 10px 0;
@@ -381,7 +420,7 @@ section#menu button#larger-menu i {
 
 section#settings {
   grid-column: 3/span 4;
-  padding: 20px;
+  padding: 10px 0;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -463,6 +502,7 @@ section#settings div#top-bar input {
 }
 section#settings div#results {
   display: grid;
+  grid-auto-rows: max-content;
   overflow-y: auto;
   align-items: start;
   row-gap: 10px;
@@ -496,12 +536,13 @@ section#settings div.search-result button.add-location i {
 }
 
 section#report {
-  padding: 20px;
+  padding: 10px 0;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  height: auto !important;
   grid-column: 6/span 6;
 }
 section#report h3 {
@@ -526,7 +567,7 @@ section#report div#announcements i {
 }
 
 section#radar {
-  padding: 20px;
+  padding: 10px 0;
   height: 100vh;
   width: 100%;
   display: flex;

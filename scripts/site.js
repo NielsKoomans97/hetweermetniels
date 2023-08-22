@@ -8,8 +8,9 @@ async function AddSecondaryLinks() {
             .then((data) => {
                 for (let link of data) {
                     let linkBtn = document.createElement('a');
-                   
+
                     linkBtn.innerHTML = `<img src=\"${link['Favicon']}\">${link['SiteName']}`
+                    linkBtn.setAttribute('target', '_blank');
                     linkBtn.setAttribute('href', link['Url']);
                     linkBtn.className = "secondary-item";
 

@@ -1,8 +1,12 @@
 <section id="observations">
     <div class="container flex-column">
-        <div class="col" id="location-selector">
+        <h5>Locatie</h5>
+        <div class="col d-flex flex-row" id="location-selector">
             <select id="stations"></select>
+            <a id="add-location" href="settings.php"><i class="fa-solid fa-user-gear"></i></a>
         </div>
+        <br>
+        <h5>Actuele gegevens</h5>
         <div class="col" id="observations">
             <div class="col grid">
                 <div>
@@ -17,11 +21,11 @@
                     <h6 id="observation-wind"></h6>
                 </div>
                 <div>
-                    <i class="fa-solid fa-umbrella"></i>
+                    <i class="fa-solid fa-droplet"></i>
                     <h6 id="observation-humid"></h6>
                 </div>
                 <div>
-                    <i class="fa-solid fa-droplet"></i>
+                    <i class="fa-solid fa-umbrella"></i>
                     <h6 id="observation-rainamt"></h6>
                 </div>
                 <div>
@@ -34,6 +38,8 @@
 
     </div>
     <div class="container flex-column">
+        <br>
+        <h5>Voorspellingen</h5>
         <div class="col grid" id="forecast">
             <div class="forecast-day"></div>
             <div class="forecast-day"></div>
@@ -53,7 +59,7 @@
     </div>
     <div class="container flex-column flex-grow padding-bottom overflow-hidden">
         <br>
-        <h3>Vandaag</h3>
+        <h5>Vandaag</h5>
         <div class="col" id="hourly-forecast">
 
         </div>

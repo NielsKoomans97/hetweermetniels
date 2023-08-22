@@ -41,7 +41,7 @@ function CreateLink($icon, $link, $class, $id, $value, $clickEvent){
 }
 
 function CreateImgLink($favIcon, $link, $id, $value){
-    return "<a href=\"".$link."\" class=\"secondary-item\" id=\"".$id."\"><img src=\"".$favIcon."\"></i>".$value."</a>";
+    return "<a target=\"_blank\" href=\"".$link."\" class=\"secondary-item\" id=\"".$id."\"><img src=\"".$favIcon."\"></i>".$value."</a>";
 }
 
 function CreateInput($type, $class, $id, $value, $eventType, $event){

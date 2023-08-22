@@ -1,7 +1,7 @@
 @use '../variables' as *;
 
 @mixin section($width) {
-    padding: 20px;
+    padding: 10px 0 ;
     height: 100vh;
     width: $width;
     display: flex;

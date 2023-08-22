@@ -5,6 +5,8 @@ section#report{
     $width: 100%;
     @include section($width);
 
+    height: auto !important;
+
     grid-column: 6 / span 6;
 
     h3{

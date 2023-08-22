@@ -65,15 +65,28 @@ section#observations {
     }
 
     div#location-selector 
-    select#stations {
-        @include widget;
-
-        border-radius: 4px;
-        border: none;
-        padding: 5px;
-
-        width: 98%;
+    {
+        a#add-location{
+            @include menu-button(4px 20px, 5px, 4px);
+            
+            border: map-get($map: $colors, $key: menu-shadow) 1px solid;
+            outline: none;
+            
+            i{
+                margin: 0;
+            }
+        }
+        select#stations {
+            @include widget;
+    
+            border-radius: 4px;
+            border: none;
+            padding: 5px;
+    
+            width: 98%;
+        }
     }
+   
 
     div#forecast {
         @include widget;
@@ -178,13 +191,13 @@ section#observations {
         padding: 0;
 
         div.forecast-hour {
-            @include grid(5, 0, 20% 20% 20% 20% 20%, 0);
+            @include grid(5, 0, 15% 25% 20% 20% 20%, 0);
 
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
 
             align-items: center;
-            justify-items: normal;
+            justify-items: stretch;
 
             margin: 7px 0;
             min-height: 65px;
@@ -208,7 +221,7 @@ section#observations {
         h6.forecast-time {
             border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
             font-weight: 300;
-            justify-self: flex-start;
+            justify-self: center;
         }
 
         div.forecast-wind,
@@ -224,6 +237,12 @@ section#observations {
     }
 
     @media(max-width:2250px) {
+        div#observations{
+            img#observation-icon{
+                width: 96px;
+                object-fit: contain;
+            }
+        }
         div#forecast {
             max-height: 300px;
             padding: 0;
@@ -236,7 +255,7 @@ section#observations {
             grid-template-rows: repeat(13, 75px);
 
             div.forecast-day {
-                @include grid(4, 0, 20% 30% 30% 20%, 0);
+                @include grid(4, 0, 15% 35% 30% 20%, 0);
 
                 align-items: center;
                 justify-content: space-between;
