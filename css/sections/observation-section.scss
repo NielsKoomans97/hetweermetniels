@@ -16,7 +16,7 @@ section#observations {
         @include widget;
         margin-bottom: 20px;
         align-items: center;
-        padding: 0;       
+        padding: 0;
 
         div.col.grid {
             display: grid;
@@ -140,10 +140,22 @@ section#observations {
 
             h6.high {
                 color: map-get($map: $colors, $key: temperature-high);
+
+                &::before {
+                    content: "\f185";
+                    font-family: 'FontAwesome';
+                    margin-right: 15px;
+                }
             }
 
             h6.low {
                 color: map-get($map: $colors, $key: temperature-low);
+
+                &::before {
+                    content: "\f186";
+                    font-family: 'FontAwesome';
+                    margin-right: 15px;
+                }
             }
         }
     }
@@ -239,11 +251,12 @@ section#observations {
                 margin: 0;
             }
 
-            h6, h5{
+            h6,
+            h5 {
                 margin: 0;
             }
 
-            h6.high{
+            h6.high {
                 margin-bottom: 5px;
             }
         }
