@@ -64,25 +64,29 @@ section#observations {
         font-weight: 300;
     }
 
-    div#location-selector {
-        margin: 5px 0;
+    div#location-selector 
+    select#stations {
+        @include widget;
 
-        select#stations {
-            @include widget;
+        border-radius: 4px;
+        border: none;
+        padding: 5px;
 
-            border-radius: 4px;
-            padding: 5px;
-
-            width: 98%;
-        }
+        width: 98%;
     }
 
     div#forecast {
         @include widget;
 
+        grid-auto-flow: column;
+
+        // max-height: 230px;
+        overflow-x: auto;
+
         background: none;
-        grid-template-columns: repeat(3, calc(96% / 3));
+        grid-template-columns: repeat(13, 150px);
         padding: 0;
+        padding-bottom: 5px;
 
         column-gap: 10px;
 
@@ -221,18 +225,20 @@ section#observations {
 
     @media(max-width:2250px) {
         div#forecast {
-            height: 300px;
+            max-height: 300px;
             padding: 0;
 
+            grid-auto-flow: row;
+            overflow-y: scroll;
             flex-wrap: wrap;
 
             grid-template-columns: none;
-            grid-template-rows: repeat(3, 75px);
+            grid-template-rows: repeat(13, 75px);
 
             div.forecast-day {
-                @include grid(4, 0, auto, 1);
-                align-items: center;
+                @include grid(4, 0, 20% 30% 30% 20%, 0);
 
+                align-items: center;
                 justify-content: space-between;
                 margin: 0;
                 padding-right: 10px;
@@ -251,6 +257,10 @@ section#observations {
                 margin: 0;
             }
 
+            div.forecast-temp {
+                align-items: flex-start;
+            }
+
             h6,
             h5 {
                 margin: 0;
@@ -258,6 +268,10 @@ section#observations {
 
             h6.high {
                 margin-bottom: 5px;
+            }
+
+            h6.low::before {
+                margin-left: 5px;
             }
         }
 

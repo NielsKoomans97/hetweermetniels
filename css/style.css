@@ -114,9 +114,6 @@ section#observations div#observations img#observation-icon {
 section#observations h5#station-name {
   font-weight: 300;
 }
-section#observations div#location-selector {
-  margin: 5px 0;
-}
 section#observations div#location-selector select#stations {
   display: flex;
   background: linear-gradient(135deg, #92b7fc, #e0edfb);
@@ -124,6 +121,7 @@ section#observations div#location-selector select#stations {
   margin: 5px;
   padding: 0 20px;
   border-radius: 4px;
+  border: none;
   padding: 5px;
   width: 98%;
 }
@@ -133,9 +131,12 @@ section#observations div#forecast {
   border-radius: 6px;
   margin: 5px;
   padding: 0 20px;
+  grid-auto-flow: column;
+  overflow-x: auto;
   background: none;
-  grid-template-columns: repeat(3, 32%);
+  grid-template-columns: repeat(13, 150px);
   padding: 0;
+  padding-bottom: 5px;
   column-gap: 10px;
 }
 section#observations div#forecast div.forecast-day {
@@ -247,15 +248,17 @@ section#observations div#hourly-forecast i {
 }
 @media (max-width: 2250px) {
   section#observations div#forecast {
-    height: 300px;
+    max-height: 300px;
     padding: 0;
+    grid-auto-flow: row;
+    overflow-y: scroll;
     flex-wrap: wrap;
     grid-template-columns: none;
-    grid-template-rows: repeat(3, 75px);
+    grid-template-rows: repeat(13, 75px);
   }
   section#observations div#forecast div.forecast-day {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: 20% 30% 30% 20%;
     align-items: center;
     justify-content: space-between;
     margin: 0;
@@ -271,12 +274,18 @@ section#observations div#hourly-forecast i {
     padding: 2px;
     margin: 0;
   }
+  section#observations div#forecast div.forecast-temp {
+    align-items: flex-start;
+  }
   section#observations div#forecast h6,
   section#observations div#forecast h5 {
     margin: 0;
   }
   section#observations div#forecast h6.high {
     margin-bottom: 5px;
+  }
+  section#observations div#forecast h6.low::before {
+    margin-left: 5px;
   }
 }
 @media (max-width: 1800px) {

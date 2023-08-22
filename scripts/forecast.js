@@ -12,7 +12,7 @@ function GetForecast(locationId) {
         .then((data) => {
             const forecast_days = document.querySelectorAll('.forecast-day');
 
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 13; i++) {
                 let day = data['days'][i + 1];
                 let forecast_day = forecast_days[i];
 
@@ -106,7 +106,7 @@ function CreateDateElement(root, day){
     let date = document.createElement('h5');
 
     date.className = 'forecast-date';
-    date.innerText = daysInWeek[pDate.getDay()];
+    date.innerText = `${daysInWeek[pDate.getDay()]}`;
 
     root.appendChild(date);
 }
