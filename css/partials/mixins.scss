@@ -1,0 +1,87 @@
+@use '../variables' as *;
+
+@mixin section($width) {
+    padding: 20px;
+    height: 100vh;
+    width: $width;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@mixin grid($columnAmount, $rowAmount, $percentage, $repeat) {
+    display: grid;
+
+    @if($columnAmount != 0){
+        @if($repeat == 1)
+        {
+            grid-template-columns: repeat($columnAmount, $percentage);
+        }
+        @else
+        {
+            grid-template-columns: $percentage;
+        }
+    }
+
+    @if($rowAmount != 0){
+        @if($repeat == 1)
+        {
+            grid-template-rows: repeat($rowAmount, $percentage);
+        }
+        @else
+        {
+            grid-template-rows: $percentage;
+        }
+    }
+}
+
+@mixin box-shadow($inset, $opacity, $blur, $color){
+    box-shadow: $inset 10px 10px 10px 10px $color;
+}
+
+@mixin widget {
+    display: flex;
+
+    background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
+    border-radius:6px;
+    margin: 5px;
+
+    padding: 0 20px;
+}
+
+@mixin menu-button ($padding, $margin, $border-radius) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    color: black;
+
+    text-decoration: none;
+    padding: $padding;
+    margin: $margin;
+    border-radius: $border-radius;
+
+    font-size: map-get($map: $typo, $key: menu);
+    font-weight: 400;
+
+    transition: all 180ms ease-in-out;
+
+    i{
+        align-self: center;
+
+        margin-right: 10px;
+    }
+
+    &:hover{
+        background-color: map-get($map: $colors, $key: menu-hover);
+        color: map-get($map: $colors, $key: menu-hover-text);
+        box-shadow: 0px 4px 0px 0px map-get($map: $colors, $key: menu-shadow);
+    }
+
+    &:active{
+        color: map-get($map: $colors, $key: menu-active-text);
+        background-color: map-get($map: $colors, $key: menu-shadow);
+        box-shadow: 0px 4px 0px 0px map-get($map: $colors, $key: menu-hover);
+    }
+}

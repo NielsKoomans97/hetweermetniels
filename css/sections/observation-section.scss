@@ -1,0 +1,260 @@
+@use "../variables" as *;
+@use "../partials/mixins" as *;
+
+section#observations {
+    grid-column: 3 / span 3;
+    $width: 100%;
+
+    @include section($width);
+
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+    background-color: map-get($map: $colors, $key: background-color-2);
+
+    div#observations {
+        @include widget;
+        margin-bottom: 20px;
+        align-items: center;
+        padding: 0;       
+
+        div.col.grid {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(2, 50%);
+
+            margin: 10px 0;
+
+            justify-items: center;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                margin: 5px 0;
+            }
+
+            div h6 {
+
+                margin: 0;
+
+            }
+
+            div i {
+                margin-bottom: 5px;
+            }
+        }
+
+        h5,
+        h2 {
+            margin-bottom: 0;
+        }
+
+        img#observation-icon {
+            background-color: white;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            object-fit: none;
+            height: 100%;
+        }
+    }
+
+    h5#station-name {
+        font-weight: 300;
+    }
+
+    div#location-selector {
+        margin: 5px 0;
+
+        select#stations {
+            @include widget;
+
+            border-radius: 4px;
+            padding: 5px;
+
+            width: 98%;
+        }
+    }
+
+    div#forecast {
+        @include widget;
+
+        background: none;
+        grid-template-columns: repeat(3, calc(96% / 3));
+        padding: 0;
+
+        column-gap: 10px;
+
+        div.forecast-day {
+            @include grid(0, 4, auto, 1);
+
+            background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
+            border-radius: 4px;
+
+            justify-items: center;
+        }
+
+        div.forecast-wind {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            i {
+                margin-bottom: 5px;
+            }
+        }
+
+
+
+        img.forecast-icon {
+            height: 65px;
+            width: 100%;
+
+            background-color: map-get($map: $colors, $key: icon-background);
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            padding: 2px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+            object-fit: contain;
+        }
+
+        h5.forecast-date {
+            font-weight: 300;
+            border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
+        }
+
+        div.forecast-temp {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            margin: 5px 0;
+
+            h6 {
+                font-weight: 500;
+                font-size: map-get($map: $typo, $key: forecast-temperature);
+            }
+
+            h6.high {
+                color: map-get($map: $colors, $key: temperature-high);
+            }
+
+            h6.low {
+                color: map-get($map: $colors, $key: temperature-low);
+            }
+        }
+    }
+
+    div#hourly-forecast {
+        @include widget;
+
+        background: none;
+
+        flex-direction: column;
+        overflow-y: auto;
+
+        margin-bottom: 20px;
+
+        height: 100%;
+        padding: 0;
+
+        div.forecast-hour {
+            @include grid(5, 0, 20% 20% 20% 20% 20%, 0);
+
+            background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
+            border-radius: 4px;
+
+            align-items: center;
+            justify-items: normal;
+
+            margin: 7px 0;
+            min-height: 65px;
+        }
+
+        img.forecast-icon {
+            height: 65px;
+            background-color: map-get($map: $colors, $key: icon-background);
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            padding: 2px;
+            align-self: flex-start;
+            object-fit: contain;
+        }
+
+        h6,
+        h4 {
+            margin-bottom: 0;
+        }
+
+        h6.forecast-time {
+            border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
+            font-weight: 300;
+            justify-self: flex-start;
+        }
+
+        div.forecast-wind,
+        div.forecast-humidity {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        i {
+            margin-bottom: 5px;
+        }
+    }
+
+    @media(max-width:2250px) {
+        div#forecast {
+            height: 300px;
+            padding: 0;
+
+            flex-wrap: wrap;
+
+            grid-template-columns: none;
+            grid-template-rows: repeat(3, 75px);
+
+            div.forecast-day {
+                @include grid(4, 0, auto, 1);
+                align-items: center;
+
+                justify-content: space-between;
+                margin: 0;
+                padding-right: 10px;
+            }
+
+            img.forecast-icon {
+                border-radius: 0;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+
+                align-self: flex-end;
+                object-fit: contain;
+
+                height: 65px;
+                padding: 2px;
+                margin: 0;
+            }
+
+            h6, h5{
+                margin: 0;
+            }
+
+            h6.high{
+                margin-bottom: 5px;
+            }
+        }
+
+    }
+
+    @media(max-width:1800px) {
+        grid-column: 3 / span 4;
+    }
+
+    @media(max-width: 1420px) {
+        grid-column: 3 / span 5;
+    }
+}

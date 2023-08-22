@@ -1,52 +1,59 @@
-const cookie = document.cookie;
+let cookie = document.cookie;
 
-function ListCookies(){
+function ListCookies() {
+    cookie = document.cookie;
     let cookies = [];
     let parts = cookie.split(';');
 
-    for(part of parts){
+    for (part of parts) {
         let keyvalue = part.split('=');
         let key = keyvalue[0].replace(' ', '');
         let value = keyvalue[1];
-        cookies.push(new Cookie(key,value));
+        cookies.push(new Cookie(key, value));
     }
 
     return cookies;
 }
 
-function GetCookie(query){
+function RemoveAllCookies() {
+    document.cookie = "";
+}
+
+function GetCookie(query) {
+    cookie = document.cookie;
     let parts = cookie.split(';');
 
-    for(part of parts){
+    for (part of parts) {
         let keyvalue = part.split('=');
         let key = keyvalue[0].replace(' ', '');
         let value = keyvalue[1];
 
-        if (key == query){
-            return new Cookie(key,value);
+        if (key == query) {
+            return new Cookie(key, value);
         }
     }
 }
 
-function HasCookie(query){
+function HasCookie(query) {
+    cookie = document.cookie;
     let parts = cookie.split(';');
 
-    for(part of parts){
+    for (part of parts) {
         let keyvalue = part.split('=');
         let key = keyvalue[0].replace(' ', '');
 
-        if (key == query){
+        if (key == query) {
             return true;
         }
     }
 }
 
-function SaveCookie(cookie){
+function SaveCookie(cookie) {
     document.cookie = `${cookie.Key}=${cookie.Value}`
 }
 
-class Cookie{
-    constructor(key,value){
+class Cookie {
+    constructor(key, value) {
         this.Key = key;
         this.Value = value;
     }

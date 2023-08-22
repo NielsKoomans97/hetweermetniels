@@ -1,16 +1,10 @@
-if (HasCookie('location-id')){
-    var location_id = GetCookie('location-id').Value;
-    GetForecast(location_id);
+function ClearAll(element) {
+    var delChild = element.lastChild;
+    while (delChild) {
+        element.removeChild(delChild);
+        delChild = element.lastChild;
+    }
 }
-else
-{
-    SaveCookie(new Cookie('location-id','2756800'))
-    var location_id = GetCookie('location-id').Value;
-    GetForecast(location_id);
-}
-
-GetWeatherReport('nl');
-GetAnnouncements();
 
 function GetForecast(locationId) {
     fetch(`https://forecast.buienradar.nl/2.0/forecast/${locationId}`)
@@ -22,6 +16,8 @@ function GetForecast(locationId) {
                 let day = data['days'][i + 1];
                 let forecast_day = forecast_days[i];
 
+                ClearAll(forecast_day);
+
                 CreateIconElement(forecast_day, day);
                 CreateDateElement(forecast_day, day);
                 CreateTempElement(forecast_day, day);
@@ -31,12 +27,14 @@ function GetForecast(locationId) {
             let dayZero = data['days'][0];
             const hourlyForecast = document.getElementById('hourly-forecast');
 
+            ClearAll(hourlyForecast);
+            
             for(let hour of dayZero['hours']){
                 let forecast_hour  = document.createElement('div');
                 forecast_hour.className = 'forecast-hour';
-
-                CreateTimeElement(forecast_hour, hour);
+                
                 CreateIconElement(forecast_hour, hour);
+                CreateTimeElement(forecast_hour, hour);
                 CreateHourlyTempElement(forecast_hour, hour);        
                 CreateWindElement(forecast_hour, hour);
                 CreateHumidityElement(forecast_hour, hour);
