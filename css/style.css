@@ -182,8 +182,18 @@ section#observations div#forecast div.forecast-temp h6 {
 section#observations div#forecast div.forecast-temp h6.high {
   color: #a41d1d;
 }
+section#observations div#forecast div.forecast-temp h6.high::before {
+  content: "\f185";
+  font-family: "FontAwesome";
+  margin-right: 15px;
+}
 section#observations div#forecast div.forecast-temp h6.low {
   color: #303eb5;
+}
+section#observations div#forecast div.forecast-temp h6.low::before {
+  content: "\f186";
+  font-family: "FontAwesome";
+  margin-right: 15px;
 }
 section#observations div#hourly-forecast {
   display: flex;
@@ -261,7 +271,8 @@ section#observations div#hourly-forecast i {
     padding: 2px;
     margin: 0;
   }
-  section#observations div#forecast h6, section#observations div#forecast h5 {
+  section#observations div#forecast h6,
+  section#observations div#forecast h5 {
     margin: 0;
   }
   section#observations div#forecast h6.high {
