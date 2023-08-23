@@ -5,7 +5,8 @@ section#report{
     $width: 100%;
     @include section($width);
 
-    height: auto !important;
+    flex-grow: 1;
+    overflow-y: scroll;
 
     grid-column: 6 / span 6;
 
@@ -21,6 +22,10 @@ section#report{
         i{
             font-size: map-get($map: $typo, $key: warning-icon);
         }
+    }
+
+    @media(max-width:1170px){
+        height: auto !important;
     }
 
     @media (max-width:1800px){

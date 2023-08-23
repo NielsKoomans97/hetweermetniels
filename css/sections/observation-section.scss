@@ -12,9 +12,12 @@ section#observations {
 
     background-color: map-get($map: $colors, $key: background-color-2);
 
+    h5{
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
     div#observations {
         @include widget;
-        margin-bottom: 20px;
         align-items: center;
         padding: 0;
 
@@ -64,29 +67,29 @@ section#observations {
         font-weight: 300;
     }
 
-    div#location-selector 
+    div#location-selector
     {
         a#add-location{
             @include menu-button(4px 20px, 5px, 4px);
-            
+
             border: map-get($map: $colors, $key: menu-shadow) 1px solid;
             outline: none;
-            
+
             i{
                 margin: 0;
             }
         }
         select#stations {
             @include widget;
-    
+
             border-radius: 4px;
             border: none;
             padding: 5px;
-    
+
             width: 98%;
         }
     }
-   
+
 
     div#forecast {
         @include widget;
@@ -237,7 +240,23 @@ section#observations {
     }
 
     @media(max-width:2250px) {
+        h5{
+            font-size: smaller;
+        }
+
+        br{
+            max-height: 10px;
+        }
+
         div#observations{
+            h6{
+                font-size: smaller;
+            }
+
+            h2{
+                font-size: revert;
+            }
+
             img#observation-icon{
                 width: 96px;
                 object-fit: contain;
@@ -280,6 +299,10 @@ section#observations {
                 align-items: flex-start;
             }
 
+            h5.forecast-date{
+                font-size: small;
+            }
+
             h6,
             h5 {
                 margin: 0;
@@ -292,8 +315,20 @@ section#observations {
             h6.low::before {
                 margin-left: 5px;
             }
-        }
 
+            h6.speed{
+                font-size: smaller;
+            }
+        }
+        div#hourly-forecast{
+            h6{
+                font-size: smaller;
+            }
+
+            h4{
+                font-size: revert;
+            }
+        }
     }
 
     @media(max-width:1800px) {

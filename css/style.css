@@ -71,13 +71,16 @@ section#observations {
   flex-wrap: nowrap;
   background-color: #e8f5ff;
 }
+section#observations h5 {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
 section#observations div#observations {
   display: flex;
   background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 6px;
   margin: 5px;
   padding: 0 20px;
-  margin-bottom: 20px;
   align-items: center;
   padding: 0;
 }
@@ -280,6 +283,18 @@ section#observations div#hourly-forecast i {
   margin-bottom: 5px;
 }
 @media (max-width: 2250px) {
+  section#observations h5 {
+    font-size: smaller;
+  }
+  section#observations br {
+    max-height: 10px;
+  }
+  section#observations div#observations h6 {
+    font-size: smaller;
+  }
+  section#observations div#observations h2 {
+    font-size: revert;
+  }
   section#observations div#observations img#observation-icon {
     width: 96px;
     object-fit: contain;
@@ -314,6 +329,9 @@ section#observations div#hourly-forecast i {
   section#observations div#forecast div.forecast-temp {
     align-items: flex-start;
   }
+  section#observations div#forecast h5.forecast-date {
+    font-size: small;
+  }
   section#observations div#forecast h6,
   section#observations div#forecast h5 {
     margin: 0;
@@ -323,6 +341,15 @@ section#observations div#hourly-forecast i {
   }
   section#observations div#forecast h6.low::before {
     margin-left: 5px;
+  }
+  section#observations div#forecast h6.speed {
+    font-size: smaller;
+  }
+  section#observations div#hourly-forecast h6 {
+    font-size: smaller;
+  }
+  section#observations div#hourly-forecast h4 {
+    font-size: revert;
   }
 }
 @media (max-width: 1800px) {
@@ -542,7 +569,8 @@ section#report {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: auto !important;
+  flex-grow: 1;
+  overflow-y: scroll;
   grid-column: 6/span 6;
 }
 section#report h3 {
@@ -554,6 +582,11 @@ section#report div#announcements {
 }
 section#report div#announcements i {
   font-size: 32px;
+}
+@media (max-width: 1170px) {
+  section#report {
+    height: auto !important;
+  }
 }
 @media (max-width: 1800px) {
   section#report {
