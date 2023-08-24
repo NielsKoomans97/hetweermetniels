@@ -85,9 +85,13 @@ section#radar{
     }
 
     img#warnings-today{
-        object-fit: none;
+        object-fit: contain;
         width: 100%;
         padding-bottom: 25px;
+    }
+
+    @media(max-width:1170px){
+        height: auto !important;
     }
 
 

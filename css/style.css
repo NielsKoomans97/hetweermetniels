@@ -285,17 +285,8 @@ section#observations div#hourly-forecast i {
   margin-bottom: 5px;
 }
 @media (max-width: 2250px) {
-  section#observations h5 {
-    font-size: small;
-  }
   section#observations br {
     max-height: 10px;
-  }
-  section#observations div#observations h6 {
-    font-size: small;
-  }
-  section#observations div#observations h2 {
-    font-size: revert;
   }
   section#observations div#observations img#observation-icon {
     width: 72px;
@@ -328,40 +319,50 @@ section#observations div#hourly-forecast i {
     padding: 2px;
     margin: 0;
   }
-  section#observations div#forecast h6,
-  section#observations div#forecast h5 {
-    margin: 0;
-  }
   section#observations div#forecast div.forecast-temp {
-    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
   }
-  section#observations div#forecast div.forecast-temp h6.high {
-    margin-bottom: 5px;
-    font-size: small;
-  }
-  section#observations div#forecast div.forecast-temp h6.low {
-    font-size: small;
-  }
-  section#observations div#forecast div.forecast-temp h6.low::before {
-    margin-left: 5px;
-  }
-  section#observations div#forecast h5.forecast-date {
-    font-size: small;
-    margin-bottom: 0;
-  }
-  section#observations div#forecast h6.speed {
-    font-size: small;
-  }
-  section#observations div#hourly-forecast h6 {
-    font-size: small;
-  }
-  section#observations div#hourly-forecast h4 {
-    font-size: revert;
+  section#observations div#forecast div.forecast-temp h6 {
+    margin: auto;
   }
 }
 @media (max-width: 1800px) {
   section#observations {
     grid-column: 3/span 4;
+  }
+  section#observations h5 {
+    font-size: small;
+  }
+  section#observations div#observations h6 {
+    font-size: small;
+  }
+  section#observations div#observations h2 {
+    font-size: revert;
+  }
+  section#observations div#forecast div#forecast-temp h6.high {
+    margin-bottom: 5px;
+    font-size: normal !important;
+  }
+  section#observations div#forecast div#forecast-temp h6.low {
+    font-size: normal !important;
+  }
+  section#observations div#forecast div#forecast-temp h6.low::before {
+    margin-left: 5px;
+  }
+  section#observations div#forecast h5.forecast-date {
+    font-size: medium;
+    margin-bottom: 0;
+  }
+  section#observations div#forecast h6.speed {
+    font-size: medium;
+  }
+  section#observations div#hourly-forecast h6 {
+    font-size: medium;
+  }
+  section#observations div#hourly-forecast h4 {
+    font-size: large;
   }
 }
 @media (max-width: 1420px) {
@@ -696,9 +697,14 @@ section#radar div#announcements span#warning-title {
   margin: 0 10px;
 }
 section#radar img#warnings-today {
-  object-fit: none;
+  object-fit: contain;
   width: 100%;
   padding-bottom: 25px;
+}
+@media (max-width: 1170px) {
+  section#radar {
+    height: auto !important;
+  }
 }
 @media (max-width: 765px) {
   section#radar div#announcements span#warning-title {

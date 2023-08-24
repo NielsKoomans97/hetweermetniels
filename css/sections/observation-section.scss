@@ -242,28 +242,18 @@ section#observations {
     }
 
     @media(max-width:2250px) {
-        h5{
-            font-size: small;
-        }
-
+      
         br{
             max-height: 10px;
         }
 
         div#observations{
-            h6{
-                font-size: small;
-            }
-
-            h2{
-                font-size: revert;
-            }
-
             img#observation-icon{
                 width: 72px;
                 object-fit: contain;
             }
         }
+
         div#forecast {
             max-height: 300px;
             padding: 0;
@@ -296,52 +286,72 @@ section#observations {
                 padding: 2px;
                 margin: 0;
             }
-
-            h6,
-            h5 {
-                margin: 0;
-            }
-
-            div.forecast-temp {
-                align-items: flex-start;
-
-                h6.high {
-                    margin-bottom: 5px;
-                    font-size: small;
-                }
-    
-                h6.low{
-                    font-size: small;
-                }
-    
-                h6.low::before {
-                    margin-left: 5px;
-                }
-    
-            }
-
-            h5.forecast-date{
-                font-size: small;
-                margin-bottom: 0;
-            }
            
-            h6.speed{
-                font-size: small;
-            }
-        }
-        div#hourly-forecast{
-            h6{
-                font-size: small;
-            }
+            div.forecast-temp {
+                justify-content: center;
+                margin: 0;
 
-            h4{
-                font-size: revert;
-            }
+                height: 100%;
+
+                h6{
+                    margin: auto;
+                }
+            }           
         }
     }
 
     @media(max-width:1800px) {
         grid-column: 3 / span 4;
+
+        h5{
+            font-size: small;
+        }
+
+        div#observations{
+            h6{
+                font-size: small;
+            }
+
+            h2{
+                font-size: revert;
+            }
+        }
+
+        div#forecast{
+            div#forecast-temp{
+                h6.high {
+                    margin-bottom: 5px;
+                    font-size: normal !important;
+                }
+    
+                h6.low{
+                    font-size: normal !important;
+                }
+    
+                h6.low::before {
+                    margin-left: 5px;
+                }
+            }
+
+            h5.forecast-date{
+                font-size: medium;
+                margin-bottom: 0;
+            }
+           
+            h6.speed{
+                font-size: medium;
+            }
+        }
+
+        div#hourly-forecast{
+            h6{
+                font-size: medium;
+            }
+
+            h4{
+                font-size: large;
+            }
+        }
     }
 
     @media(max-width: 1420px) {
