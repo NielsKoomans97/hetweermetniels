@@ -46,20 +46,20 @@ function GetForecast(locationId) {
 
 function GetAnnouncements() {
     const announcements = document.getElementById('announcements');
-    const warningIcon = document.getElementById('warning-icon');
-    const warningTitle = document.getElementById('warning-title');
-    const warningText = document.getElementById('warning-text');
+    const warnings_today = document.getElementById('warnings-today');
+    const warning_title = document.getElementById('warning-title');
 
     fetch('https://data.buienradar.nl/1.0/announcements/apps')
         .then((response) => (response.json()))
         .then((data) => {
             if (data['warnings']['color'] == 'GREEN'){
                 announcements.setAttribute('style','display:none !important');
+                warnings_today.setAttribute('style','display:none;');
             }
             else{
                 announcements.setAttribute('data-color', data['warnings']['color']);
-                warningTitle.innerText = data['warnings']['title'];
-                warningText.innerHTML = data['info']['body'];
+                warning_title.innerText = data['warnings']['title'];
+                warnings_today.setAttribute('src',data['warnings']['daySummaries']['day1']['image']);
             }
         });
 }

@@ -90,7 +90,6 @@ section#observations {
         }
     }
 
-
     div#forecast {
         @include widget;
 
@@ -144,6 +143,8 @@ section#observations {
         h5.forecast-date {
             font-weight: 300;
             border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
+            margin-bottom: 10px;
+            margin-top: 0;
         }
 
         div.forecast-temp {
@@ -180,6 +181,7 @@ section#observations {
         }
     }
 
+    
     div#hourly-forecast {
         @include widget;
 

@@ -9,7 +9,12 @@ $colors: (
     icon-background: #ffffff,
     temperature-high: #a41d1d,
     temperature-low: #303eb5,
-    background-result: #d8e3ef
+    background-result: #d8e3ef,
+    image-background: #fdfbef,
+    warning-yellow:rgb(241, 223, 16),
+    warning-red:red,
+    warning-orange:orange,
+    warning-green:green
 );
 
 $typo:(
@@ -17,6 +22,7 @@ $typo:(
     menu: 16px,
     logo: 32px,
     warning-icon: 32px,
+    warning-title: 20px,
     observation-icons: 20px,
     forecast-temperature: 18px,
     menu-button: 16px,
