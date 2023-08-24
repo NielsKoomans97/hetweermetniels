@@ -14,6 +14,7 @@ section#radar{
     select#radar-options{
         @include widget;
 
+        border: none;
         border-radius: 4px;
         padding: 5px;
 
@@ -22,8 +23,6 @@ section#radar{
     }
 
     img#radar-image{
-        box-shadow: 0px 2px 2px 0px transparentize(map-get($map: $colors, $key: menu-shadow),.80);
-
         width: 100%;
         margin-top: 15px;
 
@@ -82,13 +81,15 @@ section#radar{
             margin:  0 10px ;
         }
 
-        img{
-            object-fit: none;
-            width: 100%;
-        }
-
         border-radius: 6px;
     }
+
+    img#warnings-today{
+        object-fit: none;
+        width: 100%;
+        padding-bottom: 25px;
+    }
+
 
     @media(max-width:765px){
         div#announcements
