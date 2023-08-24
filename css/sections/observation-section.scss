@@ -56,8 +56,8 @@ section#observations {
 
         img#observation-icon {
             background-color: white;
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
             object-fit: none;
             height: 100%;
         }
@@ -243,7 +243,7 @@ section#observations {
 
     @media(max-width:2250px) {
         h5{
-            font-size: smaller;
+            font-size: small;
         }
 
         br{
@@ -252,7 +252,7 @@ section#observations {
 
         div#observations{
             h6{
-                font-size: smaller;
+                font-size: small;
             }
 
             h2{
@@ -260,7 +260,7 @@ section#observations {
             }
 
             img#observation-icon{
-                width: 96px;
+                width: 72px;
                 object-fit: contain;
             }
         }
@@ -297,34 +297,41 @@ section#observations {
                 margin: 0;
             }
 
-            div.forecast-temp {
-                align-items: flex-start;
-            }
-
-            h5.forecast-date{
-                font-size: small;
-            }
-
             h6,
             h5 {
                 margin: 0;
             }
 
-            h6.high {
-                margin-bottom: 5px;
+            div.forecast-temp {
+                align-items: flex-start;
+
+                h6.high {
+                    margin-bottom: 5px;
+                    font-size: small;
+                }
+    
+                h6.low{
+                    font-size: small;
+                }
+    
+                h6.low::before {
+                    margin-left: 5px;
+                }
+    
             }
 
-            h6.low::before {
-                margin-left: 5px;
+            h5.forecast-date{
+                font-size: small;
+                margin-bottom: 0;
             }
-
+           
             h6.speed{
-                font-size: smaller;
+                font-size: small;
             }
         }
         div#hourly-forecast{
             h6{
-                font-size: smaller;
+                font-size: small;
             }
 
             h4{

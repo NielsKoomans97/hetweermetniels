@@ -7,6 +7,7 @@
         </div>
         <h5>Actuele gegevens</h5>
         <div class="col" id="observations">
+            <img id="observation-icon">
             <div class="col grid">
                 <div>
                     <h2 id="observation-temp"></h2>
@@ -32,7 +33,7 @@
                     <h6 id="observation-pressure"></h6>
                 </div>
             </div>
-            <img id="observation-icon">
+            
         </div>
 
     </div>

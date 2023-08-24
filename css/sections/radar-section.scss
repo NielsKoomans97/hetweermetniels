@@ -35,7 +35,7 @@ section#radar{
         margin: 10px 0;
         padding: 5px;
 
-        grid-template-columns: 15% 65% 20%;
+        grid-template-columns: auto 65% auto;
         justify-items: self-start;
 
         a{
@@ -79,7 +79,7 @@ section#radar{
         span#warning-title{
             font-weight: 300;
             font-size: map-get($map: $typo, $key: warning-title);
-            margin: 10px 0 ;
+            margin:  0 10px ;
         }
 
         img{
@@ -88,5 +88,12 @@ section#radar{
         }
 
         border-radius: 6px;
+    }
+
+    @media(max-width:765px){
+        div#announcements
+        span#warning-title{
+            font-size: medium;
+        }
     }
 }

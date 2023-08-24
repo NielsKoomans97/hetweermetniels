@@ -109,8 +109,8 @@ section#observations div#observations h2 {
 }
 section#observations div#observations img#observation-icon {
   background-color: white;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   object-fit: none;
   height: 100%;
 }
@@ -286,19 +286,19 @@ section#observations div#hourly-forecast i {
 }
 @media (max-width: 2250px) {
   section#observations h5 {
-    font-size: smaller;
+    font-size: small;
   }
   section#observations br {
     max-height: 10px;
   }
   section#observations div#observations h6 {
-    font-size: smaller;
+    font-size: small;
   }
   section#observations div#observations h2 {
     font-size: revert;
   }
   section#observations div#observations img#observation-icon {
-    width: 96px;
+    width: 72px;
     object-fit: contain;
   }
   section#observations div#forecast {
@@ -328,27 +328,32 @@ section#observations div#hourly-forecast i {
     padding: 2px;
     margin: 0;
   }
-  section#observations div#forecast div.forecast-temp {
-    align-items: flex-start;
-  }
-  section#observations div#forecast h5.forecast-date {
-    font-size: small;
-  }
   section#observations div#forecast h6,
   section#observations div#forecast h5 {
     margin: 0;
   }
-  section#observations div#forecast h6.high {
-    margin-bottom: 5px;
+  section#observations div#forecast div.forecast-temp {
+    align-items: flex-start;
   }
-  section#observations div#forecast h6.low::before {
+  section#observations div#forecast div.forecast-temp h6.high {
+    margin-bottom: 5px;
+    font-size: small;
+  }
+  section#observations div#forecast div.forecast-temp h6.low {
+    font-size: small;
+  }
+  section#observations div#forecast div.forecast-temp h6.low::before {
     margin-left: 5px;
   }
+  section#observations div#forecast h5.forecast-date {
+    font-size: small;
+    margin-bottom: 0;
+  }
   section#observations div#forecast h6.speed {
-    font-size: smaller;
+    font-size: small;
   }
   section#observations div#hourly-forecast h6 {
-    font-size: smaller;
+    font-size: small;
   }
   section#observations div#hourly-forecast h4 {
     font-size: revert;
@@ -581,6 +586,7 @@ section#report h3 {
 @media (max-width: 1170px) {
   section#report {
     height: auto !important;
+    font-size: normal;
   }
 }
 @media (max-width: 1800px) {
@@ -626,7 +632,7 @@ section#radar img#radar-image {
 section#radar div#announcements {
   margin: 10px 0;
   padding: 5px;
-  grid-template-columns: 15% 65% 20%;
+  grid-template-columns: auto 65% auto;
   justify-items: self-start;
   border-radius: 6px;
 }
@@ -687,11 +693,16 @@ section#radar div#announcements[data-color=RED] i {
 section#radar div#announcements span#warning-title {
   font-weight: 300;
   font-size: 20px;
-  margin: 10px 0;
+  margin: 0 10px;
 }
 section#radar div#announcements img {
   object-fit: none;
   width: 100%;
+}
+@media (max-width: 765px) {
+  section#radar div#announcements span#warning-title {
+    font-size: medium;
+  }
 }
 
 /* cyrillic */
