@@ -8,12 +8,11 @@
         </div>
         <div class="col-12" id="main-nav">
             <nav>
-                <?= CreateLink("fa-solid fa-house-chimney", "index.php", "", "index", "Thuispagina", ""); ?>
-                <?= CreateLink("fa-solid fa-chart-area", "models.php", "", "models", "Weermodellen", ""); ?>
-                <?= CreateLink("fa-solid fa-user-gear", "settings.php", "", "settings", "Instellingen", ""); ?>
+                <a href="index.php"><i class="fa-solid fa-house-chimney"></i>Thuispagina</a>
+                <a href="models.php"><i class="fa-solid fa-chart-area"></i>Weerkaarten</a>
+                <a href="settings.php"><i class="fa-solid fa-user-gear"></i>Instellingen</a>
             </nav>
         </div>
-
     </div>
     <br>
     <div class="container flex-column">
