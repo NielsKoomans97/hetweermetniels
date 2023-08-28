@@ -72,6 +72,11 @@
         margin-right: 10px;
     }
 
+    img{
+        height: calc(100vh * 0.025);
+        width: auto !important;
+    }
+
     &:hover{
         background-color: map-get($map: $colors, $key: menu-hover);
         color: map-get($map: $colors, $key: menu-hover-text);

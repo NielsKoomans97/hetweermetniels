@@ -5,6 +5,8 @@
                 <optgroup label="Neerslag">
                     <option data-version="v3" data-type="RadarMapRain5mNL">Regen</option>
                     <option data-version="v3" data-type="RadarMapSnow5mNL">Sneeuw</option>
+                    <option data-version="v3" data-type="RadarMapLightning5mNL">Onweer</option>
+                    <option data-version="v3" data-type="RadarMapHail5mNL">Hagel</option>
                 </optgroup>
                
             </select>

@@ -29,6 +29,7 @@ section#radar{
         object-fit: contain;
         background-image: url('https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=full');
         background-size: contain;
+        background-repeat: no-repeat;
     }
 
     div#radar-container{
@@ -39,6 +40,10 @@ section#radar{
 
             border-top-left-radius: 6px;
             border-top-right-radius: 6px;
+
+            select{
+                background-color: map-get($map: $colors, $key: background-color-3);
+            }
         }
 
         div#radar-controls{

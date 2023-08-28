@@ -44,7 +44,7 @@ span, select {
 }
 
 i.fa-solid, i.fas {
-  font-size: 1.3vh;
+  font-size: 1.4vh;
 }
 
 nav {
@@ -171,6 +171,10 @@ section#observations div#location-selector a#add-location {
 section#observations div#location-selector a#add-location i {
   align-self: center;
   margin-right: 10px;
+}
+section#observations div#location-selector a#add-location img {
+  height: 2.5vh;
+  width: auto !important;
 }
 section#observations div#location-selector a#add-location:hover {
   background-color: #92b7fc;
@@ -421,6 +425,10 @@ section#menu nav a i {
   align-self: center;
   margin-right: 10px;
 }
+section#menu nav a img {
+  height: 2.5vh;
+  width: auto !important;
+}
 section#menu nav a:hover {
   background-color: #92b7fc;
   color: #000000;
@@ -472,6 +480,10 @@ section#settings button {
 section#settings button i {
   align-self: center;
   margin-right: 10px;
+}
+section#settings button img {
+  height: 2.5vh;
+  width: auto !important;
 }
 section#settings button:hover {
   background-color: #92b7fc;
@@ -608,12 +620,16 @@ section#radar img#radar-image {
   object-fit: contain;
   background-image: url("https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=full");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 section#radar div#radar-container div#radar-selector {
   padding: 6px;
   background-color: #e0edfb;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+}
+section#radar div#radar-container div#radar-selector select {
+  background-color: #fcfeff;
 }
 section#radar div#radar-container div#radar-controls {
   padding: 6px;
@@ -645,6 +661,10 @@ section#radar div#radar-container button#radar-playpause {
 section#radar div#radar-container button#radar-playpause i {
   align-self: center;
   margin-right: 10px;
+}
+section#radar div#radar-container button#radar-playpause img {
+  height: 2.5vh;
+  width: auto !important;
 }
 section#radar div#radar-container button#radar-playpause:hover {
   background-color: #92b7fc;
@@ -684,6 +704,10 @@ section#radar div#announcements a {
 section#radar div#announcements a i {
   align-self: center;
   margin-right: 10px;
+}
+section#radar div#announcements a img {
+  height: 2.5vh;
+  width: auto !important;
 }
 section#radar div#announcements a:hover {
   background-color: #92b7fc;
