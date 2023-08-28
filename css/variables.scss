@@ -18,12 +18,16 @@ $colors: (
 );
 
 $typo:(
-    menu-hover: 17px,
-    menu: 16px,
     logo: 32px,
     warning-icon: 32px,
     warning-title: 20px,
-    observation-icons: 20px,
-    forecast-temperature: 18px,
-    menu-button: 16px,
+    h1: calc(100vh * 0.023),
+    h2: calc(100vh * 0.021),
+    h3: calc(100vh * 0.020),
+    h4: calc(100vh * 0.018),
+    h5: calc(100vh * 0.016),
+    h6: calc(100vh * 0.015),
+    a: calc(100vh * 0.014),
+    span: calc(100vh * 0.013),
+    fontawesome: calc(100vh * 0.014),
 );

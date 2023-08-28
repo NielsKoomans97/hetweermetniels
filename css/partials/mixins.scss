@@ -62,7 +62,6 @@
     margin: $margin;
     border-radius: $border-radius;
 
-    font-size: map-get($map: $typo, $key: menu);
     font-weight: 400;
 
     transition: all 180ms ease-in-out;

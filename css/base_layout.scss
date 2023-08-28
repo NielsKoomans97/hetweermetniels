@@ -16,6 +16,41 @@ div#logo h5 {
     font-family: 'Fasthand', cursive;
 }
 
+h1 {
+    font-size: map-get($map: $typo, $key: h1);
+}
+
+h2 {
+    font-size: map-get($map: $typo, $key: h2);
+}
+
+h3 {
+    font-size: map-get($map: $typo, $key: h3);
+}
+
+h4 {
+    font-size: map-get($map: $typo, $key: h4);
+}
+
+h5 {
+    font-size: map-get($map: $typo, $key: h5);
+}
+
+h6 {
+    font-size: map-get($map: $typo, $key: h6);
+}
+
+a{
+    font-size: map-get($map: $typo, $key: a);
+}
+
+span, select{
+    font-size: map-get($map: $typo, $key: span);
+}
+
+i.fa-solid, i.fas{
+    font-size: map-get($map: $typo, $key: fontawesome);
+}
 
 nav {
     display: flex;
@@ -32,7 +67,7 @@ div.container {
         overflow: auto;
     }
 
-    &.overflow-hidden{
+    &.overflow-hidden {
         overflow: hidden;
     }
 
@@ -58,15 +93,15 @@ div#logo h5 {
     font-size: map-get($map: $typo, $key: logo);
 }
 
-@media(max-width: 1170px){
-    body{
+@media(max-width: 1170px) {
+    body {
         grid-template-columns: none;
 
         display: flex;
         flex-direction: column;
     }
 
-    section{
+    section {
         width: 100vw !important;
     }
 }

@@ -26,16 +26,4 @@ section#menu{
        width: 24px;
        margin-right: 10px;
     }
-
-    button#larger-menu{
-        @include menu-button(8px,0,4px);
-        background-color: map-get($map: $colors, $key: background-color);
-        outline: none;
-        border: none;
-        font-size: map-get($map: $typo, $key: menu-button);
-
-        i{
-            margin: 0;
-        }
-    }
 }

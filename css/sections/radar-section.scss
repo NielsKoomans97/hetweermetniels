@@ -77,7 +77,7 @@ section#radar{
 
         span#warning-title{
             font-weight: 300;
-            font-size: map-get($map: $typo, $key: warning-title);
+            font-size: map-get($map: $typo, $key: h3);
             margin:  0 10px ;
         }
 
@@ -92,13 +92,5 @@ section#radar{
 
     @media(max-width:1170px){
         height: auto !important;
-    }
-
-
-    @media(max-width:765px){
-        div#announcements
-        span#warning-title{
-            font-size: medium;
-        }
     }
 }
