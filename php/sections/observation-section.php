@@ -58,7 +58,7 @@
     </div>
     <div class="container flex-column flex-grow overflow-hidden">
         <h5>Vandaag</h5>
-        <div class="col" id="hourly-forecast">
+        <div class="col grid" id="hourly-forecast">
 
         </div>
     </div>

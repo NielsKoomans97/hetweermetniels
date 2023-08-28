@@ -72,7 +72,7 @@ section#observations {
         a#add-location {
             @include menu-button(4px 20px, 5px, 4px);
 
-            border: map-get($map: $colors, $key: menu-shadow) 1px solid;
+            border: none;
             outline: none;
 
             i {
@@ -81,9 +81,9 @@ section#observations {
         }
 
         select#stations {
-            @include widget;
-
-            border-radius: 4px;
+            background-color: map-get($map: $colors, $key: background-color-3);
+            
+            border-radius: 6px;
             border: none;
             padding: 5px;
 
@@ -191,13 +191,14 @@ section#observations {
 
         background: none;
 
-        flex-direction: column;
         overflow-y: auto;
 
         margin-bottom: 20px;
 
         height: 100%;
         padding: 0;
+
+        grid-row-gap: 8px;
 
         div.forecast-hour {
             @include grid(5, 0, 15% 25% 20% 20% 20%, 0);
@@ -208,7 +209,6 @@ section#observations {
             align-items: center;
             justify-items: stretch;
 
-            margin: 7px 0;
             min-height: 65px;
         }
 
@@ -247,6 +247,8 @@ section#observations {
 
     @media(max-width:2250px) {
 
+        height: 140vh !important;
+
         br {
             max-height: 10px;
         }
@@ -267,7 +269,8 @@ section#observations {
             flex-wrap: wrap;
 
             grid-template-columns: none;
-            grid-template-rows: repeat(13, 75px);
+            grid-template-rows: repeat(13, auto);
+            grid-row-gap: 8px;
 
             div.forecast-day {
                 @include grid(4, 0, 15% 35% 30% 20%, 0);
@@ -286,7 +289,7 @@ section#observations {
                 align-self: flex-end;
                 object-fit: contain;
 
-                height: 65px;
+                height: auto;
                 padding: 2px;
                 margin: 0;
             }
@@ -298,6 +301,16 @@ section#observations {
 
             div.forecast-wind{
                 margin: 0;
+            }
+        }
+
+        div#hourly-forecast{
+            div.forecast-hour{
+                min-height: auto;
+            }
+
+            img.forecast-icon{
+                height: auto !important;
             }
         }
     }
