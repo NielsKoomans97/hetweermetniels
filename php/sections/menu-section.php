@@ -19,13 +19,13 @@
         <div class="col-12" id="secondary-nav">
             <h5>Andere items</h5>
             <nav id="nav-items">
-                <?= CreateImgLink("https://cdn.buienradar.nl/resources/images/favicon.png", "https://buienradar.nl", "", "Buienradar"); ?>
-                <?= CreateImgLink("https://www.onweer-online.nl/favicon.ico", "https://onweer-online.nl", "", "Onweer-online"); ?>
-                <?= CreateImgLink("https://primary.jwwb.nl/public/k/k/y/temp-frvufhxnzegthaceduoj/blikseminslag80922-2-1.jpg", "https://www.woutervanbernebeek.nl/weermodel", "", "Wouter van Bernebeek"); ?>
-                <?= CreateImgLink("https://www.estofex.org/icon.ico", "https://estofex.org", "", "Estofex"); ?>
-                <?= CreateImgLink("https://st.wetteronline.de/dr/1.1.497/images/logo/favicon.ico", "https://wetteronline.de", "", "Wetteronline"); ?>
-                <?= CreateImgLink("https://www.lightningmaps.org/Images/app_icon_shadow.png", "https://lightningmaps.org", "", "Lightningmaps"); ?>
-                <?= CreateImgLink("https://map.blitzortung.org/Icons/favicon.ico", "https://map.blitzortung.org/#1.32/0/8", "", "Blitzortung"); ?>
+                <a class="secondary-item" href="https://buienradar.nl"><img src="https://cdn.buienradar.nl/resources/images/favicon.png">Buienradar</a>
+                <a class="secondary-item" href="https://onweer-online.nl"><img src="https://www.onweer-online.nl/favicon.ico">Onweer-online</a>
+                <a class="secondary-item" href="https://www.woutervanbernebeek.nl/weermodel"><img src="https://primary.jwwb.nl/public/k/k/y/temp-frvufhxnzegthaceduoj/blikseminslag80922-2-1.jpg">Wouter van Bernebeek</a>
+                <a class="secondary-item" href="https://estofex.org"><img src="https://www.estofex.org/icon.ico">Estofex</a>
+                <a class="secondary-item" href="https://wetteronline.de"><img src="https://st.wetteronline.de/dr/1.1.497/images/logo/favicon.ico">Wetteronline</a>
+                <a class="secondary-item" href="https://lightningmaps.org"><img src="https://www.lightningmaps.org/Images/app_icon_shadow.png">Lightningmaps</a>
+                <a class="secondary-item" href="https://map.blitzortung.org/#1.32/0/8"><img src="https://map.blitzortung.org/Icons/favicon.ico">Blitzortung</a>
             </nav>
         </div>
     </div>

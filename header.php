@@ -12,5 +12,4 @@
 
 </head>
 <body>
-<?php require 'php/components/generator.php'; ?>
 <?php require 'php/sections/menu-section.php' ?>
