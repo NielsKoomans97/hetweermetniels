@@ -37,6 +37,8 @@ function Slide() {
 
     var value = radar_slider.value;
     var image = images[value];
+    console.log(`index: ${index} images: ${images.length} radar_slider: ${radar_slider.getAttribute('max')} ${image}`);
+
     var date = new Date(Date.parse(image.Time));
 
     index = value;
@@ -46,6 +48,7 @@ function Slide() {
 
 function EmptySlides() {
     images.length = 0;
+    index = 0;
 }
 
 async function RadarSelectorChanged() {
@@ -77,7 +80,7 @@ async function LoadRadar(version, type, history, forecast, startIndex, renderBac
         images.push(slide);
     });
 
-    radar_slider.setAttribute('max', times.length);
+    radar_slider.setAttribute('max', times.length -1);
     radar_slider.value = 0;
 
     Slide();
@@ -92,17 +95,20 @@ async function LoadV3Manifest(type, history, forecast, startIndex) {
 }
 
 function PlayAnimation() {
-    if (index == (images.length - 1)){
-        index = 0;
-    }
-
     radar_playpause.innerHTML = '<i class="fa-solid fa-pause"></i>';
 
-    index++;
     radar_slider.value = index;
     Slide();
 
     animate = setTimeout(PlayAnimation, 400);
+
+    if (index == parseInt(radar_slider.getAttribute('max'))){
+        index = 0;
+    }
+    else
+    {
+        index++;
+    }
 }
 
 function StopAnimation(){
