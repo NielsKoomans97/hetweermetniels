@@ -6,6 +6,7 @@
     <script src="scripts/cookies.js" defer></script>
     <script src="scripts/locations.js" defer></script>
     <script src="scripts/settings.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
 </footer>
 </body>
 
