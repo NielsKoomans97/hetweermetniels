@@ -7,7 +7,7 @@ Voor nu is de voorpagina bijna af, maar nog wel onder constructie. Hierna gaat d
 De data is volledig afkomstig van Buienradar. Deze heeft een API die niet afgesloten is voor het publiek, maar waarvan ook niet helemaal duidelijk is of dat deze vrij door anderen gebruikt mag worden. Dit staat niet duidelijk aangegeven op hun site, en enige helderheid hierin zou wel een uitkomst bieden. Totdat Buienradar zelf aangeeft dat ik geen gebruik mag maken van hun data, blijft dit de hoofdbron.
 
 ## Instructies
-- Kloon de volledige repository in je 'www' map van Laragon, of in de map waar je 'valet park' hebt gebruikt. Zowel Valet als Laragon maken hiervoor een testdomein voor je aan waarop je de lokaal gezette site kan bezoeken.
+- Kloon de volledige repository in je 'www' map van Laragon, of in de map waar je 'valet park' hebt gebruikt. Zowel Valet als Laragon maken hiervoor een testdomein voor je aan waarop je de lokaal gezette site kan bezoeken. Dit betreft de naam van de map waar je alle bestanden hebt uitgepakt + het '.test' domein.
 - Wil je toevoegingen hebben aan de site? Maak dan een zogenoemde 'issue' aan en beschrijf hierin wat je voor ogen hebt, probeer zo gedetailleerd als mogelijk te zijn. Hoe meer informatie ik mee kan werken, hoe beter :)
   Gebruik hiervoor de correcte labels:
   * 'bug' is voor problemen binnen de site
@@ -17,7 +17,7 @@ De data is volledig afkomstig van Buienradar. Deze heeft een API die niet afgesl
 
   Op basis hiervan zal ik er een of meerdere van de volgende labels bij plaatsen afhankelijk van onder andere de mogelijkheid, capaciteit en detailheid van de aanvraag:
   * 'currently-working-on' betekent dat ik aan deze issue aan het werken ben
-  * 'duplicate' betekent dat er al een issue bestaat met dezelfde beschrijving
+  * 'duplicate' betekent dat er al een issue bestaat met dezelfde beschrijving. De redenen voor het geven van deze label zal ik plaatsen onder jouw issue
   * 'help wanted' betekent dat ik JOUW hulp nodig heb met eventuele verbeteringen/aanpassingen. Hier ga ik in de volgende sectie op in
   * 'invalid' betekent dat de aanvraag ongeldig is verklaard, dit kan meerdere redenen hebben. Deze redenen zal ik plaatsen onder jouw issue
   * 'wontfix' betekent dat de aanvraag NIET in behandeling genomen zal worden.
