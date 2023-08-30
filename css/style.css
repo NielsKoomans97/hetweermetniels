@@ -265,6 +265,7 @@ section#observations div#forecast div.forecast-temp {
 section#observations div#forecast div.forecast-temp h6 {
   font-weight: 500;
   margin: 2px 0;
+  align-self: flex-start;
 }
 section#observations div#forecast div.forecast-temp h6.high {
   color: #a41d1d;
