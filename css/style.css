@@ -281,7 +281,7 @@ section#observations div#forecast div.forecast-temp h6.low {
 section#observations div#forecast div.forecast-temp h6.low::before {
   content: "\f186";
   font-family: "FontAwesome";
-  margin-right: 15px;
+  margin-right: 20px;
 }
 section#observations div#hourly-forecast {
   display: flex;
