@@ -1,3 +1,19 @@
+const forecast_days = document.getElementsByName('forecast-count');
+console.log(forecast_days);
+
+forecast_days.forEach((element) => {
+    if (HasCookie('forecast-count')){
+        var val = GetCookie('forecast-count');
+        if (element.getAttribute('value') == val.Value) {
+            element.setAttribute('checked', '');
+        }
+    }
+
+    element.addEventListener('input', () => {
+        SaveCookie(new Cookie('forecast-count', element.getAttribute('value')));
+    });
+});
+
 const search_button = document.getElementById('search-button');
 search_button.addEventListener('click', SearchLocations);
 

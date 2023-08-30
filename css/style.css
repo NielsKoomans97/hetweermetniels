@@ -39,7 +39,7 @@ a {
   font-size: 1.4vh;
 }
 
-span, select, input[type=radio], input[type=text], p, button {
+span, select, input[type=radio], input[type=text], label, p, button {
   font-size: 1.6vh;
 }
 
@@ -254,7 +254,7 @@ section#observations div#forecast div.forecast-temp {
 }
 section#observations div#forecast div.forecast-temp h6 {
   font-weight: 500;
-  margin: 4px 0;
+  margin: 2px 0;
 }
 section#observations div#forecast div.forecast-temp h6.high {
   color: #a41d1d;

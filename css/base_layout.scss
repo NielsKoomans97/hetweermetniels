@@ -44,7 +44,7 @@ a{
     font-size: map-get($map: $typo, $key: a);
 }
 
-span, select, input[type="radio"], input[type="text"], p, button{
+span, select, input[type="radio"], input[type="text"], label, p, button{
     font-size: map-get($map: $typo, $key: span);
 }
 
