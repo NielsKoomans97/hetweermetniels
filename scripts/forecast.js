@@ -6,6 +6,14 @@ function ClearAll(element) {
     }
 }
 
+function SetForecastDayDisplayNone(){
+    const forecast_days = document.querySelectorAll('.forecast-day');
+
+    forecast_days.forEach((day) => {
+        day.setAttribute('style','display:none;');
+    });
+}
+
 function GetForecast(locationId) {
     fetch(`https://forecast.buienradar.nl/2.0/forecast/${locationId}`)
         .then((response) => (response.json()))
@@ -13,6 +21,7 @@ function GetForecast(locationId) {
             let day_count = 0;
 
             const forecast_days = document.querySelectorAll('.forecast-day');
+            const forecast_host = document.getElementById('forecast');
 
             if (HasCookie('forecast-count')) {
                 const forecast_count = GetCookie('forecast-count');
@@ -20,22 +29,25 @@ function GetForecast(locationId) {
                 console.log(forecast_count);
 
                 switch (forecast_count.Value) {
-                    case '3 dagen': day_count = 2; break;
-                    case '7 dagen': day_count = 6; break;
-                    case '14 dagen': day_count = 13; break;
+                    case '3 dagen': day_count = 3; break;
+                    case '7 dagen': day_count = 7; break;
+                    case '14 dagen': day_count = 14; break;
                 }
             }
             else {
                 day_count = 3;
             }
 
-            console.log(day_count);
+            SetForecastDayDisplayNone();
+            forecast_host.setAttribute('data-count', day_count);
 
             for (let i = 0; i < day_count; i++) {
                 let day = data['days'][i + 1];
                 let forecast_day = forecast_days[i];
 
                 ClearAll(forecast_day);
+
+                forecast_day.setAttribute('style','display:grid');
 
                 CreateIconElement(forecast_day, day);
                 CreateDateElement(forecast_day, day);
