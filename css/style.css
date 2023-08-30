@@ -39,7 +39,7 @@ a {
   font-size: 1.4vh;
 }
 
-span, select {
+span, select, input[type=radio], input[type=text], label, p, button {
   font-size: 1.6vh;
 }
 
@@ -203,12 +203,22 @@ section#observations div#forecast {
   margin: 5px;
   padding: 0 20px;
   grid-auto-flow: column;
-  overflow-x: auto;
+  overflow: auto;
   background: none;
-  grid-template-columns: repeat(13, 150px);
+  grid-template-rows: 1;
   padding: 0;
   padding-bottom: 5px;
   column-gap: 10px;
+}
+section#observations div#forecast[data-count="3"] {
+  grid-template-columns: repeat(3, 31.6666666667%);
+  overflow: hidden;
+}
+section#observations div#forecast[data-count="7"] {
+  grid-template-columns: repeat(7, 150px);
+}
+section#observations div#forecast[data-count="14"] {
+  grid-template-columns: repeat(13, 150px);
 }
 section#observations div#forecast div.forecast-day {
   display: grid;
@@ -324,9 +334,6 @@ section#observations div#hourly-forecast i {
   margin-bottom: 5px;
 }
 @media (max-width: 2250px) {
-  section#observations {
-    height: 140vh !important;
-  }
   section#observations br {
     max-height: 10px;
   }
@@ -340,9 +347,17 @@ section#observations div#hourly-forecast i {
     grid-auto-flow: row;
     overflow-y: scroll;
     flex-wrap: wrap;
-    grid-template-columns: none;
-    grid-template-rows: repeat(13, auto);
-    grid-row-gap: 8px;
+    grid-template-columns: auto !important;
+    grid-row-gap: 12px;
+  }
+  section#observations div#forecast[data-count="3"] {
+    grid-template-rows: repeat(3, 50px);
+  }
+  section#observations div#forecast[data-count="7"] {
+    grid-template-rows: repeat(7, 50px);
+  }
+  section#observations div#forecast[data-count="14"] {
+    grid-template-rows: repeat(13, 50px);
   }
   section#observations div#forecast div.forecast-day {
     display: grid;
@@ -378,6 +393,7 @@ section#observations div#hourly-forecast i {
 }
 @media (max-width: 1800px) {
   section#observations {
+    height: 140vh !important;
     grid-column: 3/span 4;
   }
   section#observations div#forecast div#forecast-temp h6.high {
@@ -499,6 +515,10 @@ section#settings button:active {
 }
 section#settings button:hover {
   border: transparent 1px solid;
+}
+section#settings button i {
+  margin: 0;
+  padding: 0 10px;
 }
 section#settings h5.title {
   border-bottom: #01264d 1px solid;

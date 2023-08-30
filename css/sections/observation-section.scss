@@ -97,10 +97,25 @@ section#observations {
         grid-auto-flow: column;
 
         // max-height: 230px;
-        overflow-x: auto;
+        overflow: auto;
 
         background: none;
-        grid-template-columns: repeat(13, 150px);
+
+        &[data-count="3"]{
+            grid-template-columns: repeat(3, calc(95% / 3));
+            overflow: hidden;
+        }
+
+        &[data-count="7"]{
+            grid-template-columns: repeat(7, 150px);
+        }
+
+        &[data-count="14"]{
+            grid-template-columns: repeat(13, 150px);
+        }
+
+        grid-template-rows: 1;
+
         padding: 0;
         padding-bottom: 5px;
 
@@ -248,7 +263,6 @@ section#observations {
 
     @media(max-width:2250px) {
 
-        height: 140vh !important;
 
         br {
             max-height: 10px;
@@ -269,9 +283,21 @@ section#observations {
             overflow-y: scroll;
             flex-wrap: wrap;
 
-            grid-template-columns: none;
-            grid-template-rows: repeat(13, auto);
-            grid-row-gap: 8px;
+            &[data-count="3"]{
+                grid-template-rows: repeat(3, 50px);
+            }
+
+            &[data-count="7"]{
+                grid-template-rows: repeat(7, 50px);
+            }
+
+            &[data-count="14"]{
+                grid-template-rows: repeat(13, 50px);
+            }
+
+            grid-template-columns: auto !important;
+
+            grid-row-gap: 12px;
 
             div.forecast-day {
                 @include grid(4, 0, 15% 35% 30% 20%, 0);
@@ -317,6 +343,8 @@ section#observations {
     }
 
     @media(max-width:1800px) {
+        height: 140vh !important;
+
         grid-column: 3 / span 4;
 
         div#forecast {

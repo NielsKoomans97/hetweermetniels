@@ -1,3 +1,19 @@
+const forecast_days = document.getElementsByName('forecast-count');
+console.log(forecast_days);
+
+forecast_days.forEach((element) => {
+    if (HasCookie('forecast-count')){
+        var val = GetCookie('forecast-count');
+        if (element.getAttribute('value') == val.Value) {
+            element.setAttribute('checked', '');
+        }
+    }
+
+    element.addEventListener('input', () => {
+        SaveCookie(new Cookie('forecast-count', element.getAttribute('value')));
+    });
+});
+
 const search_button = document.getElementById('search-button');
 search_button.addEventListener('click', SearchLocations);
 
@@ -19,19 +35,35 @@ locationItems.forEach(function (savedItem) {
 function CreateSavedLocationItem(item, root) {
     let parsed = JSON.parse(item);
     let savedLocation = document.createElement('div');
-    savedLocation.className = 'saved-location';
+    savedLocation.classList.add('saved-location', 'd-flex');
+
+    let locationInfoContainer = document.createElement('div');
+    locationInfoContainer.classList.add('col', 'd-flex', 'flex-column');
 
     let locationName = document.createElement('h6');
     locationName.innerText = parsed['name'];
     locationName.className = 'location-name';
-    savedLocation.appendChild(locationName);
+    locationInfoContainer.appendChild(locationName);
 
     if (parsed['foad'] != null) {
         let locationFoad = document.createElement('p');
         locationFoad.innerText = `${parsed['foad']['name']}, ${parsed['country']}`;
         locationFoad.className = 'location-foad';
-        savedLocation.appendChild(locationFoad);
+        locationInfoContainer.appendChild(locationFoad);
     }
+
+    savedLocation.appendChild(locationInfoContainer);
+
+    let removeLocationButton = document.createElement('button');
+    removeLocationButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    removeLocationButton.id = 'remove-location';
+    removeLocationButton.setAttribute('data-json', item);
+    removeLocationButton.addEventListener('click', () => {
+        console.log('ik doe wat hahaha');
+        RemoveLocation(removeLocationButton);
+    });
+
+    savedLocation.appendChild(removeLocationButton);
 
     root.appendChild(savedLocation);
 }
@@ -62,12 +94,12 @@ function CreateSearchResult(data, root) {
     if (data['foad'] != null) {
         country = `${data['foad']['name']}, `;
     }
-    
+
     if (data['country'] != null) {
         country += `${data['country']}`;
     }
 
-    if (country != ''){
+    if (country != '') {
         locationFoad.innerText = country;
     }
     else {
