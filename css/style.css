@@ -39,7 +39,7 @@ a {
   font-size: 1.4vh;
 }
 
-span, select {
+span, select, input[type=radio], input[type=text], p, button {
   font-size: 1.6vh;
 }
 
@@ -498,6 +498,10 @@ section#settings button:active {
 }
 section#settings button:hover {
   border: transparent 1px solid;
+}
+section#settings button i {
+  margin: 0;
+  padding: 0 10px;
 }
 section#settings h5.title {
   border-bottom: #01264d 1px solid;
