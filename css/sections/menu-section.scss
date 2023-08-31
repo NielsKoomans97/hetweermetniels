@@ -29,7 +29,6 @@ section#menu {
 
         nav#nav-items{
             display: grid;
-            grid-template-rows: repeat(auto, calc(100vh * 0.020));
         }
     }
 
@@ -44,8 +43,6 @@ section#menu {
 
         justify-self: flex-end;
     }
-
-    
 
     nav a.secondary-item img {
         width: 24px;
