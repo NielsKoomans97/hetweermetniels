@@ -20,7 +20,6 @@ function GetForecast(locationId) {
         .then((data) => {
             let day_count = 0;
 
-            const forecast_days = document.querySelectorAll('.forecast-day');
             const forecast_host = document.getElementById('forecast');
 
             if (HasCookie('forecast-count')) {
@@ -38,12 +37,12 @@ function GetForecast(locationId) {
                 day_count = 3;
             }
 
-            SetForecastDayDisplayNone();
             forecast_host.setAttribute('data-count', day_count);
 
             for (let i = 0; i < day_count; i++) {
                 let day = data['days'][i + 1];
-                let forecast_day = forecast_days[i];
+                let forecast_day = document.createElement('div');
+                forecast_day.className = 'forecast-day';
 
                 ClearAll(forecast_day);
 
@@ -53,6 +52,8 @@ function GetForecast(locationId) {
                 CreateDateElement(forecast_day, day);
                 CreateTempElement(forecast_day, day);
                 CreateWindElement(forecast_day, day);
+
+                forecast_host.appendChild(forecast_day);
             }
 
             let dayZero = data['days'][0];

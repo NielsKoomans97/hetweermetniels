@@ -40,19 +40,6 @@
     <div class="container flex-column">
         <h5>Voorspellingen</h5>
         <div class="col grid" id="forecast">
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
-            <div class="forecast-day"></div>
         </div>
 
     </div>

@@ -369,7 +369,6 @@ section#observations div#hourly-forecast i {
     border-radius: 0;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    align-self: flex-end;
     object-fit: contain;
     height: auto;
     padding: 2px;
