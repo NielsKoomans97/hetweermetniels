@@ -30,9 +30,9 @@ section#settings {
             border: transparent 1px solid;
         }
 
-        i{
+        i {
             margin: 0;
-            padding:  0 10px;
+            padding: 0 10px;
         }
     }
 
@@ -45,15 +45,23 @@ section#settings {
         margin-bottom: 20px;
     }
 
-    div.saved-location{
+    div.saved-location {
         padding: 10px;
         background-color: map-get($map: $colors, $key: background-result);
         border-radius: 6px;
 
-        p.location-foad{
+        p.location-foad {
             border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
             width: fit-content;
             margin: 0;
+        }
+
+        button {
+            grid-template-columns: auto;
+
+            i {
+                margin: 0;
+            }
         }
     }
 
@@ -115,9 +123,15 @@ section#settings {
             grid-column: 2;
             grid-row: span 2;
 
+            grid-template-columns: auto;
+
             i {
                 margin: 0;
             }
         }
+    }
+
+    @media(max-width: 1000px) {
+        height: 140vh !important;
     }
 }

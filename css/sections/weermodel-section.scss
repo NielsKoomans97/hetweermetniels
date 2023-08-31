@@ -1,0 +1,17 @@
+@use '../variables' as *;
+@use '../partials/mixins' as *;
+
+section#progtemps{
+    grid-column: 3 / span 4;
+    @include section(100%);
+
+    iframe#progtemps-embed{
+        height: 1000px;
+
+        background-color: map-get($map: $colors, $key: background-color-2) !important;
+
+        body{
+            background-color: map-get($map: $colors, $key: background-color-2) !important;
+        }
+    }
+}

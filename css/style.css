@@ -156,18 +156,16 @@ section#observations h5#station-name {
 section#observations div#location-selector a#add-location {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
-  padding: 4px 20px;
-  margin: 5px;
+  padding: 8px 20px;
+  margin: 0 5px;
   border-radius: 4px;
   font-weight: 400;
   transition: all 180ms ease-in-out;
   border: none;
   outline: none;
-  height: 35px;
 }
 section#observations div#location-selector a#add-location i {
   align-self: center;
@@ -430,7 +428,6 @@ section#menu div.col-12 {
 section#menu nav a {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -458,6 +455,51 @@ section#menu nav a:active {
   background-color: #01264d;
   box-shadow: 0px 4px 0px 0px #92b7fc;
 }
+section#menu div#secondary-nav[data-collapsed=expanded] {
+  display: flex;
+}
+section#menu div#secondary-nav[data-collapsed=collapsed] {
+  display: none;
+}
+section#menu div#secondary-nav nav#nav-items {
+  display: grid;
+  grid-template-rows: repeat(auto, 2vh);
+}
+section#menu button#secondary-nav-expand {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 6px;
+  font-weight: 400;
+  transition: all 180ms ease-in-out;
+  background-color: #e0edfb;
+  border: none;
+  outline: none;
+  grid-template-columns: auto;
+  justify-self: flex-end;
+}
+section#menu button#secondary-nav-expand i {
+  align-self: center;
+  justify-self: center;
+}
+section#menu button#secondary-nav-expand img {
+  height: 2.5vh;
+  width: auto !important;
+}
+section#menu button#secondary-nav-expand:hover {
+  background-color: #92b7fc;
+  color: #000000;
+  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#menu button#secondary-nav-expand:active {
+  color: #ffffff;
+  background-color: #01264d;
+  box-shadow: 0px 4px 0px 0px #92b7fc;
+}
 section#menu nav a.secondary-item img {
   width: 24px;
   justify-self: center;
@@ -481,7 +523,6 @@ section#settings div.container {
 section#settings button {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -538,6 +579,12 @@ section#settings div.saved-location p.location-foad {
   width: fit-content;
   margin: 0;
 }
+section#settings div.saved-location button {
+  grid-template-columns: auto;
+}
+section#settings div.saved-location button i {
+  margin: 0;
+}
 section#settings div#top-bar {
   display: grid;
   grid-template-columns: 80% 20%;
@@ -582,9 +629,15 @@ section#settings div.search-result p.location-foad {
 section#settings div.search-result button.add-location {
   grid-column: 2;
   grid-row: span 2;
+  grid-template-columns: auto;
 }
 section#settings div.search-result button.add-location i {
   margin: 0;
+}
+@media (max-width: 1000px) {
+  section#settings {
+    height: 140vh !important;
+  }
 }
 
 section#report {
@@ -677,7 +730,6 @@ section#radar div#radar-container span#radar-time {
 section#radar div#radar-container button#radar-playpause {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -690,7 +742,6 @@ section#radar div#radar-container button#radar-playpause {
   background-color: transparent;
   outline: 0;
   border: 0;
-  height: 35px;
   justify-content: center;
 }
 section#radar div#radar-container button#radar-playpause i {
@@ -724,7 +775,6 @@ section#radar div#announcements {
 section#radar div#announcements a {
   display: grid;
   grid-template-columns: 20% 80%;
-  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -792,6 +842,23 @@ section#radar img#warnings-today {
   section#radar {
     height: auto !important;
   }
+}
+
+section#progtemps {
+  grid-column: 3/span 4;
+  padding: 10px 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+section#progtemps iframe#progtemps-embed {
+  height: 1000px;
+  background-color: #e8f5ff !important;
+}
+section#progtemps iframe#progtemps-embed body {
+  background-color: #e8f5ff !important;
 }
 
 /* cyrillic */

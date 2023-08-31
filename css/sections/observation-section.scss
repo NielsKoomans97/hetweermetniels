@@ -70,11 +70,10 @@ section#observations {
 
     div#location-selector {
         a#add-location {
-            @include menu-button(4px 20px, 5px, 4px);
+            @include menu-button(8px 20px, 0 5px, 4px);
 
             border: none;
             outline: none;
-            height: 35px;
 
             i {
                 margin: 0;

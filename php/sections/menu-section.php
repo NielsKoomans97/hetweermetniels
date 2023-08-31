@@ -16,7 +16,10 @@
     </div>
     <br>
     <div class="container flex-column">
-        <div class="col-12" id="secondary-nav">
+        <div class="col grid">
+            <button id="secondary-nav-expand"><i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+        <div class="col-12 flex-column" data-collapsed="collapsed" id="secondary-nav">
             <h5>Andere items</h5>
             <nav id="nav-items">
                 <a class="secondary-item" href="https://buienradar.nl"><img src="https://cdn.buienradar.nl/resources/images/favicon.png">Buienradar</a>
