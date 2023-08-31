@@ -1,7 +1,7 @@
 @use '../partials/mixins' as *;
 @use '../variables' as *;
 
-section#menu{
+section#menu {
     grid-column: 1 / span 2;
     $width: 100%;
     height: auto !important;
@@ -10,20 +10,20 @@ section#menu{
 
     flex-wrap: nowrap;
 
-    div.col-12{
+    div.col-12 {
         margin: 10px 0;
     }
 
-    nav a{
-        @include menu-button(5px 10px, 5px, 4px);
+    nav a {
+        @include menu-button(5px, 5px, 4px);
     }
 
-    div#secondary-nav{
+    div#secondary-nav {
         // display: none !important;
     }
 
-    nav a.secondary-item img{
-       width: 24px;
-       margin-right: 10px;
+    nav a.secondary-item img {
+        width: 24px;
+        justify-self: center;
     }
 }

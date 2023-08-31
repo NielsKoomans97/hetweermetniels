@@ -108,7 +108,7 @@ section#observations {
   background-color: #e8f5ff;
 }
 section#observations h5 {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 0;
 }
 section#observations div#observations {
@@ -154,9 +154,9 @@ section#observations h5#station-name {
   font-weight: 300;
 }
 section#observations div#location-selector a#add-location {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -167,10 +167,11 @@ section#observations div#location-selector a#add-location {
   transition: all 180ms ease-in-out;
   border: none;
   outline: none;
+  height: 35px;
 }
 section#observations div#location-selector a#add-location i {
   align-self: center;
-  margin-right: 10px;
+  justify-self: center;
 }
 section#observations div#location-selector a#add-location img {
   height: 2.5vh;
@@ -254,7 +255,7 @@ section#observations div#forecast img.forecast-icon {
 section#observations div#forecast h5.forecast-date {
   font-weight: 300;
   border-bottom: #01264d 2px solid;
-  margin: 0;
+  margin: 0 0 5px 0;
 }
 section#observations div#forecast div.forecast-temp {
   display: flex;
@@ -427,13 +428,13 @@ section#menu div.col-12 {
   margin: 10px 0;
 }
 section#menu nav a {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 5px;
   margin: 5px;
   border-radius: 4px;
   font-weight: 400;
@@ -441,7 +442,7 @@ section#menu nav a {
 }
 section#menu nav a i {
   align-self: center;
-  margin-right: 10px;
+  justify-self: center;
 }
 section#menu nav a img {
   height: 2.5vh;
@@ -459,7 +460,7 @@ section#menu nav a:active {
 }
 section#menu nav a.secondary-item img {
   width: 24px;
-  margin-right: 10px;
+  justify-self: center;
 }
 
 section#settings {
@@ -478,9 +479,9 @@ section#settings div.container {
   padding: 20px;
 }
 section#settings button {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -497,7 +498,7 @@ section#settings button {
 }
 section#settings button i {
   align-self: center;
-  margin-right: 10px;
+  justify-self: center;
 }
 section#settings button img {
   height: 2.5vh;
@@ -637,6 +638,12 @@ section#radar select#radar-options {
   padding: 5px;
   width: 100%;
 }
+section#radar select#radar-speed {
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  margin-left: 15px;
+}
 section#radar div#radar-images {
   position: relative;
 }
@@ -644,7 +651,7 @@ section#radar img#radar-image {
   width: 100%;
   object-fit: contain;
   background-image: url("https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=full");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 section#radar div#radar-container div#radar-selector {
@@ -658,7 +665,7 @@ section#radar div#radar-container div#radar-selector select {
 }
 section#radar div#radar-container div#radar-controls {
   padding: 6px;
-  grid-template-columns: 10% 15% 70%;
+  grid-template-columns: 10% 15% 55% 20%;
   background-color: #e0edfb;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -668,9 +675,9 @@ section#radar div#radar-container span#radar-time {
   font-weight: 500;
 }
 section#radar div#radar-container button#radar-playpause {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -679,14 +686,16 @@ section#radar div#radar-container button#radar-playpause {
   border-radius: 6px;
   font-weight: 400;
   transition: all 180ms ease-in-out;
+  grid-template-columns: auto;
   background-color: transparent;
   outline: 0;
   border: 0;
+  height: 35px;
   justify-content: center;
 }
 section#radar div#radar-container button#radar-playpause i {
   align-self: center;
-  margin-right: 10px;
+  justify-self: center;
 }
 section#radar div#radar-container button#radar-playpause img {
   height: 2.5vh;
@@ -713,9 +722,9 @@ section#radar div#announcements {
   border-radius: 6px;
 }
 section#radar div#announcements a {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 45px;
   align-items: center;
   color: black;
   text-decoration: none;
@@ -729,7 +738,7 @@ section#radar div#announcements a {
 }
 section#radar div#announcements a i {
   align-self: center;
-  margin-right: 10px;
+  justify-self: center;
 }
 section#radar div#announcements a img {
   height: 2.5vh;

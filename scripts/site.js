@@ -41,8 +41,11 @@ async function Launch() {
     }
 }
 
-stations.addEventListener('change', () => {
-    LoadData();
-});
+if (stations != null) {
+    stations.addEventListener('change', () => {
+        LoadData();
+    });
 
-Launch();
+    Launch();
+}
+

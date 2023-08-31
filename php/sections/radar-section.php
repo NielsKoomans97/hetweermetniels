@@ -20,6 +20,11 @@
             </button>
             <span id="radar-time">00:00</span>
             <input id="radar-slider" type="range">
+            <select id="radar-speed">
+                <option value="200">10x</option>
+                <option value="500">5x</option>
+                <option value="1000">1x</option>
+            </select>
         </div>
     </div>
     <div class="container flex-column">

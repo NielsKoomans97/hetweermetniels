@@ -3,12 +3,18 @@ const radar_image = document.getElementById('radar-image');
 const radar_playpause = document.getElementById('radar-playpause');
 const radar_time = document.getElementById('radar-time');
 const radar_slider = document.getElementById('radar-slider');
+const radar_speed = document.getElementById('radar-speed');
 
 var images = [];
 var paused = false;
 var index = 0;
+var speed = 200;
 var animate;
 
+radar_speed.addEventListener('change', () => {
+    var option = radar_speed.selectedOptions[0];
+    speed = parseInt(option.value);
+});
 radar_options.addEventListener('change', RadarSelectorChanged);
 radar_slider.addEventListener('input', Slide);
 radar_playpause.addEventListener('click', () => {
@@ -37,8 +43,6 @@ function Slide() {
 
     var value = radar_slider.value;
     var image = images[value];
-    console.log(`index: ${index} images: ${images.length} radar_slider: ${radar_slider.getAttribute('max')} ${image}`);
-
     var date = new Date(Date.parse(image.Time));
 
     index = value;
@@ -100,7 +104,7 @@ function PlayAnimation() {
     radar_slider.value = index;
     Slide();
 
-    animate = setTimeout(PlayAnimation, 400);
+    animate = setTimeout(PlayAnimation, speed);
 
     if (index == parseInt(radar_slider.getAttribute('max'))){
         index = 0;
