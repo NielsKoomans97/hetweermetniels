@@ -32,7 +32,7 @@ h5 {
 }
 
 h6 {
-  font-size: 1.5vh;
+  font-size: 1.4vh;
 }
 
 a {
@@ -44,7 +44,7 @@ span, select, input[type=radio], input[type=text], label, p, button {
 }
 
 i.fa-solid, i.fas {
-  font-size: 1.4vh;
+  font-size: 1.3vh;
 }
 
 nav {
@@ -178,12 +178,15 @@ section#observations div#location-selector a#add-location img {
 section#observations div#location-selector a#add-location:hover {
   background-color: #92b7fc;
   color: #000000;
-  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#observations div#location-selector a#add-location:hover::before {
+  background-color: #01264d;
+  width: 100%;
 }
 section#observations div#location-selector a#add-location:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #92b7fc;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
 }
 section#observations div#location-selector a#add-location i {
   margin: 0;
@@ -221,7 +224,7 @@ section#observations div#forecast[data-count="14"] {
 }
 section#observations div#forecast div.forecast-day {
   display: grid;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
   background: linear-gradient(135deg, #92b7fc, #e0edfb);
   border-radius: 4px;
   justify-items: center;
@@ -231,12 +234,27 @@ section#observations div#forecast div.forecast-wind {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10px;
+  align-self: center;
+  margin: 10px 0;
 }
 section#observations div#forecast div.forecast-wind i {
   margin-bottom: 5px;
 }
 section#observations div#forecast div.forecast-wind h6.speed {
+  margin: 0;
+}
+section#observations div#forecast div.forecast-humidity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-self: center;
+  margin: 10px 0;
+}
+section#observations div#forecast div.forecast-humidity i {
+  margin-bottom: 5px;
+}
+section#observations div#forecast div.forecast-humidity h6.forecast-precipitation {
   margin: 0;
 }
 section#observations div#forecast img.forecast-icon {
@@ -345,8 +363,9 @@ section#observations div#hourly-forecast i {
     grid-auto-flow: row;
     overflow-y: scroll;
     flex-wrap: wrap;
+    max-height: 300px;
     grid-template-columns: auto !important;
-    grid-row-gap: 12px;
+    grid-row-gap: 8px;
   }
   section#observations div#forecast[data-count="3"] {
     grid-template-rows: repeat(3, auto);
@@ -359,7 +378,7 @@ section#observations div#hourly-forecast i {
   }
   section#observations div#forecast div.forecast-day {
     display: grid;
-    grid-template-columns: 15% 35% 30% 20%;
+    grid-template-columns: 15% 30% 25% 15% 15%;
     align-items: center;
     justify-content: space-between;
     margin: 0;
@@ -372,6 +391,9 @@ section#observations div#hourly-forecast i {
     object-fit: contain;
     height: auto;
     padding: 2px;
+    margin: 0;
+  }
+  section#observations div#forecast div.forecast-humidity {
     margin: 0;
   }
   section#observations div#forecast div.forecast-temp {
@@ -446,12 +468,15 @@ section#menu nav a img {
 section#menu nav a:hover {
   background-color: #92b7fc;
   color: #000000;
-  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#menu nav a:hover::before {
+  background-color: #01264d;
+  width: 100%;
 }
 section#menu nav a:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #92b7fc;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
 }
 section#menu div#secondary-nav[data-collapsed=expanded] {
   display: flex;
@@ -490,12 +515,15 @@ section#menu button#secondary-nav-expand img {
 section#menu button#secondary-nav-expand:hover {
   background-color: #92b7fc;
   color: #000000;
-  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#menu button#secondary-nav-expand:hover::before {
+  background-color: #01264d;
+  width: 100%;
 }
 section#menu button#secondary-nav-expand:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #92b7fc;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
 }
 section#menu nav a.secondary-item img {
   width: 24px;
@@ -545,12 +573,15 @@ section#settings button img {
 section#settings button:hover {
   background-color: #92b7fc;
   color: #000000;
-  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#settings button:hover::before {
+  background-color: #01264d;
+  width: 100%;
 }
 section#settings button:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #92b7fc;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
 }
 section#settings button:hover {
   border: transparent 1px solid;
@@ -752,12 +783,15 @@ section#radar div#radar-container button#radar-playpause img {
 section#radar div#radar-container button#radar-playpause:hover {
   background-color: #92b7fc;
   color: #000000;
-  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#radar div#radar-container button#radar-playpause:hover::before {
+  background-color: #01264d;
+  width: 100%;
 }
 section#radar div#radar-container button#radar-playpause:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #92b7fc;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
 }
 section#radar div#radar-container button#radar-playpause i {
   margin: 0;
@@ -794,12 +828,15 @@ section#radar div#announcements a img {
 section#radar div#announcements a:hover {
   background-color: #92b7fc;
   color: #000000;
-  box-shadow: 0px 4px 0px 0px #01264d;
+}
+section#radar div#announcements a:hover::before {
+  background-color: #01264d;
+  width: 100%;
 }
 section#radar div#announcements a:active {
   color: #ffffff;
   background-color: #01264d;
-  box-shadow: 0px 4px 0px 0px #92b7fc;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
 }
 section#radar div#announcements i {
   font-size: 32px;

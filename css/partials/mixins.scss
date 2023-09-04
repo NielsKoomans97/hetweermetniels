@@ -51,7 +51,7 @@
 
 @mixin menu-button ($padding, $margin, $border-radius) {
     display: grid;
-    
+
     grid-template-columns: 20% 80%;
     align-items: center;
 
@@ -79,12 +79,16 @@
     &:hover{
         background-color: map-get($map: $colors, $key: menu-hover);
         color: map-get($map: $colors, $key: menu-hover-text);
-        box-shadow: 0px 4px 0px 0px map-get($map: $colors, $key: menu-shadow);
+
+        &::before{
+            background-color: map-get($map: $colors, $key: menu-shadow);
+            width: 100%;
+        }
     }
 
     &:active{
         color: map-get($map: $colors, $key: menu-active-text);
         background-color: map-get($map: $colors, $key: menu-shadow);
-        box-shadow: 0px 4px 0px 0px map-get($map: $colors, $key: menu-hover);
+        box-shadow: 0px 2px 0px 0px map-get($map: $colors, $key: menu-hover);
     }
 }

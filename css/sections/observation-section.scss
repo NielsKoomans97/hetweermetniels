@@ -122,7 +122,7 @@ section#observations {
         column-gap: 10px;
 
         div.forecast-day {
-            @include grid(0, 4, auto, 1);
+            @include grid(0, 5, auto, 1);
 
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
@@ -135,6 +135,7 @@ section#observations {
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            align-self: center;
 
             i {
                 margin-bottom: 5px;
@@ -144,7 +145,25 @@ section#observations {
                 margin: 0;
             }
 
-            margin-bottom: 10px;
+            margin: 10px 0;
+        }
+
+        div.forecast-humidity{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            align-self: center;
+
+            i {
+                margin-bottom: 5px;
+            }
+
+            h6.forecast-precipitation {
+                margin: 0;
+            }
+
+            margin: 10px 0;
         }
 
         img.forecast-icon {
@@ -281,6 +300,7 @@ section#observations {
             grid-auto-flow: row;
             overflow-y: scroll;
             flex-wrap: wrap;
+            max-height: 300px;
 
             &[data-count="3"]{
                 grid-template-rows: repeat(3, auto);
@@ -296,10 +316,10 @@ section#observations {
 
             grid-template-columns: auto !important;
 
-            grid-row-gap: 12px;
+            grid-row-gap: 8px;
 
             div.forecast-day {
-                @include grid(4, 0, 15% 35% 30% 20%, 0);
+                @include grid(4, 0, 15% 30% 25% 15% 15%, 0);
 
                 align-items: center;
                 justify-content: space-between;
@@ -317,6 +337,10 @@ section#observations {
 
                 height: auto;
                 padding: 2px;
+                margin: 0;
+            }
+
+            div.forecast-humidity{
                 margin: 0;
             }
 

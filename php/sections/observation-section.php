@@ -10,7 +10,7 @@
             <img id="observation-icon">
             <div class="col grid">
                 <div>
-                    <h2 id="observation-temp"></h2>
+                    <h1 id="observation-temp"></h1>
                 </div>
                 <div>
                     <i class="fa-solid fa-hand-dots"></i>
@@ -33,7 +33,7 @@
                     <h6 id="observation-pressure"></h6>
                 </div>
             </div>
-            
+
         </div>
 
     </div>

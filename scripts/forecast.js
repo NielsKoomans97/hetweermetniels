@@ -48,6 +48,7 @@ function GetForecast(locationId) {
                 CreateDateElement(forecast_day, day);
                 CreateTempElement(forecast_day, day);
                 CreateWindElement(forecast_day, day);
+                CreatePrecipElement(forecast_day,day);
 
                 forecast_host.appendChild(forecast_day);
             }
@@ -200,4 +201,20 @@ function CreateHumidityElement(root, day) {
     humidityContainer.appendChild(humidityIcon);
     humidityContainer.appendChild(humdity);
     root.append(humidityContainer);
+}
+
+function CreatePrecipElement(root, day){
+    let precipContainer = document.createElement('div');
+    precipContainer.className = 'forecast-humidity';
+
+    let precipIcon = document.createElement('i');
+    precipIcon.className = 'fas fa-umbrella'
+
+    let precipitation = document.createElement('h6');
+    precipitation.className = 'forecast-precipitation';
+    precipitation.innerText = `${day['precipitationmm']} mm`;
+
+    precipContainer.appendChild(precipIcon);
+    precipContainer.appendChild(precipitation);
+    root.append(precipContainer);
 }
