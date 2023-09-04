@@ -42,11 +42,7 @@ function GetForecast(locationId) {
             for (let i = 0; i < day_count; i++) {
                 let day = data['days'][i + 1];
                 let forecast_day = document.createElement('div');
-                forecast_day.className = 'forecast-day';
-
-                ClearAll(forecast_day);
-
-                forecast_day.setAttribute('style','display:grid');
+                forecast_day.className = 'forecast-day grid';
 
                 CreateIconElement(forecast_day, day);
                 CreateDateElement(forecast_day, day);

@@ -349,13 +349,13 @@ section#observations div#hourly-forecast i {
     grid-row-gap: 12px;
   }
   section#observations div#forecast[data-count="3"] {
-    grid-template-rows: repeat(3, 50px);
+    grid-template-rows: repeat(3, auto);
   }
   section#observations div#forecast[data-count="7"] {
-    grid-template-rows: repeat(7, 50px);
+    grid-template-rows: repeat(7, auto);
   }
   section#observations div#forecast[data-count="14"] {
-    grid-template-rows: repeat(13, 50px);
+    grid-template-rows: repeat(13, auto);
   }
   section#observations div#forecast div.forecast-day {
     display: grid;
@@ -649,10 +649,10 @@ section#report {
   grid-column: 6/span 6;
 }
 section#report h3 {
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 section#report span#guidance-text p {
-  margin: 30px 0;
+  margin: 20px 0 0 0;
 }
 @media (max-width: 1170px) {
   section#report {
@@ -842,20 +842,42 @@ section#radar img#warnings-today {
 }
 
 section#progtemps {
-  grid-column: 3/span 4;
+  background-color: #e8f5ff !important;
+  grid-column: 3/span 5;
   padding: 10px 0;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  height: 100vh;
 }
 section#progtemps iframe#progtemps-embed {
-  height: 1000px;
+  overflow: hidden;
+  height: 900px;
   background-color: #e8f5ff !important;
 }
 section#progtemps iframe#progtemps-embed body {
   background-color: #e8f5ff !important;
+  overflow: hidden;
+}
+
+section#charts {
+  background-color: #e0edfb !important;
+  grid-column: 8/span 7;
+  padding: 10px 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+section#charts select#chart-options {
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
 }
 
 /* cyrillic */

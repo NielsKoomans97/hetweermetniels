@@ -283,15 +283,15 @@ section#observations {
             flex-wrap: wrap;
 
             &[data-count="3"]{
-                grid-template-rows: repeat(3, 50px);
+                grid-template-rows: repeat(3, auto);
             }
 
             &[data-count="7"]{
-                grid-template-rows: repeat(7, 50px);
+                grid-template-rows: repeat(7, auto);
             }
 
             &[data-count="14"]{
-                grid-template-rows: repeat(13, 50px);
+                grid-template-rows: repeat(13, auto);
             }
 
             grid-template-columns: auto !important;
