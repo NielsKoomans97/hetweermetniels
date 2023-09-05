@@ -2,6 +2,7 @@
     <div class="container">
         <div class="col d-flex flex-column">
             <h3>Progtemps en kaarten <b>HarmonieV40</b> van <a href="https://woutervanbernebeek.nl">Wouter van Bernebeek</a></h3>
+            <h5><i>Kaarten afkomstig van Wilfred Janssen</i></h5>
             <iframe src="https://dev.weercijfers.nl/harmonie/widget/progtemp-small" id="progtemps-embed"
                 frameborder="0"></iframe>
         </div>
@@ -9,14 +10,14 @@
 </section>
 <section id="charts">
     <div class="container flex-column">
-        <div class="col grid">
+        <div class="col grid" id="charts-selector">
             <select id="chart-options">
                 <optgroup label="Temperature">
                     <option value="temperature2m_0">Temperature 2m</option>
                 </optgroup>
                 <optgroup label="Moisture">
                     <option value="dewpoint2m_0">Dewpoint 2m</option>
-                    <option value="humidity_0">Relative Humidiy 2m</option>
+                    <option value="humidity_0">Relative Humidity 2m</option>
                 </optgroup>
                 <optgroup label="Boundary Layer">
                     <option value="visibility_0">Horizontal Visibility</option>
@@ -43,11 +44,11 @@
                 </optgroup>
             </select>
         </div>
-        <div class="col">
+        <div class="col" id="charts-image">
             <img id="chart-image">
         </div>
-        <div class="col grid">
-            <input type="range" max="100" value="0" id="chart-slider">
+        <div class="col grid" id="charts-controls">
+            <input type="range" max="48" value="0" id="chart-slider">
         </div>
     </div>
 </section>

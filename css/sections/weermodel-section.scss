@@ -11,7 +11,8 @@ section#progtemps{
 
     iframe#progtemps-embed{
         overflow: hidden;
-        height:900px;
+        height: 850px;
+        margin: 0 50px;
         background-color: map-get($map: $colors, $key: background-color-2) !important;
 
         body{
@@ -25,7 +26,7 @@ section#progtemps{
 section#charts{
     background-color: map-get($map: $colors, $key: background-color) !important;
 
-    grid-column: 8 / span 7;
+    grid-column: 8 / span 5;
     @include section(100%);
 
     height: 100vh;
@@ -36,5 +37,32 @@ section#charts{
         padding: 5px;
 
         width: 100%;
+    }
+
+    div#charts-selector{
+        padding: 6px;
+
+        background-color: map-get($map: $colors, $key: background-color-2);
+
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+
+        select{
+            background-color: map-get($map: $colors, $key: background-color-3);
+        }
+    }
+
+    div#charts-controls{
+        padding: 6px;
+
+        background-color: map-get($map: $colors, $key: background-color-2);
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    img#chart-image{
+        width: 100%;
+
+        object-fit: contain;
     }
 }

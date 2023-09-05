@@ -12,7 +12,7 @@ div#logo h5 {
 }
 
 h1 {
-  font-size: 2.3vh;
+  font-size: 2.5vh;
 }
 
 h2 {
@@ -896,7 +896,8 @@ section#progtemps {
 }
 section#progtemps iframe#progtemps-embed {
   overflow: hidden;
-  height: 900px;
+  height: 850px;
+  margin: 0 50px;
   background-color: #e8f5ff !important;
 }
 section#progtemps iframe#progtemps-embed body {
@@ -906,7 +907,7 @@ section#progtemps iframe#progtemps-embed body {
 
 section#charts {
   background-color: #e0edfb !important;
-  grid-column: 8/span 7;
+  grid-column: 8/span 5;
   padding: 10px 0;
   height: 100vh;
   width: 100%;
@@ -920,6 +921,25 @@ section#charts select#chart-options {
   border-radius: 4px;
   padding: 5px;
   width: 100%;
+}
+section#charts div#charts-selector {
+  padding: 6px;
+  background-color: #e8f5ff;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+section#charts div#charts-selector select {
+  background-color: #fcfeff;
+}
+section#charts div#charts-controls {
+  padding: 6px;
+  background-color: #e8f5ff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+section#charts img#chart-image {
+  width: 100%;
+  object-fit: contain;
 }
 
 /* cyrillic */
