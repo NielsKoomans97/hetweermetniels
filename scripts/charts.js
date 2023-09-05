@@ -7,11 +7,14 @@ chart_options.addEventListener('change', () => {
     LoadCharts(option.value);
 });
 
-chart_slider.addEventListener('input', () => {
-    chart_image.setAttribute('src', chart_images[parseInt(chart_slider.value)]);
-});
+chart_slider.addEventListener('input', SlideChartSlide);
 
 var chart_images = [];
+
+function SlideChartSlide(){
+    console.log(chart_images[parseInt(chart_slider.value)]);
+    chart_image.setAttribute('src', chart_images[parseInt(chart_slider.value)]);
+}
 
 function LoadCharts(chart_type) {
     chart_images = [];
@@ -20,7 +23,7 @@ function LoadCharts(chart_type) {
         chart_images.push(`https://dev.weercijfers.nl/static/harmonie/benelux/${chart_type}${FixInteger(i)}00.png`);
     }
 
-    chart_slider.value = 0;
+    SlideChartSlide();
 }
 
 function FixInteger(i){
@@ -34,3 +37,4 @@ function FixInteger(i){
 
 chart_options.selectedIndex = 0;
 LoadCharts('temperature2m_0');
+
