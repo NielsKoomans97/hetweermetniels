@@ -130,6 +130,13 @@ section#observations {
             justify-items: center;
         }
 
+        div.forecast-misc{
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: auto;
+
+            column-gap: 14px;
+        }
+
         div.forecast-wind {
             display: flex;
             justify-content: center;
@@ -319,7 +326,7 @@ section#observations {
             grid-row-gap: 8px;
 
             div.forecast-day {
-                @include grid(4, 0, 15% 30% 25% 15% 15%, 0);
+                @include grid(4, 0, 15% 30% 25% 30%, 0);
 
                 align-items: center;
                 justify-content: space-between;

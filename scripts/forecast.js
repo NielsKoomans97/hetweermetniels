@@ -47,8 +47,7 @@ function GetForecast(locationId) {
                 CreateIconElement(forecast_day, day);
                 CreateDateElement(forecast_day, day);
                 CreateTempElement(forecast_day, day);
-                CreateWindElement(forecast_day, day);
-                CreatePrecipElement(forecast_day,day);
+                CreateMiscElement(forecast_day,day);
 
                 forecast_host.appendChild(forecast_day);
             }
@@ -185,6 +184,42 @@ function CreateWindElement(root, day) {
     windContainer.appendChild(windSpeed);
 
     root.appendChild(windContainer);
+}
+
+function CreateMiscElement(root, day){
+    let miscContainer = document.createElement('div');
+    miscContainer.classList.add('forecast-misc','col', 'grid');
+
+    let windContainer = document.createElement('div');
+    windContainer.className = 'forecast-wind';
+
+    let windDirection = document.createElement('i');
+    windDirection.className = 'fas fa-arrow-down icon';
+    windDirection.style = `transform: rotate(${day['winddirectiondegrees']}deg);`;
+
+    let windSpeed = document.createElement('h6');
+    windSpeed.className = 'speed';
+    windSpeed.innerText = `${day['beaufort']} bft`;
+
+    windContainer.appendChild(windDirection);
+    windContainer.appendChild(windSpeed);
+    miscContainer.appendChild(windContainer);
+
+    let precipContainer = document.createElement('div');
+    precipContainer.className = 'forecast-humidity';
+
+    let precipIcon = document.createElement('i');
+    precipIcon.className = 'fas fa-umbrella'
+
+    let precipitation = document.createElement('h6');
+    precipitation.className = 'forecast-precipitation';
+    precipitation.innerText = `${day['precipitationmm']} mm`;
+
+    precipContainer.appendChild(precipIcon);
+    precipContainer.appendChild(precipitation);
+    miscContainer.appendChild(precipContainer);
+
+    root.appendChild(miscContainer);
 }
 
 function CreateHumidityElement(root, day) {

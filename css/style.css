@@ -44,7 +44,7 @@ span, select, input[type=radio], input[type=text], label, p, button {
 }
 
 i.fa-solid, i.fas {
-  font-size: 1.3vh;
+  font-size: 1.2vh;
 }
 
 nav {
@@ -229,6 +229,11 @@ section#observations div#forecast div.forecast-day {
   border-radius: 4px;
   justify-items: center;
 }
+section#observations div#forecast div.forecast-misc {
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto;
+  column-gap: 14px;
+}
 section#observations div#forecast div.forecast-wind {
   display: flex;
   justify-content: center;
@@ -378,7 +383,7 @@ section#observations div#hourly-forecast i {
   }
   section#observations div#forecast div.forecast-day {
     display: grid;
-    grid-template-columns: 15% 30% 25% 15% 15%;
+    grid-template-columns: 15% 30% 25% 30%;
     align-items: center;
     justify-content: space-between;
     margin: 0;
