@@ -13,34 +13,34 @@
         <div class="col grid" id="charts-selector">
             <select id="chart-options">
                 <optgroup label="Temperature">
-                    <option value="temperature2m_0">Temperature 2m</option>
+                    <option value="temperature2m_0">Temperature op 2 meter hoogte</option>
                 </optgroup>
                 <optgroup label="Moisture">
-                    <option value="dewpoint2m_0">Dewpoint 2m</option>
-                    <option value="humidity_0">Relative Humidity 2m</option>
+                    <option value="dewpoint2m_0">Dauwpuntstemperatuur</option>
+                    <option value="humidity_0">Relatieve vochtigheid</option>
                 </optgroup>
                 <optgroup label="Boundary Layer">
-                    <option value="visibility_0">Horizontal Visibility</option>
+                    <option value="visibility_0">Zicht in meters</option>
                 </optgroup>
                 <optgroup label="Cloud Cover">
-                    <option value="lowclouds_0">Low Cloud Cover</option>
-                    <option value="midclouds_0">Mid Level Cloud Cover</option>
-                    <option value="highclouds_0">High Cloud Cover</option>
-                    <option value="totalclouds_0">Total Cloud Cover</option>
-                    <option value="cloudbase_0">Cloud Base Height</option>
+                    <option value="lowclouds_0">Lage bewolking</option>
+                    <option value="midclouds_0">Middelbare bewolking</option>
+                    <option value="highclouds_0">Hoge bewolking</option>
+                    <option value="totalclouds_0">Totale bewolking</option>
+                    <option value="cloudbase_0">Wolkenhoogte (voet/ft)</option>
                 </optgroup>
                 <optgroup label="Precipitation">
-                    <option value="simradar_0">Simulated Radar Reflectivity</option>
-                    <option value="hourlyprecip_0">Hourly Precipitation Amount</option>
-                    <option value="cumulativeprecipitation_0">Accumulated Precipitation</option>
-                    <option value="hourlysnowfall_0">Hourly Snowfall Depth</option>
-                    <option value="snowdepth_0">Snow Depth</option>
-                    <option value="pcptype_0">Precipitation Type</option>
+                    <option value="simradar_0">Gesimuleerde radarbeelden</option>
+                    <option value="hourlyprecip_0">Uurlijkse neerslaghoeveelheid (mm/u)</option>
+                    <option value="cumulativeprecipitation_0">Totale neerslaghoeveelheid (mm)</option>
+                    <option value="hourlysnowfall_0">Uurlijkse sneeuwval (cm/u)</option>
+                    <option value="snowdepth_0">Sneeuwdikte (cm)</option>
+                    <option value="pcptype_0">Neerslagtype</option>
                 </optgroup>
                 <optgroup label="Wind and Pressure">
-                    <option value="wind10m_0">Mean Sea Level Pressure and 10m Wind Force</option>
-                    <option value="wind10m_kt_0">Mean Sea Level Pressure and 10m Wind Speed</option>
-                    <option value="windgust10m_0">Mean Sea Level Pressure and 10m Wind Gust Speed</option>
+                    <option value="wind10m_0">Luchtdruk op zeeniveau + windkracht in beaufort</option>
+                    <option value="wind10m_kt_0">Luchtdruk op zeeniveau + windkracht in knopen</option>
+                    <option value="windgust10m_0">Luchtdruk op zeeniveau + windstoten op 10 meter hoogte</option>
                 </optgroup>
             </select>
         </div>

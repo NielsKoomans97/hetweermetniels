@@ -24,7 +24,7 @@ section#progtemps{
 }
 
 section#charts{
-    background-color: map-get($map: $colors, $key: background-color) !important;
+    background-color: map-get($map: $colors, $key: background-color-2) !important;
 
     grid-column: 8 / span 5;
     @include section(100%);
@@ -37,25 +37,23 @@ section#charts{
         padding: 5px;
 
         width: 100%;
+
+        background-color: map-get($map: $colors, $key: background-color-3);
     }
 
     div#charts-selector{
         padding: 6px;
 
-        background-color: map-get($map: $colors, $key: background-color-2);
+        background-color: map-get($map: $colors, $key: background-color);
 
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
-
-        select{
-            background-color: map-get($map: $colors, $key: background-color-3);
-        }
     }
 
     div#charts-controls{
         padding: 6px;
 
-        background-color: map-get($map: $colors, $key: background-color-2);
+        background-color: map-get($map: $colors, $key: background-color);
         border-bottom-left-radius: 6px;
         border-bottom-right-radius: 6px;
     }

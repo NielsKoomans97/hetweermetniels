@@ -9,6 +9,8 @@ section#report{
     overflow-y: auto;
     grid-column: 6 / span 6;
 
+    background-color: map-get($map: $colors, $key: background-color-2);
+
     h3{
         margin-bottom: 15px;
     }
