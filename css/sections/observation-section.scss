@@ -72,6 +72,7 @@ section#observations {
         a#add-location {
             @include menu-button(8px 20px, 0 5px, 4px);
 
+            grid-template-columns: auto;
             border: none;
             outline: none;
 

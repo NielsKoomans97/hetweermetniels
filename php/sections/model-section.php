@@ -13,7 +13,7 @@
         <div class="col grid" id="charts-selector">
             <select id="chart-options">
                 <optgroup label="Temperature">
-                    <option value="temperature2m_0">Temperature op 2 meter hoogte</option>
+                    <option value="temperature2m_0">Temperatuur op 2 meter hoogte</option>
                 </optgroup>
                 <optgroup label="Moisture">
                     <option value="dewpoint2m_0">Dauwpuntstemperatuur</option>

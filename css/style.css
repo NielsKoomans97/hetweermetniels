@@ -4,7 +4,7 @@ body {
   justify-content: stretch;
   font-family: "Jost", sans-serif;
   font-weight: 300;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
 }
 
 div#logo h5 {
@@ -28,11 +28,11 @@ h4 {
 }
 
 h5 {
-  font-size: 1.8vh;
+  font-size: 1.7vh;
 }
 
 h6 {
-  font-size: 1.4vh;
+  font-size: 1.2vh;
 }
 
 a {
@@ -113,7 +113,7 @@ section#observations h5 {
 }
 section#observations div#observations {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #e0edfb);
+  background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 6px;
   margin: 5px;
   padding: 0 20px;
@@ -164,6 +164,7 @@ section#observations div#location-selector a#add-location {
   border-radius: 4px;
   font-weight: 400;
   transition: all 180ms ease-in-out;
+  grid-template-columns: auto;
   border: none;
   outline: none;
 }
@@ -200,7 +201,7 @@ section#observations div#location-selector select#stations {
 }
 section#observations div#forecast {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #e0edfb);
+  background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 6px;
   margin: 5px;
   padding: 0 20px;
@@ -225,7 +226,7 @@ section#observations div#forecast[data-count="14"] {
 section#observations div#forecast div.forecast-day {
   display: grid;
   grid-template-rows: repeat(5, auto);
-  background: linear-gradient(135deg, #92b7fc, #e0edfb);
+  background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 4px;
   justify-items: center;
 }
@@ -308,7 +309,7 @@ section#observations div#forecast div.forecast-temp h6.low::before {
 }
 section#observations div#hourly-forecast {
   display: flex;
-  background: linear-gradient(135deg, #92b7fc, #e0edfb);
+  background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 6px;
   margin: 5px;
   padding: 0 20px;
@@ -323,7 +324,7 @@ section#observations div#hourly-forecast {
 section#observations div#hourly-forecast div.forecast-hour {
   display: grid;
   grid-template-columns: 15% 25% 20% 20% 20%;
-  background: linear-gradient(135deg, #92b7fc, #e0edfb);
+  background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 4px;
   align-items: center;
   justify-items: stretch;
@@ -504,7 +505,7 @@ section#menu button#secondary-nav-expand {
   border-radius: 6px;
   font-weight: 400;
   transition: all 180ms ease-in-out;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
   border: none;
   outline: none;
   grid-template-columns: auto;
@@ -565,7 +566,7 @@ section#settings button {
   flex-wrap: nowrap;
   border: #01264d 1px solid;
   outline: none;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
   justify-content: center;
 }
 section#settings button i {
@@ -744,7 +745,7 @@ section#radar img#radar-image {
 }
 section#radar div#radar-container div#radar-selector {
   padding: 6px;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -754,7 +755,7 @@ section#radar div#radar-container div#radar-selector select {
 section#radar div#radar-container div#radar-controls {
   padding: 6px;
   grid-template-columns: 10% 15% 55% 20%;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -927,13 +928,13 @@ section#charts select#chart-options {
 }
 section#charts div#charts-selector {
   padding: 6px;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 section#charts div#charts-controls {
   padding: 6px;
-  background-color: #e0edfb;
+  background-color: #cfdbe9;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
