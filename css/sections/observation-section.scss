@@ -19,7 +19,7 @@ section#observations {
 
     div#observations {
         @include widget;
-        align-items: center;
+        align-items: stretch;
         padding: 0;
 
         div.col.grid {
@@ -60,7 +60,6 @@ section#observations {
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
             object-fit: none;
-            height: 100%;
         }
     }
 
@@ -291,6 +290,8 @@ section#observations {
 
     @media(max-width:2250px) {
 
+        min-height: 300px;
+        height: auto;
 
         br {
             max-height: 10px;
@@ -375,8 +376,6 @@ section#observations {
     }
 
     @media(max-width:1800px) {
-        height: 140vh !important;
-
         grid-column: 3 / span 4;
 
         div#forecast {

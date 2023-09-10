@@ -117,7 +117,7 @@ section#observations div#observations {
   border-radius: 6px;
   margin: 5px;
   padding: 0 20px;
-  align-items: center;
+  align-items: stretch;
   padding: 0;
 }
 section#observations div#observations div.col.grid {
@@ -148,7 +148,6 @@ section#observations div#observations img#observation-icon {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   object-fit: none;
-  height: 100%;
 }
 section#observations h5#station-name {
   font-weight: 300;
@@ -358,6 +357,10 @@ section#observations div#hourly-forecast i {
   margin-bottom: 5px;
 }
 @media (max-width: 2250px) {
+  section#observations {
+    min-height: 300px;
+    height: auto;
+  }
   section#observations br {
     max-height: 10px;
   }
@@ -419,7 +422,6 @@ section#observations div#hourly-forecast i {
 }
 @media (max-width: 1800px) {
   section#observations {
-    height: 140vh !important;
     grid-column: 3/span 4;
   }
   section#observations div#forecast div#forecast-temp h6.high {
