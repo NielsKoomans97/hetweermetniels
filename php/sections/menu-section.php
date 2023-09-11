@@ -24,12 +24,12 @@
             <h5>Andere items</h5>
             <nav id="nav-items">
                 <a class="secondary-item" target="_blank" href="https://buienradar.nl"><img src="https://cdn.buienradar.nl/resources/images/favicon.png">Buienradar</a>
-                <a class="secondary-item" target="_blank"  href="https://onweer-online.nl"><img src="https://www.onweer-online.nl/favicon.ico">Onweer-online</a>
-                <a class="secondary-item" target="_blank"  href="https://www.woutervanbernebeek.nl/weermodel"><img src="https://primary.jwwb.nl/public/k/k/y/temp-frvufhxnzegthaceduoj/blikseminslag80922-2-1.jpg">Wouter van Bernebeek</a>
-                <a class="secondary-item" target="_blank"  href="https://estofex.org"><img src="https://www.estofex.org/icon.ico">Estofex</a>
-                <a class="secondary-item" target="_blank"  href="https://wetteronline.de"><img src="https://st.wetteronline.de/dr/1.1.497/images/logo/favicon.ico">Wetteronline</a>
-                <a class="secondary-item" target="_blank"  href="https://lightningmaps.org"><img src="https://www.lightningmaps.org/Images/app_icon_shadow.png">Lightningmaps</a>
-                <a class="secondary-item" target="_blank"  href="https://map.blitzortung.org/#1.32/0/8"><img src="https://map.blitzortung.org/Icons/favicon.ico">Blitzortung</a>
+                <a class="secondary-item" target="_blank" href="https://onweer-online.nl"><img src="https://www.onweer-online.nl/favicon.ico">Onweer-online</a>
+                <a class="secondary-item" target="_blank" href="https://www.woutervanbernebeek.nl/weermodel"><img src="https://primary.jwwb.nl/public/k/k/y/temp-frvufhxnzegthaceduoj/blikseminslag80922-2-1.jpg">Wouter van Bernebeek</a>
+                <a class="secondary-item" target="_blank" href="https://estofex.org"><img src="https://www.estofex.org/icon.ico">Estofex</a>
+                <a class="secondary-item" target="_blank" href="https://wetteronline.de"><img src="https://st.wetteronline.de/dr/1.1.497/images/logo/favicon.ico">Wetteronline</a>
+                <a class="secondary-item" target="_blank" href="https://lightningmaps.org"><img src="https://www.lightningmaps.org/Images/app_icon_shadow.png">Lightningmaps</a>
+                <a class="secondary-item" target="_blank" href="https://map.blitzortung.org/#1.32/0/8"><img src="https://map.blitzortung.org/Icons/favicon.ico">Blitzortung</a>
             </nav>
         </div>
     </div>
