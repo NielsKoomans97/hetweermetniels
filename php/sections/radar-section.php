@@ -8,7 +8,7 @@
                     <option data-version="v3" data-type="RadarMapLightning5mNL">Onweer</option>
                     <option data-version="v3" data-type="RadarMapHail5mNL">Hagel</option>
                 </optgroup>
-               
+
             </select>
         </div>
         <div class="col" id="radar-images">
@@ -20,6 +20,7 @@
             </button>
             <span id="radar-time">00:00</span>
             <input id="radar-slider" type="range">
+            <i class="fa-solid fa-angles-right"></i>
             <select id="radar-speed">
                 <option value="200">10x</option>
                 <option value="500">5x</option>

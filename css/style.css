@@ -31,7 +31,10 @@ h5 {
   font-size: 1.7vh;
 }
 
-h6 {
+h6,
+p.location-foad,
+label,
+input[type=radio] {
   font-size: 1.2vh;
 }
 
@@ -39,11 +42,16 @@ a {
   font-size: 1.4vh;
 }
 
-span, select, input[type=radio], input[type=text], label, p, button {
+span,
+select,
+input[type=text],
+p,
+button {
   font-size: 1.4vh;
 }
 
-i.fa-solid, i.fas {
+i.fa-solid,
+i.fas {
   font-size: 1.2vh;
 }
 
@@ -566,8 +574,8 @@ section#settings button {
   font-weight: 400;
   transition: all 180ms ease-in-out;
   flex-wrap: nowrap;
-  border: #01264d 1px solid;
   outline: none;
+  border: transparent 1px solid;
   background-color: #cfdbe9;
   justify-content: center;
 }
@@ -733,10 +741,16 @@ section#radar select#radar-speed {
   border: none;
   border-radius: 4px;
   padding: 5px;
-  margin-left: 15px;
+}
+section#radar select#radar-speed::before {
+  content: "\f101";
+  font-family: "FontAwesome";
 }
 section#radar div#radar-images {
   position: relative;
+}
+section#radar i.fa-solid {
+  margin-left: 25px;
 }
 section#radar img#radar-image {
   width: 100%;
@@ -756,7 +770,7 @@ section#radar div#radar-container div#radar-selector select {
 }
 section#radar div#radar-container div#radar-controls {
   padding: 6px;
-  grid-template-columns: 10% 15% 55% 20%;
+  grid-template-columns: 10% 15% 50% 10% 15%;
   background-color: #cfdbe9;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;

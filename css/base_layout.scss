@@ -36,19 +36,27 @@ h5 {
     font-size: map-get($map: $typo, $key: h5);
 }
 
-h6 {
+h6,
+p.location-foad,
+label,
+input[type="radio"] {
     font-size: map-get($map: $typo, $key: h6);
 }
 
-a{
+a {
     font-size: map-get($map: $typo, $key: a);
 }
 
-span, select, input[type="radio"], input[type="text"], label, p, button{
+span,
+select,
+input[type="text"],
+p,
+button {
     font-size: map-get($map: $typo, $key: span);
 }
 
-i.fa-solid, i.fas{
+i.fa-solid,
+i.fas {
     font-size: map-get($map: $typo, $key: fontawesome);
 }
 
