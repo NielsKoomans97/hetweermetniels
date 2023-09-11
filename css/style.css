@@ -35,7 +35,7 @@ h6,
 p.location-foad,
 label,
 input[type=radio] {
-  font-size: 1.2vh;
+  font-size: 1.3vh;
 }
 
 a {
@@ -116,7 +116,6 @@ section#observations {
   background-color: #e8f5ff;
 }
 section#observations h5 {
-  margin-top: 15px;
   margin-bottom: 0;
 }
 section#observations div#observations {
@@ -365,10 +364,6 @@ section#observations div#hourly-forecast i {
   margin-bottom: 5px;
 }
 @media (max-width: 2250px) {
-  section#observations {
-    min-height: 300px;
-    height: auto;
-  }
   section#observations br {
     max-height: 10px;
   }
@@ -445,6 +440,11 @@ section#observations div#hourly-forecast i {
 @media (max-width: 1420px) {
   section#observations {
     grid-column: 3/span 5;
+  }
+}
+@media (max-width: 1170px) {
+  section#observations {
+    min-height: 300px;
   }
 }
 
@@ -703,6 +703,77 @@ section#report h3 {
 section#report span#guidance-text p {
   margin: 20px 0 0 0;
 }
+section#report div#announcements {
+  margin: 0 0 10px 0;
+  height: auto;
+  grid-template-columns: 60px auto 120px;
+  justify-items: self-start;
+  background-color: #cfdbe9;
+  border-radius: 6px;
+}
+section#report div#announcements a {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+  margin: 0 5px 0 2px;
+  border-radius: 6px;
+  font-weight: 400;
+  transition: all 180ms ease-in-out;
+  justify-self: stretch;
+  justify-content: center;
+  grid-template-columns: auto;
+}
+section#report div#announcements a i {
+  align-self: center;
+  justify-self: center;
+}
+section#report div#announcements a img {
+  height: 2.5vh;
+  width: auto !important;
+}
+section#report div#announcements a:hover {
+  background-color: #92b7fc;
+  color: #000000;
+}
+section#report div#announcements a:hover::before {
+  background-color: #01264d;
+  width: 100%;
+}
+section#report div#announcements a:active {
+  color: #ffffff;
+  background-color: #01264d;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
+}
+section#report div#announcements i {
+  font-size: 32px;
+  text-align: center;
+  padding: 2vh 10px;
+  height: 100%;
+  width: 100%;
+  background-color: #fdfbef;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+section#report div#announcements[data-color=YELLOW] i {
+  color: rgb(241, 223, 16);
+}
+section#report div#announcements[data-color=ORANGE] i {
+  color: orange;
+}
+section#report div#announcements[data-color=RED] i {
+  color: red;
+}
+section#report div#announcements h6#warning-locations {
+  margin: 0 10px;
+}
+section#report div#announcements span#warning-title {
+  font-weight: 300;
+  font-size: 1.9vh;
+  margin: 0 10px;
+}
 @media (max-width: 1170px) {
   section#report {
     height: auto !important;
@@ -716,6 +787,7 @@ section#report span#guidance-text p {
 @media (max-width: 1420px) {
   section#report {
     grid-column: 8/span 4;
+    flex-wrap: nowrap;
   }
 }
 
@@ -819,77 +891,6 @@ section#radar div#radar-container button#radar-playpause:active {
 }
 section#radar div#radar-container button#radar-playpause i {
   margin: 0;
-}
-section#radar div#announcements {
-  margin: 10px 0;
-  padding: 5px;
-  grid-template-columns: auto 65% auto;
-  justify-items: self-start;
-  border-radius: 6px;
-}
-section#radar div#announcements a {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  align-items: center;
-  color: black;
-  text-decoration: none;
-  padding: 8px;
-  margin: 0 5px 0 2px;
-  border-radius: 6px;
-  font-weight: 400;
-  transition: all 180ms ease-in-out;
-  justify-self: stretch;
-  justify-content: center;
-}
-section#radar div#announcements a i {
-  align-self: center;
-  justify-self: center;
-}
-section#radar div#announcements a img {
-  height: 2.5vh;
-  width: auto !important;
-}
-section#radar div#announcements a:hover {
-  background-color: #92b7fc;
-  color: #000000;
-}
-section#radar div#announcements a:hover::before {
-  background-color: #01264d;
-  width: 100%;
-}
-section#radar div#announcements a:active {
-  color: #ffffff;
-  background-color: #01264d;
-  box-shadow: 0px 2px 0px 0px #92b7fc;
-}
-section#radar div#announcements i {
-  font-size: 32px;
-  padding: 10px;
-  background-color: #fdfbef;
-  border-radius: 6px;
-}
-section#radar div#announcements[data-color=YELLOW] {
-  background-color: rgb(241, 223, 16);
-}
-section#radar div#announcements[data-color=YELLOW] i {
-  color: rgb(241, 223, 16);
-}
-section#radar div#announcements[data-color=ORANGE] {
-  background-color: orange;
-}
-section#radar div#announcements[data-color=ORANGE] i {
-  color: orange;
-}
-section#radar div#announcements[data-color=RED] {
-  background-color: red;
-}
-section#radar div#announcements[data-color=RED] i {
-  color: red;
-}
-section#radar div#announcements span#warning-title {
-  font-weight: 300;
-  font-size: 2vh;
-  margin: 0 10px;
 }
 section#radar img#warnings-today {
   object-fit: contain;

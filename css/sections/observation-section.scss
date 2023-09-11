@@ -13,7 +13,6 @@ section#observations {
     background-color: map-get($map: $colors, $key: background-color-2);
 
     h5 {
-        margin-top: 15px;
         margin-bottom: 0;
     }
 
@@ -290,8 +289,7 @@ section#observations {
 
     @media(max-width:2250px) {
 
-        min-height: 300px;
-        height: auto;
+
 
         br {
             max-height: 10px;
@@ -398,5 +396,10 @@ section#observations {
 
     @media(max-width: 1420px) {
         grid-column: 3 / span 5;
+    }
+
+    @media (max-width: 1170px) {
+        min-height: 300px;
+        // height: auto;        
     }
 }

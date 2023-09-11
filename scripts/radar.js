@@ -126,7 +126,7 @@ async function Initialize() {
 }
 
 Initialize();
-PlayAnimation();
+// PlayAnimation();
 
 class RadarSlide {
     constructor(time, url) {

@@ -1,11 +1,12 @@
 <section id="observations">
     <div class="container flex-column">
-        <h5>Locatie</h5>
+        <h6>Locatie</h6>
         <div class="col d-flex flex-row" id="location-selector">
             <select id="stations"></select>
             <a id="add-location" href="settings.php"><i class="fa-solid fa-user-gear"></i></a>
         </div>
-        <h5>Actuele gegevens</h5>
+        <br>
+        <h6>Actuele gegevens</h6>
         <div class="col" id="observations">
             <img id="observation-icon">
             <div class="col grid">
@@ -38,13 +39,15 @@
 
     </div>
     <div class="container flex-column">
-        <h5>Voorspellingen</h5>
+        <br>
+        <h6>Voorspellingen</h6>
         <div class="col grid" id="forecast">
         </div>
 
     </div>
     <div class="container flex-column flex-grow overflow-hidden">
-        <h5>Vandaag</h5>
+        <br>
+        <h6>Vandaag</h6>
         <div class="col grid" id="hourly-forecast">
 
         </div>

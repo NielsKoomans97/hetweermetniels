@@ -9,6 +9,7 @@
         <div class="col-12" id="main-nav">
             <nav>
                 <a href="index.php"><i class="fa-solid fa-house-chimney"></i>Thuispagina</a>
+                <a href="warnings.php"><i class="fa-solid fa-warning"></i>Waarschuwingen</a>
                 <a href="models.php"><i class="fa-solid fa-chart-area"></i>Weerkaarten</a>
                 <a href="settings.php"><i class="fa-solid fa-user-gear"></i>Instellingen</a>
             </nav>

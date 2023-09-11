@@ -6,11 +6,11 @@ function ClearAll(element) {
     }
 }
 
-function SetForecastDayDisplayNone(){
+function SetForecastDayDisplayNone() {
     const forecast_days = document.querySelectorAll('.forecast-day');
 
     forecast_days.forEach((day) => {
-        day.setAttribute('style','display:none;');
+        day.setAttribute('style', 'display:none;');
     });
 }
 
@@ -47,7 +47,7 @@ function GetForecast(locationId) {
                 CreateIconElement(forecast_day, day);
                 CreateDateElement(forecast_day, day);
                 CreateTempElement(forecast_day, day);
-                CreateMiscElement(forecast_day,day);
+                CreateMiscElement(forecast_day, day);
 
                 forecast_host.appendChild(forecast_day);
             }
@@ -74,8 +74,8 @@ function GetForecast(locationId) {
 
 function GetAnnouncements() {
     const announcements = document.getElementById('announcements');
-    const warnings_today = document.getElementById('warnings-today');
     const warning_title = document.getElementById('warning-title');
+    const warning_locations = document.getElementById('warning-locations');
 
     fetch('https://data.buienradar.nl/1.0/announcements/apps')
         .then((response) => (response.json()))
@@ -87,7 +87,22 @@ function GetAnnouncements() {
             else {
                 announcements.setAttribute('data-color', data['warnings']['color']);
                 warning_title.innerText = data['warnings']['title'];
-                warnings_today.setAttribute('src', data['warnings']['daySummaries']['day1']['image']);
+
+                const locationData = data['warnings']['locations'];
+
+                let warningString = locationData[0]['name'];
+
+                if (locationData.length < 3) {
+                    warningString += ` en ${locationData[1]['name']}`;
+                }
+                else {
+
+                    for (let i = 1; i < locationData.length; i++) {
+                        warningString += `, ${locationData[i]['name']}`;
+                    }
+                }
+
+                warning_locations.innerText = `Voor ${warningString}`;
             }
         });
 }
@@ -186,9 +201,9 @@ function CreateWindElement(root, day) {
     root.appendChild(windContainer);
 }
 
-function CreateMiscElement(root, day){
+function CreateMiscElement(root, day) {
     let miscContainer = document.createElement('div');
-    miscContainer.classList.add('forecast-misc','col', 'grid');
+    miscContainer.classList.add('forecast-misc', 'col', 'grid');
 
     let windContainer = document.createElement('div');
     windContainer.className = 'forecast-wind';
@@ -238,7 +253,7 @@ function CreateHumidityElement(root, day) {
     root.append(humidityContainer);
 }
 
-function CreatePrecipElement(root, day){
+function CreatePrecipElement(root, day) {
     let precipContainer = document.createElement('div');
     precipContainer.className = 'forecast-humidity';
 
