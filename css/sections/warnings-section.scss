@@ -25,9 +25,6 @@ section#warnings {
             margin: 5px 5px;
         }
 
-        &[data-expanded="expanded"] div.announcement-alerts {
-        }
-
         &[data-expanded="collapsed"] div.announcement-alerts {
             display: none !important;
         }
