@@ -35,16 +35,18 @@ section#report{
 
             grid-template-columns: auto;
         }
-
-        i{
-            font-size: map-get($map: $typo, $key: warning-icon);
-            text-align: center;
-            padding: 2vh 10px;
-            height: 100%;
-            width: 100%;
-            background-color: map-get($map: $colors, $key: image-background);
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
+    
+        i.fa-solid{
+            &.fa-warning{
+                font-size: map-get($map: $typo, $key: warning-icon);
+                text-align: center;
+                padding: 2vh 10px;
+                height: 100%;
+                width: 100%;
+                background-color: map-get($map: $colors, $key: icon-background);
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
         }
 
         background-color: map-get($map: $colors, $key: background-color);

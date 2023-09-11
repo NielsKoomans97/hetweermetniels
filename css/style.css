@@ -747,13 +747,13 @@ section#report div#announcements a:active {
   background-color: #01264d;
   box-shadow: 0px 2px 0px 0px #92b7fc;
 }
-section#report div#announcements i {
+section#report div#announcements i.fa-solid.fa-warning {
   font-size: 32px;
   text-align: center;
   padding: 2vh 10px;
   height: 100%;
   width: 100%;
-  background-color: #fdfbef;
+  background-color: #ffffff;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
@@ -958,6 +958,79 @@ section#charts div#charts-controls {
 section#charts img#chart-image {
   width: 100%;
   object-fit: contain;
+}
+
+section#warnings {
+  grid-column: 3/span 3;
+  padding: 10px 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #e8f5ff;
+}
+section#warnings div#warnings-list {
+  row-gap: 15px;
+}
+section#warnings div.announcement {
+  grid-template-rows: auto;
+  row-gap: 10px;
+  background-color: #d8e3ef;
+  padding: 5px;
+  border-radius: 6px;
+}
+section#warnings div.announcement h4,
+section#warnings div.announcement h6 {
+  margin: 5px 5px;
+}
+section#warnings div.announcement[data-expanded=collapsed] div.announcement-alerts {
+  display: none !important;
+}
+section#warnings button.announcement-expand {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px 2px;
+  border-radius: 6px;
+  font-weight: 400;
+  transition: all 180ms ease-in-out;
+  background-color: #cfdbe9;
+  border: none;
+  outline: none;
+  grid-template-columns: auto;
+  height: 80%;
+}
+section#warnings button.announcement-expand i {
+  align-self: center;
+  justify-self: center;
+}
+section#warnings button.announcement-expand img {
+  height: 2.5vh;
+  width: auto !important;
+}
+section#warnings button.announcement-expand:hover {
+  background-color: #92b7fc;
+  color: #000000;
+}
+section#warnings button.announcement-expand:hover::before {
+  background-color: #01264d;
+  width: 100%;
+}
+section#warnings button.announcement-expand:active {
+  color: #ffffff;
+  background-color: #01264d;
+  box-shadow: 0px 2px 0px 0px #92b7fc;
+}
+section#warnings button.announcement-expand i {
+  margin: 0;
+}
+section#warnings div.announcement-title {
+  grid-template-columns: 90% 10%;
+  grid-template-rows: auto;
 }
 
 /* cyrillic */
