@@ -53,6 +53,7 @@ section#settings {
         p.location-foad {
             border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
             width: fit-content;
+            font-weight: 400;
             margin: 0;
         }
 
@@ -113,6 +114,8 @@ section#settings {
         p.location-foad {
             grid-column: 1;
             grid-row: 2;
+
+            font-weight: 400;
 
             border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
             width: fit-content;

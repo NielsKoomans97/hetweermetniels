@@ -630,6 +630,7 @@ section#settings div.saved-location {
 section#settings div.saved-location p.location-foad {
   border-bottom: #01264d 1px solid;
   width: fit-content;
+  font-weight: 400;
   margin: 0;
 }
 section#settings div.saved-location button {
@@ -675,6 +676,7 @@ section#settings div.search-result h6.location-name {
 section#settings div.search-result p.location-foad {
   grid-column: 1;
   grid-row: 2;
+  font-weight: 400;
   border-bottom: #01264d 1px solid;
   width: fit-content;
   margin: 0;

@@ -12,7 +12,6 @@ chart_slider.addEventListener('input', SlideChartSlide);
 var chart_images = [];
 
 function SlideChartSlide(){
-    console.log(chart_images[parseInt(chart_slider.value)]);
     chart_image.setAttribute('src', chart_images[parseInt(chart_slider.value)]);
 }
 
