@@ -45,8 +45,6 @@ async function Launch() {
 if (chart_frame != null){
     // var frame = frames['progtemps-embed'].document;
     var head = chart_frame.getElementsByTagName('head');
-    console.log(chart_frame.contentDocument);
-
     var css_link = document.createElement('link');
     css_link.rel = 'stylesheet';
     css_link.href = 'http://hetweermetniels.nl/css/style.css';

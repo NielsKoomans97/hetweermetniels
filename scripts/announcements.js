@@ -61,8 +61,6 @@ function Expand(element) {
         parent.setAttribute('data-expanded','expanded');
         element.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
     }
-
-    console.log(element.parentElement.parentElement);
 }
 
 function BuildLocationWarnings(root, data) {

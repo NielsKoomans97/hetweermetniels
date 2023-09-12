@@ -1,5 +1,4 @@
 const forecast_days = document.getElementsByName('forecast-count');
-console.log(forecast_days);
 
 forecast_days.forEach((element) => {
     if (HasCookie('forecast-count')){
@@ -59,7 +58,6 @@ function CreateSavedLocationItem(item, root) {
     removeLocationButton.id = 'remove-location';
     removeLocationButton.setAttribute('data-json', item);
     removeLocationButton.addEventListener('click', () => {
-        console.log('ik doe wat hahaha');
         RemoveLocation(removeLocationButton);
     });
 

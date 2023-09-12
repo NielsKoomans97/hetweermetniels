@@ -35,7 +35,7 @@ h6,
 p.location-foad,
 label,
 input[type=radio] {
-  font-size: 1.3vh;
+  font-size: 1.35vh;
 }
 
 a {
@@ -52,7 +52,7 @@ button {
 
 i.fa-solid,
 i.fas {
-  font-size: 1.2vh;
+  font-size: 1.25vh;
 }
 
 nav {
@@ -117,6 +117,10 @@ section#observations {
 }
 section#observations h5 {
   margin-bottom: 0;
+}
+section#observations div.spacer {
+  width: 2px;
+  height: 15px;
 }
 section#observations div#observations {
   display: flex;
@@ -281,7 +285,7 @@ section#observations div#forecast img.forecast-icon {
   object-fit: contain;
 }
 section#observations div#forecast h5.forecast-date {
-  font-weight: 300;
+  font-weight: 400;
   border-bottom: #01264d 2px solid;
   margin: 0 0 5px 0;
 }
@@ -329,12 +333,16 @@ section#observations div#hourly-forecast {
 }
 section#observations div#hourly-forecast div.forecast-hour {
   display: grid;
-  grid-template-columns: 15% 25% 20% 20% 20%;
+  grid-template-columns: 15% 25% 30% 30%;
   background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 4px;
   align-items: center;
   justify-items: stretch;
   min-height: 65px;
+}
+section#observations div#hourly-forecast div.forecast-misc {
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto;
 }
 section#observations div#hourly-forecast img.forecast-icon {
   height: 65px;
@@ -351,7 +359,7 @@ section#observations div#hourly-forecast h4 {
 }
 section#observations div#hourly-forecast h6.forecast-time {
   border-bottom: #01264d 2px solid;
-  font-weight: 300;
+  font-weight: 400;
   justify-self: center;
 }
 section#observations div#hourly-forecast div.forecast-wind,
@@ -702,6 +710,10 @@ section#report h3 {
 }
 section#report span#guidance-text p {
   margin: 20px 0 0 0;
+  font-weight: 400;
+}
+section#report span#guidance-text p strong {
+  font-weight: 500;
 }
 section#report div#announcements {
   margin: 0 0 10px 0;
@@ -807,7 +819,6 @@ section#radar select#radar-options {
   border: none;
   border-radius: 4px;
   padding: 5px;
-  width: 100%;
 }
 section#radar select#radar-speed {
   border: none;
@@ -817,6 +828,11 @@ section#radar select#radar-speed {
 section#radar select#radar-speed::before {
   content: "\f101";
   font-family: "FontAwesome";
+}
+section#radar select#radar-times {
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
 }
 section#radar div#radar-images {
   position: relative;
@@ -832,6 +848,9 @@ section#radar img#radar-image {
   background-repeat: no-repeat;
 }
 section#radar div#radar-container div#radar-selector {
+  display: grid;
+  grid-template-columns: 70% 10% 20%;
+  align-items: center;
   padding: 6px;
   background-color: #cfdbe9;
   border-top-left-radius: 6px;

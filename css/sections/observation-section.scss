@@ -16,6 +16,11 @@ section#observations {
         margin-bottom: 0;
     }
 
+    div.spacer{
+        width: 2px;
+        height: 15px;
+    }
+
     div#observations {
         @include widget;
         align-items: stretch;
@@ -186,7 +191,7 @@ section#observations {
         }
 
         h5.forecast-date {
-            font-weight: 300;
+            font-weight: 400;
             border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
             margin: 0 0 5px 0;
         }
@@ -243,7 +248,7 @@ section#observations {
         grid-auto-rows: max-content;
 
         div.forecast-hour {
-            @include grid(5, 0, 15% 25% 20% 20% 20%, 0);
+            @include grid(5, 0, 15% 25% 30% 30%, 0);
 
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
@@ -252,6 +257,11 @@ section#observations {
             justify-items: stretch;
 
             min-height: 65px;
+        }
+
+        div.forecast-misc{
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: auto;
         }
 
         img.forecast-icon {
@@ -271,7 +281,7 @@ section#observations {
 
         h6.forecast-time {
             border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
-            font-weight: 300;
+            font-weight: 400;
             justify-self: center;
         }
 

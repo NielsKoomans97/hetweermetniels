@@ -4,6 +4,7 @@ const radar_playpause = document.getElementById('radar-playpause');
 const radar_time = document.getElementById('radar-time');
 const radar_slider = document.getElementById('radar-slider');
 const radar_speed = document.getElementById('radar-speed');
+const radar_times = document.getElementById('radar-times');
 
 var images = [];
 var paused = false;
@@ -16,6 +17,7 @@ radar_speed.addEventListener('change', () => {
     speed = parseInt(option.value);
 });
 radar_options.addEventListener('change', RadarSelectorChanged);
+radar_times.addEventListener('change', RadarSelectorChanged);
 radar_slider.addEventListener('input', Slide);
 radar_playpause.addEventListener('click', () => {
     if (paused == true){
@@ -57,11 +59,23 @@ function EmptySlides() {
 
 async function RadarSelectorChanged() {
     var option = radar_options.selectedOptions[0];
+    var timeOption = radar_times.selectedOptions[0];
 
     var radar_version = option.getAttribute('data-version');
     var radar_type = option.getAttribute('data-type');
+    var radar_24u = option.getAttribute('data-24u');
 
-    await LoadRadar(radar_version, radar_type, 24, 0, 0, false, false, false);
+    if (timeOption.getAttribute('data-timetype') == 'history'){
+        if (parseInt(timeOption.value) > 1) {
+            await LoadRadar('v2', radar_24u, timeOption.value, 0, 0, true, false, false);
+        }
+        else{
+            await LoadRadar(radar_version, radar_type, 24, 0, 0, false, false, false);
+        }
+    }
+    else{
+        await LoadRadar(radar_version, radar_type, 0, timeOption.value, 0, false, false, false);
+    }
 }
 
 async function LoadRadar(version, type, history, forecast, startIndex, renderBackground, renderLogo, renderTime) {
@@ -122,7 +136,7 @@ function StopAnimation(){
 }
 
 async function Initialize() {
-    await LoadRadar('v3', 'RadarMapRain5mNL', 24, 0, 0, false, false, false);
+    RadarSelectorChanged();
 }
 
 Initialize();

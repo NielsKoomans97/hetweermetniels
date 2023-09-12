@@ -5,7 +5,7 @@
             <select id="stations"></select>
             <a id="add-location" href="settings.php"><i class="fa-solid fa-user-gear"></i></a>
         </div>
-        <br>
+        <div class="spacer"></div>
         <h6>Actuele gegevens</h6>
         <div class="col" id="observations">
             <img id="observation-icon">
@@ -39,14 +39,14 @@
 
     </div>
     <div class="container flex-column">
-        <br>
+        <div class="spacer"></div>
         <h6>Voorspellingen</h6>
         <div class="col grid" id="forecast">
         </div>
 
     </div>
     <div class="container flex-column flex-grow overflow-hidden">
-        <br>
+        <div class="spacer"></div>
         <h6>Vandaag</h6>
         <div class="col grid" id="hourly-forecast">
 

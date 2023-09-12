@@ -21,11 +21,11 @@ function GetForecast(locationId) {
             let day_count = 0;
 
             const forecast_host = document.getElementById('forecast');
+            ClearAll(forecast_host);
 
             if (HasCookie('forecast-count')) {
                 const forecast_count = GetCookie('forecast-count');
 
-                console.log(forecast_count);
 
                 switch (forecast_count.Value) {
                     case '3 dagen': day_count = 3; break;
@@ -64,8 +64,7 @@ function GetForecast(locationId) {
                 CreateIconElement(forecast_hour, hour);
                 CreateTimeElement(forecast_hour, hour);
                 CreateHourlyTempElement(forecast_hour, hour);
-                CreateWindElement(forecast_hour, hour);
-                CreateHumidityElement(forecast_hour, hour);
+                CreateMiscElement2(forecast_hour,hour);
 
                 hourlyForecast.appendChild(forecast_hour);
             }
@@ -229,6 +228,42 @@ function CreateMiscElement(root, day) {
     let precipitation = document.createElement('h6');
     precipitation.className = 'forecast-precipitation';
     precipitation.innerText = `${day['precipitationmm']} mm`;
+
+    precipContainer.appendChild(precipIcon);
+    precipContainer.appendChild(precipitation);
+    miscContainer.appendChild(precipContainer);
+
+    root.appendChild(miscContainer);
+}
+
+function CreateMiscElement2(root, day) {
+    let miscContainer = document.createElement('div');
+    miscContainer.classList.add('forecast-misc', 'col', 'grid');
+
+    let windContainer = document.createElement('div');
+    windContainer.className = 'forecast-wind';
+
+    let windDirection = document.createElement('i');
+    windDirection.className = 'fas fa-arrow-down icon';
+    windDirection.style = `transform: rotate(${day['winddirectiondegrees']}deg);`;
+
+    let windSpeed = document.createElement('h6');
+    windSpeed.className = 'speed';
+    windSpeed.innerText = `${day['beaufort']} bft`;
+
+    windContainer.appendChild(windDirection);
+    windContainer.appendChild(windSpeed);
+    miscContainer.appendChild(windContainer);
+
+    let precipContainer = document.createElement('div');
+    precipContainer.className = 'forecast-humidity';
+
+    let precipIcon = document.createElement('i');
+    precipIcon.className = 'fa-solid fa-droplet'
+
+    let precipitation = document.createElement('h6');
+    precipitation.className = 'forecast-precipitation';
+    precipitation.innerText = `${day['humidity']}%`;
 
     precipContainer.appendChild(precipIcon);
     precipContainer.appendChild(precipitation);
