@@ -1054,6 +1054,17 @@ section#warnings div.announcement-title {
   grid-template-rows: auto;
 }
 
+section#warning-overview {
+  grid-column: 6/span 9;
+  background-color: #e8f5ff;
+  padding: 10px 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 /* cyrillic */
 @font-face {
   font-family: "Jost";

@@ -59,12 +59,17 @@ function EmptySlides() {
 
 async function RadarSelectorChanged() {
     var option = radar_options.selectedOptions[0];
-    var timeOption = radar_times.selectedOptions[0];
 
     var radar_version = option.getAttribute('data-version');
     var radar_type = option.getAttribute('data-type');
     var radar_24u = option.getAttribute('data-24u');
+    var radar_country = option.getAttribute('data-country');
 
+    if (radar_country == "EU"){
+        radar_times.selectedIndex = 1;
+    }
+
+    var timeOption = radar_times.selectedOptions[0];
     if (timeOption.getAttribute('data-timetype') == 'history'){
         if (parseInt(timeOption.value) > 1) {
             await LoadRadar('v2', radar_24u, timeOption.value, 0, 0, true, false, false);

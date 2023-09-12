@@ -9,7 +9,7 @@
                     <option data-version="v3" data-type="RadarMapHail5mNL" data-24u="RadarMapHailNL">Hagel</option>
                 </optgroup>
                 <optgroup label="Neerslag - Europa">
-                    <option data-version="v3" data-type="RadarMapRain5mEU">Regen</option>
+                    <option data-version="v2" data-country="EU" data-type="RadarMapCloudEU" data-24u="RadarMapCloudEU">Onweer</option>
                 </optgroup>
             </select>
             <i class="fa-solid fa-clock"></i>

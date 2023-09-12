@@ -50,3 +50,11 @@ section#warnings {
         grid-template-rows: auto;
     }
 }
+
+section#warning-overview{
+    grid-column: 6 / span 9;
+
+    background-color: map-get($map: $colors, $key: background-color-2);
+
+    @include section(100%);
+}
