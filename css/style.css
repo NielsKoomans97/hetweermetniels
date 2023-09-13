@@ -840,7 +840,7 @@ section#radar div#radar-images {
   position: relative;
 }
 section#radar i.fa-solid {
-  margin-left: 25px;
+  margin-left: 55%;
 }
 section#radar img#radar-image {
   width: 100%;
