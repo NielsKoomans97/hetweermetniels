@@ -48,11 +48,14 @@ a {
 }
 
 span,
-select,
-input[type="text"],
 p,
-button {
+input[type="text"]{
     font-size: map-get($map: $typo, $key: span);
+}
+
+select,
+button {
+    font-size: map-get($map: $typo, $key: clickables);
 }
 
 i.fa-solid,

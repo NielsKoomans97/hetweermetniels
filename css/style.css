@@ -43,9 +43,12 @@ a {
 }
 
 span,
-select,
-input[type=text],
 p,
+input[type=text] {
+  font-size: 1.5vh;
+}
+
+select,
 button {
   font-size: 1.4vh;
 }
