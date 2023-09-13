@@ -66,7 +66,7 @@ async function RadarSelectorChanged() {
     var radar_country = option.getAttribute('data-country');
 
     if (radar_country == "EU"){
-        radar_times.selectedIndex = 1;
+        radar_times.selectedIndex = 2;
     }
 
     var timeOption = radar_times.selectedOptions[0];

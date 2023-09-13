@@ -131,14 +131,14 @@ section#observations {
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
 
-            justify-items: center;
+            justify-items: stretch;
         }
 
         div.forecast-misc{
             grid-template-columns: repeat(2, auto);
             grid-template-rows: auto;
 
-            column-gap: 14px;
+            justify-items: stretch;
         }
 
         div.forecast-wind {
@@ -194,6 +194,7 @@ section#observations {
             font-weight: 400;
             border-bottom: map-get($map: $colors, $key: menu-shadow) 2px solid;
             margin: 0 0 5px 0;
+            justify-self: center;
         }
 
         div.forecast-temp {
@@ -410,6 +411,6 @@ section#observations {
 
     @media (max-width: 1170px) {
         min-height: 300px;
-        // height: auto;        
+        // height: auto;
     }
 }

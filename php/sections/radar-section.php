@@ -15,9 +15,9 @@
             <i class="fa-solid fa-clock"></i>
             <select id="radar-times">
                 <optgroup label="Verleden">
+                    <option data-timetype="history" value="1">1u</option>
                     <option data-timetype="history" value="24">6u</option>
                     <option data-timetype="history" value="48">9u</option>
-                    <option data-timetype="history" value="1">1u</option>
                 </optgroup>
             </select>
         </div>

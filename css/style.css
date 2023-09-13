@@ -238,12 +238,12 @@ section#observations div#forecast div.forecast-day {
   grid-template-rows: repeat(5, auto);
   background: linear-gradient(135deg, #92b7fc, #cfdbe9);
   border-radius: 4px;
-  justify-items: center;
+  justify-items: stretch;
 }
 section#observations div#forecast div.forecast-misc {
   grid-template-columns: repeat(2, auto);
   grid-template-rows: auto;
-  column-gap: 14px;
+  justify-items: stretch;
 }
 section#observations div#forecast div.forecast-wind {
   display: flex;
@@ -288,6 +288,7 @@ section#observations div#forecast h5.forecast-date {
   font-weight: 400;
   border-bottom: #01264d 2px solid;
   margin: 0 0 5px 0;
+  justify-self: center;
 }
 section#observations div#forecast div.forecast-temp {
   display: flex;
