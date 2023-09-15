@@ -199,8 +199,9 @@ section#observations {
 
         div.forecast-temp {
             display: flex;
-            align-items: center;
+            align-content: center;
             flex-direction: column;
+            flex-wrap: wrap;
 
             margin: 5px 0;
 
