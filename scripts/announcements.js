@@ -14,6 +14,12 @@ async function GetAnnouncementList() {
         warnings_list.appendChild(location);
     });
 
+    if(locations.length < 1){
+        let no_warnings = document.createElement('h4');
+        no_warnings.innerText = 'Er zijn geen waarschuwingen. Code Groen.';
+        warnings_list.appendChild(no_warnings);
+    }
+
     GetDailySummaries(json);
 }
 
@@ -93,15 +99,12 @@ function GetDailySummaries(data){
     const summaries = data['warnings']['daySummaries'];
     const day1 = summaries['day1'];
     const day2 = summaries['day2'];
-    const day3 = summaries['day3'];
 
     const tDay1 = document.getElementById('day1');
     const tDay2 = document.getElementById('day2');
-    const tDay3 = document.getElementById('day3');
 
     tDay1.setAttribute('src',day1['image']);
     tDay2.setAttribute('src',day2['image']);
-    tDay3.setAttribute('src',day3['image']);
 }
 
 GetAnnouncementList();

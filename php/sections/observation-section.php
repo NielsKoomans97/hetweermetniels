@@ -1,5 +1,6 @@
 <section id="observations">
     <div class="container flex-column">
+        <h3><b>Actuele gegevens</b></h3>
         <h6>Locatie</h6>
         <div class="col d-flex flex-row" id="location-selector">
             <select id="stations"></select>

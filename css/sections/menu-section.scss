@@ -16,23 +16,27 @@ section#menu {
 
     nav a {
         @include menu-button(5px, 5px, 4px);
+
+        font-weight: 500;
     }
 
     div#secondary-nav {
-        &[data-collapsed="expanded"]{
-            display: flex;
+        overflow: auto;
+
+        &[data-collapsed="expanded"] {
+            height: max-content;
         }
 
-        &[data-collapsed="collapsed"]{
-            display: none;
+        &[data-collapsed="collapsed"] {
+            height: 0;
         }
 
-        nav#nav-items{
+        nav#nav-items {
             display: grid;
         }
     }
 
-    button#secondary-nav-expand{
+    button#secondary-nav-expand {
         @include menu-button(10px 20px, 0, 6px);
 
         background-color: map-get($map: $colors, $key: background-color);

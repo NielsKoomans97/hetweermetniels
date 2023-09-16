@@ -32,7 +32,7 @@ h4 {
     font-size: map-get($map: $typo, $key: h4);
 }
 
-h5 {
+h5, h6.location-name {
     font-size: map-get($map: $typo, $key: h5);
 }
 
@@ -56,6 +56,7 @@ input[type="text"]{
 select,
 button {
     font-size: map-get($map: $typo, $key: clickables);
+    font-weight: 400;
 }
 
 i.fa-solid,

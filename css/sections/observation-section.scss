@@ -21,6 +21,12 @@ section#observations {
         height: 15px;
     }
 
+
+    h2, h3{
+        border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
+        margin-bottom: 25px;
+    }
+
     div#observations {
         @include widget;
         align-items: stretch;

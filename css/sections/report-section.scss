@@ -15,6 +15,12 @@ section#report{
         margin-bottom: 15px;
     }
 
+
+    h2, h3{
+        border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
+        margin-bottom: 25px;
+    }
+
     span#guidance-text p{
         margin: 20px 0 0 0;
         font-weight: 400;
@@ -40,7 +46,7 @@ section#report{
 
             grid-template-columns: auto;
         }
-    
+
         i.fa-solid{
             &.fa-warning{
                 font-size: map-get($map: $typo, $key: warning-icon);

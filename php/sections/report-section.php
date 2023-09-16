@@ -11,7 +11,7 @@
         <img id="warnings-today">
     </div>
     <div class="container d-flex flex-column flex-grow">
-        <h3>Weerbericht</h3>
+        <h3><b>Weerbericht</b></h3>
         <span id="guidance-text"></span>
     </div>
 </section>

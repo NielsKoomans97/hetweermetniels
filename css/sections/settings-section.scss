@@ -12,7 +12,11 @@ section#settings {
     background-color: map-get($map: $colors, $key: background-color-2);
 
     div.container {
-        padding: 20px;
+        padding-bottom:20px;
+    }
+
+    label{
+        font-weight: 400;
     }
 
     button {
@@ -36,7 +40,8 @@ section#settings {
         }
     }
 
-    h5.title {
+
+    h2, h3{
         border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
     }
 
@@ -53,8 +58,13 @@ section#settings {
         p.location-foad {
             border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
             width: fit-content;
-            font-weight: 400;
+            font-weight: 600 !important;
             margin: 0;
+        }
+
+        h6.location-name{
+            font-weight: 400;
+
         }
 
         button {
