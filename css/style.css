@@ -744,6 +744,7 @@ section#report span#guidance-text p strong {
 section#report div#announcements {
   margin: 0 0 10px 0;
   height: auto;
+  max-height: 75px;
   grid-template-columns: 60px auto 120px;
   justify-items: self-start;
   background-color: #cfdbe9;
@@ -788,7 +789,7 @@ section#report div#announcements a:active {
 section#report div#announcements i.fa-solid.fa-warning {
   font-size: 32px;
   text-align: center;
-  padding: 2vh 10px;
+  padding: 2.2vh 10px;
   height: 100%;
   width: 100%;
   background-color: #ffffff;

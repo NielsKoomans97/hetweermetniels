@@ -64,7 +64,7 @@ function GetForecast(locationId) {
                 CreateIconElement(forecast_hour, hour);
                 CreateTimeElement(forecast_hour, hour);
                 CreateHourlyTempElement(forecast_hour, hour);
-                CreateMiscElement2(forecast_hour,hour);
+                CreateMiscElement2(forecast_hour, hour);
 
                 hourlyForecast.appendChild(forecast_hour);
             }
@@ -79,15 +79,36 @@ function GetAnnouncements() {
     fetch('https://data.buienradar.nl/1.0/announcements/apps')
         .then((response) => (response.json()))
         .then((data) => {
+            const locationData = data['warnings']['locations'];
+
             if (data['warnings']['color'] == 'GREEN') {
-                announcements.setAttribute('style', 'display:none !important');
-                warnings_today.setAttribute('style', 'display:none;');
+
+                if (locationData.length > 0) {
+                    warning_title.innerText = `${locationData.length} waarschuwing(en)`;
+
+                    let warningString = locationData[0]['name'];
+
+                    if (locationData.length > 1) {
+                        if (locationData.length < 3) {
+                            warningString += ` en ${locationData[1]['name']}`;
+                        }
+                        else {
+
+                            for (let i = 1; i < locationData.length; i++) {
+                                warningString += `, ${locationData[i]['name']}`;
+                            }
+                        }
+                    }
+
+                    warning_locations.innerText = `Voor ${warningString}`;
+                }
+                else {
+                    announcements.setAttribute('style', 'display:none !important');
+                }
             }
             else {
                 announcements.setAttribute('data-color', data['warnings']['color']);
                 warning_title.innerText = data['warnings']['title'];
-
-                const locationData = data['warnings']['locations'];
 
                 let warningString = locationData[0]['name'];
 
