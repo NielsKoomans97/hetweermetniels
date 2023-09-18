@@ -839,7 +839,7 @@ section#radar select#radar-speed {
   border-radius: 4px;
   padding: 5px;
 }
-section#radar select#radar-speed::before {
+section#radar select#radar-speed::after {
   content: "\f101";
   font-family: "FontAwesome";
 }
@@ -852,7 +852,7 @@ section#radar div#radar-images {
   position: relative;
 }
 section#radar i.fa-solid {
-  margin-left: 55%;
+  margin-left: 50%;
 }
 section#radar img#radar-image {
   width: 100%;

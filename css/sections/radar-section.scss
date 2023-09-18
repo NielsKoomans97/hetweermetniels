@@ -22,7 +22,7 @@ section#radar {
         border-radius: 4px;
         padding: 5px;
 
-        &::before {
+        &::after {
             content: "\f101";
             font-family: 'FontAwesome';
         }
@@ -39,7 +39,7 @@ section#radar {
     }
 
     i.fa-solid {
-        margin-left: 55%
+        margin-left: 50%
     }
 
     img#radar-image {
