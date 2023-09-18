@@ -20,11 +20,11 @@ radar_options.addEventListener('change', RadarSelectorChanged);
 radar_times.addEventListener('change', RadarSelectorChanged);
 radar_slider.addEventListener('input', Slide);
 radar_playpause.addEventListener('click', () => {
-    if (paused == true){
+    if (paused == true) {
         paused = false;
         PlayAnimation();
     }
-    else{
+    else {
         paused = true;
         StopAnimation();
     }
@@ -64,21 +64,29 @@ async function RadarSelectorChanged() {
     var radar_type = option.getAttribute('data-type');
     var radar_24u = option.getAttribute('data-24u');
     var radar_country = option.getAttribute('data-country');
+    var radar_chart = option.getAttribute('data-chart');
 
-    if (radar_country == "EU"){
+    if (radar_country == "EU") {
         radar_times.selectedIndex = 2;
     }
 
+    if (radar_chart == 'true'){
+        radar_image.setAttribute('style', 'background:none');
+    }
+    else{
+        radar_image.setAttribute('style','');
+    }
+    
     var timeOption = radar_times.selectedOptions[0];
-    if (timeOption.getAttribute('data-timetype') == 'history'){
+    if (timeOption.getAttribute('data-timetype') == 'history') {
         if (parseInt(timeOption.value) > 1) {
             await LoadRadar('v2', radar_24u, timeOption.value, 0, 0, true, false, false);
         }
-        else{
+        else {
             await LoadRadar(radar_version, radar_type, 24, 0, 0, false, false, false);
         }
     }
-    else{
+    else {
         await LoadRadar(radar_version, radar_type, 0, timeOption.value, 0, false, false, false);
     }
 }
@@ -103,7 +111,7 @@ async function LoadRadar(version, type, history, forecast, startIndex, renderBac
         images.push(slide);
     });
 
-    radar_slider.setAttribute('max', times.length -1);
+    radar_slider.setAttribute('max', times.length - 1);
     radar_slider.value = 0;
 
     Slide();
@@ -125,16 +133,15 @@ function PlayAnimation() {
 
     animate = setTimeout(PlayAnimation, speed);
 
-    if (index == parseInt(radar_slider.getAttribute('max'))){
+    if (index == parseInt(radar_slider.getAttribute('max'))) {
         index = 0;
     }
-    else
-    {
+    else {
         index++;
     }
 }
 
-function StopAnimation(){
+function StopAnimation() {
     radar_playpause.innerHTML = '<i class="fa-solid fa-play"></i>';
 
     clearTimeout(animate);

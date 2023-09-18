@@ -55,18 +55,30 @@ section#warnings {
         border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
         margin-bottom: 25px;
     }
+
+    @media (max-width: 1170px) {
+        height: auto;
+    }
 }
 
 section#warning-overview{
+    flex-wrap: nowrap;
     grid-column: 6 / span 9;
 
     background-color: map-get($map: $colors, $key: background-color-2);
 
     @include section(100%);
 
-
     h3{
         border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
         margin-bottom: 25px;
+    }
+
+    @media (max-width: 1170px) {
+        div#overview{
+            flex-direction: column !important;
+        }
+
+        height: auto;
     }
 }

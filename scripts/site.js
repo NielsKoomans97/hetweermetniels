@@ -42,17 +42,6 @@ async function Launch() {
     }
 }
 
-if (chart_frame != null){
-    // var frame = frames['progtemps-embed'].document;
-    var head = chart_frame.getElementsByTagName('head');
-    var css_link = document.createElement('link');
-    css_link.rel = 'stylesheet';
-    css_link.href = 'http://hetweermetniels.nl/css/style.css';
-    css_link.type = 'text/css';
-
-    head.appendChild(css_link);
-}
-
 if (stations != null) {
     stations.addEventListener('change', () => {
         LoadData();

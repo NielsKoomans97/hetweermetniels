@@ -8,6 +8,9 @@
                     <option data-version="v3" data-type="RadarMapLightning5mNL" data-24u="RadarMapLightningNL">Onweer</option>
                     <option data-version="v3" data-type="RadarMapHail5mNL" data-24u="RadarMapHailNL">Hagel</option>
                 </optgroup>
+                <optgroup label="Weerkaarten - BeNeLux">
+                    <option data-version="v3" data-chart="true" data-type="WeatherMapActualTemperature10mNL" data-24u="WeatherMapTemperatureActualNL">Temperatuur</option>
+                </optgroup>
                 <optgroup label="Neerslag - Europa">
                     <option data-version="v2" data-country="EU" data-type="RadarMapCloudEU" data-24u="RadarMapCloudEU">Onweer</option>
                 </optgroup>
@@ -36,6 +39,17 @@
                 <option value="500">5x</option>
                 <option value="1000">1x</option>
             </select>
+        </div>
+    </div>
+    <div class="container flex-column" id="lightningmaps">
+        <div class="col grid" id="lightningmaps-titel">
+            <h5>Live bliksemontladingen</h5>
+        </div>
+        <div class="col">
+            <iframe src="https://map.blitzortung.org/#1.32/0/8"></iframe>
+        </div>
+        <div class="col grid" id="lightningmaps-bottom">
+
         </div>
     </div>
 </section>

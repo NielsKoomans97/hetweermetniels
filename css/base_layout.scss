@@ -26,6 +26,10 @@ h2 {
 
 h3 {
     font-size: map-get($map: $typo, $key: h3);
+
+    b{
+        font-weight: 500;
+    }
 }
 
 h4 {

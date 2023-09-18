@@ -22,6 +22,9 @@ h2 {
 h3 {
   font-size: 2vh;
 }
+h3 b {
+  font-weight: 500;
+}
 
 h4 {
   font-size: 1.9vh;
@@ -922,6 +925,31 @@ section#radar div#radar-container button#radar-playpause:active {
 section#radar div#radar-container button#radar-playpause i {
   margin: 0;
 }
+section#radar div#lightningmaps {
+  margin: 10px 0;
+}
+section#radar div#lightningmaps iframe {
+  width: 100%;
+  min-height: 300px;
+}
+section#radar div#lightningmaps-titel {
+  padding: 15px 10px;
+  background-color: #cfdbe9;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+section#radar div#lightningmaps-titel h5 {
+  margin: 0;
+}
+section#radar div#lightningmaps-bottom {
+  padding: 6px;
+  min-height: 40px;
+  background-color: #cfdbe9;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
 section#radar img#warnings-today {
   object-fit: contain;
   width: 100%;
@@ -1066,8 +1094,14 @@ section#warnings h2, section#warnings h3 {
   border-bottom: #01264d 1px solid;
   margin-bottom: 25px;
 }
+@media (max-width: 1170px) {
+  section#warnings {
+    height: auto;
+  }
+}
 
 section#warning-overview {
+  flex-wrap: nowrap;
   grid-column: 6/span 9;
   background-color: #e8f5ff;
   padding: 10px 0;
@@ -1080,6 +1114,14 @@ section#warning-overview {
 section#warning-overview h3 {
   border-bottom: #01264d 1px solid;
   margin-bottom: 25px;
+}
+@media (max-width: 1170px) {
+  section#warning-overview {
+    height: auto;
+  }
+  section#warning-overview div#overview {
+    flex-direction: column !important;
+  }
 }
 
 /* cyrillic */
