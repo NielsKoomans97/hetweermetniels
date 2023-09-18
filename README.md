@@ -4,7 +4,7 @@
 Na geexperimenteerd te hebben met verschillende layouts, en gestart te zijn als stagaire bij Lyfter, heb ik voor mezelf de doelstelling gemaakt om deze site volledig functioneel te maken.
 
 Voor nu is de voorpagina bijna af, maar nog wel onder constructie. Hierna gaat de instellingenpagina nog aangevuld worden, en vervolgens ook de pagina waar je alle weerkaarten (huidig en toekomst) kan bekijken.
-De data is volledig afkomstig van Buienradar. Deze heeft een API die niet afgesloten is voor het publiek, maar waarvan ook niet helemaal duidelijk is of dat deze vrij door anderen gebruikt mag worden. Dit staat niet duidelijk aangegeven op hun site, en enige helderheid hierin zou wel een uitkomst bieden. Totdat Buienradar zelf aangeeft dat ik geen gebruik mag maken van hun data, blijft dit de hoofdbron.
+De data, los van wat er getoond wordt op de __*Weerkaarten*__ pagina is volledig afkomstig van Buienradar. Deze heeft een API die niet afgesloten is voor het publiek, maar waarvan ook niet helemaal duidelijk is of dat deze vrij door anderen gebruikt mag worden. Dit staat niet duidelijk aangegeven op hun site, en enige helderheid hierin zou wel een uitkomst bieden. Totdat Buienradar zelf aangeeft dat ik geen gebruik mag maken van hun data, blijft dit de hoofdbron.
 
 ## Instructies
 - Kloon de volledige repository in je 'www' map van Laragon, of in de map waar je 'valet park' hebt gebruikt. Zowel Valet als Laragon maken hiervoor een testdomein voor je aan waarop je de lokaal gezette site kan bezoeken. Dit betreft de naam van de map waar je alle bestanden hebt uitgepakt + het '.test' domein.
