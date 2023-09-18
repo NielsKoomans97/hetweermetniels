@@ -44,10 +44,15 @@ function GetForecast(locationId) {
                 let forecast_day = document.createElement('div');
                 forecast_day.className = 'forecast-day grid';
 
+                let data_container = document.createElement('div');
+                data_container.classList.add('col', 'grid', 'forecast-data');
+
                 CreateIconElement(forecast_day, day);
-                CreateDateElement(forecast_day, day);
-                CreateTempElement(forecast_day, day);
-                CreateMiscElement(forecast_day, day);
+                CreateDateElement(data_container, day);
+                CreateTempElement(data_container, day);
+                CreateMiscElement(data_container, day);
+
+                forecast_day.appendChild(data_container);
 
                 forecast_host.appendChild(forecast_day);
             }
@@ -61,11 +66,16 @@ function GetForecast(locationId) {
                 let forecast_hour = document.createElement('div');
                 forecast_hour.className = 'forecast-hour';
 
-                CreateIconElement(forecast_hour, hour);
-                CreateTimeElement(forecast_hour, hour);
-                CreateHourlyTempElement(forecast_hour, hour);
-                CreateMiscElement2(forecast_hour, hour);
+                let data_container = document.createElement('div');
+                data_container.classList.add('col', 'grid', 'forecast-data');
 
+                CreateIconElement(forecast_hour, hour);
+                CreateTimeElement(data_container, hour);
+                CreateHourlyTempElement(data_container, hour);
+                CreateMiscElement2(data_container, hour);
+
+                forecast_hour.appendChild(data_container);
+                
                 hourlyForecast.appendChild(forecast_hour);
             }
         });

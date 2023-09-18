@@ -21,7 +21,7 @@ $colors: (
 
 $typo:(
     logo: 32px,
-    warning-icon: 32px,
+    warning-icon: calc(100vh * 0.0230),
     warning-title: 20px,
     h1: calc(100vh * 0.025),
     h2: calc(100vh * 0.030),
@@ -32,5 +32,5 @@ $typo:(
     a: calc(100vh * 0.0145),
     span: calc(100vh * 0.015),
     clickables: calc(100vh * 0.014),
-    fontawesome: calc(100vh * 0.0128),
+    fontawesome: calc(100vh * 0.0120),
 );

@@ -16,13 +16,14 @@ section#observations {
         margin-bottom: 0;
     }
 
-    div.spacer{
+    div.spacer {
         width: 2px;
         height: 15px;
     }
 
 
-    h2, h3{
+    h2,
+    h3 {
         border-bottom: map-get($map: $colors, $key: menu-shadow) 1px solid;
         margin-bottom: 25px;
     }
@@ -111,20 +112,18 @@ section#observations {
 
         background: none;
 
-        &[data-count="3"]{
+        &[data-count="3"] {
             grid-template-columns: repeat(3, calc(95% / 3));
             overflow: hidden;
         }
 
-        &[data-count="7"]{
-            grid-template-columns: repeat(7, 150px);
+        &[data-count="7"] {
+            grid-template-columns: repeat(7, auto);
         }
 
-        &[data-count="14"]{
-            grid-template-columns: repeat(13, 150px);
+        &[data-count="14"] {
+            grid-template-columns: repeat(13, auto);
         }
-
-        grid-template-rows: 1;
 
         padding: 0;
         padding-bottom: 5px;
@@ -132,15 +131,22 @@ section#observations {
         column-gap: 10px;
 
         div.forecast-day {
-            @include grid(0, 5, auto, 1);
+            @include grid(0, 2, auto, 1);
 
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
 
             justify-items: stretch;
+            height: 100%;
+            width: 13vh;
         }
 
-        div.forecast-misc{
+        div.forecast-data {
+            grid-template-columns: auto;
+            grid-template-rows: repeat(4, auto);
+        }
+
+        div.forecast-misc {
             grid-template-columns: repeat(2, auto);
             grid-template-rows: auto;
 
@@ -165,7 +171,7 @@ section#observations {
             margin: 10px 0;
         }
 
-        div.forecast-humidity{
+        div.forecast-humidity {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -245,39 +251,58 @@ section#observations {
 
         background: none;
 
-        overflow-y: auto;
-
-        margin-bottom: 20px;
+        overflow: auto;
+        grid-auto-flow: column;
 
         height: 100%;
         padding: 0;
 
-        grid-row-gap: 8px;
-        grid-auto-rows: max-content;
+        padding: 0;
+        padding-bottom: 5px;
+
+        column-gap: 10px;
 
         div.forecast-hour {
-            @include grid(5, 0, 15% 25% 30% 30%, 0);
+            @include grid(0, 2, auto, 1);
 
             background: linear-gradient(135deg, map-get($colors, background-widget), map-get($colors, background-color));
             border-radius: 4px;
 
-            align-items: center;
             justify-items: stretch;
-
-            min-height: 65px;
+            height: 100%;
+            width: 13vh;
+        }
+        
+        div.forecast-data {
+            grid-template-columns: auto;
+            grid-template-rows: repeat(4, auto);
         }
 
-        div.forecast-misc{
+        div.forecast-misc {
             grid-template-columns: repeat(2, auto);
             grid-template-rows: auto;
         }
 
+        div.forecast-wind, div.forecast-humidity{
+            margin: 10px 0;
+        }
+
+        div.forecast-temp{
+            display: flex;
+            justify-content: center;
+
+            margin: 10px 0;
+        }
+
         img.forecast-icon {
             height: 65px;
+            width: 100%;
+
             background-color: map-get($map: $colors, $key: icon-background);
             border-top-left-radius: 4px;
-            border-bottom-left-radius: 4px;
+            border-top-right-radius: 4px;
             padding: 2px;
+            margin-bottom: 10px;
             align-self: flex-start;
             object-fit: contain;
         }
@@ -306,9 +331,6 @@ section#observations {
     }
 
     @media(max-width:2250px) {
-
-
-
         br {
             max-height: 10px;
         }
@@ -322,77 +344,13 @@ section#observations {
 
         div#forecast {
             padding: 0;
-
-            grid-auto-flow: row;
-            overflow-y: scroll;
-            flex-wrap: wrap;
-            max-height: 300px;
-
-            &[data-count="3"]{
-                grid-template-rows: repeat(3, auto);
-            }
-
-            &[data-count="7"]{
-                grid-template-rows: repeat(7, auto);
-            }
-
-            &[data-count="14"]{
-                grid-template-rows: repeat(13, auto);
-            }
-
-            grid-template-columns: auto !important;
-
-            grid-row-gap: 8px;
-
-            div.forecast-day {
-                @include grid(4, 0, 15% 30% 25% 30%, 0);
-
-                align-items: center;
-                justify-content: space-between;
-                margin: 0;
-                padding-right: 10px;
-            }
-
-            img.forecast-icon {
-                border-radius: 0;
-                border-top-left-radius: 4px;
-                border-bottom-left-radius: 4px;
-
-                // align-self: flex-end;
-                object-fit: contain;
-
-                height: auto;
-                padding: 2px;
-                margin: 0;
-            }
-
-            div.forecast-humidity{
-                margin: 0;
-            }
-
-            div.forecast-temp {
-                justify-content: center;
-                margin: 0;
-            }
-
-            div.forecast-wind{
-                margin: 0;
-            }
-        }
-
-        div#hourly-forecast{
-            div.forecast-hour{
-                min-height: auto;
-            }
-
-            img.forecast-icon{
-                height: auto !important;
-            }
         }
     }
 
     @media(max-width:1800px) {
         grid-column: 3 / span 4;
+
+        height: auto;
 
         div#forecast {
             div#forecast-temp {

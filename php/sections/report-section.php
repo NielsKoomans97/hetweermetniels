@@ -1,5 +1,5 @@
 <section id="report">
-    <div class="container d-flex flex-column flex-grow">
+    <div class="container grid">
         <h3><b>Weerbericht</b></h3>
         <div class="col grid" id="announcements">
             <i class="fa-solid fa-warning"></i>

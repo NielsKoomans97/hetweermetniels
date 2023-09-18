@@ -46,7 +46,7 @@
         </div>
 
     </div>
-    <div class="container flex-column flex-grow overflow-hidden">
+    <div class="container flex-column">
         <div class="spacer"></div>
         <h6>Vandaag</h6>
         <div class="col grid" id="hourly-forecast">
