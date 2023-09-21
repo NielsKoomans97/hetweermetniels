@@ -1,0 +1,142 @@
+@use '../../partials/grid' as *;
+@use '../../partials/nav-button' as *;
+
+@use '../../config/variables' as *;
+
+@media(max-width: 1175px) {
+    body {
+        background-color: map-get($map: $colors, $key: background-color-3);
+    }
+
+    div#nav-bar {
+        @include grid($columns: 20% auto 15%);
+
+        padding: 10px;
+
+        img#logo {
+            height: 100%;
+        }
+
+        nav#nav-menu {
+            background-color: map-get($map: $colors, $key: background-color-3);
+            border-radius: 6px;
+
+            grid-column: 1 / span 3;
+            grid-row: 2;
+
+            height: calc(100vh - 10vh);
+            width: 95vw;
+
+            flex-direction: column;
+
+            a {
+                @include nav-button;
+
+                grid-template-columns: 15% 85%;
+
+                margin-bottom: 5px;
+                padding: 10px 5px;
+
+                text-decoration: none;
+                color: map-get($map: $colors, $key: text-normal);
+
+                i {
+                    align-self: center;
+                    justify-self: center;
+
+                    font-size: map-get($map: $typo, $key: menu-button-icon);
+                }
+
+                span {
+                    align-self: center;
+                }
+            }
+        }
+
+        button#nav-expand {
+            @include nav-button;
+
+            grid-column: 3;
+            grid-row: 1;
+
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            i {
+                align-self: center;
+                justify-self: center;
+
+                font-size: map-get($map: $typo, $key: nav-button-icon);
+            }
+        }
+
+        &[data-expanded="collapsed"] {
+            grid-template-rows: 5vh;
+
+            button#nav-expand {
+                i {
+                    transition: all 150ms ease-in-out;
+                    transform: rotate(0deg);
+                }
+            }
+
+            nav#nav-menu {
+                height: 0;
+                display: none;
+            }
+        }
+
+        &[data-expanded="expanded"] {
+            position: relative;
+            grid-template-rows: 5vh auto;
+
+            button#nav-expand {
+                i {
+                    transition: all 150ms ease-in-out;
+                    transform: rotate(180deg);
+                }
+            }
+
+            nav#nav-menu {
+                position: absolute;
+                display: flex;
+            }
+        }
+    }
+
+    section#search-bar {
+        padding: 20px 0;
+
+        div.text-input {
+            @include grid($columns: auto 15%, $rows: auto);
+
+            border-radius: 6px;
+
+            border: map-get($map: $colors, $key: button-pressed) 1px solid;
+
+            input#search-query {
+                border: none;
+                outline: none;
+
+                padding: 5px;
+
+                border-radius: 6px;
+            }
+
+            button#search {
+                @include nav-button;
+
+                grid-template-columns: auto;
+                grid-template-rows: auto;
+
+                border-top-left-radius: 0%;
+                border-bottom-left-radius: 0%;
+
+                i {
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}

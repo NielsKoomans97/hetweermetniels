@@ -1,0 +1,30 @@
+@use '../config/variables.scss' as *;
+@use '../partials/grid' as *;
+
+@mixin nav-button {
+    @include grid($columns: 10% auto, $rows: auto);
+
+    border: none;
+    outline: none;
+
+    border-radius: 6px;
+
+    background-color: map-get($map: $colors, $key: button-normal);
+    transition: all 160ms ease-in-out;
+
+    i, span{
+        color: map-get($map: $colors, $key: text-normal);
+    }
+
+    &:hover{
+        background-color: map-get($map: $colors, $key: button-hover);
+
+        i, span{
+            color: map-get($map: $colors, $key: text-hover);
+        }
+    }
+
+    &:active{
+        background-color: map-get($map: $colors, $key: button-pressed);
+    }
+}

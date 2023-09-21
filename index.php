@@ -1,17 +1,9 @@
-<?php require 'header.php'; ?>
-
-<?php require 'php/sections/observation-section.php'; ?>
-<?php require 'php/sections/report-section.php'; ?>
-<?php require 'php/sections/radar-section.php'; ?>
-
-<script src="scripts/cookies.js" defer></script>
-<script src="scripts/locations.js" defer></script>
-<script src="scripts/observation-section.js" defer></script>
-<script src="scripts/forecast.js" defer></script>
-<script src="scripts/radar.js" defer></script>
-<script src="scripts/site.js" defer></script>
-<script src="scripts/menu.js" defer></script>
-
-</body>
-
-</html>
+<?php include 'header.php'; ?>
+<section id="search-bar">
+    <div class="container">
+        <div class="col text-input">
+            <input type="text" id="search-query" nane="search-query" placeholder="Typ hier uw zoekopdracht">
+            <button id="search" class="nav-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+</section>
