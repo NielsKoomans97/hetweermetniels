@@ -12,12 +12,12 @@
         <img id="icon">
         <div class="col" id="observations-widget">
             <h2 id="temperature"></h2>
-            <div class="col">
+            <div class="col" id="col-precip">
                 <i class="fas fa-umbrella"></i>
                 <h4 id="precipitation"></h4>
             </div>
-            <div class="col">
-                <i class="fas fa-arrow-up" id="wind-direction"></i>
+            <div class="col" id="col-wind">
+                <i class="fas fa-arrow-down" id="wind-direction"></i>
                 <h4 id="wind-speed"></h4>
             </div>
         </div>

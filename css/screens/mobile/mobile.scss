@@ -4,8 +4,32 @@
 @use '../../config/variables' as *;
 
 @media(max-width: 1175px) {
+    h1 {
+        font-size: map-get($map: $typo, $key: h1);
+    }
+
+    h2 {
+        font-size: map-get($map: $typo, $key: h2);
+    }
+
+    h3 {
+        font-size: map-get($map: $typo, $key: h3);
+    }
+
+    h4 {
+        font-size: map-get($map: $typo, $key: h4);
+    }
+
+    h5 {
+        font-size: map-get($map: $typo, $key: h5);
+    }
+
+    h6 {
+        font-size: map-get($map: $typo, $key: h6);
+    }
+
     body {
-        background-color: map-get($map: $colors, $key: background-color-3);
+        background-color: map-get($map: $colors, $key: background-color);
         height: 100vh;
     }
 
@@ -13,6 +37,7 @@
         @include grid($columns: 20% auto 15%);
 
         padding: 10px;
+        position: relative;
 
         img#logo {
             height: 100%;
@@ -25,8 +50,11 @@
             grid-column: 1 / span 3;
 
             width: 95vw;
+            top: 8vh;
+            z-index: 9999;
 
             flex-direction: column;
+            position: absolute;
 
             a {
                 @include nav-button;
@@ -86,8 +114,7 @@
         }
 
         &[data-expanded="expanded"] {
-            position: relative;
-            grid-template-rows: 5vh auto;
+            grid-template-rows: 5vh;
 
             button#nav-expand {
                 i {
@@ -97,7 +124,6 @@
             }
 
             nav#nav-menu {
-                position: absolute;
                 display: flex;
             }
         }
@@ -110,6 +136,7 @@
             @include grid($columns: auto 15%, $rows: auto);
 
             border-radius: 6px;
+            background-color: map-get($map: $colors, $key: background-color-3);
 
             border: map-get($map: $colors, $key: button-pressed) 1px solid;
 
@@ -139,29 +166,86 @@
         }
     }
 
-    section#observations{
+    section#observations {
         padding: 5px 0;
 
-        img#icon{
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
+        div.container {
+            height: 85px;
         }
 
-        div#observations-widget{
-            @include grid;
+        img#icon {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+
+            height: 100%;
+            object-fit: contain;
+
+            background-color: map-get($map: $colors, $key: background-color-3);
+        }
+
+        div#observations-widget {
+            @include grid($columns: repeat(3, 33.3%), $rows: auto);
+
+            align-items: center;
+
+            padding: 5px 15px;
 
             border-top-right-radius: 6px;
             border-bottom-right-radius: 6px;
 
             background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
+
+            h2#temperature {
+                grid-column: 1;
+
+                margin: 0;
+            }
+
+            div#col-precip {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                grid-column: 2;
+
+                i {
+                    width: fit-content;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    margin: 0;
+                }
+            }
+
+            div#col-wind {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                i {
+                    width: fit-content;
+                    margin-bottom: 10px;
+                }
+
+                h4 {
+                    margin: 0;
+                }
+
+                grid-column: 3;
+            }
         }
     }
 
-    section#more-info{
-        div#more-information{
+    section#more-info {
+        div#more-information {
             @include grid($columns: 10% 40% 40% 10%, $rows: auto);
 
             align-items: center;
+        }
+
+        h5{
+            margin: 0;
         }
     }
 }
