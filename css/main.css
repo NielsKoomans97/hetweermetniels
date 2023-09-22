@@ -1,6 +1,7 @@
 @media (max-width: 1175px) {
   body {
     background-color: #fcfeff;
+    height: 100vh;
   }
   div#nav-bar {
     display: grid;
@@ -18,7 +19,6 @@
     border-radius: 6px;
     grid-column: 1/span 3;
     grid-row: 2;
-    height: 90vh;
     width: 95vw;
     flex-direction: column;
   }
@@ -164,6 +164,23 @@
   section#search-bar div.text-input button#search i {
     align-self: center;
     justify-self: center;
+  }
+  section#observations {
+    padding: 5px 0;
+  }
+  section#observations img#icon {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  section#observations div#observations-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    column-gap: 5px;
+    row-gap: 5px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background: linear-gradient(65deg, #e8f5ff, #92b7fc);
   }
 }
 /* cyrillic */

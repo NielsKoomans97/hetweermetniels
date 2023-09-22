@@ -6,6 +6,7 @@
 @media(max-width: 1175px) {
     body {
         background-color: map-get($map: $colors, $key: background-color-3);
+        height: 100vh;
     }
 
     div#nav-bar {
@@ -24,7 +25,6 @@
             grid-column: 1 / span 3;
             grid-row: 2;
 
-            height: calc(100vh - 10vh);
             width: 95vw;
 
             flex-direction: column;
@@ -137,6 +137,24 @@
                     justify-self: center;
                 }
             }
+        }
+    }
+
+    section#observations{
+        padding: 5px 0;
+
+        img#icon{
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+
+        div#observations-widget{
+            @include grid;
+
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+
+            background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
         }
     }
 }
