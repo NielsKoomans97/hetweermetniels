@@ -157,4 +157,12 @@
             background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
         }
     }
+
+    section#more-info{
+        div#more-information{
+            @include grid($columns: 10% 40% 40% 10%, $rows: auto);
+
+            align-items: center;
+        }
+    }
 }

@@ -23,3 +23,16 @@
         </div>
     </div>
 </section>
+<section id="more-info">
+    <div class="container">
+        <div class="col" id="more-information">
+            <i class="fas fa-warning"></i>
+            <div class="col">
+                <h5 id="warning-code"></h5>
+                <h6 id="warning-description"></h6>
+            </div>
+            <h5>Meer informatie</h5>
+            <i class="fa-solid fa-square-arrow-up-right"></i>
+        </div>
+    </div>
+</section>
