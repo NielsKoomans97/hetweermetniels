@@ -18,7 +18,6 @@
     background-color: #fcfeff;
     border-radius: 6px;
     grid-column: 1/span 3;
-    grid-row: 2;
     width: 95vw;
     flex-direction: column;
   }

@@ -1,11 +1,10 @@
 export class ObservationsWidget {
     constructor(stationId) {
         this.StationId = stationId;
-        Refresh();
     }
 
     async GetObservationData(stationId) {
-        const data = await fetch(``);
+        const data = await fetch(`https://observations.buienradar.nl/1.0/actual/weatherstation/${stationId}`);
         const json = await data.json();
 
         return json;
@@ -16,8 +15,8 @@ export class ObservationsWidget {
         const temperature = document.getElementById('temperature');
         const precipitation = document.getElementById('precipitation');
         const windDirection = document.getElementById('wind-direction');
-        const windSpeed = document.getElementById('windspeed');
-        const json = this.GetObservationData(this.StationId);
+        const windSpeed = document.getElementById('wind-speed');
+        const json = await this.GetObservationData(this.StationId);
 
         icon.setAttribute('src', `https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${json['iconcode']}.png`);
         temperature.innerText = `${json['temperature']}°`;

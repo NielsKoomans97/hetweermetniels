@@ -2,4 +2,5 @@ import { MenuExpander } from "./nav-menu.js";
 import { ObservationsWidget } from "./observations.js";
 
 new MenuExpander();
-new ObservationsWidget();
+const widget = new ObservationsWidget(6340);
+await widget.Refresh();
