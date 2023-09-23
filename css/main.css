@@ -1,47 +1,65 @@
 @media (max-width: 1175px) {
   h1 {
-    font-size: 4.8vh;
+    font-size: 1.08vh;
   }
   h2 {
-    font-size: 4vh;
+    font-size: 6vh;
   }
   h3 {
     font-size: 3.2vh;
   }
-  h4 {
+  h4,
+  input {
     font-size: 2vh;
   }
-  h5 {
-    font-size: 1.4vh;
+  h5,
+  a#more-info-button {
+    font-size: 1.8vh;
   }
   h6 {
     font-size: 1vh;
   }
+  a {
+    font-size: 2.4vh;
+  }
+  i.fas,
+  i.fad,
+  i.fa-solid,
+  i-fa-sharp {
+    font-size: 2.7vh;
+  }
   body {
-    background-color: #eaeff5;
+    background-color: #e8f5ff;
     height: 100vh;
   }
   div#nav-bar {
     display: grid;
-    grid-template-columns: 20% auto 15%;
-    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 7vh 0;
     column-gap: 5px;
     row-gap: 5px;
-    padding: 10px;
     position: relative;
   }
   div#nav-bar img#logo {
     height: 100%;
+    padding: 10px;
   }
   div#nav-bar nav#nav-menu {
-    background-color: #fcfeff;
+    position: absolute;
+    background-color: #e8f5ff;
     border-radius: 6px;
     grid-column: 1/span 3;
-    width: 95vw;
+    width: 100vw;
     top: 8vh;
+    height: 100vh;
     z-index: 9999;
     flex-direction: column;
     position: absolute;
+    background-image: url("../../../assets/forgetmenots.png");
+    background-position-y: calc(88vh - 200px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: all 250ms ease-in-out;
   }
   div#nav-bar nav#nav-menu a {
     display: grid;
@@ -54,23 +72,34 @@
     border-radius: 6px;
     background-color: #e8f5ff;
     transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 0;
     grid-template-columns: 15% 85%;
     margin-bottom: 5px;
     padding: 10px 5px;
     text-decoration: none;
     color: #000000;
   }
-  div#nav-bar nav#nav-menu a i, div#nav-bar nav#nav-menu a span {
+  div#nav-bar nav#nav-menu a i, div#nav-bar nav#nav-menu a span, div#nav-bar nav#nav-menu a h1, div#nav-bar nav#nav-menu a h2, div#nav-bar nav#nav-menu a h3, div#nav-bar nav#nav-menu a h4, div#nav-bar nav#nav-menu a h5, div#nav-bar nav#nav-menu a h6 {
     color: #000000;
   }
   div#nav-bar nav#nav-menu a:hover {
     background-color: #92b7fc;
   }
-  div#nav-bar nav#nav-menu a:hover i, div#nav-bar nav#nav-menu a:hover span {
+  div#nav-bar nav#nav-menu a:hover i, div#nav-bar nav#nav-menu a:hover span, div#nav-bar nav#nav-menu a:hover h1, div#nav-bar nav#nav-menu a:hover h2, div#nav-bar nav#nav-menu a:hover h3, div#nav-bar nav#nav-menu a:hover h4, div#nav-bar nav#nav-menu a:hover h5, div#nav-bar nav#nav-menu a:hover h6 {
     color: #ffffff;
   }
   div#nav-bar nav#nav-menu a:active {
     background-color: #01264d;
+  }
+  div#nav-bar nav#nav-menu a nth:first-child {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+  }
+  div#nav-bar nav#nav-menu a nth:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
   }
   div#nav-bar nav#nav-menu a i {
     align-self: center;
@@ -91,18 +120,21 @@
     border-radius: 6px;
     background-color: #e8f5ff;
     transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
     grid-column: 3;
     grid-row: 1;
     grid-template-columns: auto;
     grid-template-rows: auto;
+    margin: 10px;
   }
-  div#nav-bar button#nav-expand i, div#nav-bar button#nav-expand span {
+  div#nav-bar button#nav-expand i, div#nav-bar button#nav-expand span, div#nav-bar button#nav-expand h1, div#nav-bar button#nav-expand h2, div#nav-bar button#nav-expand h3, div#nav-bar button#nav-expand h4, div#nav-bar button#nav-expand h5, div#nav-bar button#nav-expand h6 {
     color: #000000;
   }
   div#nav-bar button#nav-expand:hover {
     background-color: #92b7fc;
   }
-  div#nav-bar button#nav-expand:hover i, div#nav-bar button#nav-expand:hover span {
+  div#nav-bar button#nav-expand:hover i, div#nav-bar button#nav-expand:hover span, div#nav-bar button#nav-expand:hover h1, div#nav-bar button#nav-expand:hover h2, div#nav-bar button#nav-expand:hover h3, div#nav-bar button#nav-expand:hover h4, div#nav-bar button#nav-expand:hover h5, div#nav-bar button#nav-expand:hover h6 {
     color: #ffffff;
   }
   div#nav-bar button#nav-expand:active {
@@ -113,26 +145,24 @@
     justify-self: center;
     font-size: 3.8vh;
   }
-  div#nav-bar[data-expanded=collapsed] {
-    grid-template-rows: 5vh;
-  }
   div#nav-bar[data-expanded=collapsed] button#nav-expand i {
     transition: all 150ms ease-in-out;
     transform: rotate(0deg);
   }
   div#nav-bar[data-expanded=collapsed] nav#nav-menu {
     height: 0;
-    display: none;
+    visibility: hidden;
   }
-  div#nav-bar[data-expanded=expanded] {
-    grid-template-rows: 5vh;
+  div#nav-bar[data-expanded=collapsed] nav#nav-menu a {
+    display: none;
   }
   div#nav-bar[data-expanded=expanded] button#nav-expand i {
     transition: all 150ms ease-in-out;
     transform: rotate(180deg);
   }
   div#nav-bar[data-expanded=expanded] nav#nav-menu {
-    display: flex;
+    visibility: visible;
+    height: 92vh;
   }
   section#search-bar {
     padding: 20px 0;
@@ -145,12 +175,11 @@
     row-gap: 5px;
     border-radius: 6px;
     background-color: #fcfeff;
-    border: #01264d 1px solid;
   }
   section#search-bar div.text-input input#search-query {
     border: none;
     outline: none;
-    padding: 5px;
+    padding: 10px 15px;
     border-radius: 6px;
   }
   section#search-bar div.text-input button#search {
@@ -164,18 +193,21 @@
     border-radius: 6px;
     background-color: #e8f5ff;
     transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    background-color: #d0dfeb;
     grid-template-columns: auto;
     grid-template-rows: auto;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
   }
-  section#search-bar div.text-input button#search i, section#search-bar div.text-input button#search span {
+  section#search-bar div.text-input button#search i, section#search-bar div.text-input button#search span, section#search-bar div.text-input button#search h1, section#search-bar div.text-input button#search h2, section#search-bar div.text-input button#search h3, section#search-bar div.text-input button#search h4, section#search-bar div.text-input button#search h5, section#search-bar div.text-input button#search h6 {
     color: #000000;
   }
   section#search-bar div.text-input button#search:hover {
     background-color: #92b7fc;
   }
-  section#search-bar div.text-input button#search:hover i, section#search-bar div.text-input button#search:hover span {
+  section#search-bar div.text-input button#search:hover i, section#search-bar div.text-input button#search:hover span, section#search-bar div.text-input button#search:hover h1, section#search-bar div.text-input button#search:hover h2, section#search-bar div.text-input button#search:hover h3, section#search-bar div.text-input button#search:hover h4, section#search-bar div.text-input button#search:hover h5, section#search-bar div.text-input button#search:hover h6 {
     color: #ffffff;
   }
   section#search-bar div.text-input button#search:active {
@@ -189,18 +221,25 @@
     padding: 5px 0;
   }
   section#observations div.container {
-    height: 85px;
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    column-gap: 0;
+    height: auto;
   }
   section#observations img#icon {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    height: 100%;
+    width: 100%;
+    height: 12vh;
     object-fit: contain;
     background-color: #fcfeff;
   }
   section#observations div#observations-widget {
     display: grid;
-    grid-template-columns: repeat(3, 33.3%);
+    grid-template-columns: 50% 25% 25%;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
@@ -240,16 +279,104 @@
   section#observations div#observations-widget div#col-wind h4 {
     margin: 0;
   }
+  section#more-info div.container {
+    height: auto;
+  }
   section#more-info div#more-information {
     display: grid;
-    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-columns: repeat(2, 50%);
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
+    border-radius: 6px;
     align-items: center;
+    column-gap: 0;
   }
-  section#more-info h5 {
+  section#more-info h5, section#more-info h6 {
     margin: 0;
+    justify-self: flex-end;
+  }
+  section#more-info i.fa-square-arrow-up-right {
+    justify-self: center;
+  }
+  section#more-info i.fa-warning {
+    justify-self: center;
+  }
+  section#more-info a#more-info-button,
+  section#more-info a#warnings-button {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #e8f5ff;
+    transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    display: grid;
+    grid-template-columns: auto 20%;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    background-color: #d0dfeb;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    column-gap: 0;
+    padding: 10px 5px;
+  }
+  section#more-info a#more-info-button i, section#more-info a#more-info-button span, section#more-info a#more-info-button h1, section#more-info a#more-info-button h2, section#more-info a#more-info-button h3, section#more-info a#more-info-button h4, section#more-info a#more-info-button h5, section#more-info a#more-info-button h6,
+  section#more-info a#warnings-button i,
+  section#more-info a#warnings-button span,
+  section#more-info a#warnings-button h1,
+  section#more-info a#warnings-button h2,
+  section#more-info a#warnings-button h3,
+  section#more-info a#warnings-button h4,
+  section#more-info a#warnings-button h5,
+  section#more-info a#warnings-button h6 {
+    color: #000000;
+  }
+  section#more-info a#more-info-button:hover,
+  section#more-info a#warnings-button:hover {
+    background-color: #92b7fc;
+  }
+  section#more-info a#more-info-button:hover i, section#more-info a#more-info-button:hover span, section#more-info a#more-info-button:hover h1, section#more-info a#more-info-button:hover h2, section#more-info a#more-info-button:hover h3, section#more-info a#more-info-button:hover h4, section#more-info a#more-info-button:hover h5, section#more-info a#more-info-button:hover h6,
+  section#more-info a#warnings-button:hover i,
+  section#more-info a#warnings-button:hover span,
+  section#more-info a#warnings-button:hover h1,
+  section#more-info a#warnings-button:hover h2,
+  section#more-info a#warnings-button:hover h3,
+  section#more-info a#warnings-button:hover h4,
+  section#more-info a#warnings-button:hover h5,
+  section#more-info a#warnings-button:hover h6 {
+    color: #ffffff;
+  }
+  section#more-info a#more-info-button:active,
+  section#more-info a#warnings-button:active {
+    background-color: #01264d;
+  }
+  section#more-info a#more-info-button span,
+  section#more-info a#warnings-button span {
+    text-align: center;
+    width: 100%;
+  }
+  section#more-info a#more-info-button {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  section#more-info a#warnings-button {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
   }
 }
 /* cyrillic */

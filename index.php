@@ -8,7 +8,7 @@
     </div>
 </section>
 <section id="observations">
-    <div class="container d-flex flex-row">
+    <div class="container">
         <img id="icon">
         <div class="col" id="observations-widget">
             <h2 id="temperature"></h2>
@@ -26,13 +26,18 @@
 <section id="more-info">
     <div class="container">
         <div class="col" id="more-information">
-            <i class="fas fa-warning"></i>
-            <div class="col">
-                <h5 id="warning-code"></h5>
-                <h6 id="warning-description"></h6>
-            </div>
-            <h5>Meer informatie</h5>
-            <i class="fa-solid fa-square-arrow-up-right"></i>
+
+            <a href="" class="nav-button" id="warnings-button">
+                <i class="fas fa-warning"></i>
+                <div class="col">
+                    <h5 id="warning-code">Code Geel</h5>
+                    <h6 id="warning-description">Klik hier voor meer info</h6>
+                </div>
+            </a>
+            <a href="" class="nav-button" id="more-info-button">
+                <span>Voorspellingen</span>
+                <i class="fa-solid fa-square-arrow-up-right"></i>
+            </a>
         </div>
     </div>
 </section>

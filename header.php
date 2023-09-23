@@ -22,6 +22,7 @@
         <button class="nav-button" id="nav-expand"><i class="fa-solid fa-burger"></i></button>
         <nav id="nav-menu">
             <a href="" class="nav-button"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="" class="nav-button"><i class="fa-solid fa-warning"></i><span>Waarschuwingen</span></a>
             <a href="" class="nav-button"><i class="fa-solid fa-chart-line"></i><span>Weerkaarten</span></a>
             <a href="" class="nav-button"><i class="fa-regular fa-calendar-days"></i><span>Voorspellingen</span></a>
         </nav>

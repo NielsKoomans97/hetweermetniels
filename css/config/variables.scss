@@ -1,23 +1,27 @@
 $colors: (
-    background-color: #eaeff5,
+    background-color: #e8f5ff,
     background-color-2: #e8f5ff,
     background-color-3: #fcfeff,
     background-color-4: #92b7fc,
     background-color-5:#c9d8e7,
     button-hover: #92b7fc,
     button-normal: #e8f5ff,
+    button-normal-2: #d0dfeb,
     button-pressed: #01264d,
     text-normal: #000000,
     text-hover: #ffffff,
+    menu-shadow: #979797,
 );
 
 $typo: (
     nav-button-icon: calc(100vh * 0.038),
     menu-button-icon: calc(100vh * 0.024),
-    h1: calc(100vh * 0.048),
-    h2: calc(100vh * 0.040),
+    fontawesome-icon: calc(100vh * 0.027),
+    h1: calc(100vh * 0.0108),
+    h2: calc(100vh * 0.060),
     h3: calc(100vh * 0.032),
     h4: calc(100vh * 0.020),
-    h5: calc(100vh * 0.014),
+    h5: calc(100vh * 0.018),
     h6: calc(100vh * 0.010),
+    a: calc(100vh * 0.024),
 );
