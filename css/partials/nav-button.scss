@@ -15,7 +15,14 @@
     color: map-get($map: $colors, $key: text-normal);
 
     i, span, h1, h2, h3, h4, h5, h6{
+        transition: all 160ms ease-in-out;
+
         color: map-get($map: $colors, $key: text-normal);
+    }
+
+    i{
+        width: min-content;
+        justify-self: center;
     }
 
     &:hover{
@@ -24,6 +31,7 @@
         i, span, h1, h2, h3, h4, h5, h6{
             color: map-get($map: $colors, $key: text-hover);
         }
+
     }
 
     &:active{

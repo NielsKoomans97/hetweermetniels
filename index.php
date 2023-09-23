@@ -35,8 +35,8 @@
                 </div>
             </a>
             <a href="" class="nav-button" id="more-info-button">
-                <span>Voorspellingen</span>
-                <i class="fa-solid fa-square-arrow-up-right"></i>
+                <h5>Voorspellingen</h5>
+                <i class="fa-solid fa-calendar-days"></i>
             </a>
         </div>
     </div>

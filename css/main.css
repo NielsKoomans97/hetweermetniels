@@ -10,14 +10,14 @@
   }
   h4,
   input {
-    font-size: 2vh;
+    font-size: 2.2vh;
   }
   h5,
   a#more-info-button {
-    font-size: 1.8vh;
+    font-size: 2vh;
   }
   h6 {
-    font-size: 1vh;
+    font-size: 1.4vh;
   }
   a {
     font-size: 2.4vh;
@@ -56,7 +56,7 @@
     flex-direction: column;
     position: absolute;
     background-image: url("../../../assets/forgetmenots.png");
-    background-position-y: calc(88vh - 200px);
+    background-position-y: calc(92vh - 400px);
     background-repeat: no-repeat;
     background-size: contain;
     transition: all 250ms ease-in-out;
@@ -82,7 +82,12 @@
     color: #000000;
   }
   div#nav-bar nav#nav-menu a i, div#nav-bar nav#nav-menu a span, div#nav-bar nav#nav-menu a h1, div#nav-bar nav#nav-menu a h2, div#nav-bar nav#nav-menu a h3, div#nav-bar nav#nav-menu a h4, div#nav-bar nav#nav-menu a h5, div#nav-bar nav#nav-menu a h6 {
+    transition: all 160ms ease-in-out;
     color: #000000;
+  }
+  div#nav-bar nav#nav-menu a i {
+    width: min-content;
+    justify-self: center;
   }
   div#nav-bar nav#nav-menu a:hover {
     background-color: #92b7fc;
@@ -129,7 +134,12 @@
     margin: 10px;
   }
   div#nav-bar button#nav-expand i, div#nav-bar button#nav-expand span, div#nav-bar button#nav-expand h1, div#nav-bar button#nav-expand h2, div#nav-bar button#nav-expand h3, div#nav-bar button#nav-expand h4, div#nav-bar button#nav-expand h5, div#nav-bar button#nav-expand h6 {
+    transition: all 160ms ease-in-out;
     color: #000000;
+  }
+  div#nav-bar button#nav-expand i {
+    width: min-content;
+    justify-self: center;
   }
   div#nav-bar button#nav-expand:hover {
     background-color: #92b7fc;
@@ -165,7 +175,10 @@
     height: 92vh;
   }
   section#search-bar {
-    padding: 20px 0;
+    padding: 3vh 0;
+  }
+  section#search-bar div.container {
+    height: auto;
   }
   section#search-bar div.text-input {
     display: grid;
@@ -179,7 +192,7 @@
   section#search-bar div.text-input input#search-query {
     border: none;
     outline: none;
-    padding: 10px 15px;
+    padding: 1.3vh 2vh;
     border-radius: 6px;
   }
   section#search-bar div.text-input button#search {
@@ -202,7 +215,12 @@
     border-bottom-left-radius: 0%;
   }
   section#search-bar div.text-input button#search i, section#search-bar div.text-input button#search span, section#search-bar div.text-input button#search h1, section#search-bar div.text-input button#search h2, section#search-bar div.text-input button#search h3, section#search-bar div.text-input button#search h4, section#search-bar div.text-input button#search h5, section#search-bar div.text-input button#search h6 {
+    transition: all 160ms ease-in-out;
     color: #000000;
+  }
+  section#search-bar div.text-input button#search i {
+    width: min-content;
+    justify-self: center;
   }
   section#search-bar div.text-input button#search:hover {
     background-color: #92b7fc;
@@ -325,10 +343,10 @@
     align-items: center;
     justify-self: center;
     width: 100%;
-    height: 100%;
     border-radius: 0;
-    column-gap: 0;
-    padding: 10px 5px;
+    column-gap: 10px;
+    height: -webkit-fill-available;
+    padding: 1.6vh 1vh;
   }
   section#more-info a#more-info-button i, section#more-info a#more-info-button span, section#more-info a#more-info-button h1, section#more-info a#more-info-button h2, section#more-info a#more-info-button h3, section#more-info a#more-info-button h4, section#more-info a#more-info-button h5, section#more-info a#more-info-button h6,
   section#more-info a#warnings-button i,
@@ -339,7 +357,13 @@
   section#more-info a#warnings-button h4,
   section#more-info a#warnings-button h5,
   section#more-info a#warnings-button h6 {
+    transition: all 160ms ease-in-out;
     color: #000000;
+  }
+  section#more-info a#more-info-button i,
+  section#more-info a#warnings-button i {
+    width: min-content;
+    justify-self: center;
   }
   section#more-info a#more-info-button:hover,
   section#more-info a#warnings-button:hover {
@@ -362,7 +386,7 @@
   }
   section#more-info a#more-info-button span,
   section#more-info a#warnings-button span {
-    text-align: center;
+    text-align: end;
     width: 100%;
   }
   section#more-info a#more-info-button {
