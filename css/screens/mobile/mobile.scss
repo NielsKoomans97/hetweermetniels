@@ -389,6 +389,17 @@
                 min-width: 40px;
             }
 
+            img#radar-image{
+                width: 100%;
+                object-fit: none;
+
+                &[data-version="3"]{
+                    background: url('https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=Full');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+
             div.col#radar-config {
                 @include grid($columns: 65% 15% 20%, $rows: auto);
 

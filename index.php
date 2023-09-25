@@ -46,20 +46,21 @@
             <div class="col" id="radar-config">
                 <select id="radar-type">
                     <optgroup label="Benelux">
-                        <option data-type="RadarMapRain5mNL" label="Regen"></option>
+                        <option data-version="3" data-forecast-type="RadarMapRain15mNL" data-archive-type="RadarMapRainNL" data-type="RadarMapRain5mNL" label="Regen"></option>
                     </optgroup>
                 </select>
                 <i class="fa-solid fa-clock"></i>
                 <select id="radar-history">
                     <optgroup label="Verleden">
-                        <option value="36" label="-3u"></option>
+                        <option value="12" label="-1u"></option>
+                        <option value="48" label="-6u"></option>
                     </optgroup>
                     <optgroup label="Toekomst">
-                        <option value="48" label="+48u"></option>
+                        <option value="32" label="+8u"></option>
                     </optgroup>
                 </select>
             </div>
-            <img id="radar-image">
+            <img id="radar-image" data-version="3">
             <div class="col" id="radar-controls">
                 <button id="radar-playpause"><i class="fa-solid fa-play"></i></button>
                 <h5 id="radar-time">00:00</h5>
