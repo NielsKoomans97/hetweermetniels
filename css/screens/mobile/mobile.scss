@@ -50,6 +50,7 @@
     }
 
     div.content {
+        height: calc(100vh - 7vh);
         overflow-y: auto;
     }
 

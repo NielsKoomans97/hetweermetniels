@@ -20,19 +20,25 @@ export class SmallerRadar {
         let images = [];
         let imageTimes = [];
 
-        async function GetRadarManifest(version, type, archiveType, history, forecast) {
+        async function GetRadarManifest(version, type, history, forecast) {
             let url = '';
 
             if (version == 2) {
                 url = `https://image.buienradar.nl/2.0/metadata/sprite/${type}`;
             }
             else {
-                url = `https://image-lite.buienradar.nl/3.0/metadata/${type}`;
-            }
+                if (history == 12){
+                    url = `https://image-lite.buienradar.nl/3.0/metadata/${type}5mNL`;
+                }
 
-            if (history > 12){
-                url = `https://image.buienradar.nl/2.0/metadata/sprite/${archiveType}`;
-            }
+                if (history > 12){
+                    url = `https://image.buienradar.nl/2.0/metadata/sprite/${type}NL`;
+                }
+
+                if (forecast > 30){
+                    url = `https://image-lite.buienradar.nl/3.0/metadata/${type}1hNL`;
+                }
+            }     
 
             url += `?history=${history}`;
             url += `&forecast=${forecast}`;

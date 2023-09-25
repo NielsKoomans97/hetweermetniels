@@ -35,6 +35,7 @@
     overflow: hidden;
   }
   div.content {
+    height: 93vh;
     overflow-y: auto;
   }
   div#nav-bar {
