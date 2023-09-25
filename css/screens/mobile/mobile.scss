@@ -71,16 +71,12 @@
             flex-direction: column;
             position: absolute;
 
-            background-image: url('../../../assets/forgetmenots.png');
-            background-position-y: calc(92vh - 400px);
+            background-image: url('../../../assets/blueflowers.jpg');
+            background-position-y: calc(92vh - 200px);
             background-repeat: no-repeat;
             background-size: contain;
 
-            // box-shadow: 0px 8px 20px  transparentize($color: map-get($map: $colors, $key: menu-shadow), $amount: 0.2);
-
             transition: all 250ms ease-in-out;
-
-
 
             a {
                 @include nav-button;
@@ -90,6 +86,8 @@
 
                 margin-bottom: 5px;
                 padding: 10px 5px;
+
+                transition: all 200ms ease-in-out;
 
                 text-decoration: none;
                 color: map-get($map: $colors, $key: text-normal);
@@ -146,13 +144,9 @@
                 }
             }
 
-            nav#nav-menu {
+            nav#nav-menu{
                 height: 0;
                 visibility: hidden;
-
-                a {
-                    display: none;
-                }
             }
         }
 
@@ -164,8 +158,11 @@
                 }
             }
 
-            nav#nav-menu {
+            nav#nav-menu, nav#nav-menu a  {
                 visibility: visible;
+            }
+
+            nav#nav-menu{
                 height: 92vh;
             }
         }
