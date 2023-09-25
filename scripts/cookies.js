@@ -1,55 +1,59 @@
-let cookie = document.cookie;
+export class CookieManager {
+    constructor() {
+        let cookie = document.cookie;
 
-function ListCookies() {
-    cookie = document.cookie;
-    let cookies = [];
-    let parts = cookie.split(';');
+        function ListCookies() {
+            cookie = document.cookie;
+            let cookies = [];
+            let parts = cookie.split(';');
 
-    for (part of parts) {
-        let keyvalue = part.split('=');
-        let key = keyvalue[0].replace(' ', '');
-        let value = keyvalue[1];
-        cookies.push(new Cookie(key, value));
-    }
+            for (part of parts) {
+                let keyvalue = part.split('=');
+                let key = keyvalue[0].replace(' ', '');
+                let value = keyvalue[1];
+                cookies.push(new Cookie(key, value));
+            }
 
-    return cookies;
-}
+            return cookies;
+        }
 
-function RemoveAllCookies() {
-    document.cookie = "";
-}
+        function RemoveAllCookies() {
+            document.cookie = "";
+        }
 
-function GetCookie(query) {
-    cookie = document.cookie;
-    let parts = cookie.split(';');
+        function GetCookie(query) {
+            cookie = document.cookie;
+            let parts = cookie.split(';');
 
-    for (part of parts) {
-        let keyvalue = part.split('=');
-        let key = keyvalue[0].replace(' ', '');
-        let value = keyvalue[1];
+            for (part of parts) {
+                let keyvalue = part.split('=');
+                let key = keyvalue[0].replace(' ', '');
+                let value = keyvalue[1];
 
-        if (key == query) {
-            return new Cookie(key, value);
+                if (key == query) {
+                    return new Cookie(key, value);
+                }
+            }
+        }
+
+        function HasCookie(query) {
+            cookie = document.cookie;
+            let parts = cookie.split(';');
+
+            for (part of parts) {
+                let keyvalue = part.split('=');
+                let key = keyvalue[0].replace(' ', '');
+
+                if (key == query) {
+                    return true;
+                }
+            }
+        }
+
+        function SaveCookie(cookie) {
+            document.cookie = `${cookie.Key}=${cookie.Value}`
         }
     }
-}
-
-function HasCookie(query) {
-    cookie = document.cookie;
-    let parts = cookie.split(';');
-
-    for (part of parts) {
-        let keyvalue = part.split('=');
-        let key = keyvalue[0].replace(' ', '');
-
-        if (key == query) {
-            return true;
-        }
-    }
-}
-
-function SaveCookie(cookie) {
-    document.cookie = `${cookie.Key}=${cookie.Value}`
 }
 
 class Cookie {

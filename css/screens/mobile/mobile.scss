@@ -17,12 +17,14 @@
     }
 
     h4,
-    input {
+    input,
+    select  {
         font-size: map-get($map: $typo, $key: h4);
     }
 
     h5,
-    a#more-info-button {
+    a#more-info-button
+    {
         font-size: map-get($map: $typo, $key: h5);
     }
 
@@ -37,13 +39,18 @@
     i.fas,
     i.fad,
     i.fa-solid,
-    i-fa-sharp {
+    i.fa-sharp {
         font-size: map-get($map: $typo, $key: fontawesome-icon);
     }
 
     body {
         background-color: map-get($map: $colors, $key: background-color);
         height: 100vh;
+        overflow: hidden;
+    }
+
+    div.content {
+        overflow-y: auto;
     }
 
     div#nav-bar {
@@ -59,7 +66,6 @@
         nav#nav-menu {
             position: absolute;
             background-color: map-get($map: $colors, $key: button-normal);
-            border-radius: 6px;
 
             grid-column: 1 / span 3;
 
@@ -144,8 +150,8 @@
                 }
             }
 
-            nav#nav-menu{
-                height: 0;
+            nav#nav-menu {
+                left: -100vw;
                 visibility: hidden;
             }
         }
@@ -158,194 +164,274 @@
                 }
             }
 
-            nav#nav-menu, nav#nav-menu a  {
+            nav#nav-menu {
                 visibility: visible;
-            }
-
-            nav#nav-menu{
-                height: 92vh;
+                left: 0;
             }
         }
     }
 
-    section#search-bar {
-        padding: 3vh 0;
+    div.content#index {
+        section#search-bar {
+            padding: 3vh 0;
 
-        div.container{
-            height: auto;
+            div.container {
+                height: auto;
+            }
+
+            div.text-input {
+                @include grid($columns: auto 15%, $rows: auto);
+
+                border-radius: 6px;
+                background-color: map-get($map: $colors, $key: background-color-3);
+
+                // border: map-get($map: $colors, $key: button-pressed) 1px solid;
+
+                input#search-query {
+                    border: none;
+                    outline: none;
+
+                    padding: 1.3vh 2vh;
+
+                    border-radius: 6px;
+                }
+
+                button#search {
+                    @include nav-button;
+
+                    background-color: map-get($map: $colors, $key: button-normal-2);
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    border-top-left-radius: 0%;
+                    border-bottom-left-radius: 0%;
+
+                    i {
+                        align-self: center;
+                        justify-self: center;
+                    }
+                }
+            }
         }
 
-        div.text-input {
-            @include grid($columns: auto 15%, $rows: auto);
+        section#observations {
+            padding: 5px 0;
 
-            border-radius: 6px;
-            background-color: map-get($map: $colors, $key: background-color-3);
+            div.container {
+                @include grid($columns: 20% auto, $rows: auto);
 
-            // border: map-get($map: $colors, $key: button-pressed) 1px solid;
+                column-gap: 0;
 
-            input#search-query {
+                height: auto;
+            }
+
+            img#icon {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+
+                width: 100%;
+                height: 12vh;
+                object-fit: contain;
+
+                background-color: map-get($map: $colors, $key: background-color-3);
+            }
+
+            div#observations-widget {
+                @include grid($columns: 50% 25% 25%, $rows: auto);
+
+                align-items: center;
+
+                padding: 5px 15px;
+
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+
+                background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
+
+                h2#temperature {
+                    grid-column: 1;
+
+                    margin: 0;
+                }
+
+                div#col-precip {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    grid-column: 2;
+
+                    i {
+                        width: fit-content;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        margin: 0;
+                    }
+                }
+
+                div#col-wind {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    i {
+                        width: fit-content;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        margin: 0;
+                    }
+
+                    grid-column: 3;
+                }
+            }
+        }
+
+        section#more-info {
+            div.container {
+                height: auto;
+            }
+
+            div#more-information {
+                @include grid($columns: repeat(2, 50%), $rows: auto);
+
+                border-radius: 6px;
+                align-items: center;
+                column-gap: 0;
+            }
+
+            h5,
+            h6,
+            h4 {
+                margin: 0;
+                justify-self: flex-end;
+            }
+
+            i.fa-square-arrow-up-right {
+                justify-self: center;
+            }
+
+            i.fa-warning {
+                justify-self: center;
+            }
+
+            a#more-info-button,
+            a#warnings-button {
+                @include nav-button;
+                @include grid($columns: auto 20%, $rows: auto);
+
+                background-color: map-get($map: $colors, $key: button-normal-2);
+                align-items: center;
+                justify-self: center;
+                width: 100%;
+                border-radius: 0;
+                column-gap: 10px;
+                height: -webkit-fill-available;
+
+                padding: 1.6vh 1vh;
+
+                span {
+                    text-align: end;
+                    width: 100%;
+                }
+            }
+
+            a#more-info-button {
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+
+
+            }
+
+            a#warnings-button {
+                @include grid($columns: 20% auto, $rows: auto);
+
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+            }
+        }
+
+        section#smaller-radar {
+            margin: 30px 0;
+
+            div.container{
+                height: auto;
+            }
+
+            select {
                 border: none;
                 outline: none;
 
-                padding: 1.3vh 2vh;
+                border-radius: 4px;
 
-                border-radius: 6px;
+                padding: 5px 5px;
+
+                text-align: center;
             }
 
-            button#search {
-                @include nav-button;
+            i.fa-solid{
+                font-size: map-get($map: $typo, $key: fontawesome-small);
+            }
 
-                background-color: map-get($map: $colors, $key: button-normal-2);
+            i.fa-clock,
+            i.fa-forward-fast {
+                justify-self: flex-end;
 
-                grid-template-columns: auto;
-                grid-template-rows: auto;
+                margin-right: 10px;
+            }
 
-                border-top-left-radius: 0%;
-                border-bottom-left-radius: 0%;
+            input[type="range"]{
+                width: auto;
+                min-width: 40px;
+            }
 
-                i {
-                    align-self: center;
+            div.col#radar-config {
+                @include grid($columns: 65% 15% 20%, $rows: auto);
+
+                column-gap: 0;
+                align-items: center;
+                padding: 5px;
+
+                background-color: map-get($map: $colors, $key: background-color-6);
+
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+
+                select#radar-time {
+                    grid-column: 3;
+                }
+            }
+
+            div.col#radar-controls {
+                @include grid($columns: 10% 20% auto 12% 20%, $rows: auto);
+
+                column-gap: 0;
+                align-items: center;
+                padding: 5px;
+
+                background-color: map-get($map: $colors, $key: background-color-6);
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+
+                button#radar-playpause {
+                    @include nav-button;
+                    @include grid($columns: auto, $rows: auto);
+
+                    align-self: stretch;
+
+                    align-items: center;
+                    justify-items: center;
+                }
+
+                h5#radar-time {
                     justify-self: center;
-                }
-            }
-        }
-    }
-
-    section#observations {
-        padding: 5px 0;
-
-        div.container {
-            @include grid($columns: 20% auto, $rows: auto);
-
-            column-gap: 0;
-
-            height: auto;
-        }
-
-        img#icon {
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
-
-            width: 100%;
-            height: 12vh;
-            object-fit: contain;
-
-            background-color: map-get($map: $colors, $key: background-color-3);
-        }
-
-        div#observations-widget {
-            @include grid($columns: 50% 25% 25%, $rows: auto);
-
-            align-items: center;
-
-            padding: 5px 15px;
-
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
-
-            background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
-
-            h2#temperature {
-                grid-column: 1;
-
-                margin: 0;
-            }
-
-            div#col-precip {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                grid-column: 2;
-
-                i {
-                    width: fit-content;
-                    margin-bottom: 10px;
-                }
-
-                h4 {
                     margin: 0;
                 }
             }
-
-            div#col-wind {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                i {
-                    width: fit-content;
-                    margin-bottom: 10px;
-                }
-
-                h4 {
-                    margin: 0;
-                }
-
-                grid-column: 3;
-            }
-        }
-    }
-
-    section#more-info {
-        div.container {
-            height: auto;
-        }
-
-        div#more-information {
-            @include grid($columns: repeat(2, 50%), $rows: auto);
-
-            border-radius: 6px;
-            align-items: center;
-            column-gap: 0;
-        }
-
-        h5, h6 {
-            margin: 0;
-            justify-self: flex-end;
-        }
-
-        i.fa-square-arrow-up-right {
-            justify-self: center;
-        }
-
-        i.fa-warning {
-            justify-self: center;
-        }
-
-        a#more-info-button,
-        a#warnings-button {
-            @include nav-button;
-            @include grid($columns: auto 20%, $rows: auto);
-
-            background-color: map-get($map: $colors, $key: button-normal-2);
-            align-items: center;
-            justify-self: center;
-            width: 100%;
-            border-radius: 0;
-            column-gap: 10px;
-            height: -webkit-fill-available;
-
-            padding: 1.6vh 1vh;
-
-            span {
-                text-align: end;
-                width: 100%;
-            }
-        }
-
-        a#more-info-button {
-            border-top-right-radius: 6px;
-            border-bottom-right-radius: 6px;
-
-
-        }
-
-        a#warnings-button {
-            @include grid($columns: 20% auto, $rows: auto);
-
-            border-top-left-radius: 6px;
-            border-bottom-left-radius: 6px;
         }
     }
 }

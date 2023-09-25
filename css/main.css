@@ -9,12 +9,13 @@
     font-size: 3.2vh;
   }
   h4,
-  input {
-    font-size: 2.2vh;
+  input,
+  select {
+    font-size: 1.8vh;
   }
   h5,
   a#more-info-button {
-    font-size: 2vh;
+    font-size: 1.4vh;
   }
   h6 {
     font-size: 1.4vh;
@@ -25,12 +26,16 @@
   i.fas,
   i.fad,
   i.fa-solid,
-  i-fa-sharp {
+  i.fa-sharp {
     font-size: 2.7vh;
   }
   body {
     background-color: #e8f5ff;
     height: 100vh;
+    overflow: hidden;
+  }
+  div.content {
+    overflow-y: auto;
   }
   div#nav-bar {
     display: grid;
@@ -47,7 +52,6 @@
   div#nav-bar nav#nav-menu {
     position: absolute;
     background-color: #e8f5ff;
-    border-radius: 6px;
     grid-column: 1/span 3;
     width: 100vw;
     top: 8vh;
@@ -154,33 +158,31 @@
   div#nav-bar button#nav-expand i {
     align-self: center;
     justify-self: center;
-    font-size: 3.8vh;
+    font-size: 3vh;
   }
   div#nav-bar[data-expanded=collapsed] button#nav-expand i {
     transition: all 150ms ease-in-out;
     transform: rotate(0deg);
   }
   div#nav-bar[data-expanded=collapsed] nav#nav-menu {
-    height: 0;
+    left: -100vw;
     visibility: hidden;
   }
   div#nav-bar[data-expanded=expanded] button#nav-expand i {
     transition: all 150ms ease-in-out;
     transform: rotate(180deg);
   }
-  div#nav-bar[data-expanded=expanded] nav#nav-menu, div#nav-bar[data-expanded=expanded] nav#nav-menu a {
-    visibility: visible;
-  }
   div#nav-bar[data-expanded=expanded] nav#nav-menu {
-    height: 92vh;
+    visibility: visible;
+    left: 0;
   }
-  section#search-bar {
+  div.content#index section#search-bar {
     padding: 3vh 0;
   }
-  section#search-bar div.container {
+  div.content#index section#search-bar div.container {
     height: auto;
   }
-  section#search-bar div.text-input {
+  div.content#index section#search-bar div.text-input {
     display: grid;
     grid-template-columns: auto 15%;
     grid-template-rows: auto;
@@ -189,13 +191,13 @@
     border-radius: 6px;
     background-color: #fcfeff;
   }
-  section#search-bar div.text-input input#search-query {
+  div.content#index section#search-bar div.text-input input#search-query {
     border: none;
     outline: none;
     padding: 1.3vh 2vh;
     border-radius: 6px;
   }
-  section#search-bar div.text-input button#search {
+  div.content#index section#search-bar div.text-input button#search {
     display: grid;
     grid-template-columns: 10% auto;
     grid-template-rows: auto;
@@ -214,31 +216,31 @@
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
   }
-  section#search-bar div.text-input button#search i, section#search-bar div.text-input button#search span, section#search-bar div.text-input button#search h1, section#search-bar div.text-input button#search h2, section#search-bar div.text-input button#search h3, section#search-bar div.text-input button#search h4, section#search-bar div.text-input button#search h5, section#search-bar div.text-input button#search h6 {
+  div.content#index section#search-bar div.text-input button#search i, div.content#index section#search-bar div.text-input button#search span, div.content#index section#search-bar div.text-input button#search h1, div.content#index section#search-bar div.text-input button#search h2, div.content#index section#search-bar div.text-input button#search h3, div.content#index section#search-bar div.text-input button#search h4, div.content#index section#search-bar div.text-input button#search h5, div.content#index section#search-bar div.text-input button#search h6 {
     transition: all 160ms ease-in-out;
     color: #000000;
   }
-  section#search-bar div.text-input button#search i {
+  div.content#index section#search-bar div.text-input button#search i {
     width: min-content;
     justify-self: center;
   }
-  section#search-bar div.text-input button#search:hover {
+  div.content#index section#search-bar div.text-input button#search:hover {
     background-color: #92b7fc;
   }
-  section#search-bar div.text-input button#search:hover i, section#search-bar div.text-input button#search:hover span, section#search-bar div.text-input button#search:hover h1, section#search-bar div.text-input button#search:hover h2, section#search-bar div.text-input button#search:hover h3, section#search-bar div.text-input button#search:hover h4, section#search-bar div.text-input button#search:hover h5, section#search-bar div.text-input button#search:hover h6 {
+  div.content#index section#search-bar div.text-input button#search:hover i, div.content#index section#search-bar div.text-input button#search:hover span, div.content#index section#search-bar div.text-input button#search:hover h1, div.content#index section#search-bar div.text-input button#search:hover h2, div.content#index section#search-bar div.text-input button#search:hover h3, div.content#index section#search-bar div.text-input button#search:hover h4, div.content#index section#search-bar div.text-input button#search:hover h5, div.content#index section#search-bar div.text-input button#search:hover h6 {
     color: #ffffff;
   }
-  section#search-bar div.text-input button#search:active {
+  div.content#index section#search-bar div.text-input button#search:active {
     background-color: #01264d;
   }
-  section#search-bar div.text-input button#search i {
+  div.content#index section#search-bar div.text-input button#search i {
     align-self: center;
     justify-self: center;
   }
-  section#observations {
+  div.content#index section#observations {
     padding: 5px 0;
   }
-  section#observations div.container {
+  div.content#index section#observations div.container {
     display: grid;
     grid-template-columns: 20% auto;
     grid-template-rows: auto;
@@ -247,7 +249,7 @@
     column-gap: 0;
     height: auto;
   }
-  section#observations img#icon {
+  div.content#index section#observations img#icon {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     width: 100%;
@@ -255,7 +257,7 @@
     object-fit: contain;
     background-color: #fcfeff;
   }
-  section#observations div#observations-widget {
+  div.content#index section#observations div#observations-widget {
     display: grid;
     grid-template-columns: 50% 25% 25%;
     grid-template-rows: auto;
@@ -267,40 +269,40 @@
     border-bottom-right-radius: 6px;
     background: linear-gradient(65deg, #e8f5ff, #92b7fc);
   }
-  section#observations div#observations-widget h2#temperature {
+  div.content#index section#observations div#observations-widget h2#temperature {
     grid-column: 1;
     margin: 0;
   }
-  section#observations div#observations-widget div#col-precip {
+  div.content#index section#observations div#observations-widget div#col-precip {
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-column: 2;
   }
-  section#observations div#observations-widget div#col-precip i {
+  div.content#index section#observations div#observations-widget div#col-precip i {
     width: fit-content;
     margin-bottom: 10px;
   }
-  section#observations div#observations-widget div#col-precip h4 {
+  div.content#index section#observations div#observations-widget div#col-precip h4 {
     margin: 0;
   }
-  section#observations div#observations-widget div#col-wind {
+  div.content#index section#observations div#observations-widget div#col-wind {
     display: flex;
     flex-direction: column;
     align-items: center;
     grid-column: 3;
   }
-  section#observations div#observations-widget div#col-wind i {
+  div.content#index section#observations div#observations-widget div#col-wind i {
     width: fit-content;
     margin-bottom: 10px;
   }
-  section#observations div#observations-widget div#col-wind h4 {
+  div.content#index section#observations div#observations-widget div#col-wind h4 {
     margin: 0;
   }
-  section#more-info div.container {
+  div.content#index section#more-info div.container {
     height: auto;
   }
-  section#more-info div#more-information {
+  div.content#index section#more-info div#more-information {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: auto;
@@ -310,18 +312,20 @@
     align-items: center;
     column-gap: 0;
   }
-  section#more-info h5, section#more-info h6 {
+  div.content#index section#more-info h5,
+  div.content#index section#more-info h6,
+  div.content#index section#more-info h4 {
     margin: 0;
     justify-self: flex-end;
   }
-  section#more-info i.fa-square-arrow-up-right {
+  div.content#index section#more-info i.fa-square-arrow-up-right {
     justify-self: center;
   }
-  section#more-info i.fa-warning {
+  div.content#index section#more-info i.fa-warning {
     justify-self: center;
   }
-  section#more-info a#more-info-button,
-  section#more-info a#warnings-button {
+  div.content#index section#more-info a#more-info-button,
+  div.content#index section#more-info a#warnings-button {
     display: grid;
     grid-template-columns: 10% auto;
     grid-template-rows: auto;
@@ -348,52 +352,52 @@
     height: -webkit-fill-available;
     padding: 1.6vh 1vh;
   }
-  section#more-info a#more-info-button i, section#more-info a#more-info-button span, section#more-info a#more-info-button h1, section#more-info a#more-info-button h2, section#more-info a#more-info-button h3, section#more-info a#more-info-button h4, section#more-info a#more-info-button h5, section#more-info a#more-info-button h6,
-  section#more-info a#warnings-button i,
-  section#more-info a#warnings-button span,
-  section#more-info a#warnings-button h1,
-  section#more-info a#warnings-button h2,
-  section#more-info a#warnings-button h3,
-  section#more-info a#warnings-button h4,
-  section#more-info a#warnings-button h5,
-  section#more-info a#warnings-button h6 {
+  div.content#index section#more-info a#more-info-button i, div.content#index section#more-info a#more-info-button span, div.content#index section#more-info a#more-info-button h1, div.content#index section#more-info a#more-info-button h2, div.content#index section#more-info a#more-info-button h3, div.content#index section#more-info a#more-info-button h4, div.content#index section#more-info a#more-info-button h5, div.content#index section#more-info a#more-info-button h6,
+  div.content#index section#more-info a#warnings-button i,
+  div.content#index section#more-info a#warnings-button span,
+  div.content#index section#more-info a#warnings-button h1,
+  div.content#index section#more-info a#warnings-button h2,
+  div.content#index section#more-info a#warnings-button h3,
+  div.content#index section#more-info a#warnings-button h4,
+  div.content#index section#more-info a#warnings-button h5,
+  div.content#index section#more-info a#warnings-button h6 {
     transition: all 160ms ease-in-out;
     color: #000000;
   }
-  section#more-info a#more-info-button i,
-  section#more-info a#warnings-button i {
+  div.content#index section#more-info a#more-info-button i,
+  div.content#index section#more-info a#warnings-button i {
     width: min-content;
     justify-self: center;
   }
-  section#more-info a#more-info-button:hover,
-  section#more-info a#warnings-button:hover {
+  div.content#index section#more-info a#more-info-button:hover,
+  div.content#index section#more-info a#warnings-button:hover {
     background-color: #92b7fc;
   }
-  section#more-info a#more-info-button:hover i, section#more-info a#more-info-button:hover span, section#more-info a#more-info-button:hover h1, section#more-info a#more-info-button:hover h2, section#more-info a#more-info-button:hover h3, section#more-info a#more-info-button:hover h4, section#more-info a#more-info-button:hover h5, section#more-info a#more-info-button:hover h6,
-  section#more-info a#warnings-button:hover i,
-  section#more-info a#warnings-button:hover span,
-  section#more-info a#warnings-button:hover h1,
-  section#more-info a#warnings-button:hover h2,
-  section#more-info a#warnings-button:hover h3,
-  section#more-info a#warnings-button:hover h4,
-  section#more-info a#warnings-button:hover h5,
-  section#more-info a#warnings-button:hover h6 {
+  div.content#index section#more-info a#more-info-button:hover i, div.content#index section#more-info a#more-info-button:hover span, div.content#index section#more-info a#more-info-button:hover h1, div.content#index section#more-info a#more-info-button:hover h2, div.content#index section#more-info a#more-info-button:hover h3, div.content#index section#more-info a#more-info-button:hover h4, div.content#index section#more-info a#more-info-button:hover h5, div.content#index section#more-info a#more-info-button:hover h6,
+  div.content#index section#more-info a#warnings-button:hover i,
+  div.content#index section#more-info a#warnings-button:hover span,
+  div.content#index section#more-info a#warnings-button:hover h1,
+  div.content#index section#more-info a#warnings-button:hover h2,
+  div.content#index section#more-info a#warnings-button:hover h3,
+  div.content#index section#more-info a#warnings-button:hover h4,
+  div.content#index section#more-info a#warnings-button:hover h5,
+  div.content#index section#more-info a#warnings-button:hover h6 {
     color: #ffffff;
   }
-  section#more-info a#more-info-button:active,
-  section#more-info a#warnings-button:active {
+  div.content#index section#more-info a#more-info-button:active,
+  div.content#index section#more-info a#warnings-button:active {
     background-color: #01264d;
   }
-  section#more-info a#more-info-button span,
-  section#more-info a#warnings-button span {
+  div.content#index section#more-info a#more-info-button span,
+  div.content#index section#more-info a#warnings-button span {
     text-align: end;
     width: 100%;
   }
-  section#more-info a#more-info-button {
+  div.content#index section#more-info a#more-info-button {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
   }
-  section#more-info a#warnings-button {
+  div.content#index section#more-info a#warnings-button {
     display: grid;
     grid-template-columns: 20% auto;
     grid-template-rows: auto;
@@ -401,6 +405,103 @@
     row-gap: 5px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+  }
+  div.content#index section#smaller-radar {
+    margin: 30px 0;
+  }
+  div.content#index section#smaller-radar div.container {
+    height: auto;
+  }
+  div.content#index section#smaller-radar select {
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px 5px;
+    text-align: center;
+  }
+  div.content#index section#smaller-radar i.fa-solid {
+    font-size: 2vh;
+  }
+  div.content#index section#smaller-radar i.fa-clock,
+  div.content#index section#smaller-radar i.fa-forward-fast {
+    justify-self: flex-end;
+    margin-right: 10px;
+  }
+  div.content#index section#smaller-radar input[type=range] {
+    width: auto;
+    min-width: 40px;
+  }
+  div.content#index section#smaller-radar div.col#radar-config {
+    display: grid;
+    grid-template-columns: 65% 15% 20%;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    column-gap: 0;
+    align-items: center;
+    padding: 5px;
+    background-color: #d0dfeb;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  div.content#index section#smaller-radar div.col#radar-config select#radar-time {
+    grid-column: 3;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls {
+    display: grid;
+    grid-template-columns: 10% 20% auto 12% 20%;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    column-gap: 0;
+    align-items: center;
+    padding: 5px;
+    background-color: #d0dfeb;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: #e8f5ff;
+    transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    align-self: stretch;
+    align-items: center;
+    justify-items: center;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause i, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause span, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h1, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h2, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h3, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h4, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h5, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h6 {
+    transition: all 160ms ease-in-out;
+    color: #000000;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause i {
+    width: min-content;
+    justify-self: center;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover {
+    background-color: #92b7fc;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover i, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover span, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover h1, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover h2, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover h3, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover h4, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover h5, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:hover h6 {
+    color: #ffffff;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:active {
+    background-color: #01264d;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls h5#radar-time {
+    justify-self: center;
+    margin: 0;
   }
 }
 /* cyrillic */
