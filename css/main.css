@@ -444,12 +444,16 @@ i.fa-sharp {
   }
   div.content#index section#smaller-radar img#radar-image {
     width: 100%;
-    object-fit: none;
+    object-fit: contain;
   }
-  div.content#index section#smaller-radar img#radar-image[data-version="3"] {
+  div.content#index section#smaller-radar img#radar-image[data-type=radarmap] {
     background: url("https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=Full");
     background-repeat: no-repeat;
     background-size: contain;
+  }
+  div.content#index section#smaller-radar img#radar-image[data-type=weathermap] {
+    background: none;
+    background-color: #d0dfeb;
   }
   div.content#index section#smaller-radar div.col#radar-config {
     display: grid;

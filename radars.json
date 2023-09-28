@@ -29,6 +29,16 @@
       "-9h": "RadarMapSnowNL?history=36&forecast=0",
       "+24h": "RadarMapRain1hNL?history=0&forecast=24&skip=0&startIndex=0",
       "+48h": "RadarMapRain1hNL?history=0&forecast=24&skip=0&startIndex=24"
+    },
+    {
+      "type": "Neerslagsom",
+      "-1h": "WeatherMapRain1Hour10mNL?forecast=0",
+      "-24h": "WeatherMapRain24Hours10mNL?forecast=0"
+    },
+    {
+      "type": "Actuele temperatuur",
+      "-1h": "WeatherMapActualTemperature10mNL?history=6&forecast=0",
+      "-6h": "WeatherMapActualTemperature10mNL?history=36&forecast=0"
     }
   ]
 }

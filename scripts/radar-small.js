@@ -78,11 +78,18 @@ export class SmallerRadar {
             var params = item.getAttribute('data-url');
             var baseUrl = '';
 
-            if (Contains('5mNL', params) || Contains('1hNL', params) || Contains('15mNL', params)) {
+            if (Contains('5mNL', params) || Contains('1hNL', params) || Contains('15mNL', params) || Contains('10mNL', params)) {
                 baseUrl = 'https://image-lite.buienradar.nl/3.0/metadata/';
             }
             else {
                 baseUrl = 'https://image.buienradar.nl/2.0/metadata/sprite/';
+            }
+
+            if (params.startsWith('Weather')){
+                radar_image.setAttribute('data-type', 'weathermap');
+            }
+            else{
+                radar_image.setAttribute('data-type', 'radarmap');
             }
 
             var json = await fetch(`${baseUrl}${params}`);
