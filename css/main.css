@@ -1,34 +1,42 @@
+h1 {
+  font-size: 1.08vh;
+}
+
+h2 {
+  font-size: 6vh;
+}
+
+h3 {
+  font-size: 3.2vh;
+}
+
+h4,
+input,
+select {
+  font-size: 1.8vh;
+}
+
+h5,
+a#more-info-button {
+  font-size: 1.4vh;
+}
+
+h6 {
+  font-size: 1.4vh;
+}
+
+a {
+  font-size: 2.4vh;
+}
+
+i.fas,
+i.fad,
+i.fa-solid,
+i.fa-sharp {
+  font-size: 2.7vh;
+}
+
 @media (max-width: 1175px) {
-  h1 {
-    font-size: 1.08vh;
-  }
-  h2 {
-    font-size: 6vh;
-  }
-  h3 {
-    font-size: 3.2vh;
-  }
-  h4,
-  input,
-  select {
-    font-size: 1.8vh;
-  }
-  h5,
-  a#more-info-button {
-    font-size: 1.4vh;
-  }
-  h6 {
-    font-size: 1.4vh;
-  }
-  a {
-    font-size: 2.4vh;
-  }
-  i.fas,
-  i.fad,
-  i.fa-solid,
-  i.fa-sharp {
-    font-size: 2.7vh;
-  }
   body {
     background-color: #e8f5ff;
     height: 100vh;
@@ -41,21 +49,22 @@
   div#nav-bar {
     display: grid;
     grid-template-columns: 20% auto 20%;
-    grid-template-rows: 7vh 0;
+    grid-template-rows: 7vh;
     column-gap: 5px;
     row-gap: 5px;
+    height: 7vh;
     position: relative;
   }
   div#nav-bar img#logo {
     height: 100%;
-    padding: 10px;
+    padding: 1vh 10px;
   }
   div#nav-bar nav#nav-menu {
     position: absolute;
     background-color: #e8f5ff;
     grid-column: 1/span 3;
+    top: 7vh;
     width: 100vw;
-    top: 8vh;
     height: 100vh;
     z-index: 9999;
     flex-direction: column;
@@ -178,7 +187,7 @@
     left: 0;
   }
   div.content#index section#search-bar {
-    padding: 3vh 0;
+    padding: 2vh 0;
   }
   div.content#index section#search-bar div.container {
     height: auto;
@@ -239,7 +248,7 @@
     justify-self: center;
   }
   div.content#index section#observations {
-    padding: 5px 0;
+    padding: 1vh 0;
   }
   div.content#index section#observations div.container {
     display: grid;
@@ -265,7 +274,7 @@
     column-gap: 5px;
     row-gap: 5px;
     align-items: center;
-    padding: 5px 15px;
+    padding: 1vh 15px;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     background: linear-gradient(65deg, #e8f5ff, #92b7fc);
@@ -408,7 +417,7 @@
     border-bottom-left-radius: 6px;
   }
   div.content#index section#smaller-radar {
-    margin: 30px 0;
+    margin: 2vh 0;
   }
   div.content#index section#smaller-radar div.container {
     height: auto;

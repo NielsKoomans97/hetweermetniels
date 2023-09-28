@@ -1,48 +1,9 @@
 @use '../../partials/grid' as *;
 @use '../../partials/nav-button' as *;
-
+@use './fonts' as *;
 @use '../../config/variables' as *;
 
 @media(max-width: 1175px) {
-    h1 {
-        font-size: map-get($map: $typo, $key: h1);
-    }
-
-    h2 {
-        font-size: map-get($map: $typo, $key: h2);
-    }
-
-    h3 {
-        font-size: map-get($map: $typo, $key: h3);
-    }
-
-    h4,
-    input,
-    select  {
-        font-size: map-get($map: $typo, $key: h4);
-    }
-
-    h5,
-    a#more-info-button
-    {
-        font-size: map-get($map: $typo, $key: h5);
-    }
-
-    h6 {
-        font-size: map-get($map: $typo, $key: h6);
-    }
-
-    a {
-        font-size: map-get($map: $typo, $key: a);
-    }
-
-    i.fas,
-    i.fad,
-    i.fa-solid,
-    i.fa-sharp {
-        font-size: map-get($map: $typo, $key: fontawesome-icon);
-    }
-
     body {
         background-color: map-get($map: $colors, $key: background-color);
         height: 100vh;
@@ -55,13 +16,15 @@
     }
 
     div#nav-bar {
-        @include grid($columns: 20% auto 20%, $rows: 7vh 0);
+        @include grid($columns: 20% auto 20%, $rows: 7vh);
+
+        height: 7vh;
 
         position: relative;
 
         img#logo {
             height: 100%;
-            padding: 10px;
+            padding: 1vh 10px;
         }
 
         nav#nav-menu {
@@ -70,8 +33,8 @@
 
             grid-column: 1 / span 3;
 
+            top: 7vh;
             width: 100vw;
-            top: 8vh;
             height: 100vh;
             z-index: 9999;
 
@@ -174,7 +137,7 @@
 
     div.content#index {
         section#search-bar {
-            padding: 3vh 0;
+            padding: 2vh 0;
 
             div.container {
                 height: auto;
@@ -217,7 +180,7 @@
         }
 
         section#observations {
-            padding: 5px 0;
+            padding: 1vh 0;
 
             div.container {
                 @include grid($columns: 20% auto, $rows: auto);
@@ -243,7 +206,7 @@
 
                 align-items: center;
 
-                padding: 5px 15px;
+                padding: 1vh 15px;
 
                 border-top-right-radius: 6px;
                 border-bottom-right-radius: 6px;
@@ -357,7 +320,7 @@
         }
 
         section#smaller-radar {
-            margin: 30px 0;
+            margin: 2vh 0;
 
             div.container{
                 height: auto;

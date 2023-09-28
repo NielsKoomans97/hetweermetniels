@@ -12,64 +12,79 @@ export class SmallerRadar {
         const radar_image = document.getElementById('radar-image');
 
         //events
-        radar_type.addEventListener('change', GetRadar);
-        radar_history.addEventListener('change', GetRadar);
+        radar_type.addEventListener('change', RadarSelected);
+        radar_history.addEventListener('change', RadarHistorySelected);
         radar_position.addEventListener('change', Slide);
 
         //other variables
         let images = [];
         let imageTimes = [];
 
-        async function GetRadarManifest(version, type, history, forecast) {
-            let url = '';
-
-            if (version == 2) {
-                url = `https://image.buienradar.nl/2.0/metadata/sprite/${type}`;
+        function ClearAll(element) {
+            var delChild = element.lastChild;
+            while (delChild) {
+                element.removeChild(delChild);
+                delChild = element.lastChild;
             }
-            else {
-                if (history == 12){
-                    url = `https://image-lite.buienradar.nl/3.0/metadata/${type}5mNL`;
-                }
-
-                if (history > 12){
-                    url = `https://image.buienradar.nl/2.0/metadata/sprite/${type}NL`;
-                }
-
-                if (forecast > 30){
-                    url = `https://image-lite.buienradar.nl/3.0/metadata/${type}1hNL`;
-                }
-            }     
-
-            url += `?history=${history}`;
-            url += `&forecast=${forecast}`;
-
-            if (version == 2) {
-                url += `&renderBackground=true`;
-                url += `&renderText=false`;
-                url += `&renderBranding=false`;
-            }
-
-            const manifest = await fetch(url);
-            return await manifest.json();
         }
 
-        async function GetRadar() {
-            const selectedType = radar_type.selectedOptions[0];
-            const type = selectedType.getAttribute('data-type');
-            const archive_type = selectedType.getAttribute('data-archive-type');
-            const version = selectedType.getAttribute('data-version');
+        async function LoadRadars() {
+            var radars = await fetch('radars.json');
+            var json = await radars.json();
 
-            const history = radar_history.selectedOptions[0];
-            let manifest = '';
+            var data = json['radars'];
+            data.forEach(element => {
+                var option = document.createElement('option');
+                option.innerText = element['type'];
 
-            console.log(history.parentElement);
+                option.setAttribute('data-json', JSON.stringify(element));
 
-            if (history.parentElement.getAttribute('label') == 'Verleden') {
-                manifest = await GetRadarManifest(parseInt(version), type, parseInt(history.value), 0);
+                radar_type.appendChild(option);
+            });
+        }
+
+        function RadarSelected() {
+            var item = radar_type.selectedOptions[0];
+            var json = JSON.parse(item.getAttribute('data-json'));
+            var keys = Object.keys(json);
+
+            ClearAll(radar_history);
+
+            keys.forEach(element => {
+                if (element.match('([\dh]+)')) {
+                    var option = document.createElement('option');
+                    option.setAttribute('data-url', json[element]);
+
+                    option.innerText = element;
+                    radar_history.appendChild(option);
+                }
+            });
+
+            RadarHistorySelected();
+        }
+
+        function Contains(needle, haystack) {
+            if (haystack.indexOf(needle) > 0) {
+                return true;
             }
-            else{
-                manifest = await GetRadarManifest(parseInt(version), type, 0, parseInt(history.value));
+
+            return false;
+        }
+
+        async function RadarHistorySelected() {
+            var item = radar_history.selectedOptions[0];
+            var params = item.getAttribute('data-url');
+            var baseUrl = '';
+
+            if (Contains('5mNL', params) || Contains('1hNL', params) || Contains('15mNL', params)) {
+                baseUrl = 'https://image-lite.buienradar.nl/3.0/metadata/';
             }
+            else {
+                baseUrl = 'https://image.buienradar.nl/2.0/metadata/sprite/';
+            }
+
+            var json = await fetch(`${baseUrl}${params}`);
+            var manifest = await json.json();
 
             images = [];
             imageTimes = [];
@@ -90,7 +105,7 @@ export class SmallerRadar {
             if (number < 10) {
                 return `0${number}`;
             }
-        
+
             return number;
         }
 
@@ -98,11 +113,11 @@ export class SmallerRadar {
             const index = radar_position.value;
             const image = images[parseInt(index)];
             const time = new Date(Date.parse(imageTimes[parseInt(index)]));
-        
+
             radar_image.setAttribute('src', images[parseInt(index)]);
             radar_time.innerText = `${FixTimeInt(time.getHours() + 2)}:${FixTimeInt(time.getMinutes())}`;
         }
-        
-        GetRadar();
+
+        LoadRadars();
     }
 }

@@ -1,0 +1,34 @@
+{
+  "radars": [
+    {
+      "type": "Regen",
+      "-1h": "RadarMapRain5mNL?history=12&forecast=0",
+      "-9h": "RadarMapRainNL?history=36&forecast=0",
+      "+8h": "RadarMapRain15mNL?history=0&forecast=32&skip=0",
+      "+24h": "RadarMapRain1hNL?history=0&forecast=24&skip=0&startIndex=0",
+      "+48h": "RadarMapRain1hNL?history=0&forecast=24&skip=0&startIndex=24"
+    },
+    {
+      "type": "Motregen",
+      "-1h": "RadarMapDrizzle5mNL?history=12&forecast=0",
+      "-9h": "RadarMapRainNL?history=36&forecast=0"
+    },
+    {
+      "type": "Onweer",
+      "-1h": "RadarMapLightning5mNL?history=12&forecast=0",
+      "-9h": "RadarMapLightningNL?history=36&forecast=0"
+    },
+    {
+      "type": "Hagel",
+      "-1h": "RadarMapHail5mNL?history=12&forecast=0",
+      "-9h": "RadarMapHailNL?history=36&forecast=0"
+    },
+    {
+      "type": "Sneeuw",
+      "-1h": "RadarMapSnow5mNL?history=12&forecast=0",
+      "-9h": "RadarMapSnowNL?history=36&forecast=0",
+      "+24h": "RadarMapRain1hNL?history=0&forecast=24&skip=0&startIndex=0",
+      "+48h": "RadarMapRain1hNL?history=0&forecast=24&skip=0&startIndex=24"
+    }
+  ]
+}

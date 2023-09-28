@@ -1,0 +1,40 @@
+@use '../../config/variables' as *;
+
+h1 {
+    font-size: map-get($map: $typo, $key: h1);
+}
+
+h2 {
+    font-size: map-get($map: $typo, $key: h2);
+}
+
+h3 {
+    font-size: map-get($map: $typo, $key: h3);
+}
+
+h4,
+input,
+select  {
+    font-size: map-get($map: $typo, $key: h4);
+}
+
+h5,
+a#more-info-button
+{
+    font-size: map-get($map: $typo, $key: h5);
+}
+
+h6 {
+    font-size: map-get($map: $typo, $key: h6);
+}
+
+a {
+    font-size: map-get($map: $typo, $key: a);
+}
+
+i.fas,
+i.fad,
+i.fa-solid,
+i.fa-sharp {
+    font-size: map-get($map: $typo, $key: fontawesome-icon);
+}
