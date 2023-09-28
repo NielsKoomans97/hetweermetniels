@@ -40,7 +40,7 @@ i.fa-sharp {
   body {
     background-color: #e8f5ff;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
   }
   div.content {
     height: 93vh;
