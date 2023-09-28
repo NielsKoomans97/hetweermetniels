@@ -6,23 +6,23 @@
 @media(max-width: 1175px) {
     body {
         background-color: map-get($map: $colors, $key: background-color);
-        height: 100vh;
+        overflow-y: auto;
     }
 
     div.content {
-        height: calc(100vh - 7vh);
+        max-height: calc(100vh - 7vh);
         overflow-y: auto;
     }
 
     div#nav-bar {
-        @include grid($columns: 20% auto 20%, $rows: 7vh);
+        @include grid($columns: 20% auto 20%, $rows: auto);
 
         height: 7vh;
 
         position: relative;
 
         img#logo {
-            height: 100%;
+            height: 7vh;
             padding: 1vh 10px;
         }
 
@@ -34,14 +34,15 @@
 
             top: 7vh;
             width: 100vw;
-            height: 100vh;
+            height: calc(100vh - 7vh);
             z-index: 9999;
 
             flex-direction: column;
             position: absolute;
 
-            background-image: url('../../../assets/blueflowers.jpg');
+            background-image: url('../../../assets/menu-bg-3.png');
             background-position-y: calc(92vh - 200px);
+            background-position-x: 2vw;
             background-repeat: no-repeat;
             background-size: contain;
 

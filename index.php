@@ -45,18 +45,9 @@
         <div class="container">
             <div class="col" id="radar-config">
                 <select id="radar-type">
-                    <optgroup label="Benelux">
-                    </optgroup>
                 </select>
                 <i class="fa-solid fa-clock"></i>
                 <select id="radar-history">
-                    <optgroup label="Verleden">
-                        <option value="12" label="-1u"></option>
-                        <option value="48" label="-6u"></option>
-                    </optgroup>
-                    <optgroup label="Toekomst">
-                        <option value="32" label="+8u"></option>
-                    </optgroup>
                 </select>
             </div>
             <img id="radar-image" data-version="3">

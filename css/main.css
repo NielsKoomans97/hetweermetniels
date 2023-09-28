@@ -39,23 +39,23 @@ i.fa-sharp {
 @media (max-width: 1175px) {
   body {
     background-color: #e8f5ff;
-    height: 100vh;
+    overflow-y: auto;
   }
   div.content {
-    height: 93vh;
+    max-height: 93vh;
     overflow-y: auto;
   }
   div#nav-bar {
     display: grid;
     grid-template-columns: 20% auto 20%;
-    grid-template-rows: 7vh;
+    grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
     height: 7vh;
     position: relative;
   }
   div#nav-bar img#logo {
-    height: 100%;
+    height: 7vh;
     padding: 1vh 10px;
   }
   div#nav-bar nav#nav-menu {
@@ -64,12 +64,13 @@ i.fa-sharp {
     grid-column: 1/span 3;
     top: 7vh;
     width: 100vw;
-    height: 100vh;
+    height: 93vh;
     z-index: 9999;
     flex-direction: column;
     position: absolute;
-    background-image: url("../../../assets/blueflowers.jpg");
+    background-image: url("../../../assets/menu-bg-3.png");
     background-position-y: calc(92vh - 200px);
+    background-position-x: 2vw;
     background-repeat: no-repeat;
     background-size: contain;
     transition: all 250ms ease-in-out;
