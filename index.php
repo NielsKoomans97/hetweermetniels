@@ -46,8 +46,6 @@
             <div class="col" id="radar-config">
                 <select id="radar-type">
                     <optgroup label="Benelux">
-                        <option  data-version="3" data-type="RadarMapRain" label="Regen"></option>
-                        <option data-version="3" data-type="RadarMapLightning" label="Onweer"></option>
                     </optgroup>
                 </select>
                 <i class="fa-solid fa-clock"></i>

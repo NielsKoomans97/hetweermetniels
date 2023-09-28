@@ -41,6 +41,8 @@ export class SmallerRadar {
 
                 radar_type.appendChild(option);
             });
+
+            RadarSelected();
         }
 
         function RadarSelected() {

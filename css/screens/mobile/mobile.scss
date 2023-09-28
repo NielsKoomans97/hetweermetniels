@@ -7,7 +7,6 @@
     body {
         background-color: map-get($map: $colors, $key: background-color);
         height: 100vh;
-        overflow: auto;
     }
 
     div.content {
@@ -195,7 +194,7 @@
                 border-bottom-left-radius: 6px;
 
                 width: 100%;
-                height: 12vh;
+                height: 10vh;
                 object-fit: contain;
 
                 background-color: map-get($map: $colors, $key: background-color-3);
@@ -257,11 +256,11 @@
 
         section#more-info {
             div.container {
-                height: auto;
+                height: 50px;
             }
 
             div#more-information {
-                @include grid($columns: repeat(2, 50%), $rows: auto);
+                @include grid($columns: repeat(2, 50%), $rows: 50px);
 
                 border-radius: 6px;
                 align-items: center;
@@ -296,7 +295,7 @@
                 column-gap: 10px;
                 height: -webkit-fill-available;
 
-                padding: 1.6vh 1vh;
+                padding: 1.0vh 0.5vh;
 
                 span {
                     text-align: end;
@@ -329,6 +328,8 @@
             select {
                 border: none;
                 outline: none;
+
+                background-color: map-get($map: $colors, $key: background-color-3);
 
                 border-radius: 4px;
 
