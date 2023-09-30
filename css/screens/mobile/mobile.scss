@@ -51,10 +51,12 @@
             a {
                 @include nav-button;
 
-                border-radius: 0;
                 grid-template-columns: 15% 85%;
 
                 margin-bottom: 5px;
+                margin-left: 25px;
+                margin-right: 25px;
+
                 padding: 10px 5px;
 
                 transition: all 200ms ease-in-out;
@@ -147,6 +149,9 @@
                 @include grid($columns: auto 15%, $rows: auto);
 
                 border-radius: 6px;
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+
                 background-color: map-get($map: $colors, $key: background-color-3);
 
                 // border: map-get($map: $colors, $key: button-pressed) 1px solid;
@@ -180,14 +185,14 @@
         }
 
         section#observations {
-            padding: 1vh 0;
+            padding: 0.4vh 0;
 
             div.container {
                 @include grid($columns: 20% auto, $rows: auto);
 
                 column-gap: 0;
 
-                height: auto;
+                height: min-content;
             }
 
             img#icon {
@@ -206,7 +211,7 @@
 
                 align-items: center;
 
-                padding: 1vh 15px;
+                padding: 0.5vh 15px;
 
                 border-top-right-radius: 6px;
                 border-bottom-right-radius: 6px;
@@ -257,11 +262,11 @@
 
         section#more-info {
             div.container {
-                height: 50px;
+                height: auto;
             }
 
             div#more-information {
-                @include grid($columns: repeat(2, 50%), $rows: 50px);
+                @include grid($columns: repeat(2, 50%), $rows: min-content);
 
                 border-radius: 6px;
                 align-items: center;
@@ -296,7 +301,7 @@
                 column-gap: 10px;
                 height: -webkit-fill-available;
 
-                padding: 1.0vh 0.5vh;
+                padding: 1.0vh 5px;
 
                 span {
                     text-align: end;
@@ -402,6 +407,8 @@
                 button#radar-playpause {
                     @include nav-button;
                     @include grid($columns: auto, $rows: auto);
+
+                    border-radius: 6px;
 
                     align-self: stretch;
 
