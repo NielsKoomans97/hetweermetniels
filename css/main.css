@@ -12,7 +12,8 @@ h3 {
 
 h4,
 input,
-select {
+select,
+a.nav-button {
   font-size: 1.8vh;
 }
 
@@ -260,20 +261,21 @@ i.fa-sharp {
     width: 85%;
     margin-top: 10px;
     border-radius: 6px;
-    flex-direction: column;
-    justify-content: stretch;
-    padding: 5px 0;
+    justify-items: stretch;
+    grid-template-columns: auto;
+    row-gap: 5px;
+    padding: 5px 5px;
     z-index: 9998;
     box-shadow: 0 18px 20px rgba(0, 0, 0, 0.25);
     transition: all 150ms ease-in-out;
   }
   div.content#index section#search-bar div#locations-list[data-visible=visible] {
-    display: flex;
+    display: grid;
   }
   div.content#index section#search-bar div#locations-list[data-visible=collapsed] {
     display: none;
   }
-  div.content#index section#search-bar div#locations-list a {
+  div.content#index section#search-bar div#locations-list button {
     display: grid;
     grid-template-columns: 10% auto;
     grid-template-rows: auto;
@@ -288,37 +290,39 @@ i.fa-sharp {
     color: #000000;
     grid-template-columns: auto 45px;
     border-radius: 6px;
-    margin: 5px 10px;
     padding: 5px;
   }
-  div.content#index section#search-bar div#locations-list a i, div.content#index section#search-bar div#locations-list a span, div.content#index section#search-bar div#locations-list a h1, div.content#index section#search-bar div#locations-list a h2, div.content#index section#search-bar div#locations-list a h3, div.content#index section#search-bar div#locations-list a h4, div.content#index section#search-bar div#locations-list a h5, div.content#index section#search-bar div#locations-list a h6 {
+  div.content#index section#search-bar div#locations-list button i, div.content#index section#search-bar div#locations-list button span, div.content#index section#search-bar div#locations-list button h1, div.content#index section#search-bar div#locations-list button h2, div.content#index section#search-bar div#locations-list button h3, div.content#index section#search-bar div#locations-list button h4, div.content#index section#search-bar div#locations-list button h5, div.content#index section#search-bar div#locations-list button h6 {
     transition: all 160ms ease-in-out;
     color: #000000;
   }
-  div.content#index section#search-bar div#locations-list a i {
+  div.content#index section#search-bar div#locations-list button i {
     width: min-content;
     justify-self: center;
   }
-  div.content#index section#search-bar div#locations-list a:hover {
+  div.content#index section#search-bar div#locations-list button:hover {
     background-color: #5792ff;
   }
-  div.content#index section#search-bar div#locations-list a:hover i, div.content#index section#search-bar div#locations-list a:hover span, div.content#index section#search-bar div#locations-list a:hover h1, div.content#index section#search-bar div#locations-list a:hover h2, div.content#index section#search-bar div#locations-list a:hover h3, div.content#index section#search-bar div#locations-list a:hover h4, div.content#index section#search-bar div#locations-list a:hover h5, div.content#index section#search-bar div#locations-list a:hover h6 {
+  div.content#index section#search-bar div#locations-list button:hover i, div.content#index section#search-bar div#locations-list button:hover span, div.content#index section#search-bar div#locations-list button:hover h1, div.content#index section#search-bar div#locations-list button:hover h2, div.content#index section#search-bar div#locations-list button:hover h3, div.content#index section#search-bar div#locations-list button:hover h4, div.content#index section#search-bar div#locations-list button:hover h5, div.content#index section#search-bar div#locations-list button:hover h6 {
     color: #ffffff;
   }
-  div.content#index section#search-bar div#locations-list a:active {
+  div.content#index section#search-bar div#locations-list button:active {
     background-color: #01264d;
   }
-  div.content#index section#search-bar div#locations-list a:hover {
+  div.content#index section#search-bar div#locations-list button:hover {
     color: white;
   }
-  div.content#index section#search-bar div#locations-list a h4.location-foad {
+  div.content#index section#search-bar div#locations-list button:hover h4.location-foad {
+    color: white;
+  }
+  div.content#index section#search-bar div#locations-list button h4.location-foad {
     color: #a0a0a0;
     justify-self: center;
     align-self: center;
     margin: 0;
   }
   div.content#index section#observations {
-    padding: 0.4vh 0;
+    padding: 1vh 0;
   }
   div.content#index section#observations div.container {
     display: grid;
@@ -336,7 +340,7 @@ i.fa-sharp {
     height: 10vh;
     object-fit: contain;
     background-color: #fcfeff;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.13);
   }
   div.content#index section#observations div#observations-widget {
     display: grid;
@@ -349,7 +353,7 @@ i.fa-sharp {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     background: linear-gradient(65deg, #e8f5ff, #5792ff);
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.13);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.13);
   }
   div.content#index section#observations div#observations-widget h2#temperature {
     grid-column: 1;
@@ -433,7 +437,7 @@ i.fa-sharp {
     border-radius: 0;
     column-gap: 10px;
     height: -webkit-fill-available;
-    padding: 1vh 5px;
+    padding: 1.5vh 10px;
   }
   div.content#index section#more-info a#more-info-button i, div.content#index section#more-info a#more-info-button span, div.content#index section#more-info a#more-info-button h1, div.content#index section#more-info a#more-info-button h2, div.content#index section#more-info a#more-info-button h3, div.content#index section#more-info a#more-info-button h4, div.content#index section#more-info a#more-info-button h5, div.content#index section#more-info a#more-info-button h6,
   div.content#index section#more-info a#warnings-button i,

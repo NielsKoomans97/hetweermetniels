@@ -14,7 +14,8 @@ h3 {
 
 h4,
 input,
-select  {
+select,
+a.nav-button  {
     font-size: map-get($map: $typo, $key: h4);
 }
 
