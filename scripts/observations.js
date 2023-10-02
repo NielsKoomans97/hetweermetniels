@@ -16,6 +16,7 @@ export class ObservationsWidget {
         const precipitation = document.getElementById('precipitation');
         const windDirection = document.getElementById('wind-direction');
         const windSpeed = document.getElementById('wind-speed');
+        const input = document.getElementById('search-query');
         const json = await this.GetObservationData(this.StationId);
 
         icon.setAttribute('src', `https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${json['iconcode']}.png`);
@@ -23,5 +24,6 @@ export class ObservationsWidget {
         precipitation.innerText = `${json['precipitationmm']} mm`;
         windSpeed.innerText = `${json['windspeedBft']} bft`;
         windDirection.setAttribute('style', `transform: rotate(${parseInt(json['winddirectiondegrees'])}deg);`);
+        input.setAttribute('value', `${json['stationname']}`);
     }
 }

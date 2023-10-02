@@ -249,7 +249,7 @@
         section#observations {
             padding: 1vh 0;
 
-            div.container {
+            div.container#current-observations {
                 @include grid($columns: 20% auto, $rows: auto);
 
                 column-gap: 0;

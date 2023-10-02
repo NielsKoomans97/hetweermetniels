@@ -11,7 +11,7 @@
         </div>
     </section>
     <section id="observations">
-        <div class="container">
+        <div class="container" id="current-observations">
             <img id="icon">
             <div class="col" id="observations-widget">
                 <h2 id="temperature"></h2>
@@ -29,14 +29,14 @@
     <section id="more-info">
         <div class="container">
             <div class="col" id="more-information">
-                <a href="" class="nav-button" id="warnings-button">
+                <a href="warnings.php" class="nav-button" id="warnings-button">
                     <i class="fas fa-warning"></i>
                     <div class="col">
                         <h4 id="warning-code">Code Geel</h4>
                         <h5 id="warning-description">Klik hier voor meer info</h5>
                     </div>
                 </a>
-                <a href="" class="nav-button" id="more-info-button">
+                <a href="forecasts.php" class="nav-button" id="more-info-button">
                     <h4>Voorspellingen</h4>
                     <i class="fa-solid fa-calendar-days"></i>
                 </a>
