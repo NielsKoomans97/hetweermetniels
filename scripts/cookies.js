@@ -54,7 +54,7 @@ export class CookieManager {
     }
 }
 
-class Cookie {
+export class Cookie {
     constructor(key, value) {
         this.Key = key;
         this.Value = value;

@@ -1,12 +1,26 @@
-import { CookieManager } from "./cookies";
+import { CookieManager } from "./cookies.js";
+import { Cookie } from "./cookies.js";
 
 export class WeatherManager {
-    StationId = '';
-    LocationId = '';
+    Locations = [];
+    DefaultLocation = '';
 
     async LoadConfig() {
-        const cookies = new CookieManager();
+        this.Locations = SavedLocation.GetLocations();
 
+        this.Locations.forEach(location => {
+            if (location.Default == true){
+                this.DefaultLocation= location;
+            }
+        });
+
+        if (this.HasElement('observations-widget')){
+            await this.RefreshObservations();
+        }
+
+        if (this.HasElement('locations-list')){
+            await this.RefreshForecast();
+        }
     }
 
     async Search(query) {
@@ -106,38 +120,45 @@ export class WeatherManager {
 }
 
 class SavedLocation {
+    Name = '';
+    Country = '';
     LocationId = '';
     StationId = '';
     Default = false;
 
-    constructor(locationId, stationId, defaultLocation) {
+    constructor(name, country, locationId, stationId) {
+        this.Name = name;
+        this.Country = country;
         this.LocationId = locationId;
         this.StationId = stationId;
-        this.Default = defaultLocation;
-    }
-
-    ParseLocation(value) {
-        const json = JSON.parse(value);
-        this.LocationId = json['location-id'];
-        this.StationId = json['station-id'];
-        this.Default = json['default'];
     }
 
     Parse(value) {
         return new SavedLocation(
-            value['location-id'],
-            value['station-id'],
-            value['default']
+            value['name'],
+            value['countrycode'],
+            value['id'],
+            value['weatherstationid'],
         )
     }
 
-    GetLocations() {
+    HTML(){
+        return `<a station-id="${this.StationId}" location-id="${this.LocationId}" class="nav-button location-item">
+                    <p class="location-name">
+                        ${this.Name}
+                    </p>
+                    <p class="location-country">
+                        ${this.Country}
+                    </p>
+                </a>`;
+    }
+
+    static GetLocations() {
         const cookieMan = new CookieManager();
-        const json = JSON.parse(cookieMan.GetCookie('config'));
-        const locations = json['locations'];
+        const json = JSON.parse(cookieMan.GetCookie('locations'));
 
         let result = [];
-        locations.forEach(location => {
+        json.forEach(location => {
             result.push(this.Parse(location));
         });
 
@@ -156,12 +177,21 @@ class SavedLocation {
 
     Remove() {
         const cookieMan = new CookieManager();
-        const locations = this.GetLocations();
+        const locations = SavedLocation.GetLocations();
         const index = this.GetIndex(locations);
 
         locations.splice(index, 1);
 
-        cookieMan.SaveCookie(new Cookie('config', JSON.stringify(locations)));
+        cookieMan.SaveCookie(new Cookie('locations', JSON.stringify(locations)));
+    }
+
+    Save(){
+        const cookieMan = new CookieManager();
+        const locations = SavedLocation.GetLocations();
+
+        locations.push(this);
+
+        cookieMan.SaveCookie(new Cookie('locations', JSON.stringify(locations)));
     }
 
     PopulateLocationItems() {

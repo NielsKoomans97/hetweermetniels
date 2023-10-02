@@ -1,36 +1,16 @@
 import { Announcements } from "./announcements.js";
-import { Locations } from "./locations.js";
 import { MenuExpander } from "./nav-menu.js";
 import { ObservationsWidget } from "./observations.js";
 import { SmallerRadar } from "./radar-small.js";
+import { WeatherManager } from "./weathermanager.js";
 
 new MenuExpander();
-if (HasElement('observations-widget') == true) {
-    const widget = new ObservationsWidget(6340);
-    await widget.Refresh();
-}
 
-if (HasElement('smaller-radar')){
-    new SmallerRadar();
-}
+const weatherMan = new WeatherManager();
+await weatherMan.LoadConfig();
 
-if (HasElement('warning-code')){
-    const announcements = new Announcements();
-    await announcements.RefreshHomeWidget();
-}
+const search_button = document.getElementById('search');
 
-if (HasElement('locations-list')){
-    const locations = new Locations();
-    const input = document.getElementById('search-query');
-    const search_button = document.getElementById('search');
-
-    search_button.addEventListener('click', async () => {
-        await locations.PopulateLocationsList(input.value);
-    });
-}
-
-function HasElement(element) {
-    const el = document.getElementById(element);
-
-    return el != null;
-}
+search_button.addEventListener('click', async () => {
+    await weatherMan.Search(input.value);
+});
