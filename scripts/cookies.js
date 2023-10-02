@@ -2,11 +2,11 @@ export class CookieManager {
     cookie = document.cookie;
 
     ListCookies() {
-        cookie = document.cookie;
+        const cookie = document.cookie;
         let cookies = [];
         let parts = cookie.split(';');
 
-        for (part of parts) {
+        for (let part of parts) {
             let keyvalue = part.split('=');
             let key = keyvalue[0].replace(' ', '');
             let value = keyvalue[1];
@@ -21,10 +21,10 @@ export class CookieManager {
     }
 
     GetCookie(query) {
-        cookie = document.cookie;
+        const cookie = document.cookie;
         let parts = cookie.split(';');
 
-        for (part of parts) {
+        for (let part of parts) {
             let keyvalue = part.split('=');
             let key = keyvalue[0].replace(' ', '');
             let value = keyvalue[1];
@@ -36,10 +36,10 @@ export class CookieManager {
     }
 
     HasCookie(query) {
-        cookie = document.cookie;
+        const cookie = document.cookie;
         let parts = cookie.split(';');
 
-        for (part of parts) {
+        for (let part of parts) {
             let keyvalue = part.split('=');
             let key = keyvalue[0].replace(' ', '');
 
