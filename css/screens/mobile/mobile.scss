@@ -148,11 +148,10 @@
             }
 
             div.text-input {
-                @include grid($columns: auto 15%, $rows: auto);
+                @include grid($columns: 10% auto 15%, $rows: auto);
 
-                border-radius: 6px;
-                border-top-right-radius: 30px;
-                border-bottom-right-radius: 30px;
+                border-radius: 30px;
+           
 
                 background-color: map-get($map: $colors, $key: background-color-3);
 
@@ -177,6 +176,23 @@
 
                     border-top-left-radius: 0%;
                     border-bottom-left-radius: 0%;
+
+                    i {
+                        align-self: center;
+                        justify-self: center;
+                    }
+                }
+
+                button#add{
+                    @include nav-button;
+                    
+                    background-color: map-get($map: $colors, $key: button-normal-2);
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    border-top-right-radius: 0%;
+                    border-bottom-right-radius: 0%;
 
                     i {
                         align-self: center;
@@ -234,11 +250,21 @@
                         }
                     }
 
-                    h4.location-foad {
+                    p.location-name,
+                    p.location-foad {
+                        margin: 0;
+
+                        align-self: center;
+                    }
+
+                    p.location-name {
+                        justify-self: flex-start;
+                    }
+
+                    p.location-foad {
                         color: map-get($map: $colors, $key: text-grayed);
 
                         justify-self: center;
-                        align-self: center;
 
                         margin: 0;
                     }
@@ -442,7 +468,7 @@
             }
 
             div.col#radar-config {
-                @include grid($columns: 65% 15% 20%, $rows: auto);
+                @include grid($columns: auto 15% 100px, $rows: auto);
 
                 column-gap: 0;
                 align-items: center;
@@ -459,7 +485,7 @@
             }
 
             div.col#radar-controls {
-                @include grid($columns: 10% 20% auto 12% 20%, $rows: auto);
+                @include grid($columns: 10% 100px auto 12% 100px, $rows: auto);
 
                 column-gap: 0;
                 align-items: center;
@@ -485,6 +511,108 @@
                 h5#radar-time {
                     justify-self: center;
                     margin: 0;
+                }
+            }
+        }
+    }
+
+    div.content#forecasts {
+        section#daily-forecast {
+            div.col#forecast-days {
+                @include grid($columns: repeat(15, 200px), $rows: auto);
+
+                column-gap: 15px;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            div.forecast-day{
+                @include grid($columns: auto, $rows: 120px auto);
+
+                justify-items: center;
+
+                border-radius: 6px;
+                background-color: map-get($map: $colors, $key: background-color-6);
+            }
+
+            img.forecast-icon{
+                border-top-left-radius: 6px;
+                border-top-right-radius: 6px;
+
+                width: 100%;
+                height: 120px;
+                
+                background-color: map-get($map: $colors, $key: background-color-7);
+
+                object-fit: none;
+            }
+
+            div.info-container{
+                @include grid($columns: auto, $rows: repeat(3, auto));
+
+                justify-items: flex-start;
+                width: 100%;
+
+                padding: 10px;
+
+            }
+
+            div.forecast-temps {
+                @include grid($columns: auto auto, $rows: auto);
+                align-items: center;
+                column-gap: 15px;
+
+                margin-bottom: 10px;
+
+                p{
+                    margin: 0;
+
+                    &::before{
+                        font-family: 'FontAwesome';
+                        margin-right: 10px;
+                    }
+                }
+
+
+                p.temp-high{
+                    color: map-get($map: $colors, $key: max-temp);
+
+                    &:before{
+                        content: "\f185";
+                    }
+                }
+
+                p.temp-low{
+                    color: map-get($map: $colors, $key: min-temp);
+
+                    &:before{
+                        content: "\f186";
+                    }
+                }
+            }
+
+            div.forecast-wind,
+            div.forecast-precipitation
+            {
+                @include grid($columns: 30px auto, $rows: auto);
+
+                align-items: center;
+                column-gap: 15px;
+
+                i{
+                    font-size: map-get($map: $typo, $key: fontawesome-small);
+                    width: min-content;
+
+                    justify-self: center;
+                }
+
+                p{
+                    margin: 0;
+
+                    &::before{
+                        font-family: 'FontAwesome';
+                        margin-right: 10px;
+                    }
                 }
             }
         }

@@ -7,12 +7,19 @@ h2 {
 }
 
 h3 {
-  font-size: 3.2vh;
+  font-size: 4.2vh;
 }
 
 h4,
 input,
 select,
+p.location-foad,
+p.location-name,
+p.wind-speed,
+p.precipitation,
+p.forecast-date,
+p.temp-high,
+p.temp-low,
 a.nav-button {
   font-size: 1.8vh;
 }
@@ -33,7 +40,8 @@ a {
 i.fas,
 i.fad,
 i.fa-solid,
-i.fa-sharp {
+i.fa-sharp,
+i.fa-regular {
   font-size: 2.4vh;
 }
 
@@ -197,13 +205,11 @@ i.fa-sharp {
   }
   div.content#index section#search-bar div.text-input {
     display: grid;
-    grid-template-columns: auto 15%;
+    grid-template-columns: 10% auto 15%;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
-    border-radius: 6px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 30px;
     background-color: #fcfeff;
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.13);
   }
@@ -250,6 +256,46 @@ i.fa-sharp {
     background-color: #01264d;
   }
   div.content#index section#search-bar div.text-input button#search i {
+    align-self: center;
+    justify-self: center;
+  }
+  div.content#index section#search-bar div.text-input button#add {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: #e8f5ff;
+    transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    background-color: #d0dfeb;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  div.content#index section#search-bar div.text-input button#add i, div.content#index section#search-bar div.text-input button#add span, div.content#index section#search-bar div.text-input button#add h1, div.content#index section#search-bar div.text-input button#add h2, div.content#index section#search-bar div.text-input button#add h3, div.content#index section#search-bar div.text-input button#add h4, div.content#index section#search-bar div.text-input button#add h5, div.content#index section#search-bar div.text-input button#add h6 {
+    transition: all 160ms ease-in-out;
+    color: #000000;
+  }
+  div.content#index section#search-bar div.text-input button#add i {
+    width: min-content;
+    justify-self: center;
+  }
+  div.content#index section#search-bar div.text-input button#add:hover {
+    background-color: #5792ff;
+  }
+  div.content#index section#search-bar div.text-input button#add:hover i, div.content#index section#search-bar div.text-input button#add:hover span, div.content#index section#search-bar div.text-input button#add:hover h1, div.content#index section#search-bar div.text-input button#add:hover h2, div.content#index section#search-bar div.text-input button#add:hover h3, div.content#index section#search-bar div.text-input button#add:hover h4, div.content#index section#search-bar div.text-input button#add:hover h5, div.content#index section#search-bar div.text-input button#add:hover h6 {
+    color: #ffffff;
+  }
+  div.content#index section#search-bar div.text-input button#add:active {
+    background-color: #01264d;
+  }
+  div.content#index section#search-bar div.text-input button#add i {
     align-self: center;
     justify-self: center;
   }
@@ -315,10 +361,17 @@ i.fa-sharp {
   div.content#index section#search-bar div#locations-list button:hover h4.location-foad {
     color: white;
   }
-  div.content#index section#search-bar div#locations-list button h4.location-foad {
+  div.content#index section#search-bar div#locations-list button p.location-name,
+  div.content#index section#search-bar div#locations-list button p.location-foad {
+    margin: 0;
+    align-self: center;
+  }
+  div.content#index section#search-bar div#locations-list button p.location-name {
+    justify-self: flex-start;
+  }
+  div.content#index section#search-bar div#locations-list button p.location-foad {
     color: #a0a0a0;
     justify-self: center;
-    align-self: center;
     margin: 0;
   }
   div.content#index section#observations {
@@ -508,7 +561,7 @@ i.fa-sharp {
     text-align: center;
   }
   div.content#index section#smaller-radar i.fa-solid {
-    font-size: 2vh;
+    font-size: 1.8vh;
   }
   div.content#index section#smaller-radar i.fa-clock,
   div.content#index section#smaller-radar i.fa-forward-fast {
@@ -534,7 +587,7 @@ i.fa-sharp {
   }
   div.content#index section#smaller-radar div.col#radar-config {
     display: grid;
-    grid-template-columns: 65% 15% 20%;
+    grid-template-columns: auto 15% 100px;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
@@ -550,7 +603,7 @@ i.fa-sharp {
   }
   div.content#index section#smaller-radar div.col#radar-controls {
     display: grid;
-    grid-template-columns: 10% 20% auto 12% 20%;
+    grid-template-columns: 10% 100px auto 12% 100px;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
@@ -605,6 +658,98 @@ i.fa-sharp {
   div.content#index section#smaller-radar div.col#radar-controls h5#radar-time {
     justify-self: center;
     margin: 0;
+  }
+  div.content#forecasts section#daily-forecast div.col#forecast-days {
+    display: grid;
+    grid-template-columns: repeat(15, 200px);
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    column-gap: 15px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-day {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 120px auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-items: center;
+    border-radius: 6px;
+    background-color: #d0dfeb;
+  }
+  div.content#forecasts section#daily-forecast img.forecast-icon {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: 100%;
+    height: 120px;
+    background-color: #ffffff;
+    object-fit: none;
+  }
+  div.content#forecasts section#daily-forecast div.info-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 5px;
+    row-gap: 5px;
+    justify-items: flex-start;
+    width: 100%;
+    padding: 10px;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 10px;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps p {
+    margin: 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps p::before {
+    font-family: "FontAwesome";
+    margin-right: 10px;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps p.temp-high {
+    color: #ce2828;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps p.temp-high:before {
+    content: "\f185";
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps p.temp-low {
+    color: #3e83d6;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-temps p.temp-low:before {
+    content: "\f186";
+  }
+  div.content#forecasts section#daily-forecast div.forecast-wind,
+  div.content#forecasts section#daily-forecast div.forecast-precipitation {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    align-items: center;
+    column-gap: 15px;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-wind i,
+  div.content#forecasts section#daily-forecast div.forecast-precipitation i {
+    font-size: 1.8vh;
+    width: min-content;
+    justify-self: center;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-wind p,
+  div.content#forecasts section#daily-forecast div.forecast-precipitation p {
+    margin: 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-wind p::before,
+  div.content#forecasts section#daily-forecast div.forecast-precipitation p::before {
+    font-family: "FontAwesome";
+    margin-right: 10px;
   }
 }
 /* cyrillic */

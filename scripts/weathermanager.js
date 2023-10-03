@@ -1,5 +1,6 @@
 import { CookieManager } from "./cookies.js";
 import { Cookie } from "./cookies.js";
+import { SavedLocation } from "./savedlocation.js";
 
 export class WeatherManager {
     Locations = [];
@@ -40,6 +41,33 @@ export class WeatherManager {
         if (this.HasElement('forecast-days')) {
             await this.RefreshForecast();
         }
+
+        if (this.HasElement('more-information')){
+            await this.RefreshAnnouncementPill();
+        }
+    }
+
+    async RefreshAnnouncementPill(){
+        const warning_code = document.getElementById('warning-code');
+        const warning_description = document.getElementById('warning-description');
+        const data = await fetch('https://data.buienradar.nl/1.0/announcements/apps');
+        const json = await data.json();
+
+        const warnings = json['warnings']['locations'];
+
+        if (warnings.length > 0){
+            warning_description.innerText = `Voor ${warnings.length} provincies`;
+        }
+        else{
+            warning_description.innerText = '';
+        }
+
+        switch(json['warnings']['color']){
+            case 'YELLOW': warning_code.innerText = `Code Geel`; break;
+            case 'GREEN': warning_code.innerText = 'Geen waarschuwingen'; break;
+            case 'RED': warning_code.innerText = 'Code Rood'; break;
+            case 'ORANGE': warning_code.innerText = 'Code Oranje'; break;
+        }
     }
 
     async Search(query) {
@@ -50,7 +78,6 @@ export class WeatherManager {
         if (json.length > 0) {
             json.forEach(element => {
                 let locationItem = document.createElement('button');
-                locationItem.innerText = element['name'];
                 locationItem.className = 'nav-button';
                 locationItem.setAttribute('data-json', JSON.stringify(element));
                 locationItem.addEventListener('click', async (event) => {
@@ -66,10 +93,19 @@ export class WeatherManager {
                         await this.RefreshForecast();
                     }
 
+                    if (this.HasElement('more-information')){
+                        await this.RefreshAnnouncementPill();
+                    }
+
                     locations_list.setAttribute('data-visible', 'collapsed');
                 });
 
-                let locationFoad = document.createElement('h4');
+                let locationName = document.createElement('p');
+                locationName.className = 'location-name';
+                locationName.innerText = element['name'];
+                locationItem.appendChild(locationName);
+
+                let locationFoad = document.createElement('p');
                 locationFoad.className = 'location-foad';
                 locationFoad.innerText = element['countrycode'];
                 locationItem.appendChild(locationFoad);
@@ -102,7 +138,7 @@ export class WeatherManager {
         precipitation.innerText = `${json['precipitationmm']} mm`;
         windSpeed.innerText = `${json['windspeedBft']} bft`;
         windDirection.setAttribute('style', `transform: rotate(${parseInt(json['winddirectiondegrees'])}deg);`);
-        input.setAttribute('value', `${json['stationname']}`);
+        input.value = `${json['stationname']}`;
     }
 
     async GetForecastData() {
@@ -117,77 +153,98 @@ export class WeatherManager {
         const data = await this.GetForecastData();
         const days = data['days'];
 
-        const forecast_table = document.createElement('table');
-        const tableHead = document.createElement('thead');
-        const tableBody = document.createElement('tbody');
-
-        const dayStrings = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo', ];
-
         days.forEach(day => {
+            BuildDay(forecast_days, day);
+        });
+
+        function BuildDay(root, day){
+            const forecast_day = document.createElement('div');
+            forecast_day.className = 'forecast-day';
+
+            const info_container = document.createElement('div');
+            info_container.classList.add('col', 'info-container');
+
+            BuildIconItem(forecast_day, day);
+
+            BuildDateItem(info_container, day);
+            BuildTempItem(info_container, day);
+            BuildWindItem(info_container, day);
+            BuildPrecipItem(info_container, day);
+
+            forecast_day.appendChild(info_container);
+            root.appendChild(forecast_day);
+        }
+
+        function BuildDateItem(root, day){
+            const dayStrings = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo', ];
             var date = new Date(Date.parse(day['date']));
             var day = dayStrings[date.getDay()];
 
-            var th = document.createElement('th');
-            var p = document.createElement('p');
-            p.className = 'forecast-date';
-            p.innerText = day;
-            th.appendChild(p);
+            const dateItem = document.createElement('p');
+            dateItem.className = 'forecast-date';
+            dateItem.innerText = `${day} ${date.getDate()} - ${date.getUTCMonth()}`;
 
-            tableHead.appendChild(th);
-        });
+            root.appendChild(dateItem);
+        }
 
-        forecast_table.appendChild(tableHead);
-        forecast_table.appendChild(tableBody);
+        function BuildTempItem(root, day){
+            const tempContainer = document.createElement('div');
+            tempContainer.classList.add('col', 'forecast-temps');
 
-        forecast_days.appendChild(forecast_table);
+            const high = document.createElement('p');
+            high.className = 'temp-high';
+            high.innerText = `${day['maxtemp']}°`;
+            tempContainer.appendChild(high);
 
-        // days.forEach(day => {
-        //     BuildDay(forecast_days, day);
-        // });
+            const low = document.createElement('p');
+            low.className = 'temp-low';
+            low.innerText = `${day['mintemp']}°`;
+            tempContainer.appendChild(low);
 
-        // function BuildDay(root, data) {
-        //     const forecast_day = document.createElement('div');
-        //     forecast_day.className = 'forecast-day';
+            root.appendChild(tempContainer);
+        }
 
-        //     BuildTemp(forecast_day, data);
-        //     BuildWind(forecast_day, data);
+        function BuildIconItem(root, day){
+            var iconItem = document.createElement('img');
 
-        //     root.appendChild(forecast_day);
-        // }
+            iconItem.setAttribute('src', `https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${day['iconcode']}.png`);
+            iconItem.className = 'forecast-icon';
 
-        // function BuildTemp(root, day) {
-        //     const tempContainer = document.createElement('div');
-        //     tempContainer.classList.add('col', 'forecast-temp');
+            root.appendChild(iconItem);
+        }
 
-        //     const high = document.createElement('p');
-        //     high.className = 'temp-high';
-        //     high.innerText = day['maxtemp'];
-        //     tempContainer.appendChild(high);
+        function BuildWindItem(root, day){
+            const windContainer = document.createElement('div');
+            windContainer.classList.add('col', 'forecast-wind');
 
-        //     const low = document.createElement('p');
-        //     low.className = 'temp-low';
-        //     low.innerText = day['mintemp'];
-        //     tempContainer.appendChild(low);
+            const windIcon = document.createElement('i');
+            windIcon.classList.add('fas', 'fa-arrow-up');
+            windIcon.setAttribute('style', `transform: rotate(${parseInt(day['winddirectiondegrees'])}deg);`);
+            windContainer.appendChild(windIcon);
 
-        //     root.appendChild(tempContainer);
-        // }
+            const windSpeed = document.createElement('p');
+            windSpeed.className = 'wind-speed';
+            windSpeed.innerText = day['windspeed'];
+            windContainer.appendChild(windSpeed);
 
-        // function BuildWind(root, day) {
-        //     const windContainer = document.createElement('div');
-        //     windContainer.classList.add('col', 'forecast-wind');
+            root.appendChild(windContainer);
+        }
 
-        //     const icon = document.createElement('i');
-        //     icon.classList.add('fas', 'fa-arrow-up');
-        //     icon.setAttribute('style', `transform: rotate(${day['winddirection']}deg);')`);
-        //     windContainer.appendChild(icon);
+        function BuildPrecipItem(root, day){
+            const precipContainer = document.createElement('div');
+            precipContainer.classList.add('col', 'forecast-precipitation');
 
-        //     const speed = document.createElement('p');
-        //     speed.className = 'wind-speed';
-        //     speed.innerText = `${day['windspeedbft']} bft`;
-        //     windContainer.appendChild(speed);
+            const precipIcon = document.createElement('i');
+            precipIcon.classList.add('fas','fa-droplet');
+            precipContainer.appendChild(precipIcon);
 
-        //     root.appendChild(windContainer);
-        // }
+            const precipAmount = document.createElement('p');
+            precipAmount.className = 'precipitation';
+            precipAmount.innerText = `${day['precipitationmm']} mm`
+            precipContainer.appendChild(precipAmount);
+
+            root.appendChild(precipContainer);
+        }
     }
 
     HasElement(element) {
@@ -197,96 +254,3 @@ export class WeatherManager {
     }
 }
 
-class SavedLocation {
-    Name = '';
-    Country = '';
-    LocationId = '';
-    StationId = '';
-    Default = false;
-
-    constructor(name, country, locationId, stationId) {
-        this.Name = name;
-        this.Country = country;
-        this.LocationId = locationId;
-        this.StationId = stationId;
-    }
-
-    static Parse(value) {
-        var result = new SavedLocation(
-            value['Name'],
-            value['Country'],
-            value['LocationId'],
-            value['StationId'],
-        );
-
-        return result;
-    }
-
-    static ParseSearch(value) {
-        var result = new SavedLocation(
-            value['name'],
-            value['countrycode'],
-            value['id'],
-            value['weatherstationid']
-        );
-
-        return result;
-    }
-
-    HTML() {
-        return `<a station-id="${this.StationId}" location-id="${this.LocationId}" class="nav-button location-item">
-                    <p class="location-name">
-                        ${this.Name}
-                    </p>
-                    <p class="location-country">
-                        ${this.Country}
-                    </p>
-                </a>`;
-    }
-
-    static GetLocations() {
-        const cookieMan = new CookieManager();
-        const cookie = cookieMan.GetCookie('locations').Value;
-        const json = JSON.parse(cookie);
-
-        let result = [];
-        json.forEach(location => {
-            result.push(this.Parse(location));
-        });
-
-        return result;
-    }
-
-    GetIndex(locations) {
-        for (let i = 0; i < locations.length; i++) {
-            const location = locations[i];
-
-            if (location.StationId == this.StationId) {
-                return i;
-            }
-        }
-    }
-
-    Remove() {
-        const cookieMan = new CookieManager();
-        const locations = SavedLocation.GetLocations();
-        const index = this.GetIndex(locations);
-
-        locations.splice(index, 1);
-
-        cookieMan.SaveCookie(new Cookie('locations', JSON.stringify(locations)));
-    }
-
-    Save() {
-        const cookieMan = new CookieManager();
-        const locations = SavedLocation.GetLocations();
-
-        locations.push(this);
-
-        cookieMan.SaveCookie(new Cookie('locations', JSON.stringify(locations)));
-    }
-
-    PopulateLocationItems() {
-
-    }
-}

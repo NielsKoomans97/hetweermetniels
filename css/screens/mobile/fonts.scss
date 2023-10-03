@@ -15,7 +15,14 @@ h3 {
 h4,
 input,
 select,
-a.nav-button  {
+p.location-foad,
+p.location-name,
+p.wind-speed,
+p.precipitation,
+p.forecast-date,
+p.temp-high,
+p.temp-low,
+a.nav-button {
     font-size: map-get($map: $typo, $key: h4);
 }
 
@@ -36,6 +43,7 @@ a {
 i.fas,
 i.fad,
 i.fa-solid,
-i.fa-sharp {
+i.fa-sharp,
+i.fa-regular {
     font-size: map-get($map: $typo, $key: fontawesome-icon);
 }
