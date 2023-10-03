@@ -151,7 +151,7 @@
                 @include grid($columns: 10% auto 15%, $rows: auto);
 
                 border-radius: 30px;
-           
+
 
                 background-color: map-get($map: $colors, $key: background-color-3);
 
@@ -183,7 +183,7 @@
                     }
                 }
 
-                button#add{
+                button#add {
                     @include nav-button;
 
                     background-color: map-get($map: $colors, $key: button-normal-2);
@@ -511,7 +511,7 @@
                     border-bottom-right-radius: 0;
                 }
 
-                select{
+                select {
                     margin: 5px;
                 }
 
@@ -526,97 +526,109 @@
     div.content#forecasts {
         section#daily-forecast {
             div.col#forecast-days {
-                @include grid($columns: repeat(15, 200px), $rows: auto);
+                @include grid($columns: auto, $rows: repeat(15, 100px));
 
-                column-gap: 15px;
+                row-gap: 20px;
                 width: 100%;
                 overflow-x: auto;
             }
 
-            div.forecast-day{
-                @include grid($columns: auto, $rows: 120px auto);
+            div.forecast-day {
+                @include grid($columns: 120px auto, $rows: auto);
 
                 justify-items: center;
 
                 border-radius: 6px;
                 background-color: map-get($map: $colors, $key: background-color-6);
+
+                background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
+                box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
             }
 
-            img.forecast-icon{
+            img.forecast-icon {
                 border-top-left-radius: 6px;
-                border-top-right-radius: 6px;
+                border-bottom-left-radius: 6px;
 
                 width: 100%;
-                height: 120px;
-                
+                height: 100px;
+
                 background-color: map-get($map: $colors, $key: background-color-7);
 
                 object-fit: none;
             }
 
-            div.info-container{
-                @include grid($columns: auto, $rows: repeat(3, auto));
+            div.info-container {
+                @include grid($columns: repeat(2, 50%), $rows: repeat(2, 50%));
 
                 justify-items: flex-start;
                 width: 100%;
 
-                padding: 10px;
+                padding: 0;
+                margin: auto 10px;
+                height: 90px;
 
+            }
+
+            p.forecast-date{
+                font-weight: 500;
             }
 
             div.forecast-temps {
                 @include grid($columns: auto auto, $rows: auto);
+
+                grid-column: 1;
+                grid-row: 2;
+
                 align-items: center;
                 column-gap: 15px;
 
-                margin-bottom: 10px;
-
-                p{
+                p {
                     margin: 0;
 
-                    &::before{
+                    &::before {
                         font-family: 'FontAwesome';
                         margin-right: 10px;
                     }
                 }
 
-
-                p.temp-high{
-                    color: map-get($map: $colors, $key: max-temp);
-
-                    &:before{
-                        content: "\f185";
+                p.temp-high {
+                    &:before {
+                        content: "\f062";
                     }
                 }
 
-                p.temp-low{
-                    color: map-get($map: $colors, $key: min-temp);
-
-                    &:before{
-                        content: "\f186";
+                p.temp-low {
+                    &:before {
+                        content: "\f063";
                     }
                 }
             }
 
+            div.forecast-wind{
+                grid-column: 2;
+                grid-row: 1;
+
+                height: 15px;
+            }
+
             div.forecast-wind,
-            div.forecast-precipitation
-            {
+            div.forecast-precipitation {
                 @include grid($columns: 30px auto, $rows: auto);
 
                 align-items: center;
                 column-gap: 15px;
 
-                i{
+                i {
                     font-size: map-get($map: $typo, $key: fontawesome-small);
                     width: min-content;
 
                     justify-self: center;
                 }
 
-                p{
+                p {
                     margin: 0;
 
-                    &::before{
+                    &::before {
                         font-family: 'FontAwesome';
                         margin-right: 10px;
                     }

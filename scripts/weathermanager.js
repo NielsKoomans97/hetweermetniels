@@ -176,7 +176,7 @@ export class WeatherManager {
         }
 
         function BuildDateItem(root, day){
-            const dayStrings = ['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo', ];
+            const dayStrings = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag', ];
             var date = new Date(Date.parse(day['date']));
             var day = dayStrings[date.getDay()];
 
@@ -186,6 +186,10 @@ export class WeatherManager {
 
             root.appendChild(dateItem);
         }
+
+        // function BuildDateAndTempItem(root, day){
+        //     var first_container = n
+        // }
 
         function BuildTempItem(root, day){
             const tempContainer = document.createElement('div');
@@ -218,8 +222,11 @@ export class WeatherManager {
             windContainer.classList.add('col', 'forecast-wind');
 
             const windIcon = document.createElement('i');
-            windIcon.classList.add('fas', 'fa-arrow-up');
-            windIcon.setAttribute('style', `transform: rotate(${parseInt(day['winddirectiondegrees'])}deg);`);
+            windIcon.classList.add('fa-solid', 'fa-arrow-up');
+
+            const windDir = parseInt(day['winddirectiondegrees']);
+
+            windIcon.setAttribute('style', `transform: rotate(${(windDir)}deg);`);
             windContainer.appendChild(windIcon);
 
             const windSpeed = document.createElement('p');

@@ -8,7 +8,8 @@ h2 {
     font-size: map-get($map: $typo, $key: h2);
 }
 
-h3 {
+h3,
+p.forecast-date {
     font-size: map-get($map: $typo, $key: h3);
 }
 
@@ -18,8 +19,7 @@ select,
 p.location-foad,
 p.location-name,
 p.wind-speed,
-p.precipitation,
-p.forecast-date,
+p.precipitation,,
 p.temp-high,
 p.temp-low,
 a.nav-button {
