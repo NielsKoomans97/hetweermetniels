@@ -23,6 +23,8 @@ export class SavedLocation {
             value['StationId'],
         );
 
+        result.Default = value['Default'];
+
         return result;
     }
 
