@@ -603,13 +603,12 @@ i.fa-regular {
   }
   div.content#index section#smaller-radar div.col#radar-controls {
     display: grid;
-    grid-template-columns: 10% 100px auto 12% 100px;
+    grid-template-columns: 15% 15% auto 12% 100px;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
     column-gap: 0;
     align-items: center;
-    padding: 5px;
     background-color: #d0dfeb;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -637,6 +636,9 @@ i.fa-regular {
     align-self: stretch;
     align-items: center;
     justify-items: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
   div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause i, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause span, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h1, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h2, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h3, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h4, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h5, div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause h6 {
     transition: all 160ms ease-in-out;
@@ -654,6 +656,9 @@ i.fa-regular {
   }
   div.content#index section#smaller-radar div.col#radar-controls button#radar-playpause:active {
     background-color: #01264d;
+  }
+  div.content#index section#smaller-radar div.col#radar-controls select {
+    margin: 5px;
   }
   div.content#index section#smaller-radar div.col#radar-controls h5#radar-time {
     justify-self: center;

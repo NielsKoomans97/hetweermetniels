@@ -185,7 +185,7 @@
 
                 button#add{
                     @include nav-button;
-                    
+
                     background-color: map-get($map: $colors, $key: button-normal-2);
 
                     grid-template-columns: auto;
@@ -485,11 +485,10 @@
             }
 
             div.col#radar-controls {
-                @include grid($columns: 10% 100px auto 12% 100px, $rows: auto);
+                @include grid($columns: 15% 15% auto 12% 100px, $rows: auto);
 
                 column-gap: 0;
                 align-items: center;
-                padding: 5px;
 
                 background-color: map-get($map: $colors, $key: background-color-6);
                 border-bottom-left-radius: 6px;
@@ -506,6 +505,14 @@
 
                     align-items: center;
                     justify-items: center;
+
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+                select{
+                    margin: 5px;
                 }
 
                 h5#radar-time {
