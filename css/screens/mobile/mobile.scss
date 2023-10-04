@@ -526,7 +526,7 @@
     div.content#forecasts {
         section#daily-forecast {
             div.col#forecast-days {
-                @include grid($columns: auto, $rows: repeat(15, 100px));
+                @include grid($columns: auto, $rows: repeat(15, auto));
 
                 row-gap: 20px;
                 width: 100%;
@@ -534,9 +534,8 @@
             }
 
             div.forecast-day {
-                @include grid($columns: 120px auto, $rows: auto);
-
-                justify-items: center;
+                display: flex;
+                flex-direction: row;
 
                 border-radius: 6px;
                 background-color: map-get($map: $colors, $key: background-color-6);
@@ -549,8 +548,7 @@
                 border-top-left-radius: 6px;
                 border-bottom-left-radius: 6px;
 
-                width: 100%;
-                height: 100px;
+                height: 100%;
 
                 background-color: map-get($map: $colors, $key: background-color-7);
 
@@ -563,9 +561,7 @@
                 justify-items: flex-start;
                 width: 100%;
 
-                padding: 0;
-                margin: auto 10px;
-                height: 90px;
+                padding: 15px;
 
             }
 
