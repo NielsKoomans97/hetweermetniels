@@ -696,11 +696,13 @@ i.fa-regular {
     column-gap: 5px;
     row-gap: 5px;
     justify-items: flex-start;
+    align-items: center;
     width: 100%;
     padding: 15px;
   }
   div.content#forecasts section#daily-forecast p.forecast-date {
     font-weight: 500;
+    margin: 0;
   }
   div.content#forecasts section#daily-forecast div.forecast-temps {
     display: grid;

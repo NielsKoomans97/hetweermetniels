@@ -187,10 +187,6 @@ export class WeatherManager {
             root.appendChild(dateItem);
         }
 
-        // function BuildDateAndTempItem(root, day){
-        //     var first_container = n
-        // }
-
         function BuildTempItem(root, day){
             const tempContainer = document.createElement('div');
             tempContainer.classList.add('col', 'forecast-temps');
