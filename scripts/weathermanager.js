@@ -75,6 +75,8 @@ export class WeatherManager {
         const data = await fetch(`https://location.buienradar.nl/1.1/location/search?query=${query}`);
         const json = await data.json();
 
+        this.ClearAll(locations_list);
+
         if (json.length > 0) {
             json.forEach(element => {
                 let locationItem = document.createElement('button');
@@ -108,6 +110,63 @@ export class WeatherManager {
                 let locationFoad = document.createElement('p');
                 locationFoad.className = 'location-foad';
                 locationFoad.innerText = element['countrycode'];
+                locationItem.appendChild(locationFoad);
+
+                locations_list.appendChild(locationItem);
+            });
+
+            locations_list.setAttribute('data-visible', 'visible');
+        }
+    }
+
+   ClearAll(element) {
+        var delChild = element.lastChild;
+        while (delChild) {
+            element.removeChild(delChild);
+            delChild = element.lastChild;
+        }
+    }
+
+    async Select(){
+        const locations_list = document.getElementById('saved-locations-list');
+        const locations = SavedLocation.GetLocations();
+
+        this.ClearAll(locations_list);
+        
+        if (locations.length > 0){
+            locations.forEach(element => {
+                let locationItem = document.createElement('button');
+                locationItem.className = 'nav-button';
+                locationItem.setAttribute('data-json', JSON.stringify(element));
+                locationItem.addEventListener('click', async (event) => {
+                    const target = event.target;
+
+                    this.DefaultLocation = SavedLocation.Parse(JSON.parse(target.getAttribute('data-json')));
+                    this.DefaultLocation.SetDefault();
+
+                    if (this.HasElement('observations-widget')) {
+                        await this.RefreshObservations();
+                    }
+
+                    if (this.HasElement('forecast-days')) {
+                        await this.RefreshForecast();
+                    }
+
+                    if (this.HasElement('more-information')){
+                        await this.RefreshAnnouncementPill();
+                    }
+
+                    locations_list.setAttribute('data-visible', 'collapsed');
+                });
+
+                let locationName = document.createElement('p');
+                locationName.className = 'location-name';
+                locationName.innerText = element['Name'];
+                locationItem.appendChild(locationName);
+
+                let locationFoad = document.createElement('p');
+                locationFoad.className = 'location-foad';
+                locationFoad.innerText = element['Country'];
                 locationItem.appendChild(locationFoad);
 
                 locations_list.appendChild(locationItem);
@@ -180,11 +239,20 @@ export class WeatherManager {
             var date = new Date(Date.parse(day['date']));
             var day = dayStrings[date.getDay()];
 
-            const dateItem = document.createElement('p');
-            dateItem.className = 'forecast-date';
-            dateItem.innerText = `${day} ${date.getDate()} - ${date.getUTCMonth()}`;
+            const dateContainer = document.createElement('div');
+            dateContainer.className = 'forecast-date';
 
-            root.appendChild(dateItem);
+            const dateItem = document.createElement('p');
+            dateItem.className = 'date-string';
+            dateItem.innerText = `${day}`;
+            dateContainer.appendChild(dateItem);
+
+            const dateNr = document.createElement('p');
+            dateNr.className = 'date-number';
+            dateNr.innerText = `${date.getDate()} - ${date.getUTCMonth()}`
+            dateContainer.appendChild(dateNr);
+
+            root.appendChild(dateContainer);
         }
 
         function BuildTempItem(root, day){

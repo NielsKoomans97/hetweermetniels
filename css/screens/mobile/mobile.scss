@@ -148,10 +148,10 @@
             }
 
             div.text-input {
-                @include grid($columns: 10% auto 15%, $rows: auto);
+                @include grid($columns: 12% auto 12% 15%, $rows: auto);
+                column-gap: 0;
 
-                border-radius: 30px;
-
+                border-radius: 6px;
 
                 background-color: map-get($map: $colors, $key: background-color-3);
 
@@ -176,6 +176,8 @@
 
                     border-top-left-radius: 0%;
                     border-bottom-left-radius: 0%;
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
 
                     i {
                         align-self: center;
@@ -193,6 +195,25 @@
 
                     border-top-right-radius: 0%;
                     border-bottom-right-radius: 0%;
+                    border-top-left-radius: 6px;
+                    border-bottom-left-radius: 6px;
+
+                    i {
+                        align-self: center;
+                        justify-self: center;
+                    }
+                }
+
+                button#select{
+                    @include nav-button;
+
+                    background-color: map-get($map: $colors, $key: button-normal-2);
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    margin: 0;
+                    border-radius: 0;
 
                     i {
                         align-self: center;
@@ -201,7 +222,7 @@
                 }
             }
 
-            div#locations-list {
+            div#locations-list, div#saved-locations-list {
                 background-color: map-get($map: $colors, $key: background-color-6);
 
                 position: absolute;
@@ -525,6 +546,44 @@
 
     div.content#forecasts {
         section#daily-forecast {
+
+            div.col.expander-bar{
+                @include grid($columns: auto 15%, $rows: auto);
+
+                background-color: map-get($map: $colors, $key: background-color-6);
+                align-items: center;
+
+                border-radius: 6px;
+
+                padding: 5px;
+
+                margin-bottom: 5px;
+
+                h4{
+                    margin: 0;
+                }
+
+                button{
+                    @include nav-button;
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    justify-items: center;
+                    align-items: center;
+
+                    padding: 10px 5px;
+
+                    border-radius: 6px;
+
+                    i{
+                        margin: 0;
+                        height: min-content;
+                        width: min-content;
+                    }
+                }
+            }
+
             div.col#forecast-days {
                 @include grid($columns: auto, $rows: repeat(15, auto));
 
@@ -542,6 +601,8 @@
 
                 background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
                 box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
+
+                column-gap: 5px;
             }
 
             img.forecast-icon {
@@ -549,10 +610,11 @@
                 border-bottom-left-radius: 6px;
 
                 height: 100%;
+                width: 90px;
 
                 background-color: map-get($map: $colors, $key: background-color-7);
 
-                object-fit: none;
+                object-fit: contain;
             }
 
             div.info-container {
@@ -560,15 +622,28 @@
 
                 justify-items: flex-start;
                 align-items:center;
+                padding: 10px;
+
                 width: 100%;
 
-                padding: 15px;
-
+                padding: 5px 0;
             }
 
-            p.forecast-date{
-                font-weight: 500;
-                margin: 0;
+            div.forecast-date{
+                align-self: flex-start;
+
+                p{
+                    margin: 0;
+                }
+
+                p.date-string{
+                    font-weight: 500;
+                    margin: 0;
+                }
+
+                p.date-number{
+                    font-weight: 300;
+                }
             }
 
             div.forecast-temps {

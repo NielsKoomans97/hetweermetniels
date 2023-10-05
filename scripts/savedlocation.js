@@ -92,6 +92,22 @@ export class SavedLocation {
         cookieMan.SaveCookie(new Cookie('locations', JSON.stringify(locations)));
     }
 
+    SetDefault() {
+        const cookieMan = new CookieManager();
+        const locations = SavedLocation.GetLocations();
+
+        locations.forEach(location => {
+            if (location.LocationId == this.LocationId){
+                location.Default = true;
+            }
+            else{
+                location.Default = false;
+            }
+        })
+
+        cookieMan.SaveCookie(new Cookie('locations', JSON.stringify(locations)));
+    }
+
     PopulateLocationItems() {
 
     }

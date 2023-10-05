@@ -23,6 +23,11 @@ if (HasElement('search')) {
     add_button.addEventListener('click', () => {
         weatherMan.DefaultLocation.Save();
     });
+
+    const select_button = document.getElementById('select');
+    select_button.addEventListener('click', async () => {
+        await weatherMan.Select();
+    });
 }
 
 

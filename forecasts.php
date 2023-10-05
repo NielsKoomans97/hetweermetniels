@@ -5,7 +5,7 @@
         <div class="container">
             <div class="col expander-bar">
                 <h4>Voorspellingen</h4>
-                <button class="nav-button" id="forecast-expand"><i class="fas fa-arrow-down"></i></button>
+                <button class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
             </div>
             <div class="col">
                 <div class="col" id="forecast-days" data-collapsed="collapsed">

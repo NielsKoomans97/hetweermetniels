@@ -5,9 +5,12 @@
             <div class="col text-input">
                 <button id="add" class="nav-button"><i class="fa-regular fa-square-plus"></i></button>
                 <input type="text" id="search-query" nane="search-query" placeholder="Typ hier uw zoekopdracht">
+                <button id="select" class="nav-button"><i class="fa-solid fa-gear"></i></button>
                 <button id="search" class="nav-button"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="col" id="locations-list" data-visible="collapsed">
+            </div>
+            <div class="col" id="saved-locations-list" data-visible="collapsed">
             </div>
         </div>
     </section>
