@@ -1,3 +1,4 @@
+import { GroupBox } from "./groupbox.js";
 import { MenuExpander } from "./nav-menu.js";
 import { SmallerRadar } from "./radar-small.js";
 import { WeatherManager } from "./weathermanager.js";
@@ -30,6 +31,9 @@ if (HasElement('search')) {
     });
 }
 
+if (HasElement('forecast-days')){
+    new GroupBox();
+}
 
 function HasElement(element) {
     const el = document.getElementById(element);

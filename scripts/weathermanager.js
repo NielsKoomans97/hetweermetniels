@@ -42,12 +42,12 @@ export class WeatherManager {
             await this.RefreshForecast();
         }
 
-        if (this.HasElement('more-information')){
+        if (this.HasElement('more-information')) {
             await this.RefreshAnnouncementPill();
         }
     }
 
-    async RefreshAnnouncementPill(){
+    async RefreshAnnouncementPill() {
         const warning_code = document.getElementById('warning-code');
         const warning_description = document.getElementById('warning-description');
         const data = await fetch('https://data.buienradar.nl/1.0/announcements/apps');
@@ -55,14 +55,14 @@ export class WeatherManager {
 
         const warnings = json['warnings']['locations'];
 
-        if (warnings.length > 0){
+        if (warnings.length > 0) {
             warning_description.innerText = `Voor ${warnings.length} provincies`;
         }
-        else{
+        else {
             warning_description.innerText = '';
         }
 
-        switch(json['warnings']['color']){
+        switch (json['warnings']['color']) {
             case 'YELLOW': warning_code.innerText = `Code Geel`; break;
             case 'GREEN': warning_code.innerText = 'Geen waarschuwingen'; break;
             case 'RED': warning_code.innerText = 'Code Rood'; break;
@@ -95,7 +95,7 @@ export class WeatherManager {
                         await this.RefreshForecast();
                     }
 
-                    if (this.HasElement('more-information')){
+                    if (this.HasElement('more-information')) {
                         await this.RefreshAnnouncementPill();
                     }
 
@@ -119,7 +119,7 @@ export class WeatherManager {
         }
     }
 
-   ClearAll(element) {
+    ClearAll(element) {
         var delChild = element.lastChild;
         while (delChild) {
             element.removeChild(delChild);
@@ -127,13 +127,13 @@ export class WeatherManager {
         }
     }
 
-    async Select(){
+    async Select() {
         const locations_list = document.getElementById('saved-locations-list');
         const locations = SavedLocation.GetLocations();
 
         this.ClearAll(locations_list);
-        
-        if (locations.length > 0){
+
+        if (locations.length > 0) {
             locations.forEach(element => {
                 let locationItem = document.createElement('button');
                 locationItem.className = 'nav-button';
@@ -152,7 +152,7 @@ export class WeatherManager {
                         await this.RefreshForecast();
                     }
 
-                    if (this.HasElement('more-information')){
+                    if (this.HasElement('more-information')) {
                         await this.RefreshAnnouncementPill();
                     }
 
@@ -216,7 +216,7 @@ export class WeatherManager {
             BuildDay(forecast_days, day);
         });
 
-        function BuildDay(root, day){
+        function BuildDay(root, day) {
             const forecast_day = document.createElement('div');
             forecast_day.className = 'forecast-day';
 
@@ -234,8 +234,8 @@ export class WeatherManager {
             root.appendChild(forecast_day);
         }
 
-        function BuildDateItem(root, day){
-            const dayStrings = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag', ];
+        function BuildDateItem(root, day) {
+            const dayStrings = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',];
             var date = new Date(Date.parse(day['date']));
             var day = dayStrings[date.getDay()];
 
@@ -255,7 +255,7 @@ export class WeatherManager {
             root.appendChild(dateContainer);
         }
 
-        function BuildTempItem(root, day){
+        function BuildTempItem(root, day) {
             const tempContainer = document.createElement('div');
             tempContainer.classList.add('col', 'forecast-temps');
 
@@ -272,7 +272,7 @@ export class WeatherManager {
             root.appendChild(tempContainer);
         }
 
-        function BuildIconItem(root, day){
+        function BuildIconItem(root, day) {
             var iconItem = document.createElement('img');
 
             iconItem.setAttribute('src', `https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${day['iconcode']}.png`);
@@ -281,7 +281,7 @@ export class WeatherManager {
             root.appendChild(iconItem);
         }
 
-        function BuildWindItem(root, day){
+        function BuildWindItem(root, day) {
             const windContainer = document.createElement('div');
             windContainer.classList.add('col', 'forecast-wind');
 
@@ -301,12 +301,12 @@ export class WeatherManager {
             root.appendChild(windContainer);
         }
 
-        function BuildPrecipItem(root, day){
+        function BuildPrecipItem(root, day) {
             const precipContainer = document.createElement('div');
             precipContainer.classList.add('col', 'forecast-precipitation');
 
             const precipIcon = document.createElement('i');
-            precipIcon.classList.add('fas','fa-droplet');
+            precipIcon.classList.add('fas', 'fa-droplet');
             precipContainer.appendChild(precipIcon);
 
             const precipAmount = document.createElement('p');

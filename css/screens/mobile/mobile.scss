@@ -204,7 +204,7 @@
                     }
                 }
 
-                button#select{
+                button#select {
                     @include nav-button;
 
                     background-color: map-get($map: $colors, $key: button-normal-2);
@@ -222,7 +222,8 @@
                 }
             }
 
-            div#locations-list, div#saved-locations-list {
+            div#locations-list,
+            div#saved-locations-list {
                 background-color: map-get($map: $colors, $key: background-color-6);
 
                 position: absolute;
@@ -546,40 +547,51 @@
 
     div.content#forecasts {
         section#daily-forecast {
-
-            div.col.expander-bar{
-                @include grid($columns: auto 15%, $rows: auto);
-
-                background-color: map-get($map: $colors, $key: background-color-6);
-                align-items: center;
-
-                border-radius: 6px;
-
-                padding: 5px;
-
-                margin-bottom: 5px;
-
-                h4{
-                    margin: 0;
-                }
-
-                button{
-                    @include nav-button;
-
-                    grid-template-columns: auto;
-                    grid-template-rows: auto;
-
-                    justify-items: center;
+            div.groupbox{
+                div.groupbox-bar {
+                    @include grid($columns: auto 15%, $rows: auto);
+    
+                    background-color: map-get($map: $colors, $key: background-color-6);
                     align-items: center;
-
-                    padding: 10px 5px;
-
+    
                     border-radius: 6px;
-
-                    i{
+    
+                    padding: 5px;
+    
+                    margin-bottom: 5px;
+    
+                    h4 {
                         margin: 0;
-                        height: min-content;
-                        width: min-content;
+                    }
+    
+                    button {
+                        @include nav-button;
+    
+                        grid-template-columns: auto;
+                        grid-template-rows: auto;
+    
+                        justify-items: center;
+                        align-items: center;
+    
+                        padding: 10px 5px;
+    
+                        border-radius: 6px;
+    
+                        i {
+                            margin: 0;
+                            height: min-content;
+                            width: min-content;
+                        }
+                    }
+                }
+    
+                div.groupbox-content{
+                    &[data-visible="visible"] {
+                        display: grid;
+                    }
+    
+                    &[data-visible="collapsed"] {
+                        display: none;
                     }
                 }
             }
@@ -587,9 +599,12 @@
             div.col#forecast-days {
                 @include grid($columns: auto, $rows: repeat(15, auto));
 
+                border-radius: 6px;
                 row-gap: 20px;
                 width: 100%;
-                overflow-x: auto;
+                overflow-y: auto;
+
+                max-height: 500px;
             }
 
             div.forecast-day {
@@ -621,7 +636,7 @@
                 @include grid($columns: repeat(2, 50%), $rows: repeat(2, 50%));
 
                 justify-items: flex-start;
-                align-items:center;
+                align-items: center;
                 padding: 10px;
 
                 width: 100%;
@@ -629,19 +644,19 @@
                 padding: 5px 0;
             }
 
-            div.forecast-date{
+            div.forecast-date {
                 align-self: flex-start;
 
-                p{
+                p {
                     margin: 0;
                 }
 
-                p.date-string{
+                p.date-string {
                     font-weight: 500;
                     margin: 0;
                 }
 
-                p.date-number{
+                p.date-number {
                     font-weight: 300;
                 }
             }
@@ -677,7 +692,7 @@
                 }
             }
 
-            div.forecast-wind{
+            div.forecast-wind {
                 grid-column: 2;
                 grid-row: 1;
 

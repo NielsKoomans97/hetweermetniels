@@ -3,16 +3,18 @@
 
     <section id="daily-forecast">
         <div class="container">
-            <div class="col expander-bar">
-                <h4>Voorspellingen</h4>
-                <button class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
-            </div>
-            <div class="col">
-                <div class="col" id="forecast-days" data-collapsed="collapsed">
-
+            <div class="col groupbox">
+                <div class="col groupbox-bar">
+                    <h4>Voorspellingen</h4>
+                    <button class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
                 </div>
-                <div class="col" id="forecast-scroller">
+                <div class="col groupbox-content" data-visible="collapsed">
+                    <div class="col" id="forecast-days">
 
+                    </div>
+                    <div class="col" id="forecast-scroller">
+
+                    </div>
                 </div>
             </div>
         </div>
