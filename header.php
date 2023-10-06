@@ -21,9 +21,9 @@
         <a href="index.php"><img src="assets/logo.png" id="logo"></a>
         <button class="nav-button" id="nav-expand"><i class="fa-solid fa-burger"></i></button>
         <nav id="nav-menu">
-            <a href="" class="nav-button"><i class="fa-solid fa-house"></i><span>Home</span></a>
-            <a href="" class="nav-button"><i class="fa-solid fa-warning"></i><span>Waarschuwingen</span></a>
-            <a href="" class="nav-button"><i class="fa-solid fa-chart-line"></i><span>Weerkaarten</span></a>
+            <a href="index.php" class="nav-button"><i class="fa-solid fa-house"></i><span>Home</span></a>
+            <a href="warnings.php" class="nav-button"><i class="fa-solid fa-warning"></i><span>Waarschuwingen</span></a>
+            <a href="charts.php" class="nav-button"><i class="fa-solid fa-chart-line"></i><span>Weerkaarten</span></a>
             <a href="forecasts.php" class="nav-button"><i class="fa-regular fa-calendar-days"></i><span>Voorspellingen</span></a>
         </nav>
     </div>

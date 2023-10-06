@@ -548,35 +548,37 @@
     div.content#forecasts {
         section#daily-forecast {
             div.groupbox{
+                margin-bottom: 10px;
+
                 div.groupbox-bar {
                     @include grid($columns: auto 15%, $rows: auto);
-    
+
                     background-color: map-get($map: $colors, $key: background-color-6);
                     align-items: center;
-    
+
                     border-radius: 6px;
-    
+
                     padding: 5px;
-    
+
                     margin-bottom: 5px;
-    
+
                     h4 {
                         margin: 0;
                     }
-    
+
                     button {
                         @include nav-button;
-    
+
                         grid-template-columns: auto;
                         grid-template-rows: auto;
-    
+
                         justify-items: center;
                         align-items: center;
-    
-                        padding: 10px 5px;
-    
+
+                        padding: 5px 5px;
+
                         border-radius: 6px;
-    
+
                         i {
                             margin: 0;
                             height: min-content;
@@ -584,14 +586,28 @@
                         }
                     }
                 }
-    
+
                 div.groupbox-content{
+                    border: 2px map-get($map: $colors, $key: background-color-4) solid;
+                    border-radius: 6px;
+
+                    padding: 10px 10px 10px 10px;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    transition: 150ms all ease-in-out;
+
                     &[data-visible="visible"] {
-                        display: grid;
+                        height: fit-content;
+                        transition: all 250ms;
                     }
-    
+
                     &[data-visible="collapsed"] {
-                        display: none;
+                        height: 0;
+                        padding: 0 0 0 30px;
+                        visibility: hidden;
+                        transition: all 250ms;
                     }
                 }
             }
@@ -618,14 +634,17 @@
                 box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
 
                 column-gap: 5px;
+
+                height: auto;
             }
 
             img.forecast-icon {
                 border-top-left-radius: 6px;
                 border-bottom-left-radius: 6px;
 
+                width: 54px;
                 height: 100%;
-                width: 90px;
+                object-fit: contain;
 
                 background-color: map-get($map: $colors, $key: background-color-7);
 
@@ -641,7 +660,7 @@
 
                 width: 100%;
 
-                padding: 5px 0;
+                column-gap: 10px;
             }
 
             div.forecast-date {
@@ -657,18 +676,18 @@
                 }
 
                 p.date-number {
-                    font-weight: 300;
+                    font-weight: 400;
                 }
             }
 
             div.forecast-temps {
-                @include grid($columns: auto auto, $rows: auto);
+                @include grid($columns: auto, $rows: auto  auto);
 
                 grid-column: 1;
                 grid-row: 2;
 
                 align-items: center;
-                column-gap: 15px;
+                row-gap: 5px;
 
                 p {
                     margin: 0;
@@ -721,6 +740,13 @@
                         margin-right: 10px;
                     }
                 }
+            }
+
+            div.weather-report{
+                overflow-y: auto;
+                max-height: 500px;
+
+
             }
         }
     }

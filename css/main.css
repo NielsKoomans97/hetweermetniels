@@ -15,7 +15,7 @@ h4,
 input,
 select,
 a.nav-button {
-  font-size: 2.2vh;
+  font-size: 2vh;
 }
 
 h5 {
@@ -44,8 +44,10 @@ p.location-name,
 p.wind-speed,
 p.precipitation,
 p.temp-high,
-p.temp-low {
-  font-size: 2vh;
+p.temp-low,
+p.date-string,
+div.weather-report p {
+  font-size: 1.8vh;
 }
 
 p.date-number {
@@ -745,6 +747,9 @@ p.date-number {
     justify-self: center;
     margin: 0;
   }
+  div.content#forecasts section#daily-forecast div.groupbox {
+    margin-bottom: 10px;
+  }
   div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar {
     display: grid;
     grid-template-columns: auto 15%;
@@ -777,7 +782,7 @@ p.date-number {
     grid-template-rows: auto;
     justify-items: center;
     align-items: center;
-    padding: 10px 5px;
+    padding: 5px 5px;
     border-radius: 6px;
   }
   div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button i, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button span, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h1, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h2, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h3, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h4, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h5, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h6 {
@@ -802,11 +807,23 @@ p.date-number {
     height: min-content;
     width: min-content;
   }
+  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content {
+    border: 2px #5792ff solid;
+    border-radius: 6px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    transition: 150ms all ease-in-out;
+  }
   div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content[data-visible=visible] {
-    display: grid;
+    height: fit-content;
+    transition: all 250ms;
   }
   div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content[data-visible=collapsed] {
-    display: none;
+    height: 0;
+    padding: 0 0 0 30px;
+    visibility: hidden;
+    transition: all 250ms;
   }
   div.content#forecasts section#daily-forecast div.col#forecast-days {
     display: grid;
@@ -828,12 +845,14 @@ p.date-number {
     background: linear-gradient(65deg, #e8f5ff, #5792ff);
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.13);
     column-gap: 5px;
+    height: auto;
   }
   div.content#forecasts section#daily-forecast img.forecast-icon {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+    width: 54px;
     height: 100%;
-    width: 90px;
+    object-fit: contain;
     background-color: #ffffff;
     object-fit: contain;
   }
@@ -847,7 +866,7 @@ p.date-number {
     align-items: center;
     padding: 10px;
     width: 100%;
-    padding: 5px 0;
+    column-gap: 10px;
   }
   div.content#forecasts section#daily-forecast div.forecast-date {
     align-self: flex-start;
@@ -860,18 +879,18 @@ p.date-number {
     margin: 0;
   }
   div.content#forecasts section#daily-forecast div.forecast-date p.date-number {
-    font-weight: 300;
+    font-weight: 400;
   }
   div.content#forecasts section#daily-forecast div.forecast-temps {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
     column-gap: 5px;
     row-gap: 5px;
     grid-column: 1;
     grid-row: 2;
     align-items: center;
-    column-gap: 15px;
+    row-gap: 5px;
   }
   div.content#forecasts section#daily-forecast div.forecast-temps p {
     margin: 0;
@@ -915,6 +934,10 @@ p.date-number {
   div.content#forecasts section#daily-forecast div.forecast-precipitation p::before {
     font-family: "FontAwesome";
     margin-right: 10px;
+  }
+  div.content#forecasts section#daily-forecast div.weather-report {
+    overflow-y: auto;
+    max-height: 500px;
   }
 }
 /* cyrillic */

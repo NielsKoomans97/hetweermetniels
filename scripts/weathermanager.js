@@ -45,6 +45,19 @@ export class WeatherManager {
         if (this.HasElement('more-information')) {
             await this.RefreshAnnouncementPill();
         }
+
+        if (this.HasElement('weather-report')){
+            await this.GetWeatherReport('nl');
+        }
+    }
+
+    async GetWeatherReport(country){
+        const data = await fetch(`https://data.buienradar.nl/1.1/content/weatherreport/${country}/false`)
+        const json = await data.json();
+
+        const body = json['body'];
+        const reportEl = document.getElementById('weather-report');
+        reportEl.innerHTML = body;
     }
 
     async RefreshAnnouncementPill() {
@@ -80,7 +93,7 @@ export class WeatherManager {
         if (json.length > 0) {
             json.forEach(element => {
                 let locationItem = document.createElement('button');
-                locationItem.className = 'nav-button';
+                locationItem.className = 'nav-button location-item';
                 locationItem.setAttribute('data-json', JSON.stringify(element));
                 locationItem.addEventListener('click', async (event) => {
                     const target = event.target;
@@ -97,6 +110,10 @@ export class WeatherManager {
 
                     if (this.HasElement('more-information')) {
                         await this.RefreshAnnouncementPill();
+                    }
+
+                    if (this.HasElement('weather-report')){
+                        await this.GetWeatherReport('nl');
                     }
 
                     locations_list.setAttribute('data-visible', 'collapsed');

@@ -7,8 +7,6 @@ export class GroupBox {
                 const target = event.target;
                 const parent = Up(target, 3);
 
-                console.log(parent);
-
                 const content = parent.querySelectorAll('.groupbox-content')[0];
                 const expanded = content.getAttribute('data-visible');
 
