@@ -13,11 +13,12 @@ export class GroupBox {
                 if (expanded == 'collapsed'){
                     content.setAttribute('data-visible','visible');
 
-                    button.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+                    button.setAttribute('data-flipped','flipped');
                 }
                 else{
                     content.setAttribute('data-visible','collapsed');
-                    button.innerHTML = '<i class="fa-solid fa-arrow-down"></i>';
+
+                    button.setAttribute('data-flipped', 'normal');
                 }
 
             });

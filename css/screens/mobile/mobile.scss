@@ -583,6 +583,20 @@
                             margin: 0;
                             height: min-content;
                             width: min-content;
+                            transition: all 150ms ease-in-out;
+                        }
+
+                        &[data-flipped="flipped"]{
+                            i
+                            {
+                                transform: rotate(180deg);
+                            }
+                        }
+
+                        &[data-flipped="normal"]{
+                            i{
+                                transform: rotate(0deg);
+                            }
                         }
                     }
                 }

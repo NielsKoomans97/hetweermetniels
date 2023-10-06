@@ -806,6 +806,13 @@ p.date-number {
     margin: 0;
     height: min-content;
     width: min-content;
+    transition: all 150ms ease-in-out;
+  }
+  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button[data-flipped=flipped] i {
+    transform: rotate(180deg);
+  }
+  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button[data-flipped=normal] i {
+    transform: rotate(0deg);
   }
   div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content {
     border: 2px #5792ff solid;
