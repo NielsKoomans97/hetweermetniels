@@ -63,10 +63,10 @@
                 <input id="radar-position" type="range" max="100">
                 <i class="fa-solid fa-forward-fast"></i>
                 <select id="radar-speed">
-                    <option label="10x"></option>
-                    <option label="5x"></option>
-                    <option label="2x"></option>
-                    <option label="1x"></option>
+                    <option value="200" label="10x"></option>
+                    <option value="500" label="5x"></option>
+                    <option value="700" label="2x"></option>
+                    <option value="1000" label="1x"></option>
                 </select>
             </div>
         </div>
