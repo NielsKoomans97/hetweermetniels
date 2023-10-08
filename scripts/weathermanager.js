@@ -233,6 +233,10 @@ export class WeatherManager {
             BuildDay(forecast_days, day);
         });
 
+        function GetDate(dateString){
+            return new Date(Date.parse(dateString));
+        }
+
         function BuildDay(root, day) {
             const forecast_day = document.createElement('div');
             forecast_day.className = 'forecast-day';
@@ -244,8 +248,8 @@ export class WeatherManager {
 
             BuildDateItem(info_container, day);
             BuildTempItem(info_container, day);
-            BuildWindItem(info_container, day);
-            BuildPrecipItem(info_container, day);
+            BuildPrecipWindItem(info_container, day);
+            BuildAstronomyItem(info_container, day);
 
             forecast_day.appendChild(info_container);
             root.appendChild(forecast_day);
@@ -253,7 +257,7 @@ export class WeatherManager {
 
         function BuildDateItem(root, day) {
             const dayStrings = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',];
-            var date = new Date(Date.parse(day['date']));
+            var date = GetDate(day['datetimeutc']);
             var day = dayStrings[date.getDay()];
 
             const dateContainer = document.createElement('div');
@@ -270,6 +274,64 @@ export class WeatherManager {
             dateContainer.appendChild(dateNr);
 
             root.appendChild(dateContainer);
+        }
+
+        function BuildAstronomyItem(root, day){
+            const container = document.createElement('div');
+            container.classList.add('col', 'forecast-astronomy');
+
+            const sunrise = document.createElement('p');
+            const sunriseTime = GetDate(day['sunrise']);
+            sunrise.className = 'sunrise';
+            sunrise.innerText = `${sunriseTime.getHours()}:${sunriseTime.getMinutes()}`;
+            container.appendChild(sunrise);
+
+            const sunset = document.createElement('p');
+            const sunsetTime = GetDate(day['sunset']);
+            sunset.className = 'sunset';
+            sunset.innerText = `${sunsetTime.getHours()}:${sunsetTime.getMinutes()}`;
+            container.appendChild(sunset);
+
+            root.appendChild(container);
+        }
+
+        function BuildPrecipWindItem(root, day){
+            const container = document.createElement('div');
+            container.classList.add('col', 'forecast-atmosphere');
+
+            const windContainer = document.createElement('div');
+            windContainer.classList.add('col', 'forecast-wind');
+
+            const windIcon = document.createElement('i');
+            windIcon.classList.add('fa-solid', 'fa-arrow-down');
+
+            const windDir = parseInt(day['winddirectiondegrees']);
+
+            windIcon.setAttribute('style', `transform: rotate(${(windDir)}deg);`);
+            windContainer.appendChild(windIcon);
+
+            const windSpeed = document.createElement('p');
+            windSpeed.className = 'wind-speed';
+            windSpeed.innerText = day['windspeed'];
+            windContainer.appendChild(windSpeed);
+
+            container.appendChild(windContainer);
+
+            const precipContainer = document.createElement('div');
+            precipContainer.classList.add('col', 'forecast-precipitation');
+
+            const precipIcon = document.createElement('i');
+            precipIcon.classList.add('fas', 'fa-droplet');
+            precipContainer.appendChild(precipIcon);
+
+            const precipAmount = document.createElement('p');
+            precipAmount.className = 'precipitation';
+            precipAmount.innerText = `${day['precipitationmm']} mm`
+            precipContainer.appendChild(precipAmount);
+
+            container.appendChild(precipContainer);
+
+            root.appendChild(container);``
         }
 
         function BuildTempItem(root, day) {

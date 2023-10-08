@@ -44,8 +44,6 @@ i.fa-regular {
 
 p.location-foad,
 p.location-name,
-p.wind-speed,
-p.precipitation,
 p.temp-high,
 p.temp-low,
 p.date-string,
@@ -53,6 +51,8 @@ div.weather-report p{
     font-size: map-get($map: $typo, $key: p-med);
 }
 
+p.wind-speed,
+p.precipitation,
 p.date-number{
     font-size: map-get($map: $typo, $key: p-small);
 }

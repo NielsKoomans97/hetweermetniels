@@ -41,8 +41,6 @@ i.fa-regular {
 
 p.location-foad,
 p.location-name,
-p.wind-speed,
-p.precipitation,
 p.temp-high,
 p.temp-low,
 p.date-string,
@@ -50,6 +48,8 @@ div.weather-report p {
   font-size: 1.8vh;
 }
 
+p.wind-speed,
+p.precipitation,
 p.date-number {
   font-size: 1.6vh;
 }
@@ -747,12 +747,12 @@ p.date-number {
     justify-self: center;
     margin: 0;
   }
-  div.content#forecasts section#daily-forecast div.groupbox {
+  div.groupbox {
     margin-bottom: 10px;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar {
+  div.groupbox div.groupbox-bar {
     display: grid;
-    grid-template-columns: auto 15%;
+    grid-template-columns: auto 10%;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
@@ -762,10 +762,10 @@ p.date-number {
     padding: 5px;
     margin-bottom: 5px;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar h4 {
+  div.groupbox div.groupbox-bar h4 {
     margin: 0;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button {
+  div.groupbox div.groupbox-bar button {
     display: grid;
     grid-template-columns: 10% auto;
     grid-template-rows: auto;
@@ -785,36 +785,36 @@ p.date-number {
     padding: 5px 5px;
     border-radius: 6px;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button i, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button span, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h1, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h2, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h3, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h4, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h5, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button h6 {
+  div.groupbox div.groupbox-bar button i, div.groupbox div.groupbox-bar button span, div.groupbox div.groupbox-bar button h1, div.groupbox div.groupbox-bar button h2, div.groupbox div.groupbox-bar button h3, div.groupbox div.groupbox-bar button h4, div.groupbox div.groupbox-bar button h5, div.groupbox div.groupbox-bar button h6 {
     transition: all 160ms ease-in-out;
     color: #000000;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button i {
+  div.groupbox div.groupbox-bar button i {
     width: min-content;
     justify-self: center;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover {
+  div.groupbox div.groupbox-bar button:hover {
     background-color: #5792ff;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover i, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover span, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover h1, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover h2, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover h3, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover h4, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover h5, div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:hover h6 {
+  div.groupbox div.groupbox-bar button:hover i, div.groupbox div.groupbox-bar button:hover span, div.groupbox div.groupbox-bar button:hover h1, div.groupbox div.groupbox-bar button:hover h2, div.groupbox div.groupbox-bar button:hover h3, div.groupbox div.groupbox-bar button:hover h4, div.groupbox div.groupbox-bar button:hover h5, div.groupbox div.groupbox-bar button:hover h6 {
     color: #ffffff;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button:active {
+  div.groupbox div.groupbox-bar button:active {
     background-color: #01264d;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button i {
+  div.groupbox div.groupbox-bar button i {
     margin: 0;
     height: min-content;
     width: min-content;
     transition: all 150ms ease-in-out;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button[data-flipped=flipped] i {
+  div.groupbox div.groupbox-bar button[data-flipped=flipped] i {
     transform: rotate(180deg);
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-bar button[data-flipped=normal] i {
+  div.groupbox div.groupbox-bar button[data-flipped=normal] i {
     transform: rotate(0deg);
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content {
+  div.groupbox div.groupbox-content {
     border: 2px #5792ff solid;
     border-radius: 6px;
     padding: 10px 10px 10px 10px;
@@ -822,11 +822,11 @@ p.date-number {
     flex-direction: column;
     transition: 150ms all ease-in-out;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content[data-visible=visible] {
+  div.groupbox div.groupbox-content[data-visible=visible] {
     height: fit-content;
     transition: all 250ms;
   }
-  div.content#forecasts section#daily-forecast div.groupbox div.groupbox-content[data-visible=collapsed] {
+  div.groupbox div.groupbox-content[data-visible=collapsed] {
     height: 0;
     padding: 0 0 0 30px;
     visibility: hidden;
@@ -865,7 +865,7 @@ p.date-number {
   }
   div.content#forecasts section#daily-forecast div.info-container {
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(3, 33.3333333333%);
     grid-template-rows: repeat(2, 50%);
     column-gap: 5px;
     row-gap: 5px;
@@ -873,7 +873,45 @@ p.date-number {
     align-items: center;
     padding: 10px;
     width: 100%;
-    column-gap: 10px;
+    column-gap: 5px;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-atmosphere {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 50%);
+    column-gap: 5px;
+    row-gap: 5px;
+    row-gap: 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-astronomy {
+    grid-column: 2;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, 50%);
+    column-gap: 5px;
+    row-gap: 5px;
+    row-gap: 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunrise, div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunset {
+    font-size: 1.8vh;
+    margin: auto 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunrise i, div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunset i {
+    margin: 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunrise::before {
+    content: "\f185";
+    font-family: "FontAwesome";
+    margin-right: 10px;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunset::before {
+    content: "\f186";
+    font-family: "FontAwesome";
+    margin-right: 10px;
+    margin-left: 2px;
   }
   div.content#forecasts section#daily-forecast div.forecast-date {
     align-self: flex-start;
@@ -897,7 +935,7 @@ p.date-number {
     grid-column: 1;
     grid-row: 2;
     align-items: center;
-    row-gap: 5px;
+    row-gap: 0;
   }
   div.content#forecasts section#daily-forecast div.forecast-temps p {
     margin: 0;
@@ -925,7 +963,7 @@ p.date-number {
     column-gap: 5px;
     row-gap: 5px;
     align-items: center;
-    column-gap: 15px;
+    column-gap: 10px;
   }
   div.content#forecasts section#daily-forecast div.forecast-wind i,
   div.content#forecasts section#daily-forecast div.forecast-precipitation i {

@@ -545,86 +545,86 @@
         }
     }
 
-    div.content#forecasts {
-        section#daily-forecast {
-            div.groupbox{
-                margin-bottom: 10px;
+    div.groupbox {
+        margin-bottom: 10px;
 
-                div.groupbox-bar {
-                    @include grid($columns: auto 15%, $rows: auto);
+        div.groupbox-bar {
+            @include grid($columns: auto 10%, $rows: auto);
 
-                    background-color: map-get($map: $colors, $key: background-color-6);
-                    align-items: center;
+            background-color: map-get($map: $colors, $key: background-color-6);
+            align-items: center;
 
-                    border-radius: 6px;
+            border-radius: 6px;
 
-                    padding: 5px;
+            padding: 5px;
 
-                    margin-bottom: 5px;
+            margin-bottom: 5px;
 
-                    h4 {
-                        margin: 0;
-                    }
+            h4 {
+                margin: 0;
+            }
 
-                    button {
-                        @include nav-button;
+            button {
+                @include nav-button;
 
-                        grid-template-columns: auto;
-                        grid-template-rows: auto;
+                grid-template-columns: auto;
+                grid-template-rows: auto;
 
-                        justify-items: center;
-                        align-items: center;
+                justify-items: center;
+                align-items: center;
 
-                        padding: 5px 5px;
+                padding: 5px 5px;
 
-                        border-radius: 6px;
+                border-radius: 6px;
 
-                        i {
-                            margin: 0;
-                            height: min-content;
-                            width: min-content;
-                            transition: all 150ms ease-in-out;
-                        }
+                i {
+                    margin: 0;
+                    height: min-content;
+                    width: min-content;
+                    transition: all 150ms ease-in-out;
+                }
 
-                        &[data-flipped="flipped"]{
-                            i
-                            {
-                                transform: rotate(180deg);
-                            }
-                        }
-
-                        &[data-flipped="normal"]{
-                            i{
-                                transform: rotate(0deg);
-                            }
-                        }
+                &[data-flipped="flipped"] {
+                    i {
+                        transform: rotate(180deg);
                     }
                 }
 
-                div.groupbox-content{
-                    border: 2px map-get($map: $colors, $key: background-color-4) solid;
-                    border-radius: 6px;
-
-                    padding: 10px 10px 10px 10px;
-
-                    display: flex;
-                    flex-direction: column;
-
-                    transition: 150ms all ease-in-out;
-
-                    &[data-visible="visible"] {
-                        height: fit-content;
-                        transition: all 250ms;
-                    }
-
-                    &[data-visible="collapsed"] {
-                        height: 0;
-                        padding: 0 0 0 30px;
-                        visibility: hidden;
-                        transition: all 250ms;
+                &[data-flipped="normal"] {
+                    i {
+                        transform: rotate(0deg);
                     }
                 }
             }
+        }
+
+        div.groupbox-content {
+            border: 2px map-get($map: $colors, $key: background-color-4) solid;
+            border-radius: 6px;
+
+            padding: 10px 10px 10px 10px;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 150ms all ease-in-out;
+
+            &[data-visible="visible"] {
+                height: fit-content;
+                transition: all 250ms;
+            }
+
+            &[data-visible="collapsed"] {
+                height: 0;
+                padding: 0 0 0 30px;
+                visibility: hidden;
+                transition: all 250ms;
+            }
+        }
+    }
+
+    div.content#forecasts {
+        section#daily-forecast {
 
             div.col#forecast-days {
                 @include grid($columns: auto, $rows: repeat(15, auto));
@@ -666,7 +666,7 @@
             }
 
             div.info-container {
-                @include grid($columns: repeat(2, 50%), $rows: repeat(2, 50%));
+                @include grid($columns: repeat(3, calc(100% / 3)), $rows: repeat(2, 50%));
 
                 justify-items: flex-start;
                 align-items: center;
@@ -674,7 +674,48 @@
 
                 width: 100%;
 
-                column-gap: 10px;
+                column-gap: 5px;
+            }
+
+            div.forecast-atmosphere{
+                grid-column: 2;
+                grid-row: 1;
+
+                @include grid($columns: auto, $rows: repeat(2, 50%));
+
+                row-gap: 0;
+            }
+
+            div.forecast-astronomy{
+                grid-column: 2;
+                grid-row: 2;
+
+                @include grid($columns: auto, $rows: repeat(2, 50%));
+
+                row-gap: 0;
+
+                p.sunrise, p.sunset{
+                    font-size: map-get($map: $typo, $key: p-med);
+
+                    margin: auto 0;
+
+                    i{
+                        margin: 0;
+                    }
+                }
+
+                p.sunrise::before{
+                    content: "\f185";
+                    font-family: 'FontAwesome';
+                    margin-right: 10px;
+                }
+
+                p.sunset::before{
+                    content: "\f186";
+                    font-family: 'FontAwesome';
+                    margin-right: 10px;
+                    margin-left: 2px;
+                }
             }
 
             div.forecast-date {
@@ -695,13 +736,14 @@
             }
 
             div.forecast-temps {
-                @include grid($columns: auto, $rows: auto  auto);
+                @include grid($columns: auto, $rows: auto auto);
 
                 grid-column: 1;
                 grid-row: 2;
 
                 align-items: center;
-                row-gap: 5px;
+
+                row-gap: 0;
 
                 p {
                     margin: 0;
@@ -737,7 +779,7 @@
                 @include grid($columns: 30px auto, $rows: auto);
 
                 align-items: center;
-                column-gap: 15px;
+                column-gap: 10px;
 
                 i {
                     font-size: map-get($map: $typo, $key: fontawesome-small);
@@ -756,7 +798,7 @@
                 }
             }
 
-            div.weather-report{
+            div.weather-report {
                 overflow-y: auto;
                 max-height: 500px;
 
