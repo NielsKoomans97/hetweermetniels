@@ -388,11 +388,22 @@
                 box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
             }
 
-            h5,
-            h6,
-            h4 {
+            p {
                 margin: 0;
                 justify-self: flex-end;
+
+
+            }
+
+            p#warning-code,
+            p#forecast-text {
+                font-size: map-get($map: $typo, $key: p-med);
+                font-weight: 500;
+            }
+
+            p#warning-description {
+                font-size: map-get($map: $typo, $key: p-small);
+                font-weight: 300;
             }
 
             i.fa-square-arrow-up-right {
@@ -422,6 +433,12 @@
                     text-align: end;
                     width: 100%;
                 }
+
+
+                &:hover p,
+                &:active p {
+                    color: map-get($map: $colors, $key: text-hover);
+                }
             }
 
             a#more-info-button {
@@ -435,6 +452,7 @@
                 border-top-left-radius: 6px;
                 border-bottom-left-radius: 6px;
             }
+
         }
 
         section#smaller-radar {
@@ -634,7 +652,57 @@
                 width: 100%;
                 overflow-y: auto;
 
-                max-height: 500px;
+                max-height: 70vh;
+            }
+
+            div.forecast-data{
+                @include grid($columns: 25% auto);
+
+                width: 100%;
+                height: auto;
+                margin: auto 0;
+
+                align-content: center;
+                align-items: center;
+
+                column-gap: 12px;
+
+                p{
+                    margin: 0;
+
+                    font-weight: 500;
+                }
+
+                i{
+                    justify-self: center;
+                }
+
+                &#forecast-astronomy{
+                    grid-column: 2;
+                    grid-row: 2;
+
+                    p{
+                        font-size: map-get($map: $typo, $key: p-med);
+                    }
+                }
+
+                &#forecast-temperature{
+                    grid-column: 1;
+                    grid-row: 2;
+
+                    p{
+                        font-size: map-get($map: $typo, $key: p-med);
+                    }
+                }
+
+                &#forecast-atmosphere{
+                    grid-column: 3;
+                    grid-row: 2;
+
+                    p{
+                        font-size: map-get($map: $typo, $key: p-med);
+                    }
+                }
             }
 
             div.forecast-day {
@@ -649,14 +717,14 @@
 
                 column-gap: 5px;
 
-                height: auto;
+                height:auto;
             }
 
             img.forecast-icon {
                 border-top-left-radius: 6px;
                 border-bottom-left-radius: 6px;
 
-                width: 54px;
+                width: 76px;
                 height: 100%;
                 object-fit: contain;
 
@@ -670,14 +738,15 @@
 
                 justify-items: flex-start;
                 align-items: center;
-                padding: 10px;
+                margin: 25px;
 
                 width: 100%;
 
                 column-gap: 5px;
+                row-gap: 15px;
             }
 
-            div.forecast-atmosphere{
+            div.forecast-atmosphere {
                 grid-column: 2;
                 grid-row: 1;
 
@@ -686,7 +755,7 @@
                 row-gap: 0;
             }
 
-            div.forecast-astronomy{
+            div.forecast-astronomy {
                 grid-column: 2;
                 grid-row: 2;
 
@@ -694,28 +763,29 @@
 
                 row-gap: 0;
 
-                p.sunrise, p.sunset{
+                p.sunrise,
+                p.sunset {
                     font-size: map-get($map: $typo, $key: p-med);
 
                     margin: auto 0;
 
-                    i{
+                    i {
                         margin: 0;
                     }
                 }
 
-                p.sunrise::before{
-                    content: "\f185";
-                    font-family: 'FontAwesome';
-                    margin-right: 10px;
-                }
+                // p.sunrise::before {
+                //     content: "\f185";
+                //     font-family: 'FontAwesome';
+                //     margin-right: 10px;
+                // }
 
-                p.sunset::before{
-                    content: "\f186";
-                    font-family: 'FontAwesome';
-                    margin-right: 10px;
-                    margin-left: 2px;
-                }
+                // p.sunset::before {
+                //     content: "\f186";
+                //     font-family: 'FontAwesome';
+                //     margin-right: 10px;
+                //     margin-left: 2px;
+                // }
             }
 
             div.forecast-date {
@@ -728,10 +798,16 @@
                 p.date-string {
                     font-weight: 500;
                     margin: 0;
+
+                    font-size: map-get($map: $typo, $key: p-big);
                 }
 
                 p.date-number {
                     font-weight: 400;
+
+                    font-size: map-get($map: $typo, $key: p-inbtw);
+
+                    text-decoration: overline;
                 }
             }
 
@@ -754,17 +830,17 @@
                     }
                 }
 
-                p.temp-high {
-                    &:before {
-                        content: "\f062";
-                    }
-                }
+                // p.temp-high {
+                //     &:before {
+                //         content: "\f062";
+                //     }
+                // }
 
-                p.temp-low {
-                    &:before {
-                        content: "\f063";
-                    }
-                }
+                // p.temp-low {
+                //     &:before {
+                //         content: "\f063";
+                //     }
+                // }
             }
 
             div.forecast-wind {
@@ -800,9 +876,7 @@
 
             div.weather-report {
                 overflow-y: auto;
-                max-height: 500px;
-
-
+                max-height: 70vh;
             }
         }
     }

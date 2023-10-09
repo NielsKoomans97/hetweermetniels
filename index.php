@@ -36,12 +36,12 @@
                 <a href="warnings.php" class="nav-button" id="warnings-button">
                     <i class="fas fa-warning"></i>
                     <div class="col">
-                        <h4 id="warning-code">Code Geel</h4>
-                        <h5 id="warning-description">Klik hier voor meer info</h5>
+                        <p id="warning-code">Code Geel</p>
+                        <p id="warning-description">Klik hier voor meer info</p>
                     </div>
                 </a>
                 <a href="forecasts.php" class="nav-button" id="more-info-button">
-                    <h4>Voorspellingen</h4>
+                    <p id='forecast-text'>Voorspellingen</p>
                     <i class="fa-solid fa-calendar-days"></i>
                 </a>
             </div>

@@ -68,18 +68,19 @@ export class WeatherManager {
 
         const warnings = json['warnings']['locations'];
 
-        if (warnings.length > 0) {
-            warning_description.innerText = `Voor ${warnings.length} provincies`;
-        }
-        else {
-            warning_description.innerText = '';
-        }
-
         switch (json['warnings']['color']) {
             case 'YELLOW': warning_code.innerText = `Code Geel`; break;
             case 'GREEN': warning_code.innerText = 'Geen waarschuwingen'; break;
             case 'RED': warning_code.innerText = 'Code Rood'; break;
             case 'ORANGE': warning_code.innerText = 'Code Oranje'; break;
+        }
+
+        if (warnings.length > 0) {
+            warning_code.innerText = 'Er zijn waarschuwing(en)'
+            warning_description.innerText = `Voor ${warnings.length} provincies`;
+        }
+        else {
+            warning_description.innerText = '';
         }
     }
 
@@ -257,7 +258,7 @@ export class WeatherManager {
 
         function BuildDateItem(root, day) {
             const dayStrings = ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag', 'Zondag',];
-            var date = GetDate(day['datetimeutc']);
+            var date = GetDate(day['datetime']);
             var day = dayStrings[date.getDay()];
 
             const dateContainer = document.createElement('div');
@@ -278,18 +279,27 @@ export class WeatherManager {
 
         function BuildAstronomyItem(root, day){
             const container = document.createElement('div');
-            container.classList.add('col', 'forecast-astronomy');
+            container.classList.add('col', 'forecast-data');
+            container.id = 'forecast-astronomy';
+
+            const sunriseIcon = document.createElement('i');
+            sunriseIcon.classList.add('fa-solid','fa-sun');
+            container.appendChild(sunriseIcon);
 
             const sunrise = document.createElement('p');
             const sunriseTime = GetDate(day['sunrise']);
             sunrise.className = 'sunrise';
-            sunrise.innerText = `${sunriseTime.getHours()}:${sunriseTime.getMinutes()}`;
+            sunrise.innerText = `${fixInt(sunriseTime.getHours())}:${fixInt(sunriseTime.getMinutes())}`;
             container.appendChild(sunrise);
+
+            const sunsetIcon = document.createElement('i');
+            sunsetIcon.classList.add('fa-solid', 'fa-moon');
+            container.appendChild(sunsetIcon);
 
             const sunset = document.createElement('p');
             const sunsetTime = GetDate(day['sunset']);
             sunset.className = 'sunset';
-            sunset.innerText = `${sunsetTime.getHours()}:${sunsetTime.getMinutes()}`;
+            sunset.innerText = `${fixInt(sunsetTime.getHours())}:${fixInt(sunsetTime.getMinutes())}`;
             container.appendChild(sunset);
 
             root.appendChild(container);
@@ -297,10 +307,8 @@ export class WeatherManager {
 
         function BuildPrecipWindItem(root, day){
             const container = document.createElement('div');
-            container.classList.add('col', 'forecast-atmosphere');
-
-            const windContainer = document.createElement('div');
-            windContainer.classList.add('col', 'forecast-wind');
+            container.classList.add('col', 'forecast-data');
+            container.id = 'forecast-atmosphere';
 
             const windIcon = document.createElement('i');
             windIcon.classList.add('fa-solid', 'fa-arrow-down');
@@ -308,40 +316,42 @@ export class WeatherManager {
             const windDir = parseInt(day['winddirectiondegrees']);
 
             windIcon.setAttribute('style', `transform: rotate(${(windDir)}deg);`);
-            windContainer.appendChild(windIcon);
+            container.appendChild(windIcon);
 
             const windSpeed = document.createElement('p');
             windSpeed.className = 'wind-speed';
             windSpeed.innerText = day['windspeed'];
-            windContainer.appendChild(windSpeed);
-
-            container.appendChild(windContainer);
-
-            const precipContainer = document.createElement('div');
-            precipContainer.classList.add('col', 'forecast-precipitation');
+            container.appendChild(windSpeed);
 
             const precipIcon = document.createElement('i');
             precipIcon.classList.add('fas', 'fa-droplet');
-            precipContainer.appendChild(precipIcon);
+            container.appendChild(precipIcon);
 
             const precipAmount = document.createElement('p');
             precipAmount.className = 'precipitation';
             precipAmount.innerText = `${day['precipitationmm']} mm`
-            precipContainer.appendChild(precipAmount);
-
-            container.appendChild(precipContainer);
+            container.appendChild(precipAmount);
 
             root.appendChild(container);``
         }
 
         function BuildTempItem(root, day) {
             const tempContainer = document.createElement('div');
-            tempContainer.classList.add('col', 'forecast-temps');
+            tempContainer.classList.add('col', 'forecast-data');
+            tempContainer.id = 'forecast-temperature';
+
+            const highIcon = document.createElement('i');
+            highIcon.classList.add('fa-solid', 'fa-arrow-up');
+            tempContainer.appendChild(highIcon);
 
             const high = document.createElement('p');
             high.className = 'temp-high';
             high.innerText = `${day['maxtemp']}°`;
             tempContainer.appendChild(high);
+
+            const lowIcon = document.createElement('i');
+            lowIcon.classList.add('fa-solid', 'fa-arrow-down');
+            tempContainer.appendChild(lowIcon);
 
             const low = document.createElement('p');
             low.className = 'temp-low';
@@ -394,6 +404,14 @@ export class WeatherManager {
             precipContainer.appendChild(precipAmount);
 
             root.appendChild(precipContainer);
+        }
+
+        function fixInt(nr){
+            if (nr < 10){
+                return `0${nr}`;
+            }
+
+            return `${nr}`;
         }
     }
 
