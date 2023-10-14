@@ -6,7 +6,7 @@
             <div class="col groupbox">
                 <div class="col groupbox-bar">
                     <h4>Weerbericht</h4>
-                    <button class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
+                    <button data-flipped="normal" class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
                 </div>
                 <div class="col groupbox-content" data-visible="collapsed">
                     <div class="weather-report" id="weather-report" data-scroll>
@@ -26,7 +26,7 @@
             <div class="col groupbox">
                 <div class="col groupbox-bar">
                     <h4>Voorspellingen</h4>
-                    <button class="nav-button expand"><i class="fas fa-arrow-up"></i></button>
+                    <button data-flipped="flipped" class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
                 </div>
                 <div class="col groupbox-content" data-visible="expanded">
                     <div class="col" id="forecast-days" data-scroll>
