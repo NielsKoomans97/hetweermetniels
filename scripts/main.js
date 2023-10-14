@@ -1,6 +1,7 @@
 import { GroupBox } from "./groupbox.js";
 import { MenuExpander } from "./nav-menu.js";
 import { SmallerRadar } from "./radar-small.js";
+import { Scroller } from "./scroller.js";
 import { WeatherManager } from "./weathermanager.js";
 
 new MenuExpander();
@@ -31,9 +32,8 @@ if (HasElement('search')) {
     });
 }
 
-if (HasElement('forecast-days')){
-    new GroupBox();
-}
+new GroupBox();
+new Scroller();
 
 if (HasElement('locations-list'))
 {

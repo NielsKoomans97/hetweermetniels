@@ -829,7 +829,7 @@ p.date-number {
   div.groupbox div.groupbox-content {
     border: 2px #5792ff solid;
     border-radius: 6px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     transition: 150ms all ease-in-out;
@@ -838,11 +838,76 @@ p.date-number {
     height: fit-content;
     transition: all 250ms;
   }
+  div.groupbox div.groupbox-content[data-visible=visible] div.content-scroller, div.groupbox div.groupbox-content[data-visible=visible] div.weather-report {
+    display: grid;
+  }
   div.groupbox div.groupbox-content[data-visible=collapsed] {
     height: 0;
-    padding: 0 30px;
+    padding: 0;
     visibility: hidden;
     transition: all 250ms;
+  }
+  div.groupbox div.groupbox-content[data-visible=collapsed] div.content-scroller, div.groupbox div.groupbox-content[data-visible=collapsed] div.weather-report {
+    display: none;
+  }
+  div.col.content-scroller {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 5% auto 5%;
+    column-gap: 5px;
+    row-gap: 5px;
+    position: absolute;
+    width: 100px;
+    height: 70vh;
+    align-self: center;
+  }
+  div.col.content-scroller button {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: #e8f5ff;
+    transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border-radius: 6px;
+    border: #5792ff 2px solid;
+  }
+  div.col.content-scroller button i, div.col.content-scroller button span, div.col.content-scroller button h1, div.col.content-scroller button h2, div.col.content-scroller button h3, div.col.content-scroller button h4, div.col.content-scroller button h5, div.col.content-scroller button h6 {
+    transition: all 160ms ease-in-out;
+    color: #000000;
+  }
+  div.col.content-scroller button i {
+    width: min-content;
+    justify-self: center;
+  }
+  div.col.content-scroller button:hover {
+    background-color: #5792ff;
+  }
+  div.col.content-scroller button:hover i, div.col.content-scroller button:hover span, div.col.content-scroller button:hover h1, div.col.content-scroller button:hover h2, div.col.content-scroller button:hover h3, div.col.content-scroller button:hover h4, div.col.content-scroller button:hover h5, div.col.content-scroller button:hover h6 {
+    color: #ffffff;
+  }
+  div.col.content-scroller button:active {
+    background-color: #01264d;
+  }
+  div.col.content-scroller button:active {
+    border: none;
+  }
+  div.col.content-scroller button i {
+    margin: 0;
+    align-self: center;
+  }
+  div.col.content-scroller button.scroll-down {
+    grid-row: 3;
+  }
+  div.content#forecasts section#daily-forecast col.groupbox-content {
+    position: relative;
   }
   div.content#forecasts section#daily-forecast div.col#forecast-days {
     display: grid;
@@ -853,8 +918,9 @@ p.date-number {
     border-radius: 6px;
     row-gap: 20px;
     width: 100%;
-    overflow-y: auto;
+    overflow: hidden;
     max-height: 70vh;
+    padding: 50px 0;
   }
   div.content#forecasts section#daily-forecast div.forecast-data {
     display: grid;
@@ -966,8 +1032,9 @@ p.date-number {
     align-self: flex-start;
   }
   div.content#forecasts section#daily-forecast div.weather-report {
-    overflow-y: auto;
+    overflow: hidden;
     max-height: 70vh;
+    padding: 35px 0;
   }
 }
 /* cyrillic */

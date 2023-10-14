@@ -620,7 +620,7 @@
             border: 2px map-get($map: $colors, $key: background-color-4) solid;
             border-radius: 6px;
 
-            padding: 10px 10px 10px 10px;
+            padding: 10px;
 
             display: flex;
             flex-direction: column;
@@ -630,19 +630,62 @@
             &[data-visible="visible"] {
                 height: fit-content;
                 transition: all 250ms;
+
+                div.content-scroller, div.weather-report{
+                    display: grid;
+                }
             }
 
             &[data-visible="collapsed"] {
                 height: 0;
-                padding: 0 30px;
+                padding: 0;
                 visibility: hidden;
                 transition: all 250ms;
+
+                div.content-scroller, div.weather-report{
+                    display: none;
+                }
             }
+        }
+    }
+
+    div.col.content-scroller{
+        @include grid($columns: auto, $rows: 5% auto 5%);
+        position: absolute;
+
+        width: 100px;
+        height: 70vh;
+
+        align-self: center;
+
+        button{
+            @include nav-button;
+
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            border-radius: 6px;
+
+            border: map-get($map: $colors, $key: button-hover) 2px solid;
+
+            &:active{border: none;}
+
+            i{
+                margin: 0;
+                align-self: center;
+            }
+        }
+
+        button.scroll-down{
+            grid-row: 3;
         }
     }
 
     div.content#forecasts {
         section#daily-forecast {
+            col.groupbox-content{
+                position: relative;
+            }
 
             div.col#forecast-days {
                 @include grid($columns: auto, $rows: auto);
@@ -650,9 +693,10 @@
                 border-radius: 6px;
                 row-gap: 20px;
                 width: 100%;
-                overflow-y: auto;
+                overflow: hidden;
 
                 max-height: 70vh;
+                padding: 50px 0;
             }
 
             div.forecast-data{
@@ -798,8 +842,10 @@
             }
 
             div.weather-report {
-                overflow-y: auto;
+                overflow: hidden;
                 max-height: 70vh;
+
+                padding: 35px 0;
             }
         }
     }
