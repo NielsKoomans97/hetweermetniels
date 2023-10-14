@@ -262,7 +262,8 @@ export class WeatherManager {
             var day = dayStrings[date.getDay()];
 
             const dateContainer = document.createElement('div');
-            dateContainer.className = 'forecast-date';
+            dateContainer.className = 'forecast-data';
+            dateContainer.id = 'forecast-date';
 
             const dateItem = document.createElement('p');
             dateItem.className = 'date-string';
@@ -310,6 +311,11 @@ export class WeatherManager {
             container.classList.add('col', 'forecast-data');
             container.id = 'forecast-atmosphere';
 
+            const windSymb = document.createElement('i');
+            windSymb.classList.add('fa-solid', 'fa-wind');
+
+            container.appendChild(windSymb);
+
             const windIcon = document.createElement('i');
             windIcon.classList.add('fa-solid', 'fa-arrow-down');
 
@@ -320,7 +326,7 @@ export class WeatherManager {
 
             const windSpeed = document.createElement('p');
             windSpeed.className = 'wind-speed';
-            windSpeed.innerText = day['windspeed'];
+            windSpeed.innerText = `${day['windspeed']} bft`;
             container.appendChild(windSpeed);
 
             const precipIcon = document.createElement('i');

@@ -634,7 +634,7 @@
 
             &[data-visible="collapsed"] {
                 height: 0;
-                padding: 0 0 0 30px;
+                padding: 0 30px;
                 visibility: hidden;
                 transition: all 250ms;
             }
@@ -645,7 +645,7 @@
         section#daily-forecast {
 
             div.col#forecast-days {
-                @include grid($columns: auto, $rows: repeat(15, auto));
+                @include grid($columns: auto, $rows: auto);
 
                 border-radius: 6px;
                 row-gap: 20px;
@@ -699,8 +699,55 @@
                     grid-column: 3;
                     grid-row: 2;
 
+                    grid-template-columns: auto 6% auto;
+
                     p{
                         font-size: map-get($map: $typo, $key: p-med);
+                    }
+
+                    p.precipitation{
+                        grid-column: 2 / span 2;
+                    }
+
+                    i.fa-droplet{
+                        grid-column: 1;
+                        grid-row: 2;
+                    }
+
+                    i.fa-arrow-down{
+                        font-size: map-get($map: $typo, $key: p-smaller);
+                    }
+                }
+
+                &#forecast-date{
+                    grid-column: 1 / span 3;
+                    grid-row: 1;
+
+                    grid-template-columns: repeat(3, calc(95% / 3));
+                    grid-template-rows: auto;
+
+                    p {
+                        margin: 0;
+                    }
+
+                    p.date-string {
+                        font-weight: 500;
+                        margin: 0;
+
+                        font-size: map-get($map: $typo, $key: p-big);
+
+                        justify-self: flex-start;
+                    }
+
+                    p.date-number {
+                        font-weight: 400;
+
+                        font-size: map-get($map: $typo, $key: p-inbtw);
+
+                        text-decoration: underline;
+                        justify-self: flex-start;
+
+                        grid-column: 3;
                     }
                 }
             }
@@ -734,144 +781,20 @@
             }
 
             div.info-container {
-                @include grid($columns: repeat(3, calc(100% / 3)), $rows: repeat(2, 50%));
+                @include grid($columns: repeat(3, calc(95% / 3)), $rows: repeat(2, auto));
 
                 justify-items: flex-start;
                 align-items: center;
-                margin: 25px;
 
                 width: 100%;
+                margin: 10px;
 
                 column-gap: 5px;
                 row-gap: 15px;
             }
 
-            div.forecast-atmosphere {
-                grid-column: 2;
-                grid-row: 1;
-
-                @include grid($columns: auto, $rows: repeat(2, 50%));
-
-                row-gap: 0;
-            }
-
-            div.forecast-astronomy {
-                grid-column: 2;
-                grid-row: 2;
-
-                @include grid($columns: auto, $rows: repeat(2, 50%));
-
-                row-gap: 0;
-
-                p.sunrise,
-                p.sunset {
-                    font-size: map-get($map: $typo, $key: p-med);
-
-                    margin: auto 0;
-
-                    i {
-                        margin: 0;
-                    }
-                }
-
-                // p.sunrise::before {
-                //     content: "\f185";
-                //     font-family: 'FontAwesome';
-                //     margin-right: 10px;
-                // }
-
-                // p.sunset::before {
-                //     content: "\f186";
-                //     font-family: 'FontAwesome';
-                //     margin-right: 10px;
-                //     margin-left: 2px;
-                // }
-            }
-
             div.forecast-date {
                 align-self: flex-start;
-
-                p {
-                    margin: 0;
-                }
-
-                p.date-string {
-                    font-weight: 500;
-                    margin: 0;
-
-                    font-size: map-get($map: $typo, $key: p-big);
-                }
-
-                p.date-number {
-                    font-weight: 400;
-
-                    font-size: map-get($map: $typo, $key: p-inbtw);
-
-                    text-decoration: overline;
-                }
-            }
-
-            div.forecast-temps {
-                @include grid($columns: auto, $rows: auto auto);
-
-                grid-column: 1;
-                grid-row: 2;
-
-                align-items: center;
-
-                row-gap: 0;
-
-                p {
-                    margin: 0;
-
-                    &::before {
-                        font-family: 'FontAwesome';
-                        margin-right: 10px;
-                    }
-                }
-
-                // p.temp-high {
-                //     &:before {
-                //         content: "\f062";
-                //     }
-                // }
-
-                // p.temp-low {
-                //     &:before {
-                //         content: "\f063";
-                //     }
-                // }
-            }
-
-            div.forecast-wind {
-                grid-column: 2;
-                grid-row: 1;
-
-                height: 15px;
-            }
-
-            div.forecast-wind,
-            div.forecast-precipitation {
-                @include grid($columns: 30px auto, $rows: auto);
-
-                align-items: center;
-                column-gap: 10px;
-
-                i {
-                    font-size: map-get($map: $typo, $key: fontawesome-small);
-                    width: min-content;
-
-                    justify-self: center;
-                }
-
-                p {
-                    margin: 0;
-
-                    &::before {
-                        font-family: 'FontAwesome';
-                        margin-right: 10px;
-                    }
-                }
             }
 
             div.weather-report {

@@ -18,9 +18,9 @@
             <div class="col groupbox">
                 <div class="col groupbox-bar">
                     <h4>Voorspellingen</h4>
-                    <button class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
+                    <button class="nav-button expand"><i class="fas fa-arrow-up"></i></button>
                 </div>
-                <div class="col groupbox-content" data-visible="collapsed">
+                <div class="col groupbox-content" data-visible="expanded">
                     <div class="col" id="forecast-days">
 
                     </div>

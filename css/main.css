@@ -840,14 +840,14 @@ p.date-number {
   }
   div.groupbox div.groupbox-content[data-visible=collapsed] {
     height: 0;
-    padding: 0 0 0 30px;
+    padding: 0 30px;
     visibility: hidden;
     transition: all 250ms;
   }
   div.content#forecasts section#daily-forecast div.col#forecast-days {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: repeat(15, auto);
+    grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
     border-radius: 6px;
@@ -893,9 +893,42 @@ p.date-number {
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere {
     grid-column: 3;
     grid-row: 2;
+    grid-template-columns: auto 6% auto;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere p {
     font-size: 1.8vh;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere p.precipitation {
+    grid-column: 2/span 2;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere i.fa-droplet {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere i.fa-arrow-down {
+    font-size: 1.4vh;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-date {
+    grid-column: 1/span 3;
+    grid-row: 1;
+    grid-template-columns: repeat(3, 31.6666666667%);
+    grid-template-rows: auto;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-date p {
+    margin: 0;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-date p.date-string {
+    font-weight: 500;
+    margin: 0;
+    font-size: 2.8vh;
+    justify-self: flex-start;
+  }
+  div.content#forecasts section#daily-forecast div.forecast-data#forecast-date p.date-number {
+    font-weight: 400;
+    font-size: 2.2vh;
+    text-decoration: underline;
+    justify-self: flex-start;
+    grid-column: 3;
   }
   div.content#forecasts section#daily-forecast div.forecast-day {
     display: flex;
@@ -918,109 +951,19 @@ p.date-number {
   }
   div.content#forecasts section#daily-forecast div.info-container {
     display: grid;
-    grid-template-columns: repeat(3, 33.3333333333%);
-    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(3, 31.6666666667%);
+    grid-template-rows: repeat(2, auto);
     column-gap: 5px;
     row-gap: 5px;
     justify-items: flex-start;
     align-items: center;
-    margin: 25px;
     width: 100%;
+    margin: 10px;
     column-gap: 5px;
     row-gap: 15px;
   }
-  div.content#forecasts section#daily-forecast div.forecast-atmosphere {
-    grid-column: 2;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, 50%);
-    column-gap: 5px;
-    row-gap: 5px;
-    row-gap: 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-astronomy {
-    grid-column: 2;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(2, 50%);
-    column-gap: 5px;
-    row-gap: 5px;
-    row-gap: 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunrise,
-  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunset {
-    font-size: 1.8vh;
-    margin: auto 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunrise i,
-  div.content#forecasts section#daily-forecast div.forecast-astronomy p.sunset i {
-    margin: 0;
-  }
   div.content#forecasts section#daily-forecast div.forecast-date {
     align-self: flex-start;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-date p {
-    margin: 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-date p.date-string {
-    font-weight: 500;
-    margin: 0;
-    font-size: 2.8vh;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-date p.date-number {
-    font-weight: 400;
-    font-size: 2.2vh;
-    text-decoration: overline;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-temps {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    column-gap: 5px;
-    row-gap: 5px;
-    grid-column: 1;
-    grid-row: 2;
-    align-items: center;
-    row-gap: 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-temps p {
-    margin: 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-temps p::before {
-    font-family: "FontAwesome";
-    margin-right: 10px;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-wind {
-    grid-column: 2;
-    grid-row: 1;
-    height: 15px;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-wind,
-  div.content#forecasts section#daily-forecast div.forecast-precipitation {
-    display: grid;
-    grid-template-columns: 30px auto;
-    grid-template-rows: auto;
-    column-gap: 5px;
-    row-gap: 5px;
-    align-items: center;
-    column-gap: 10px;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-wind i,
-  div.content#forecasts section#daily-forecast div.forecast-precipitation i {
-    font-size: 1.8vh;
-    width: min-content;
-    justify-self: center;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-wind p,
-  div.content#forecasts section#daily-forecast div.forecast-precipitation p {
-    margin: 0;
-  }
-  div.content#forecasts section#daily-forecast div.forecast-wind p::before,
-  div.content#forecasts section#daily-forecast div.forecast-precipitation p::before {
-    font-family: "FontAwesome";
-    margin-right: 10px;
   }
   div.content#forecasts section#daily-forecast div.weather-report {
     overflow-y: auto;
