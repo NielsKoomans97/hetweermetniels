@@ -617,6 +617,8 @@
         }
 
         div.groupbox-content {
+            position: relative;
+
             border: 2px map-get($map: $colors, $key: background-color-4) solid;
             border-radius: 6px;
 
@@ -683,10 +685,6 @@
 
     div.content#forecasts {
         section#daily-forecast {
-            col.groupbox-content{
-                position: relative;
-            }
-
             div.col#forecast-days {
                 @include grid($columns: auto, $rows: auto);
 

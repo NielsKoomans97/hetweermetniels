@@ -827,6 +827,7 @@ p.date-number {
     transform: rotate(0deg);
   }
   div.groupbox div.groupbox-content {
+    position: relative;
     border: 2px #5792ff solid;
     border-radius: 6px;
     padding: 10px;
@@ -905,9 +906,6 @@ p.date-number {
   }
   div.col.content-scroller button.scroll-down {
     grid-row: 3;
-  }
-  div.content#forecasts section#daily-forecast col.groupbox-content {
-    position: relative;
   }
   div.content#forecasts section#daily-forecast div.col#forecast-days {
     display: grid;
