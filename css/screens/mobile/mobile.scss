@@ -707,7 +707,7 @@
                 align-content: center;
                 align-items: center;
 
-                column-gap: 12px;
+                column-gap: 8px;
 
                 p{
                     margin: 0;
@@ -717,6 +717,8 @@
 
                 i{
                     justify-self: center;
+
+                    font-size: map-get($map: $typo, $key: fontawesome-smaller);
                 }
 
                 &#forecast-astronomy{
@@ -813,7 +815,7 @@
                 border-top-left-radius: 6px;
                 border-bottom-left-radius: 6px;
 
-                width: 76px;
+                width: 56px;
                 height: 100%;
                 object-fit: contain;
 

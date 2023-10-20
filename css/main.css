@@ -45,13 +45,13 @@ p.temp-high,
 p.temp-low,
 p.date-string,
 div.weather-report p {
-  font-size: 1.8vh;
+  font-size: 1.6vh;
 }
 
 p.wind-speed,
 p.precipitation,
 p.date-number {
-  font-size: 1.6vh;
+  font-size: 1.5vh;
 }
 
 @media (max-width: 1175px) {
@@ -541,11 +541,11 @@ p.date-number {
   }
   div.content#index section#more-info p#warning-code,
   div.content#index section#more-info p#forecast-text {
-    font-size: 1.8vh;
+    font-size: 1.6vh;
     font-weight: 500;
   }
   div.content#index section#more-info p#warning-description {
-    font-size: 1.6vh;
+    font-size: 1.5vh;
     font-weight: 300;
   }
   div.content#index section#more-info i.fa-square-arrow-up-right {
@@ -931,7 +931,7 @@ p.date-number {
     margin: auto 0;
     align-content: center;
     align-items: center;
-    column-gap: 12px;
+    column-gap: 8px;
   }
   div.content#forecasts section#daily-forecast div.forecast-data p {
     margin: 0;
@@ -939,20 +939,21 @@ p.date-number {
   }
   div.content#forecasts section#daily-forecast div.forecast-data i {
     justify-self: center;
+    font-size: 1.7vh;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-astronomy {
     grid-column: 2;
     grid-row: 2;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-astronomy p {
-    font-size: 1.8vh;
+    font-size: 1.6vh;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-temperature {
     grid-column: 1;
     grid-row: 2;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-temperature p {
-    font-size: 1.8vh;
+    font-size: 1.6vh;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere {
     grid-column: 3;
@@ -960,7 +961,7 @@ p.date-number {
     grid-template-columns: auto 6% auto;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere p {
-    font-size: 1.8vh;
+    font-size: 1.6vh;
   }
   div.content#forecasts section#daily-forecast div.forecast-data#forecast-atmosphere p.precipitation {
     grid-column: 2/span 2;
@@ -1007,7 +1008,7 @@ p.date-number {
   div.content#forecasts section#daily-forecast img.forecast-icon {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    width: 76px;
+    width: 56px;
     height: 100%;
     object-fit: contain;
     background-color: #ffffff;
