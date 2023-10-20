@@ -640,11 +640,11 @@
 
             &[data-visible="collapsed"] {
                 height: 0;
-                padding: 0;
+                padding: 0 10px;
                 visibility: hidden;
                 transition: all 250ms;
 
-                div.content-scroller, div.weather-report{
+                *{
                     display: none;
                 }
             }

@@ -844,11 +844,11 @@ p.date-number {
   }
   div.groupbox div.groupbox-content[data-visible=collapsed] {
     height: 0;
-    padding: 0;
+    padding: 0 10px;
     visibility: hidden;
     transition: all 250ms;
   }
-  div.groupbox div.groupbox-content[data-visible=collapsed] div.content-scroller, div.groupbox div.groupbox-content[data-visible=collapsed] div.weather-report {
+  div.groupbox div.groupbox-content[data-visible=collapsed] * {
     display: none;
   }
   div.col.content-scroller {
