@@ -43,6 +43,18 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="col groupbox">
+                <div class="col groupbox-bar">
+                    <h4>Weerkaarten</h4>
+                    <button data-flipped="normal" class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
+                </div>
+                <div class="col groupbox-content" data-visible="collapsed">
+                    <div class="col" id="forecast-charts">
 
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 </div>

@@ -355,18 +355,29 @@
                 }
 
                 div#col-wind {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    grid-template-rows: repeat(2, 50%);
 
-                    i {
+                    i.fa-wind {
+                        grid-column: 1 / span 2;
+                    }
+
+                    i.fa-arrow-down {
+                        grid-column: 1;
+
                         width: fit-content;
                         margin-bottom: 10px;
+                        font-size: map-get($map: $typo, $key: fontawesome-smaller);
                     }
 
                     h4 {
+                        grid-column: 2;
+
                         margin: 0;
+                        font-size: map-get($map: $typo, $key: p-inbtw);
                     }
+
 
                     grid-column: 3;
                 }
@@ -633,9 +644,9 @@
                 height: fit-content;
                 transition: all 250ms;
 
-                div.content-scroller, div.weather-report{
-                    display: grid;
-                }
+                // *{
+                //     display: grid !important;
+                // }
             }
 
             &[data-visible="collapsed"] {
@@ -644,14 +655,14 @@
                 visibility: hidden;
                 transition: all 250ms;
 
-                *{
-                    display: none;
+                * {
+                    display: none !important;
                 }
             }
         }
     }
 
-    div.col.content-scroller{
+    div.col.content-scroller {
         @include grid($columns: auto, $rows: 5% auto 5%);
         position: absolute;
 
@@ -660,7 +671,7 @@
 
         align-self: center;
 
-        button{
+        button {
             @include nav-button;
 
             grid-template-columns: auto;
@@ -670,15 +681,17 @@
 
             border: map-get($map: $colors, $key: button-hover) 2px solid;
 
-            &:active{border: none;}
+            &:active {
+                border: none;
+            }
 
-            i{
+            i {
                 margin: 0;
                 align-self: center;
             }
         }
 
-        button.scroll-down{
+        button.scroll-down {
             grid-row: 3;
         }
     }
@@ -697,7 +710,7 @@
                 padding: 50px 0;
             }
 
-            div.forecast-data{
+            div.forecast-data {
                 @include grid($columns: 25% auto);
 
                 width: 100%;
@@ -709,61 +722,61 @@
 
                 column-gap: 8px;
 
-                p{
+                p {
                     margin: 0;
 
                     font-weight: 500;
                 }
 
-                i{
+                i {
                     justify-self: center;
 
                     font-size: map-get($map: $typo, $key: fontawesome-smaller);
                 }
 
-                &#forecast-astronomy{
+                &#forecast-astronomy {
                     grid-column: 2;
                     grid-row: 2;
 
-                    p{
+                    p {
                         font-size: map-get($map: $typo, $key: p-med);
                     }
                 }
 
-                &#forecast-temperature{
+                &#forecast-temperature {
                     grid-column: 1;
                     grid-row: 2;
 
-                    p{
+                    p {
                         font-size: map-get($map: $typo, $key: p-med);
                     }
                 }
 
-                &#forecast-atmosphere{
+                &#forecast-atmosphere {
                     grid-column: 3;
                     grid-row: 2;
 
                     grid-template-columns: auto 6% auto;
 
-                    p{
+                    p {
                         font-size: map-get($map: $typo, $key: p-med);
                     }
 
-                    p.precipitation{
+                    p.precipitation {
                         grid-column: 2 / span 2;
                     }
 
-                    i.fa-droplet{
+                    i.fa-droplet {
                         grid-column: 1;
                         grid-row: 2;
                     }
 
-                    i.fa-arrow-down{
+                    i.fa-arrow-down {
                         font-size: map-get($map: $typo, $key: p-smaller);
                     }
                 }
 
-                &#forecast-date{
+                &#forecast-date {
                     grid-column: 1 / span 3;
                     grid-row: 1;
 
@@ -808,7 +821,7 @@
 
                 column-gap: 5px;
 
-                height:auto;
+                height: auto;
             }
 
             img.forecast-icon {

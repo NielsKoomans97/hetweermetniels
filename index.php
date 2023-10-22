@@ -24,6 +24,7 @@
                     <h4 id="precipitation"></h4>
                 </div>
                 <div class="col" id="col-wind">
+                    <i class="fa-solid fa-wind"></i>
                     <i class="fas fa-arrow-down" id="wind-direction"></i>
                     <h4 id="wind-speed"></h4>
                 </div>
