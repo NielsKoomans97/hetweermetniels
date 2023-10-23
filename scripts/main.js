@@ -1,3 +1,4 @@
+import { Charts } from "./charts.js";
 import { GroupBox } from "./groupbox.js";
 import { MenuExpander } from "./nav-menu.js";
 import { SmallerRadar } from "./radar-small.js";
@@ -76,6 +77,12 @@ if (HasElement('locations-list'))
 
         return false;
     }
+}
+
+if (HasElement('chart-options')){
+    console.log('hey');
+
+    new Charts();
 }
 
 function HasElement(element) {
