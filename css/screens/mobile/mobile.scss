@@ -678,10 +678,6 @@
             &[data-visible="visible"] {
                 height: fit-content;
                 transition: all 250ms;
-
-                // *{
-                //     display: grid !important;
-                // }
             }
 
             &[data-visible="collapsed"] {
@@ -899,7 +895,7 @@
             div#forecast-charts{
                 display: grid;
                 grid-template-columns: auto;
-                grid-template-rows: auto auto 30px;
+                grid-template-rows: auto auto auto;
 
                 row-gap: 5px;
 
@@ -921,6 +917,8 @@
                     border-radius: 6px;
 
                     align-items: center;
+
+                    padding: 10px;
                 }
 
                 select#chart-type{

@@ -1064,7 +1064,7 @@ p.date-number {
   div.content#forecasts section#daily-forecast div#forecast-charts {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto auto 30px;
+    grid-template-rows: auto auto auto;
     row-gap: 5px;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts div#chart-controls {
@@ -1090,6 +1090,7 @@ p.date-number {
     grid-template-rows: auto;
     border-radius: 6px;
     align-items: center;
+    padding: 10px;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts button i, div.content#forecasts section#daily-forecast div#forecast-charts button span, div.content#forecasts section#daily-forecast div#forecast-charts button h1, div.content#forecasts section#daily-forecast div#forecast-charts button h2, div.content#forecasts section#daily-forecast div#forecast-charts button h3, div.content#forecasts section#daily-forecast div#forecast-charts button h4, div.content#forecasts section#daily-forecast div#forecast-charts button h5, div.content#forecasts section#daily-forecast div#forecast-charts button h6 {
     transition: all 160ms ease-in-out;
