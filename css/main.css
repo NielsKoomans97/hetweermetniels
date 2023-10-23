@@ -800,7 +800,7 @@ p.date-number {
     background-color: #d0dfeb;
     align-items: center;
     border-radius: 6px;
-    padding: 5px;
+    padding: 0.6vh 1.2vh;
     margin-bottom: 5px;
   }
   div.groupbox div.groupbox-bar h4 {
@@ -857,6 +857,7 @@ p.date-number {
   }
   div.groupbox div.groupbox-content {
     position: relative;
+    background-color: #ffffff;
     border: 2px #5792ff solid;
     border-radius: 6px;
     padding: 10px;
@@ -880,7 +881,7 @@ p.date-number {
   div.col.content-scroller {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 5% auto 5%;
+    grid-template-rows: 3.8vh auto 3.8vh;
     column-gap: 5px;
     row-gap: 5px;
     position: absolute;
@@ -904,6 +905,7 @@ p.date-number {
     grid-template-columns: auto;
     grid-template-rows: auto;
     border-radius: 6px;
+    padding: 0.8vh;
     border: #5792ff 2px solid;
   }
   div.col.content-scroller button i, div.col.content-scroller button span, div.col.content-scroller button h1, div.col.content-scroller button h2, div.col.content-scroller button h3, div.col.content-scroller button h4, div.col.content-scroller button h5, div.col.content-scroller button h6 {
@@ -944,7 +946,7 @@ p.date-number {
     width: 100%;
     overflow: hidden;
     max-height: 70vh;
-    padding: 50px 0;
+    padding: 5vh 0;
   }
   div.content#forecasts section#daily-forecast div.forecast-data {
     display: grid;
@@ -1034,10 +1036,10 @@ p.date-number {
   div.content#forecasts section#daily-forecast img.forecast-icon {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    width: 56px;
+    width: 8vh;
     height: 100%;
     object-fit: contain;
-    background-color: #ffffff;
+    background-color: #fcfeff;
     object-fit: contain;
   }
   div.content#forecasts section#daily-forecast div.info-container {
@@ -1059,19 +1061,19 @@ p.date-number {
   div.content#forecasts section#daily-forecast div.weather-report {
     overflow: hidden;
     max-height: 70vh;
-    padding: 35px 0;
+    padding: 5vh 0;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
-    row-gap: 5px;
+    row-gap: 10px;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts div#chart-controls {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 50px 50px auto;
-    column-gap: 5px;
+    column-gap: 10px;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts button {
     display: grid;
@@ -1088,9 +1090,10 @@ p.date-number {
     color: #000000;
     grid-template-columns: auto;
     grid-template-rows: auto;
+    border: 2px #01264d solid;
     border-radius: 6px;
     align-items: center;
-    padding: 10px;
+    padding: 1.1vh 1.2vh;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts button i, div.content#forecasts section#daily-forecast div#forecast-charts button span, div.content#forecasts section#daily-forecast div#forecast-charts button h1, div.content#forecasts section#daily-forecast div#forecast-charts button h2, div.content#forecasts section#daily-forecast div#forecast-charts button h3, div.content#forecasts section#daily-forecast div#forecast-charts button h4, div.content#forecasts section#daily-forecast div#forecast-charts button h5, div.content#forecasts section#daily-forecast div#forecast-charts button h6 {
     transition: all 160ms ease-in-out;
@@ -1113,9 +1116,9 @@ p.date-number {
     border: none;
     outline: none;
     background-color: #fcfeff;
+    border: 2px #01264d solid;
     border-radius: 4px;
     padding: 5px 5px;
-    text-align: center;
     width: 100%;
   }
   div.content#forecasts section#daily-forecast div#forecast-charts img#chart-image {
