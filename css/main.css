@@ -650,7 +650,7 @@ p.date-number {
     grid-template-rows: 60% 40%;
     grid-column: 2;
     align-content: center;
-    row-gap: 10px;
+    row-gap: 5px;
     column-gap: 5px;
     margin: auto 0;
   }
@@ -662,7 +662,6 @@ p.date-number {
     align-self: center;
     font-size: 2.4vh;
     margin: 0;
-    width: 0;
   }
   div.content#index section#observations div#observations-widget div#col-precip h4 {
     margin: 0;
@@ -673,10 +672,10 @@ p.date-number {
   }
   div.content#index section#observations div#observations-widget div#col-wind {
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: 30% auto;
     grid-template-rows: 60% 40%;
-    row-gap: 10px;
-    column-gap: 5px;
+    row-gap: 5px;
+    column-gap: 2px;
     align-content: center;
     align-items: center;
     grid-column: 3;
@@ -692,7 +691,6 @@ p.date-number {
     font-size: 1.7vh;
     align-self: center;
     justify-self: center;
-    width: 0;
   }
   div.content#index section#observations div#observations-widget div#col-wind h4 {
     grid-column: 2;

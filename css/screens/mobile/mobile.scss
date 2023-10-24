@@ -470,7 +470,7 @@
                     grid-column: 2;
                     align-content: center;
 
-                    row-gap: 10px;
+                    row-gap: 5px;
                     column-gap: 5px;
 
                     margin: auto 0;
@@ -486,7 +486,6 @@
                         font-size: map-get($map: $typo, $key: fontawesome-icon);
 
                         margin: 0;
-                        width: 0;
                     }
 
                     h4 {
@@ -502,11 +501,11 @@
 
                 div#col-wind {
                     display: grid;
-                    grid-template-columns: 20% auto;
+                    grid-template-columns: 30% auto;
                     grid-template-rows: 60% 40%;
 
-                    row-gap: 10px;
-                    column-gap: 5px;
+                    row-gap: 5px;
+                    column-gap: 2px;
 
                     align-content: center;
                     align-items: center;
@@ -525,8 +524,6 @@
 
                         align-self: center;
                         justify-self: center;
-
-                        width: 0;
                     }
 
                     h4 {
@@ -733,7 +730,7 @@
             }
         }
     }
-    
+
     div.content#forecasts {
         section#daily-forecast {
             div.col#forecast-days {
