@@ -380,42 +380,6 @@ export class WeatherManager {
             root.appendChild(iconItem);
         }
 
-        function BuildWindItem(root, day) {
-            const windContainer = document.createElement('div');
-            windContainer.classList.add('col', 'forecast-wind');
-
-            const windIcon = document.createElement('i');
-            windIcon.classList.add('fa-solid', 'fa-arrow-up');
-
-            const windDir = parseInt(day['winddirectiondegrees']);
-
-            windIcon.setAttribute('style', `transform: rotate(${(windDir)}deg);`);
-            windContainer.appendChild(windIcon);
-
-            const windSpeed = document.createElement('p');
-            windSpeed.className = 'wind-speed';
-            windSpeed.innerText = day['windspeed'];
-            windContainer.appendChild(windSpeed);
-
-            root.appendChild(windContainer);
-        }
-
-        function BuildPrecipItem(root, day) {
-            const precipContainer = document.createElement('div');
-            precipContainer.classList.add('col', 'forecast-precipitation');
-
-            const precipIcon = document.createElement('i');
-            precipIcon.classList.add('fas', 'fa-droplet');
-            precipContainer.appendChild(precipIcon);
-
-            const precipAmount = document.createElement('p');
-            precipAmount.className = 'precipitation';
-            precipAmount.innerText = `${day['precipitationmm']} mm`
-            precipContainer.appendChild(precipAmount);
-
-            root.appendChild(precipContainer);
-        }
-
         function fixInt(nr) {
             if (nr < 10) {
                 return `0${nr}`;
