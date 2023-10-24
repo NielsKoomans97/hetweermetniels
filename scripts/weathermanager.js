@@ -46,12 +46,16 @@ export class WeatherManager {
             await this.RefreshAnnouncementPill();
         }
 
-        if (this.HasElement('weather-report')){
+        if (this.HasElement('weather-report')) {
             await this.GetWeatherReport('nl');
+        }
+
+        if (this.HasElement('warning-overview')) {
+            await this.RefreshWarnings();
         }
     }
 
-    async GetWeatherReport(country){
+    async GetWeatherReport(country) {
         const data = await fetch(`https://data.buienradar.nl/1.1/content/weatherreport/${country}/false`)
         const json = await data.json();
 
@@ -113,7 +117,7 @@ export class WeatherManager {
                         await this.RefreshAnnouncementPill();
                     }
 
-                    if (this.HasElement('weather-report')){
+                    if (this.HasElement('weather-report')) {
                         await this.GetWeatherReport('nl');
                     }
 
@@ -234,7 +238,7 @@ export class WeatherManager {
             BuildDay(forecast_days, day);
         });
 
-        function GetDate(dateString){
+        function GetDate(dateString) {
             return new Date(Date.parse(dateString));
         }
 
@@ -278,13 +282,13 @@ export class WeatherManager {
             root.appendChild(dateContainer);
         }
 
-        function BuildAstronomyItem(root, day){
+        function BuildAstronomyItem(root, day) {
             const container = document.createElement('div');
             container.classList.add('col', 'forecast-data');
             container.id = 'forecast-astronomy';
 
             const sunriseIcon = document.createElement('i');
-            sunriseIcon.classList.add('fa-solid','fa-sun');
+            sunriseIcon.classList.add('fa-solid', 'fa-sun');
             container.appendChild(sunriseIcon);
 
             const sunrise = document.createElement('p');
@@ -306,7 +310,7 @@ export class WeatherManager {
             root.appendChild(container);
         }
 
-        function BuildPrecipWindItem(root, day){
+        function BuildPrecipWindItem(root, day) {
             const container = document.createElement('div');
             container.classList.add('col', 'forecast-data');
             container.id = 'forecast-atmosphere';
@@ -338,7 +342,7 @@ export class WeatherManager {
             precipAmount.innerText = `${day['precipitationmm']} mm`
             container.appendChild(precipAmount);
 
-            root.appendChild(container);``
+            root.appendChild(container); ``
         }
 
         function BuildTempItem(root, day) {
@@ -412,12 +416,78 @@ export class WeatherManager {
             root.appendChild(precipContainer);
         }
 
-        function fixInt(nr){
-            if (nr < 10){
+        function fixInt(nr) {
+            if (nr < 10) {
                 return `0${nr}`;
             }
 
             return `${nr}`;
+        }
+    }
+
+    async RefreshWarnings() {
+        const data = await fetch('https://data.buienradar.nl/1.0/announcements/apps');
+        const json = await data.json();
+
+        SetWarningOverview();
+        SetDailyWarnings();
+
+        function SetWarningOverview() {
+            const warning_code = document.getElementById('warning-title');
+            const warning_description = document.getElementById('warning-description');
+
+            const warnings = json['warnings']['locations'];
+
+            switch (json['warnings']['color']) {
+                case 'YELLOW': warning_code.innerText = `Code Geel`; break;
+                case 'GREEN': warning_code.innerText = 'Geen waarschuwingen'; break;
+                case 'RED': warning_code.innerText = 'Code Rood'; break;
+                case 'ORANGE': warning_code.innerText = 'Code Oranje'; break;
+            }
+
+            if (warnings.length > 0) {
+                warning_code.innerText = 'Er zijn waarschuwing(en)'
+                warning_description.innerText = `Voor ${warnings.length} provincies`;
+            }
+            else {
+                warning_description.innerText = '';
+            }
+        }
+
+        function SetDailyWarnings() {
+            const warning_maps = document.getElementById('warning-maps');
+
+            for (let i = 1; i < 3; i++) {
+                let url = json['warnings']['daySummaries'][`day${i}`]['image'];
+                let day = "";
+
+                switch (i) {
+                    case 1:
+                        day = "Vandaag";
+                        break;
+                    case 2:
+                        day = "Morgen";
+                        break;
+                }
+
+                warning_maps.append(BuildMap(day, url));
+            }
+
+            function BuildMap(day, url) {
+                let summary = document.createElement('div');
+                summary.classList.add('col', 'daily-summary');
+
+                let dayName = document.createElement('p');
+                dayName.className = 'day-name';
+                dayName.innerText = day;
+                summary.appendChild(dayName);
+
+                let dayImage = document.createElement('img');
+                dayImage.setAttribute('src', url);
+                summary.appendChild(dayImage);
+
+                return summary;
+            }
         }
     }
 

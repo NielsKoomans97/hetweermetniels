@@ -2,6 +2,17 @@
 <div class="content" id="warning-page">
     <section id="warnings">
         <div class="container">
+            <div class="col">
+                <h4>Overzicht</h4>
+            </div>
+            <div class="col" id="warning-overview">
+                <i class="fa-solid fa-warning"></i>
+                <p id="warning-title">Geen waarschuwingen</p>
+                <p id="warning-description">Voor 0 locaties</p>
+            </div>
+        </div>
+        <br>
+        <div class="container">
             <div class="col groupbox">
                 <div class="col groupbox-bar">
                     <h4>Dagelijkse waarschuwingskaarten</h4>
