@@ -49,7 +49,7 @@
                     <h4>Weerkaarten (expert/gevorderde)</h4>
                     <button data-flipped="normal" class="nav-button expand"><i class="fas fa-arrow-down"></i></button>
                 </div>
-                <div class="col groupbox-content" data-visible="collapsed">
+                <div class="col groupbox-content white-bg" data-visible="collapsed">
                     <div class="col" id="forecast-charts">
                         <div class="col" id="chart-options">
                             <select id="chart-type">

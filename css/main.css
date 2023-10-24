@@ -205,6 +205,155 @@ p.date-number {
     visibility: visible;
     left: 0;
   }
+  div.groupbox {
+    margin-bottom: 10px;
+  }
+  div.groupbox div.groupbox-bar {
+    display: grid;
+    grid-template-columns: auto 10%;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    background-color: #d0dfeb;
+    align-items: center;
+    border-radius: 6px;
+    padding: 0.6vh 1.2vh;
+    margin-bottom: 5px;
+  }
+  div.groupbox div.groupbox-bar h4 {
+    margin: 0;
+  }
+  div.groupbox div.groupbox-bar button {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: #e8f5ff;
+    transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    padding: 5px 5px;
+    border-radius: 6px;
+  }
+  div.groupbox div.groupbox-bar button i, div.groupbox div.groupbox-bar button span, div.groupbox div.groupbox-bar button h1, div.groupbox div.groupbox-bar button h2, div.groupbox div.groupbox-bar button h3, div.groupbox div.groupbox-bar button h4, div.groupbox div.groupbox-bar button h5, div.groupbox div.groupbox-bar button h6 {
+    transition: all 160ms ease-in-out;
+    color: #000000;
+  }
+  div.groupbox div.groupbox-bar button i {
+    width: min-content;
+    justify-self: center;
+  }
+  div.groupbox div.groupbox-bar button:hover {
+    background-color: #5792ff;
+  }
+  div.groupbox div.groupbox-bar button:hover i, div.groupbox div.groupbox-bar button:hover span, div.groupbox div.groupbox-bar button:hover h1, div.groupbox div.groupbox-bar button:hover h2, div.groupbox div.groupbox-bar button:hover h3, div.groupbox div.groupbox-bar button:hover h4, div.groupbox div.groupbox-bar button:hover h5, div.groupbox div.groupbox-bar button:hover h6 {
+    color: #ffffff;
+  }
+  div.groupbox div.groupbox-bar button:active {
+    background-color: #01264d;
+  }
+  div.groupbox div.groupbox-bar button i {
+    margin: 0;
+    height: min-content;
+    width: min-content;
+    transition: all 150ms ease-in-out;
+  }
+  div.groupbox div.groupbox-bar button[data-flipped=flipped] i {
+    transform: rotate(180deg);
+  }
+  div.groupbox div.groupbox-bar button[data-flipped=normal] i {
+    transform: rotate(0deg);
+  }
+  div.groupbox div.groupbox-content {
+    position: relative;
+    border: 2px #5792ff solid;
+    border-radius: 6px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: 150ms all ease-in-out;
+  }
+  div.groupbox div.groupbox-content[data-visible=visible] {
+    height: fit-content;
+    transition: all 250ms;
+  }
+  div.groupbox div.groupbox-content[data-visible=collapsed] {
+    height: 0;
+    padding: 0 10px;
+    visibility: hidden;
+    transition: all 250ms;
+  }
+  div.groupbox div.groupbox-content[data-visible=collapsed] * {
+    display: none !important;
+  }
+  div.groupbox div.groupbox-content.white-bg {
+    background-color: #ffffff;
+  }
+  div.content-scroller {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 3.8vh auto 3.8vh;
+    column-gap: 5px;
+    row-gap: 5px;
+    position: absolute;
+    width: 100px;
+    height: 70vh;
+    align-self: center;
+  }
+  div.content-scroller button {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    background-color: #e8f5ff;
+    transition: all 160ms ease-in-out;
+    text-decoration: none;
+    color: #000000;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border-radius: 6px;
+    padding: 0.8vh;
+    border: #5792ff 2px solid;
+    align-content: center;
+  }
+  div.content-scroller button i, div.content-scroller button span, div.content-scroller button h1, div.content-scroller button h2, div.content-scroller button h3, div.content-scroller button h4, div.content-scroller button h5, div.content-scroller button h6 {
+    transition: all 160ms ease-in-out;
+    color: #000000;
+  }
+  div.content-scroller button i {
+    width: min-content;
+    justify-self: center;
+  }
+  div.content-scroller button:hover {
+    background-color: #5792ff;
+  }
+  div.content-scroller button:hover i, div.content-scroller button:hover span, div.content-scroller button:hover h1, div.content-scroller button:hover h2, div.content-scroller button:hover h3, div.content-scroller button:hover h4, div.content-scroller button:hover h5, div.content-scroller button:hover h6 {
+    color: #ffffff;
+  }
+  div.content-scroller button:active {
+    background-color: #01264d;
+  }
+  div.content-scroller button:active {
+    border: none;
+  }
+  div.content-scroller button i {
+    margin: 0;
+  }
+  div.content-scroller button.scroll-down {
+    grid-row: 3;
+  }
   div.content#index section#search-bar {
     padding: 2vh 0;
   }
@@ -480,7 +629,7 @@ p.date-number {
   }
   div.content#index section#observations div#observations-widget {
     display: grid;
-    grid-template-columns: 50% 25% 25%;
+    grid-template-columns: auto 30% 30%;
     grid-template-rows: auto;
     column-gap: 5px;
     row-gap: 5px;
@@ -500,7 +649,7 @@ p.date-number {
     grid-template-columns: auto;
     grid-template-rows: 60% 40%;
     grid-column: 2;
-    align-items: center;
+    align-content: center;
     row-gap: 10px;
     column-gap: 5px;
     margin: auto 0;
@@ -524,10 +673,11 @@ p.date-number {
   }
   div.content#index section#observations div#observations-widget div#col-wind {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: 20% auto;
     grid-template-rows: 60% 40%;
     row-gap: 10px;
     column-gap: 5px;
+    align-content: center;
     align-items: center;
     grid-column: 3;
   }
@@ -538,7 +688,7 @@ p.date-number {
   div.content#index section#observations div#observations-widget div#col-wind i.fa-arrow-down {
     grid-column: 1;
     width: fit-content;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     font-size: 1.7vh;
     align-self: center;
     justify-self: center;
@@ -788,153 +938,6 @@ p.date-number {
     justify-self: center;
     margin: 0;
   }
-  div.groupbox {
-    margin-bottom: 10px;
-  }
-  div.groupbox div.groupbox-bar {
-    display: grid;
-    grid-template-columns: auto 10%;
-    grid-template-rows: auto;
-    column-gap: 5px;
-    row-gap: 5px;
-    background-color: #d0dfeb;
-    align-items: center;
-    border-radius: 6px;
-    padding: 0.6vh 1.2vh;
-    margin-bottom: 5px;
-  }
-  div.groupbox div.groupbox-bar h4 {
-    margin: 0;
-  }
-  div.groupbox div.groupbox-bar button {
-    display: grid;
-    grid-template-columns: 10% auto;
-    grid-template-rows: auto;
-    column-gap: 5px;
-    row-gap: 5px;
-    border: none;
-    outline: none;
-    border-radius: 30px;
-    background-color: #e8f5ff;
-    transition: all 160ms ease-in-out;
-    text-decoration: none;
-    color: #000000;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    justify-items: center;
-    align-items: center;
-    padding: 5px 5px;
-    border-radius: 6px;
-  }
-  div.groupbox div.groupbox-bar button i, div.groupbox div.groupbox-bar button span, div.groupbox div.groupbox-bar button h1, div.groupbox div.groupbox-bar button h2, div.groupbox div.groupbox-bar button h3, div.groupbox div.groupbox-bar button h4, div.groupbox div.groupbox-bar button h5, div.groupbox div.groupbox-bar button h6 {
-    transition: all 160ms ease-in-out;
-    color: #000000;
-  }
-  div.groupbox div.groupbox-bar button i {
-    width: min-content;
-    justify-self: center;
-  }
-  div.groupbox div.groupbox-bar button:hover {
-    background-color: #5792ff;
-  }
-  div.groupbox div.groupbox-bar button:hover i, div.groupbox div.groupbox-bar button:hover span, div.groupbox div.groupbox-bar button:hover h1, div.groupbox div.groupbox-bar button:hover h2, div.groupbox div.groupbox-bar button:hover h3, div.groupbox div.groupbox-bar button:hover h4, div.groupbox div.groupbox-bar button:hover h5, div.groupbox div.groupbox-bar button:hover h6 {
-    color: #ffffff;
-  }
-  div.groupbox div.groupbox-bar button:active {
-    background-color: #01264d;
-  }
-  div.groupbox div.groupbox-bar button i {
-    margin: 0;
-    height: min-content;
-    width: min-content;
-    transition: all 150ms ease-in-out;
-  }
-  div.groupbox div.groupbox-bar button[data-flipped=flipped] i {
-    transform: rotate(180deg);
-  }
-  div.groupbox div.groupbox-bar button[data-flipped=normal] i {
-    transform: rotate(0deg);
-  }
-  div.groupbox div.groupbox-content {
-    position: relative;
-    background-color: #ffffff;
-    border: 2px #5792ff solid;
-    border-radius: 6px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    transition: 150ms all ease-in-out;
-  }
-  div.groupbox div.groupbox-content[data-visible=visible] {
-    height: fit-content;
-    transition: all 250ms;
-  }
-  div.groupbox div.groupbox-content[data-visible=collapsed] {
-    height: 0;
-    padding: 0 10px;
-    visibility: hidden;
-    transition: all 250ms;
-  }
-  div.groupbox div.groupbox-content[data-visible=collapsed] * {
-    display: none !important;
-  }
-  div.col.content-scroller {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 3.8vh auto 3.8vh;
-    column-gap: 5px;
-    row-gap: 5px;
-    position: absolute;
-    width: 100px;
-    height: 70vh;
-    align-self: center;
-  }
-  div.col.content-scroller button {
-    display: grid;
-    grid-template-columns: 10% auto;
-    grid-template-rows: auto;
-    column-gap: 5px;
-    row-gap: 5px;
-    border: none;
-    outline: none;
-    border-radius: 30px;
-    background-color: #e8f5ff;
-    transition: all 160ms ease-in-out;
-    text-decoration: none;
-    color: #000000;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    border-radius: 6px;
-    padding: 0.8vh;
-    border: #5792ff 2px solid;
-  }
-  div.col.content-scroller button i, div.col.content-scroller button span, div.col.content-scroller button h1, div.col.content-scroller button h2, div.col.content-scroller button h3, div.col.content-scroller button h4, div.col.content-scroller button h5, div.col.content-scroller button h6 {
-    transition: all 160ms ease-in-out;
-    color: #000000;
-  }
-  div.col.content-scroller button i {
-    width: min-content;
-    justify-self: center;
-  }
-  div.col.content-scroller button:hover {
-    background-color: #5792ff;
-  }
-  div.col.content-scroller button:hover i, div.col.content-scroller button:hover span, div.col.content-scroller button:hover h1, div.col.content-scroller button:hover h2, div.col.content-scroller button:hover h3, div.col.content-scroller button:hover h4, div.col.content-scroller button:hover h5, div.col.content-scroller button:hover h6 {
-    color: #ffffff;
-  }
-  div.col.content-scroller button:active {
-    background-color: #01264d;
-  }
-  div.col.content-scroller button:active {
-    border: none;
-  }
-  div.col.content-scroller button i {
-    margin: 0;
-    align-self: center;
-  }
-  div.col.content-scroller button.scroll-down {
-    grid-row: 3;
-  }
   div.content#forecasts section#daily-forecast div.col#forecast-days {
     display: grid;
     grid-template-columns: auto;
@@ -1090,7 +1093,7 @@ p.date-number {
     color: #000000;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    border: 2px #01264d solid;
+    border: 1px #01264d solid;
     border-radius: 6px;
     align-items: center;
     padding: 1.1vh 1.2vh;
@@ -1116,7 +1119,7 @@ p.date-number {
     border: none;
     outline: none;
     background-color: #fcfeff;
-    border: 2px #01264d solid;
+    border: 1px #01264d solid;
     border-radius: 4px;
     padding: 5px 5px;
     width: 100%;

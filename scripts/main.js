@@ -36,39 +36,38 @@ if (HasElement('search')) {
 new GroupBox();
 new Scroller();
 
-if (HasElement('locations-list'))
-{
+if (HasElement('locations-list')) {
     const body = document.getElementsByTagName('body')[0];
     body.addEventListener('mousedown', (event) => {
         const locations_list = document.getElementById('locations-list');
         const saved_locations_list = document.getElementById('saved-locations-list');
 
-        if (locations_list.getAttribute('data-visible') == 'visible'){
+        if (locations_list.getAttribute('data-visible') == 'visible') {
             const bounds = locations_list.getBoundingClientRect();
             const coordsX = event.clientX;
             const coordsY = event.clientY;
 
-            if (BoundsContains(bounds, coordsX, coordsY) == false){
-                locations_list.setAttribute('data-visible','collapsed');
+            if (BoundsContains(bounds, coordsX, coordsY) == false) {
+                locations_list.setAttribute('data-visible', 'collapsed');
             }
         }
 
-        if (saved_locations_list.getAttribute('data-visible') == 'visible'){
+        if (saved_locations_list.getAttribute('data-visible') == 'visible') {
             const bounds = saved_locations_list.getBoundingClientRect();
             const coordsX = event.clientX;
             const coordsY = event.clientY;
 
-            if (BoundsContains(bounds,coordsX,coordsY) == false){
-                saved_locations_list.setAttribute('data-visible','collapsed');
+            if (BoundsContains(bounds, coordsX, coordsY) == false) {
+                saved_locations_list.setAttribute('data-visible', 'collapsed');
             }
         }
     });
 
-    function BoundsContains(bounds, x, y){
-        if (x > bounds.x){
-            if (x < bounds.width){
-                if (y > bounds.y){
-                    if (y < bounds.width){
+    function BoundsContains(bounds, x, y) {
+        if (x > bounds.x) {
+            if (x < bounds.width) {
+                if (y > bounds.y) {
+                    if (y < bounds.width) {
                         return true;
                     }
                 }
@@ -79,9 +78,7 @@ if (HasElement('locations-list'))
     }
 }
 
-if (HasElement('chart-options')){
-    console.log('hey');
-
+if (HasElement('chart-options')) {
     new Charts();
 }
 

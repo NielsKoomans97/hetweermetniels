@@ -33,7 +33,7 @@
     {
       "type": "Neerslagsom",
       "-1h": "WeatherMapRain1Hour10mNL?forecast=0",
-      "-24h": "WeatherMapRain24Hours10mNL?forecast=0"
+      "-12h": "WeatherMapRain24Hours10mNL?forecast=0&history=48"
     },
     {
       "type": "Actuele temperatuur",

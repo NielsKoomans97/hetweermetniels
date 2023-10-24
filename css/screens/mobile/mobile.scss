@@ -137,6 +137,130 @@
         }
     }
 
+    div.groupbox {
+        margin-bottom: 10px;
+
+        div.groupbox-bar {
+            @include grid($columns: auto 10%, $rows: auto);
+
+            background-color: map-get($map: $colors, $key: background-color-6);
+            align-items: center;
+
+            border-radius: 6px;
+
+            padding: 0.6vh 1.2vh;
+
+            margin-bottom: 5px;
+
+            h4 {
+                margin: 0;
+            }
+
+            button {
+                @include nav-button;
+
+                grid-template-columns: auto;
+                grid-template-rows: auto;
+
+                justify-items: center;
+                align-items: center;
+
+                padding: 5px 5px;
+                border-radius: 6px;
+
+                i {
+                    margin: 0;
+                    height: min-content;
+                    width: min-content;
+                    transition: all 150ms ease-in-out;
+                }
+
+                &[data-flipped="flipped"] {
+                    i {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &[data-flipped="normal"] {
+                    i {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+
+        div.groupbox-content {
+            position: relative;
+
+            border: 2px map-get($map: $colors, $key: background-color-4) solid;
+            border-radius: 6px;
+
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 150ms all ease-in-out;
+
+            &[data-visible="visible"] {
+                height: fit-content;
+                transition: all 250ms;
+            }
+
+            &[data-visible="collapsed"] {
+                height: 0;
+                padding: 0 10px;
+                visibility: hidden;
+                transition: all 250ms;
+
+                * {
+                    display: none !important;
+                }
+            }
+
+            &.white-bg {
+                background-color: map-get($map: $colors, $key: background-color-7);
+            }
+        }
+    }
+
+    div.content-scroller {
+        @include grid($columns: auto, $rows: 3.8vh auto 3.8vh);
+        position: absolute;
+
+        width: 100px;
+        height: 70vh;
+
+        align-self: center;
+
+        button {
+            @include nav-button;
+
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            border-radius: 6px;
+
+            padding: 0.8vh;
+
+            border: map-get($map: $colors, $key: button-hover) 2px solid;
+
+            align-content: center;
+
+            &:active {
+                border: none;
+            }
+
+            i {
+                margin: 0;             
+            }
+        }
+
+        button.scroll-down {
+            grid-row: 3;
+        }
+    }
+
     div.content#index {
         section#search-bar {
             padding: 2vh 0;
@@ -319,7 +443,7 @@
             }
 
             div#observations-widget {
-                @include grid($columns: 50% 25% 25%, $rows: auto);
+                @include grid($columns: auto 30% 30%, $rows: auto);
 
                 align-items: center;
 
@@ -344,7 +468,7 @@
                     grid-template-rows: 60% 40%;
 
                     grid-column: 2;
-                    align-items: center;
+                    align-content: center;
 
                     row-gap: 10px;
                     column-gap: 5px;
@@ -378,12 +502,13 @@
 
                 div#col-wind {
                     display: grid;
-                    grid-template-columns: repeat(2, auto);
+                    grid-template-columns: 20% auto;
                     grid-template-rows: 60% 40%;
 
                     row-gap: 10px;
                     column-gap: 5px;
 
+                    align-content: center;
                     align-items: center;
 
                     i.fa-wind {
@@ -395,7 +520,7 @@
                         grid-column: 1;
 
                         width: fit-content;
-                        margin-bottom: 10px;
+                        margin-bottom: 2px;
                         font-size: map-get($map: $typo, $key: fontawesome-smaller);
 
                         align-self: center;
@@ -608,127 +733,7 @@
             }
         }
     }
-
-    div.groupbox {
-        margin-bottom: 10px;
-
-        div.groupbox-bar {
-            @include grid($columns: auto 10%, $rows: auto);
-
-            background-color: map-get($map: $colors, $key: background-color-6);
-            align-items: center;
-
-            border-radius: 6px;
-
-            padding: 0.6vh 1.2vh;
-
-            margin-bottom: 5px;
-
-            h4 {
-                margin: 0;
-            }
-
-            button {
-                @include nav-button;
-
-                grid-template-columns: auto;
-                grid-template-rows: auto;
-
-                justify-items: center;
-                align-items: center;
-
-                padding: 5px 5px;
-                border-radius: 6px;
-
-                i {
-                    margin: 0;
-                    height: min-content;
-                    width: min-content;
-                    transition: all 150ms ease-in-out;
-                }
-
-                &[data-flipped="flipped"] {
-                    i {
-                        transform: rotate(180deg);
-                    }
-                }
-
-                &[data-flipped="normal"] {
-                    i {
-                        transform: rotate(0deg);
-                    }
-                }
-            }
-        }
-
-        div.groupbox-content {
-            position: relative;
-
-            background-color: map-get($map: $colors, $key: background-color-7);
-            border: 2px map-get($map: $colors, $key: background-color-4) solid;
-            border-radius: 6px;
-
-            padding: 10px;
-
-            display: flex;
-            flex-direction: column;
-
-            transition: 150ms all ease-in-out;
-
-            &[data-visible="visible"] {
-                height: fit-content;
-                transition: all 250ms;
-            }
-
-            &[data-visible="collapsed"] {
-                height: 0;
-                padding: 0 10px;
-                visibility: hidden;
-                transition: all 250ms;
-
-                * {
-                    display: none !important;
-                }
-            }
-        }
-    }
-
-    div.col.content-scroller {
-        @include grid($columns: auto, $rows: 3.8vh auto 3.8vh);
-        position: absolute;
-
-        width: 100px;
-        height: 70vh;
-
-        align-self: center;
-
-        button {
-            @include nav-button;
-
-            grid-template-columns: auto;
-            grid-template-rows: auto;
-
-            border-radius: 6px;
-
-            padding: 0.8vh;
-
-            border: map-get($map: $colors, $key: button-hover) 2px solid;
-
-            &:active {
-                border: none;
-            }
-
-            i {
-                margin: 0;
-                align-self: center;
-            }
-        }
-
-        button.scroll-down {
-            grid-row: 3;
-        }
-    }
-
+    
     div.content#forecasts {
         section#daily-forecast {
             div.col#forecast-days {
@@ -894,14 +899,14 @@
                 padding: 5vh 0;
             }
 
-            div#forecast-charts{
+            div#forecast-charts {
                 display: grid;
                 grid-template-columns: auto;
                 grid-template-rows: auto auto auto;
 
                 row-gap: 10px;
 
-                div#chart-controls{
+                div#chart-controls {
                     display: grid;
 
                     grid-template-rows: auto;
@@ -910,13 +915,13 @@
                     column-gap: 10px;
                 }
 
-                button{
+                button {
                     @include nav-button;
 
                     grid-template-columns: auto;
                     grid-template-rows: auto;
 
-                    border: 2px map-get($map: $colors, $key: button-pressed) solid;
+                    border: 1px map-get($map: $colors, $key: button-pressed) solid;
 
                     border-radius: 6px;
 
@@ -925,12 +930,12 @@
                     padding: 1.1vh 1.2vh;
                 }
 
-                select#chart-type{
+                select#chart-type {
                     border: none;
                     outline: none;
 
                     background-color: map-get($map: $colors, $key: background-color-3);
-                    border: 2px map-get($map: $colors, $key: button-pressed) solid;
+                    border: 1px map-get($map: $colors, $key: button-pressed) solid;
 
                     border-radius: 4px;
 
@@ -939,12 +944,11 @@
                     width: 100%;
                 }
 
-                img#chart-image{
+                img#chart-image {
                     width: 100%;
                 }
 
-                input[type="range"]
-                {
+                input[type="range"] {
                     width: 100%;
                 }
 
