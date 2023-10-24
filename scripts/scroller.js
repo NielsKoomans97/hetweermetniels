@@ -2,8 +2,6 @@ export class Scroller{
     constructor(){
         const scroller = document.querySelectorAll('.content-scroller');
 
-        console.log(scroller);
-
         scroller.forEach(element => {
             const upButton = element.querySelector('.scroll-up');
             const downButton = element.querySelector('.scroll-down');

@@ -2,8 +2,6 @@ export class Charts {
     constructor() {
         var images = [];
 
-        console.log('charts');
-
         const chart_type = document.getElementById('chart-type');
         const previous_chart = document.getElementById('previous-chart');
         const next_chart = document.getElementById('next-chart');
@@ -13,12 +11,17 @@ export class Charts {
         chart_type.addEventListener('change', SelectChart);
         slider.addEventListener('change', Slide);
         previous_chart.addEventListener('click', () => {
-            slider.value -= 1;
-
+            let value = parseInt(slider.value);
+            value -= 1;
+            
+            slider.value = value;
             Slide();
         });
         next_chart.addEventListener('click', () => {
-            slider.value += 1;
+            let value = parseInt(slider.value);
+            value += 1;
+            
+            slider.value = value;
 
             Slide();
         });
