@@ -395,6 +395,7 @@ export class WeatherManager {
 
         SetWarningOverview();
         SetDailyWarnings();
+        SetWarningsPerLocation();
 
         function SetWarningOverview() {
             const warning_code = document.getElementById('warning-title');
@@ -415,6 +416,53 @@ export class WeatherManager {
             }
             else {
                 warning_description.innerText = '';
+            }
+        }
+
+        function SetWarningsPerLocation(){
+            const warning_list = document.getElementById('warning-list');
+            const locations = json['warnings']['locations'];
+
+            locations.forEach(location => {
+                BuildListItem(location);
+            })
+
+            function BuildListItem(location){
+                const rootItem = document.createElement('div');
+                rootItem.classList.add('col', 'warning-item');
+
+                const alerts = location['alerts'];
+
+                alerts.forEach(alert => {
+                    BuildAlertItem(rootItem, alert, location);
+                });
+
+                warning_list.appendChild(rootItem);
+            }
+
+            function BuildAlertItem(root, alert, location){
+                let item = document.createElement('div');
+                item.classList.add('col','alert-item');
+
+                let title = '';
+                switch(alert['color']){
+                    case 'YELLOW': item.classList.add('code-yellow'); title = 'Code Geel voor'; break;
+                    case 'GREEN': item.classList.add('code-green');  title = 'Geen waarschuwingen';  break;
+                    case 'RED': item.classList.add('code-red');  title = 'Code Red voor';  break;
+                    case 'ORANGE': item.classList.add('code-orange'); title = 'Code Oranje voor';   break;
+                }
+
+                let alert_title = document.createElement('p');
+                alert_title.className = 'alert-title';
+                alert_title.innerText = `${title} ${location['name']}`;
+                item.appendChild(alert_title);
+
+                let alert_summary = document.createElement('p');
+                alert_summary.className = 'alert-summary';
+                alert_summary.innerText = alert['text'];
+                item.appendChild(alert_summary);
+
+                root.appendChild(item);
             }
         }
 

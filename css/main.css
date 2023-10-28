@@ -305,7 +305,7 @@ p.date-number {
     row-gap: 5px;
     position: absolute;
     width: 100px;
-    height: 70vh;
+    height: -webkit-fill-available;
     align-self: center;
   }
   div.content-scroller button {
@@ -1139,21 +1139,22 @@ p.date-number {
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.13);
     align-items: center;
     align-content: center;
-    padding: 5px;
+    padding: 10px;
   }
   div.content#warning-page section#warnings div#warning-overview i.fa-warning {
     grid-column: 1;
     grid-row: 1/span 2;
     justify-self: center;
-    align-self: center;
+    align-self: flex-start;
+    padding-top: 0.3vh;
   }
   div.content#warning-page section#warnings div#warning-overview p {
-    margin: 5px 0;
+    margin: 0;
   }
   div.content#warning-page section#warnings div#warning-overview p#warning-title {
     grid-column: 2;
     grid-row: 1;
-    font-size: 1.6vh;
+    font-size: 2.2vh;
     font-weight: 500;
   }
   div.content#warning-page section#warnings div#warning-overview p#warning-description {
@@ -1172,11 +1173,31 @@ p.date-number {
     row-gap: 20px;
     width: 100%;
     overflow: hidden;
-    max-height: 70vh;
+    max-height: 50vh;
     padding: 5vh 0;
   }
   div.content#warning-page section#warnings div.daily-summary img {
     width: 100%;
+  }
+  div.content#warning-page section#warnings div.warning-list {
+    border-radius: 6px;
+    row-gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    max-height: 50vh;
+    padding: 5vh 0;
+  }
+  div.content#warning-page section#warnings div.warning-list div.warning-item {
+    padding: 5px;
+    border-radius: 6px;
+  }
+  div.content#warning-page section#warnings div.warning-list div.alert-item {
+    padding: 5px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.13);
+  }
+  div.content#warning-page section#warnings div.warning-list div.alert-item.code-yellow {
+    background: linear-gradient(65deg, #eeff02, rgb(223, 255, 43));
   }
 }
 /* cyrillic */

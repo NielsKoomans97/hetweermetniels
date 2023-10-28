@@ -229,7 +229,7 @@
         position: absolute;
 
         width: 100px;
-        height: 70vh;
+        height: -webkit-fill-available;
 
         align-self: center;
 
@@ -252,7 +252,7 @@
             }
 
             i {
-                margin: 0;             
+                margin: 0;
             }
         }
 
@@ -964,25 +964,27 @@
                 align-items: center;
                 align-content: center;
 
-                padding: 5px;
+                padding: 10px;
 
                 i.fa-warning{
                     grid-column: 1;
                     grid-row: 1 / span 2;
 
                     justify-self: center;
-                    align-self: center;
+                    align-self: flex-start;
+
+                    padding-top: 0.3vh;
                 }
 
                 p{
-                    margin: 5px 0;
+                    margin: 0;
                 }
 
                 p#warning-title{
                     grid-column: 2;
                     grid-row: 1;
 
-                    font-size: map-get($map: $typo, $key: p-med);
+                    font-size: map-get($map: $typo, $key: p-inbtw);
                     font-weight: 500;
                 }
 
@@ -1003,7 +1005,7 @@
                 width: 100%;
                 overflow: hidden;
 
-                max-height: 70vh;
+                max-height: 50vh;
                 padding: 5vh 0;
             }
 
@@ -1011,6 +1013,36 @@
                 img{
                     width: 100%;
                 }
+            }
+
+            div.warning-list{
+                border-radius: 6px;
+                row-gap: 20px;
+                width: 100%;
+                overflow: hidden;
+
+                max-height: 50vh;
+                padding: 5vh 0;
+
+                div.warning-item{
+                    padding: 5px;
+
+                    border-radius: 6px;
+                }
+
+                div.alert-item{
+                    padding: 5px 15px;
+
+                    border-radius: 6px;
+
+                    &.code-yellow{
+                        background: linear-gradient(65deg, #eeff02, rgb(223, 255, 43));
+                    }
+
+                    box-shadow: 0 2px 0 transparentize($color: #000000, $amount: 0.87);
+                }
+
+
             }
         }
     }
