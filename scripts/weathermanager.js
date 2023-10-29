@@ -431,6 +431,10 @@ export class WeatherManager {
                 const rootItem = document.createElement('div');
                 rootItem.classList.add('col', 'warning-item');
 
+                let warning_title = document.createElement('p');
+                warning_title.innerText = location['name'];
+                rootItem.appendChild(warning_title)
+
                 const alerts = location['alerts'];
 
                 alerts.forEach(alert => {
@@ -446,15 +450,15 @@ export class WeatherManager {
 
                 let title = '';
                 switch(alert['color']){
-                    case 'YELLOW': item.classList.add('code-yellow'); title = 'Code Geel voor'; break;
+                    case 'YELLOW': item.classList.add('code-yellow'); title = 'Code Geel'; break;
                     case 'GREEN': item.classList.add('code-green');  title = 'Geen waarschuwingen';  break;
-                    case 'RED': item.classList.add('code-red');  title = 'Code Red voor';  break;
-                    case 'ORANGE': item.classList.add('code-orange'); title = 'Code Oranje voor';   break;
+                    case 'RED': item.classList.add('code-red');  title = 'Code Red';  break;
+                    case 'ORANGE': item.classList.add('code-orange'); title = 'Code Oranje';   break;
                 }
 
                 let alert_title = document.createElement('p');
                 alert_title.className = 'alert-title';
-                alert_title.innerText = `${title} ${location['name']}`;
+                alert_title.innerText = `${title}`;
                 item.appendChild(alert_title);
 
                 let alert_summary = document.createElement('p');

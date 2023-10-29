@@ -15,7 +15,10 @@ $colors: (
     text-grayed: #a0a0a0,
     menu-shadow: #979797,
     max-temp: #ce2828,
-    min-temp: #3e83d6
+    min-temp: #3e83d6,
+    code-yellow: linear-gradient(65deg, #eeff02, #ccf000),
+    code-orange: linear-gradient(65deg, #eeff02, #dfff2b),
+    code-red: linear-gradient(65deg, #eeff02, #dfff2b),
 );
 
 $typo: (

@@ -1180,6 +1180,11 @@ p.date-number {
     width: 100%;
   }
   div.content#warning-page section#warnings div.warning-list {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    column-gap: 5px;
+    row-gap: 5px;
     border-radius: 6px;
     row-gap: 20px;
     width: 100%;
@@ -1187,17 +1192,44 @@ p.date-number {
     max-height: 50vh;
     padding: 5vh 0;
   }
+  div.content#warning-page section#warnings div.warning-list p {
+    margin: 0;
+  }
   div.content#warning-page section#warnings div.warning-list div.warning-item {
+    display: flex;
+    flex-direction: column;
     padding: 5px;
     border-radius: 6px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.13);
+    background-color: #d0dfeb;
   }
   div.content#warning-page section#warnings div.warning-list div.alert-item {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 20% auto;
+    column-gap: 5px;
+    row-gap: 5px;
     padding: 5px 15px;
     border-radius: 6px;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.13);
+  }
+  div.content#warning-page section#warnings div.warning-list div.alert-item p.alert-title {
+    grid-column: 1/span 2;
+    grid-row: 1;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  div.content#warning-page section#warnings div.warning-list div.alert-item p.alert-summary {
+    grid-column: 1/span 2;
+    grid-row: 2;
   }
   div.content#warning-page section#warnings div.warning-list div.alert-item.code-yellow {
-    background: linear-gradient(65deg, #eeff02, rgb(223, 255, 43));
+    background: linear-gradient(65deg, #eeff02, #ccf000);
+  }
+  div.content#warning-page section#warnings div.warning-list div.alert-item.code-orange {
+    background: linear-gradient(65deg, #eeff02, #dfff2b);
+  }
+  div.content#warning-page section#warnings div.warning-list div.alert-item.code-red {
+    background: linear-gradient(65deg, #eeff02, #dfff2b);
   }
 }
 /* cyrillic */

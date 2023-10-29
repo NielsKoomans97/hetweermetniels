@@ -1016,6 +1016,8 @@
             }
 
             div.warning-list{
+                @include grid($columns: auto, $rows: auto);
+
                 border-radius: 6px;
                 row-gap: 20px;
                 width: 100%;
@@ -1024,25 +1026,54 @@
                 max-height: 50vh;
                 padding: 5vh 0;
 
+                p{margin: 0;}
+
                 div.warning-item{
+                    display: flex;
+                    flex-direction: column;
+
                     padding: 5px;
 
                     border-radius: 6px;
+
+                    box-shadow: 0 2px 0 transparentize($color: #000000, $amount: 0.87);
+
+                    background-color: map-get($map: $colors, $key: background-color-6);
                 }
 
                 div.alert-item{
+                    @include grid($columns: 20% auto, $rows: 20% auto);
+
                     padding: 5px 15px;
 
                     border-radius: 6px;
 
-                    &.code-yellow{
-                        background: linear-gradient(65deg, #eeff02, rgb(223, 255, 43));
+                    p.alert-title{
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+
+                        font-weight: 500;
+
+                        text-decoration: underline;
                     }
 
-                    box-shadow: 0 2px 0 transparentize($color: #000000, $amount: 0.87);
+                    p.alert-summary{
+                        grid-column: 1 / span 2;
+                        grid-row: 2;
+                    }
+
+                    &.code-yellow{
+                        background: map-get($map: $colors, $key: code-yellow);
+                    }
+
+                    &.code-orange{
+                        background: map-get($map: $colors, $key: code-orange);
+                    }
+
+                    &.code-red{
+                        background: map-get($map: $colors, $key: code-red);
+                    }
                 }
-
-
             }
         }
     }
