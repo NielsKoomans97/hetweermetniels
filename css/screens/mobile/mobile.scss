@@ -137,6 +137,130 @@
         }
     }
 
+    div.groupbox {
+        margin-bottom: 10px;
+
+        div.groupbox-bar {
+            @include grid($columns: auto 10%, $rows: auto);
+
+            background-color: map-get($map: $colors, $key: background-color-6);
+            align-items: center;
+
+            border-radius: 6px;
+
+            padding: 0.6vh 1.2vh;
+
+            margin-bottom: 5px;
+
+            h4 {
+                margin: 0;
+            }
+
+            button {
+                @include nav-button;
+
+                grid-template-columns: auto;
+                grid-template-rows: auto;
+
+                justify-items: center;
+                align-items: center;
+
+                padding: 5px 5px;
+                border-radius: 6px;
+
+                i {
+                    margin: 0;
+                    height: min-content;
+                    width: min-content;
+                    transition: all 150ms ease-in-out;
+                }
+
+                &[data-flipped="flipped"] {
+                    i {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &[data-flipped="normal"] {
+                    i {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+
+        div.groupbox-content {
+            position: relative;
+
+            border: 2px map-get($map: $colors, $key: background-color-4) solid;
+            border-radius: 6px;
+
+            padding: 10px;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 150ms all ease-in-out;
+
+            &[data-visible="visible"] {
+                height: fit-content;
+                transition: all 250ms;
+            }
+
+            &[data-visible="collapsed"] {
+                height: 0;
+                padding: 0 10px;
+                visibility: hidden;
+                transition: all 250ms;
+
+                * {
+                    display: none !important;
+                }
+            }
+
+            &.white-bg {
+                background-color: map-get($map: $colors, $key: background-color-7);
+            }
+        }
+    }
+
+    div.content-scroller {
+        @include grid($columns: auto, $rows: 3.8vh auto 3.8vh);
+        position: absolute;
+
+        width: 100px;
+        height: -webkit-fill-available;
+
+        align-self: center;
+
+        button {
+            @include nav-button;
+
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+
+            border-radius: 6px;
+
+            padding: 0.8vh;
+
+            border: map-get($map: $colors, $key: button-hover) 2px solid;
+
+            align-content: center;
+
+            &:active {
+                border: none;
+            }
+
+            i {
+                margin: 0;
+            }
+        }
+
+        button.scroll-down {
+            grid-row: 3;
+        }
+    }
+
     div.content#index {
         section#search-bar {
             padding: 2vh 0;
@@ -148,11 +272,10 @@
             }
 
             div.text-input {
-                @include grid($columns: auto 15%, $rows: auto);
+                @include grid($columns: 12% auto 12% 15%, $rows: auto);
+                column-gap: 0;
 
                 border-radius: 6px;
-                border-top-right-radius: 30px;
-                border-bottom-right-radius: 30px;
 
                 background-color: map-get($map: $colors, $key: background-color-3);
 
@@ -177,6 +300,44 @@
 
                     border-top-left-radius: 0%;
                     border-bottom-left-radius: 0%;
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+
+                    i {
+                        align-self: center;
+                        justify-self: center;
+                    }
+                }
+
+                button#add {
+                    @include nav-button;
+
+                    background-color: map-get($map: $colors, $key: button-normal-2);
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    border-top-right-radius: 0%;
+                    border-bottom-right-radius: 0%;
+                    border-top-left-radius: 6px;
+                    border-bottom-left-radius: 6px;
+
+                    i {
+                        align-self: center;
+                        justify-self: center;
+                    }
+                }
+
+                button#select {
+                    @include nav-button;
+
+                    background-color: map-get($map: $colors, $key: button-normal-2);
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    margin: 0;
+                    border-radius: 0;
 
                     i {
                         align-self: center;
@@ -185,7 +346,8 @@
                 }
             }
 
-            div#locations-list {
+            div#locations-list,
+            div#saved-locations-list {
                 background-color: map-get($map: $colors, $key: background-color-6);
 
                 position: absolute;
@@ -234,11 +396,21 @@
                         }
                     }
 
-                    h4.location-foad {
+                    p.location-name,
+                    p.location-foad {
+                        margin: 0;
+
+                        align-self: center;
+                    }
+
+                    p.location-name {
+                        justify-self: flex-start;
+                    }
+
+                    p.location-foad {
                         color: map-get($map: $colors, $key: text-grayed);
 
                         justify-self: center;
-                        align-self: center;
 
                         margin: 0;
                     }
@@ -271,7 +443,7 @@
             }
 
             div#observations-widget {
-                @include grid($columns: 50% 25% 25%, $rows: auto);
+                @include grid($columns: auto 30% 30%, $rows: auto);
 
                 align-items: center;
 
@@ -290,35 +462,79 @@
                 }
 
                 div#col-precip {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    display: grid;
+
+                    grid-template-columns: auto;
+                    grid-template-rows: 60% 40%;
 
                     grid-column: 2;
+                    align-content: center;
+
+                    row-gap: 5px;
+                    column-gap: 5px;
+
+                    margin: auto 0;
 
                     i {
                         width: fit-content;
                         margin-bottom: 10px;
+
+                        grid-row: 1;
+                        justify-self: center;
+                        align-self: center;
+
+                        font-size: map-get($map: $typo, $key: fontawesome-icon);
+
+                        margin: 0;
                     }
 
                     h4 {
                         margin: 0;
+
+                        font-size: map-get($map: $typo, $key: p-inbtw);
+
+                        grid-row: 2;
+                        justify-self: center;
+                        align-self: center;
                     }
                 }
 
                 div#col-wind {
-                    display: flex;
-                    flex-direction: column;
+                    display: grid;
+                    grid-template-columns: 30% auto;
+                    grid-template-rows: 60% 40%;
+
+                    row-gap: 5px;
+                    column-gap: 2px;
+
+                    align-content: center;
                     align-items: center;
 
-                    i {
+                    i.fa-wind {
+                        grid-column: 1 / span 2;
+                        justify-self: center;
+                    }
+
+                    i.fa-arrow-down {
+                        grid-column: 1;
+
                         width: fit-content;
-                        margin-bottom: 10px;
+                        margin-bottom: 2px;
+                        font-size: map-get($map: $typo, $key: fontawesome-smaller);
+
+                        align-self: center;
+                        justify-self: center;
                     }
 
                     h4 {
+                        grid-column: 2;
+
                         margin: 0;
+                        font-size: map-get($map: $typo, $key: p-inbtw);
+
+                        align-self: center;
                     }
+
 
                     grid-column: 3;
                 }
@@ -340,11 +556,22 @@
                 box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
             }
 
-            h5,
-            h6,
-            h4 {
+            p {
                 margin: 0;
                 justify-self: flex-end;
+
+
+            }
+
+            p#warning-code,
+            p#forecast-text {
+                font-size: map-get($map: $typo, $key: p-med);
+                font-weight: 500;
+            }
+
+            p#warning-description {
+                font-size: map-get($map: $typo, $key: p-small);
+                font-weight: 300;
             }
 
             i.fa-square-arrow-up-right {
@@ -368,11 +595,16 @@
                 column-gap: 10px;
                 height: -webkit-fill-available;
 
-                padding: 1.5vh 10px;
+                padding: 0.9vh 0.8vh;
 
                 span {
                     text-align: end;
                     width: 100%;
+                }
+
+                &:hover p,
+                &:active p {
+                    color: map-get($map: $colors, $key: text-hover);
                 }
             }
 
@@ -387,6 +619,7 @@
                 border-top-left-radius: 6px;
                 border-bottom-left-radius: 6px;
             }
+
         }
 
         section#smaller-radar {
@@ -442,7 +675,7 @@
             }
 
             div.col#radar-config {
-                @include grid($columns: 65% 15% 20%, $rows: auto);
+                @include grid($columns: auto 15% 100px, $rows: auto);
 
                 column-gap: 0;
                 align-items: center;
@@ -459,11 +692,10 @@
             }
 
             div.col#radar-controls {
-                @include grid($columns: 10% 20% auto 12% 20%, $rows: auto);
+                @include grid($columns: 15% 15% auto 12% 100px, $rows: auto);
 
                 column-gap: 0;
                 align-items: center;
-                padding: 5px;
 
                 background-color: map-get($map: $colors, $key: background-color-6);
                 border-bottom-left-radius: 6px;
@@ -480,11 +712,367 @@
 
                     align-items: center;
                     justify-items: center;
+
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+                select {
+                    margin: 5px;
                 }
 
                 h5#radar-time {
                     justify-self: center;
                     margin: 0;
+                }
+            }
+        }
+    }
+
+    div.content#forecasts {
+        section#daily-forecast {
+            div.col#forecast-days {
+                @include grid($columns: auto, $rows: auto);
+
+                border-radius: 6px;
+                row-gap: 20px;
+                width: 100%;
+                overflow: hidden;
+
+                max-height: 70vh;
+                padding: 5vh 0;
+            }
+
+            div.forecast-data {
+                @include grid($columns: 25% auto);
+
+                width: 100%;
+                height: auto;
+                margin: auto 0;
+
+                align-content: center;
+                align-items: center;
+
+                column-gap: 8px;
+
+                p {
+                    margin: 0;
+
+                    font-weight: 500;
+                }
+
+                i {
+                    justify-self: center;
+
+                    font-size: map-get($map: $typo, $key: fontawesome-smaller);
+                }
+
+                &#forecast-astronomy {
+                    grid-column: 2;
+                    grid-row: 2;
+
+                    p {
+                        font-size: map-get($map: $typo, $key: p-med);
+                    }
+                }
+
+                &#forecast-temperature {
+                    grid-column: 1;
+                    grid-row: 2;
+
+                    p {
+                        font-size: map-get($map: $typo, $key: p-med);
+                    }
+                }
+
+                &#forecast-atmosphere {
+                    grid-column: 3;
+                    grid-row: 2;
+
+                    grid-template-columns: auto 6% auto;
+
+                    p {
+                        font-size: map-get($map: $typo, $key: p-med);
+                    }
+
+                    p.precipitation {
+                        grid-column: 2 / span 2;
+                    }
+
+                    i.fa-droplet {
+                        grid-column: 1;
+                        grid-row: 2;
+                    }
+
+                    i.fa-arrow-down {
+                        font-size: map-get($map: $typo, $key: p-smaller);
+                    }
+                }
+
+                &#forecast-date {
+                    grid-column: 1 / span 3;
+                    grid-row: 1;
+
+                    grid-template-columns: repeat(3, calc(95% / 3));
+                    grid-template-rows: auto;
+
+                    p {
+                        margin: 0;
+                    }
+
+                    p.date-string {
+                        font-weight: 500;
+                        margin: 0;
+
+                        font-size: map-get($map: $typo, $key: p-big);
+
+                        justify-self: flex-start;
+                    }
+
+                    p.date-number {
+                        font-weight: 400;
+
+                        font-size: map-get($map: $typo, $key: p-inbtw);
+
+                        text-decoration: underline;
+                        justify-self: flex-start;
+
+                        grid-column: 3;
+                    }
+                }
+            }
+
+            div.forecast-day {
+                display: flex;
+                flex-direction: row;
+
+                border-radius: 6px;
+                background-color: map-get($map: $colors, $key: background-color-6);
+
+                background: linear-gradient(65deg, map-get($map: $colors, $key: background-color-2), map-get($map: $colors, $key: background-color-4));
+                box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
+
+                column-gap: 5px;
+
+                height: auto;
+            }
+
+            img.forecast-icon {
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+
+                width: 8vh;
+                height: 100%;
+                object-fit: contain;
+
+                background-color: map-get($map: $colors, $key: background-color-3);
+
+                object-fit: contain;
+            }
+
+            div.info-container {
+                @include grid($columns: repeat(3, calc(95% / 3)), $rows: repeat(2, auto));
+
+                justify-items: flex-start;
+                align-items: center;
+
+                width: 100%;
+                margin: 10px;
+
+                column-gap: 5px;
+                row-gap: 15px;
+            }
+
+            div.forecast-date {
+                align-self: flex-start;
+            }
+
+            div.weather-report {
+                overflow: hidden;
+                max-height: 70vh;
+
+                padding: 5vh 0;
+            }
+
+            div#forecast-charts {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto;
+
+                row-gap: 10px;
+
+                div#chart-controls {
+                    display: grid;
+
+                    grid-template-rows: auto;
+                    grid-template-columns: 50px 50px auto;
+
+                    column-gap: 10px;
+                }
+
+                button {
+                    @include nav-button;
+
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+
+                    border: 1px map-get($map: $colors, $key: button-pressed) solid;
+
+                    border-radius: 6px;
+
+                    align-items: center;
+
+                    padding: 1.1vh 1.2vh;
+                }
+
+                select#chart-type {
+                    border: none;
+                    outline: none;
+
+                    background-color: map-get($map: $colors, $key: background-color-3);
+                    border: 1px map-get($map: $colors, $key: button-pressed) solid;
+
+                    border-radius: 4px;
+
+                    padding: 5px 5px;
+
+                    width: 100%;
+                }
+
+                img#chart-image {
+                    width: 100%;
+                }
+
+                input[type="range"] {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+
+    div.content#warning-page{
+        section#warnings{
+            div#warning-overview{
+                @include grid($columns: auto 90%);
+
+                border-radius: 6px;
+                background-color: map-get($map: $colors, $key: background-color-3);
+                box-shadow: 0 2px 1px transparentize($color: #000000, $amount: 0.87);
+
+                align-items: center;
+                align-content: center;
+
+                padding: 10px;
+
+                i.fa-warning{
+                    grid-column: 1;
+                    grid-row: 1 / span 2;
+
+                    justify-self: center;
+                    align-self: flex-start;
+
+                    padding-top: 0.3vh;
+                }
+
+                p{
+                    margin: 0;
+                }
+
+                p#warning-title{
+                    grid-column: 2;
+                    grid-row: 1;
+
+                    font-size: map-get($map: $typo, $key: p-inbtw);
+                    font-weight: 500;
+                }
+
+                p#warning-description{
+                    grid-column: 2;
+                    grid-row: 2;
+
+                    font-size: map-get($map: $typo, $key: p-small);
+                    font-weight: 300;
+                }
+            }
+
+            div#warning-maps{
+                @include grid($columns: auto, $rows: auto);
+
+                border-radius: 6px;
+                row-gap: 20px;
+                width: 100%;
+                overflow: hidden;
+
+                max-height: 50vh;
+                padding: 5vh 0;
+            }
+
+            div.daily-summary{
+                img{
+                    width: 100%;
+                }
+            }
+
+            div.warning-list{
+                @include grid($columns: auto, $rows: auto);
+
+                border-radius: 6px;
+                row-gap: 20px;
+                width: 100%;
+                overflow: hidden;
+
+                max-height: 50vh;
+                padding: 5vh 0;
+
+                p{margin: 0;}
+
+                div.warning-item{
+                    display: flex;
+                    flex-direction: column;
+
+                    padding: 5px;
+
+                    border-radius: 6px;
+
+                    box-shadow: 0 2px 0 transparentize($color: #000000, $amount: 0.87);
+
+                    background-color: map-get($map: $colors, $key: background-color-6);
+                }
+
+                div.alert-item{
+                    @include grid($columns: 20% auto, $rows: 20% auto);
+
+                    padding: 5px 15px;
+
+                    border-radius: 6px;
+
+                    p.alert-title{
+                        grid-column: 1 / span 2;
+                        grid-row: 1;
+
+                        font-weight: 500;
+
+                        text-decoration: underline;
+                    }
+
+                    p.alert-summary{
+                        grid-column: 1 / span 2;
+                        grid-row: 2;
+                    }
+
+                    &.code-yellow{
+                        background: map-get($map: $colors, $key: code-yellow);
+                    }
+
+                    &.code-orange{
+                        background: map-get($map: $colors, $key: code-orange);
+                    }
+
+                    &.code-red{
+                        background: map-get($map: $colors, $key: code-red);
+                    }
                 }
             }
         }

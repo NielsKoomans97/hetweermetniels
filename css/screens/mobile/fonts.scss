@@ -8,23 +8,24 @@ h2 {
     font-size: map-get($map: $typo, $key: h2);
 }
 
-h3 {
+h3,
+p.forecast-date {
     font-size: map-get($map: $typo, $key: h3);
 }
 
 h4,
 input,
 select,
-a.nav-button  {
+a.nav-button {
     font-size: map-get($map: $typo, $key: h4);
 }
 
-h5,
-a#more-info-button
+h5
 {
     font-size: map-get($map: $typo, $key: h5);
 }
 
+a#more-info-button,
 h6 {
     font-size: map-get($map: $typo, $key: h6);
 }
@@ -36,6 +37,22 @@ a {
 i.fas,
 i.fad,
 i.fa-solid,
-i.fa-sharp {
+i.fa-sharp,
+i.fa-regular {
     font-size: map-get($map: $typo, $key: fontawesome-icon);
+}
+
+p.location-foad,
+p.location-name,
+p.temp-high,
+p.temp-low,
+p.date-string,
+div.weather-report p{
+    font-size: map-get($map: $typo, $key: p-med);
+}
+
+p.wind-speed,
+p.precipitation,
+p.date-number{
+    font-size: map-get($map: $typo, $key: p-small);
 }

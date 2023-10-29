@@ -3,10 +3,14 @@
     <section id="search-bar">
         <div class="container">
             <div class="col text-input">
+                <button id="add" class="nav-button"><i class="fa-regular fa-square-plus"></i></button>
                 <input type="text" id="search-query" nane="search-query" placeholder="Typ hier uw zoekopdracht">
+                <button id="select" class="nav-button"><i class="fa-solid fa-gear"></i></button>
                 <button id="search" class="nav-button"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="col" id="locations-list" data-visible="collapsed">
+            </div>
+            <div class="col" id="saved-locations-list" data-visible="collapsed">
             </div>
         </div>
     </section>
@@ -20,6 +24,7 @@
                     <h4 id="precipitation"></h4>
                 </div>
                 <div class="col" id="col-wind">
+                    <i class="fa-solid fa-wind"></i>
                     <i class="fas fa-arrow-down" id="wind-direction"></i>
                     <h4 id="wind-speed"></h4>
                 </div>
@@ -32,12 +37,12 @@
                 <a href="warnings.php" class="nav-button" id="warnings-button">
                     <i class="fas fa-warning"></i>
                     <div class="col">
-                        <h4 id="warning-code">Code Geel</h4>
-                        <h5 id="warning-description">Klik hier voor meer info</h5>
+                        <p id="warning-code">Code Geel</p>
+                        <p id="warning-description">Klik hier voor meer info</p>
                     </div>
                 </a>
                 <a href="forecasts.php" class="nav-button" id="more-info-button">
-                    <h4>Voorspellingen</h4>
+                    <p id='forecast-text'>Voorspellingen</p>
                     <i class="fa-solid fa-calendar-days"></i>
                 </a>
             </div>
@@ -59,10 +64,10 @@
                 <input id="radar-position" type="range" max="100">
                 <i class="fa-solid fa-forward-fast"></i>
                 <select id="radar-speed">
-                    <option label="10x"></option>
-                    <option label="5x"></option>
-                    <option label="2x"></option>
-                    <option label="1x"></option>
+                    <option value="200" label="10x"></option>
+                    <option value="500" label="5x"></option>
+                    <option value="700" label="2x"></option>
+                    <option value="1000" label="1x"></option>
                 </select>
             </div>
         </div>

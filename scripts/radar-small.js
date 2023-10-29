@@ -15,10 +15,50 @@ export class SmallerRadar {
         radar_type.addEventListener('change', RadarSelected);
         radar_history.addEventListener('change', RadarHistorySelected);
         radar_position.addEventListener('change', Slide);
+        radar_playpause.addEventListener('click', () => {
+            if (paused == true) {
+                paused = false;
+                PlayAnimation();
+            }
+            else {
+                paused = true;
+                StopAnimation();
+            }
+        });
+        radar_speed.addEventListener('change', () => {
+            var option = radar_speed.selectedOptions[0];
+            speed = parseInt(option.value);
+        });
 
         //other variables
         let images = [];
         let imageTimes = [];
+        var animate;
+        var paused = false;
+        var speed = 200;
+        var index = 0;
+
+        function PlayAnimation() {
+            radar_playpause.innerHTML = '<i class="fa-solid fa-pause"></i>';
+
+            radar_position.value = index;
+            Slide();
+
+            animate = setTimeout(PlayAnimation, speed);
+
+            if (index == parseInt(radar_position.getAttribute('max'))) {
+                index = 0;
+            }
+            else {
+                index++;
+            }
+        }
+
+        function StopAnimation() {
+            radar_playpause.innerHTML = '<i class="fa-solid fa-play"></i>';
+
+            clearTimeout(animate);
+        }
 
         function ClearAll(element) {
             var delChild = element.lastChild;
