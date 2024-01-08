@@ -1,1 +1,1 @@
-<?php include '../core/router/routes.php'; ?>
+<?php require_once '../core/router/routes.php' ?>

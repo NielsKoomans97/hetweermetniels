@@ -1,26 +1,30 @@
 <?php
 
-require_once 'router.php';
+    require_once 'router.php';
+    $view_path = $_SERVER['DOCUMENT_ROOT'] . '/views';
 
-get('/', function () {
-    CreatePage('index', true);
-});
+    get('/', function() {
+        CreateView('index', true);
+    });
 
-get('/simulcast', function () {
-    CreatePage('simulcast', false);
-});
+    get('/simulcast', function() {
+        CreateView('simulcast', false);
+    });
 
-function CreatePage($path, $useHeaderFooter)
-{
-    $base_path = '../public';
+    function CreateView($name, $showHeader){
+        $view_path = $_SERVER['DOCUMENT_ROOT'] . '/views';
 
-    if ($useHeaderFooter == true) {
-        require_once $base_path . '/views/partials/header.view.php';
+        require_once '../functions.php';
+        
+        if ($showHeader){
+            require_once $view_path . '/partials/header.view.php';
+        }
+        else{
+            require_once $view_path . '/partials/header.nonav.view.php';
+        }
+
+        require_once $view_path . '/' . $name . '.view.php';
+
+        require_once $view_path . '/partials/footer.view.php';
     }
-
-    require_once $base_path . '/views/' . $path . '.view.php';
-
-    if ($useHeaderFooter == true) {
-        require_once $base_path . '/views/partials/footer.view.php';
-    }
-}
+?>
