@@ -1,6 +1,9 @@
 <?php
 
 $uri = $_GET['uri'];
+
+die($uri);
+
 $path = basename($uri);
 
 if (file_put_contents($path, file_get_contents($uri))) {
@@ -8,5 +11,3 @@ if (file_put_contents($path, file_get_contents($uri))) {
 }
 
 echo 'Download not successfull';
-
-?>

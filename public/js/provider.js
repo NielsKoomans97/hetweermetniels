@@ -35,12 +35,17 @@
             const timeData = await fetch(`../core/data/download.php?uri=${time['url']}`);
             const timeDataText = await timeData.text();
 
+            console.log(timeData);
+            console.log(timeDataText);
+
             let timeItem = {
                 "time": time['timestamp'],
                 "url": timeDataText
             };
             result.push(timeItem);
         });
+
+        console.log(result);
 
     }
 }
