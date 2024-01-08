@@ -1,0 +1,1 @@
+<?php include '../core/router/routes.php'; ?>
