@@ -327,6 +327,17 @@ body {
   width: 100vw;
   height: 100vh;
 }
+.content .main-menu {
+  width: calc(100vw - 25px);
+  min-height: 50px;
+  max-height: 60px;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+}
+.content .main-menu a {
+  margin-right: 5px;
+}
 
 p {
   margin: 0;
