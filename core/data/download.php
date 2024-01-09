@@ -1,13 +1,25 @@
 <?php
 
-$uri = $_GET['uri'];
+$time = json_decode($_POST['time']);
+$type = $_POST['type'];
 
-die($uri);
+if (!empty($time)) {
+    $uri = $time->url;
+    $base_path = $_SERVER['DOCUMENT_ROOT'] . '/../data/' . $type;
 
-$path = basename($uri);
+    if (!is_dir($base_path)){
+        mkdir($base_path);
+    }
 
-if (file_put_contents($path, file_get_contents($uri))) {
-    echo $path;
+    $path = $base_path . '/' . basename($uri);
+
+    if (file_put_contents($path, file_get_contents($uri))) {
+        echo '{"time":"' . $time->timestamp . '","path":"' . $path . '"}';
+    } else {
+        echo '{\"message\":\"Er was een fout opgetreden tijdens het downloaden van een radarbeeld\",\"object\":\"' . var_dump($_POST) . '\"}';
+    }
+} else {
+    echo '{\"message\":\"Er was een fout opgetreden tijdens het downloaden van een radarbeeld\",\"object\":\"' . var_dump($_POST) . '\"}';
+
+    echo var_dump($time);
 }
-
-echo 'Download not successfull';

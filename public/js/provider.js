@@ -1,4 +1,5 @@
-;export class DataProvider {
+
+export class DataProvider {
     constructor() {
 
     }
@@ -18,7 +19,7 @@
 
         const parameters = item['Parameters'];
         const param = parameters[0];
-        
+
         uriPath += `?${param['Key']}=${param['Value']}`;
 
         for (let i = 1; i < parameters.length; i++) {
@@ -32,17 +33,17 @@
         const times = json['times'];
 
         times.forEach(async time => {
-            const timeData = await fetch(`../core/data/download.php?uri=${time['url']}`);
-            const timeDataText = await timeData.text();
+            const formData = new FormData();
+            formData.append('time', JSON.stringify(time));
+            formData.append('type', item['Type']);
 
-            console.log(timeData);
-            console.log(timeDataText);
+            const data = await fetch('/get-radar', {
+                method: 'post',
+                body: formData
+            });
+            const text = await data.json();
 
-            let timeItem = {
-                "time": time['timestamp'],
-                "url": timeDataText
-            };
-            result.push(timeItem);
+            result.push(text);
         });
 
         console.log(result);
