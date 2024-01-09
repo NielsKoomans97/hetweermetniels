@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="js/main.js" type="module" defer></script>
     <script src="https://kit.fontawesome.com/9efe11bfbd.js" crossorigin="anonymous"></script>
 </head>

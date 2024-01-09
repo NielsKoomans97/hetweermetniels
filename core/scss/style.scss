@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.content{
+    width: 100vw;
+    height: 100vh;
+}
+
+.content.index{
+    .test{
+        font-family: map-get($map: $typo, $key: font-family);
+        font-size: map-get($map: $font-sizes, $key: base);
+    }
+}
