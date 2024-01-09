@@ -307,6 +307,9 @@ a, button {
   color: #000000;
   text-decoration: none;
 }
+a:hover, a:active, button:hover, button:active {
+  color: #ebf8ff;
+}
 a:hover, button:hover {
   background-color: #3999cc;
 }
@@ -336,7 +339,10 @@ body {
   align-items: center;
 }
 .content .main-menu a {
-  margin-right: 5px;
+  margin-right: 10px;
+}
+.content .main-menu a:active {
+  box-shadow: inset 0px 2px 20px 0px rgba(0, 0, 0, 0.35);
 }
 
 p {
