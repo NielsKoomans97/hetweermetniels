@@ -14,7 +14,7 @@ export class DataProvider {
     }
 
     async UpdateRadarItem(item) {
-        let result = [];
+        
         let uriPath = `${item['Host']}/${item['Type']}`;
 
         const parameters = item['Parameters'];
@@ -31,8 +31,9 @@ export class DataProvider {
         const data = await fetch(uriPath);
         const json = await data.json();
         const times = json['times'];
+        var tempItemArr = [];
 
-        times.forEach(async time => {
+        for(const time of times) {
             const formData = new FormData();
             formData.append('time', JSON.stringify(time));
             formData.append('type', item['Type']);
@@ -43,10 +44,19 @@ export class DataProvider {
             });
             const text = await data.json();
 
-            result.push(text);
+            tempItemArr.push(text);
+        };
+
+        const formData = new FormData();
+        formData.append('manifest', JSON.stringify(tempItemArr));
+        formData.append('type', item['Type']);
+
+        const resultData = await fetch('/save-manifest', {
+            method: 'post',
+            body: formData
         });
+        const text = await resultData.text();
 
-        console.log(result);
-
+        console.log(text);
     }
 }

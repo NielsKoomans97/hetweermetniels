@@ -12,6 +12,7 @@ get('/simulcast', function () {
 });
 
 post('/get-radar', $core_path . '/data/download.php');
+post('/save-manifest', $core_path . '/data/save_manifest.php');
 
 function CreateView($name, $showHeader)
 {
