@@ -5,7 +5,7 @@ $type = $_POST['type'];
 
 if (!empty($time)) {
     $uri = $time->url;
-    $base_path = $_SERVER['DOCUMENT_ROOT'] . '/../data/' . $type;
+    $base_path = $_SERVER['DOCUMENT_ROOT'] . '/data/' . $type;
 
     if (!is_dir($base_path)){
         mkdir($base_path);

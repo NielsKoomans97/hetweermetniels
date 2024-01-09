@@ -1,7 +1,7 @@
 <?php
 
 require_once 'router.php';
-$core_path = '' . $_SERVER['DOCUMENT_ROOT'] . '/../core';
+$core_path = '' . $_SERVER['DOCUMENT_ROOT'] . '/core';
 
 get('/', function () {
     CreateView('index', true);
@@ -18,7 +18,7 @@ function CreateView($name, $showHeader)
 {
     $view_path = $_SERVER['DOCUMENT_ROOT'] . '/views';
 
-    require_once '../functions.php';
+    require_once 'functions.php';
 
     if ($showHeader) {
         require_once $view_path . '/partials/header.view.php';
