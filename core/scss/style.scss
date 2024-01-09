@@ -1,23 +1,24 @@
-@use 'variables' as *;
-@use 'core/typo' as *;
-@use '../../css/fonts/jost.css';
-@use 'layout';
-@use 'components';
+@use "variables" as *;
+@use "core/typo" as *;
+@use "../../css/fonts/jost.css";
+@use "layout";
+@use "components";
 
-*{
+* {
     font-family: map-get($map: $typo, $key: font-family);
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.content{
+.content {
+    background: linear-gradient(65deg, map-get($colors, primary-color), map-get($colors, secondary-color));
     width: 100vw;
     height: 100vh;
 
-    .main-menu{
+    .main-menu {
         width: calc(100vw - 25px);
         min-height: 50px;
         max-height: 60px;
@@ -28,15 +29,15 @@ body{
         align-items: center;
     }
 
-    .main-menu a{
+    .main-menu a {
         margin-right: 10px;
 
-        &:active{
-            box-shadow: inset 0px 2px 20px 0px transparentize($color: #000000, $amount: .65);
+        &:active {
+            box-shadow: inset 0px 2px 20px 0px transparentize($color: #000000, $amount: 0.65);
         }
     }
 }
 
-p{
+p {
     margin: 0;
 }

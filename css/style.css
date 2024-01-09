@@ -327,6 +327,7 @@ body {
 }
 
 .content {
+  background: linear-gradient(65deg, #ebf8ff, #bddef0);
   width: 100vw;
   height: 100vh;
 }
