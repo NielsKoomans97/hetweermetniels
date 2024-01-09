@@ -3,9 +3,11 @@ $colors: (
     "secondary-color": #bddef0,
     "active-color": #3c7899,
     "hover-color": #3999cc,
+    "text-black": #000000,
+    "text-white": var(primary-color),
 );
 $typo: (
-    "font-family": '"Montserrat", sans-serif',
+    "font-family": ('Jost', sans-serif),
 );
 $font-sizes: (
     "base": 1.2vh,

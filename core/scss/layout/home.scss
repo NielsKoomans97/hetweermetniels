@@ -1,0 +1,43 @@
+@use '../variables' as *;
+
+.content.index{
+    position: relative;
+
+    display: grid;
+
+    img#current-radar{
+        position: absolute;
+
+        height: 100vh;
+        object-fit: cover;
+
+        background-image: url('https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=Full');
+        background-repeat: no-repeat;
+        background-size: contain;
+        justify-self: center;
+    }
+
+    div.chart-slider{
+        position: absolute;
+
+        justify-self: center;
+        align-self: flex-end;
+
+        display: grid;
+        grid-template-columns: 50px auto 35px;
+        column-gap: 5px;
+        align-items: center;
+        justify-items: center;
+
+        background-color: transparentize(map-get($colors,primary-color),0.2);
+
+        padding: 10px;
+        bottom: 25px;
+        min-width: 300px;
+        border-radius: 8px;
+
+        input[type="range"]{
+            width: -webkit-fill-available;
+        }
+    }
+}

@@ -1,4 +1,3 @@
-<img id="current-radar">
+<img id="current-radar" src="https://processing-cdn.buienradar.nl/processing/nl/rain48hour/forecast/runs/webm/202401091300/202401100400.png">
 
-<p class="test">biep biep biep.. dit nummer is niet meer in gebruik</p>
 <?= component('chartslider'); ?>
