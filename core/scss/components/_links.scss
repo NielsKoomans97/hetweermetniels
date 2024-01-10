@@ -5,14 +5,14 @@ a, button{
     outline: none;
 
     padding: 5px 10px;
-    transition: 150ms all;
+    transition: 250ms all;
     border-radius: 4px;
 
     background-color: map-get($map: $colors, $key: primary-color);
     color: map-get($map: $colors, $key: text-black);
 
     text-decoration: none;
-    
+
     &:hover, &:active{
         color: map-get($map: $colors, $key: text-white);
     }

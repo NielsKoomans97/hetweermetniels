@@ -272,10 +272,11 @@ h6 {
 .content.index img#current-radar {
   position: absolute;
   height: 100vh;
-  object-fit: cover;
+  width: 100vw;
+  object-fit: none;
   background-image: url("https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=Full");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   justify-self: center;
 }
 .content.index div.chart-slider {
@@ -301,7 +302,7 @@ a, button {
   border: none;
   outline: none;
   padding: 5px 10px;
-  transition: 150ms all;
+  transition: 250ms all;
   border-radius: 4px;
   background-color: #ebf8ff;
   color: #000000;
@@ -334,16 +335,33 @@ body {
 .content .main-menu {
   width: calc(100vw - 25px);
   min-height: 50px;
-  max-height: 60px;
+  max-height: 70px;
   margin: 5px auto;
+  z-index: 1;
   display: flex;
   align-items: center;
+  border-radius: 8px;
 }
 .content .main-menu a {
-  margin-right: 10px;
+  border-radius: 0;
+  background-color: rgba(235, 248, 255, 0.35);
+}
+.content .main-menu:hover a {
+  background-color: #ebf8ff;
+}
+.content .main-menu a:hover {
+  background-color: #3999cc;
 }
 .content .main-menu a:active {
-  box-shadow: inset 0px 2px 20px 0px rgba(0, 0, 0, 0.35);
+  background-color: #3c7899;
+}
+.content .main-menu a:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.content .main-menu a:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 p {

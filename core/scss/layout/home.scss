@@ -9,11 +9,12 @@
         position: absolute;
 
         height: 100vh;
-        object-fit: cover;
+        width: 100vw;
+        object-fit: none;
 
         background-image: url('https://image-lite.buienradar.nl/3.0/background/MapWebmercatorNL?size=Full');
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         justify-self: center;
     }
 
