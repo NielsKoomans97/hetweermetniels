@@ -1,7 +1,6 @@
 <?php
-
 require_once 'router.php';
-$core_path = '' . $_SERVER['DOCUMENT_ROOT'] . '/core';
+$core_path = $_SERVER['DOCUMENT_ROOT'] . '/core';
 
 get('/', function () {
     CreateView('index', true);

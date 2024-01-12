@@ -1,7 +1,7 @@
 import { DataProvider } from "./provider.js";
 
-// const provider = new DataProvider();
-// await provider.UpdateRadarItems();
+const provider = new DataProvider();
+await provider.UpdateRadarItems();
 
 // setInterval(async () => {
 //     const date = new Date();

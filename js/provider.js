@@ -14,7 +14,7 @@ export class DataProvider {
     }
 
     async UpdateRadarItem(item) {
-        
+
         let uriPath = `${item['Host']}/${item['Type']}`;
 
         const parameters = item['Parameters'];
