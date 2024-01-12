@@ -10,14 +10,6 @@ if (!empty($time)) {
     if (!is_dir($base_path)){
         mkdir($base_path);
     }
-    else{
-        $files = scandir($base_path);
-        foreach($files as $file){
-            if (is_file($file)){
-                unlink($file);
-            }
-        }
-    }
 
     $path = $base_path . '/' . basename($uri);
 

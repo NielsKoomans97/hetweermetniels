@@ -51,12 +51,9 @@ export class DataProvider {
         formData.append('manifest', JSON.stringify(tempItemArr));
         formData.append('type', item['Type']);
 
-        const resultData = await fetch('/save-manifest', {
+        await fetch('/save-manifest', {
             method: 'post',
             body: formData
         });
-        const text = await resultData.text();
-
-        console.log(text);
     }
 }
