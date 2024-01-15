@@ -1,0 +1,10 @@
+@use '../variables' as *;
+@use '../helpers' as *;
+
+div.radar-item{
+    position: relative;
+
+    div.radar-images{
+        position: absolute;
+    }
+}

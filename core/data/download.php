@@ -1,101 +1,71 @@
 <?php
 
-$host = $_GET['host'];
+$type = $_POST['type'];
+$url = $_POST['url'];
 
-if ($host == 'buienradar') {
-    $type = $_POST['TYPE'];
-    $url = $_POST['URL'];
-    $base_path = $_SERVER['DOCUMENT_ROOT'] . '/data/' . $type;
+$root = $_SERVER['DOCUMENT_ROOT'];
+$base_path = $root . '/data/' . $type;
+$localDoc_path = $base_path . '/' . $type . '.json';
 
-    if (!is_dir($base_path)) {
-        mkdir($base_path);
-    }
-
-    if (is_dir($base_path)) {
-        $files = glob($base_path . '/*');
-        foreach ($files as $file) {
-            if (is_file($file)) {
-                unlink($file);
-            }
+if (is_dir($base_path)) {
+    $files = glob($base_path . '/*');
+    foreach ($files as $file) {
+        if (is_file($file)) {
+            unlink($file);
         }
     }
-
-    $radarManifest = json_decode(file_get_contents($url));
-    $times = $radarManifest->times;
-    $i = 0;
-    $localManifest[] = '[';
-
-    foreach ($times as $time) {
-        $path = $base_path . '/' . basename($time->url);
-        $itemJson = '';
-
-        if (file_put_contents($path, file_get_contents($time->url))) {
-            $itemJson = '{"time":"' . $time->timestamp . '","path":"' . $path . '"}';
-        } else {
-            echo '{\"message\":\"Er was een fout opgetreden tijdens het downloaden van een radarbeeld\",\"object\":\"' . var_dump($_POST) . '\"}';
-        }
-        if ($i == count($times) - 1) {
-            $itemJson .= '';
-        } else {
-            $itemJson .= ',';
-        }
-        $i++;
-
-        $localManifest[] = $itemJson;
-    }
-
-    $localManifest[] = ']';
-
-    $manifestPath = $base_path . '/' . $type . '.json';
-
-    file_put_contents($manifestPath, $localManifest);
-} else if ($host == 'weerplaza') {
-    $type = 'Observations';
-    $url = 'https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations';
-    $base_path = $_SERVER['DOCUMENT_ROOT'] . '/data/' . $type;
-
-    if (!is_dir($base_path)) {
-        mkdir($base_path);
-    }
-
-    if (is_dir($base_path)) {
-        $files = glob($base_path . '/*');
-        foreach ($files as $file) {
-            if (is_file($file)) {
-                unlink($file);
-            }
-        }
-    }
-
-    $radarManifest = json_decode(file_get_contents($url));
-    $localManifest[] = '[';
-    $i = 0;
-
-    foreach ($radarManifest as $time) {
-        $path = $base_path . '/' . basename($time->layername) . '.png';
-        $itemJson = '';
-
-        if (file_put_contents($path, file_get_contents($url . '/' . $time->layername))) {
-            $itemJson = '{"time":"' . $time->nicetime . '","path":"' . $path . '"}';
-        } else {
-            echo '{\"message\":\"Er was een fout opgetreden tijdens het downloaden van een radarbeeld\",\"object\":\"' . var_dump($_POST) . '\"}';
-        }
-
-        if ($i == count($radarManifest) - 1) {
-            $itemJson .= '';
-        } else {
-            $itemJson .= ',';
-        }
-        $i++;
-
-        $localManifest[] = $itemJson;
-    }
-
-    $localManifest[] = ']';
-
-    $manifestPath = $base_path . '/' . $type . '.json';
-
-    file_put_contents($manifestPath, $localManifest);
+} else {
+    mkdir($base_path);
 }
 
+$doc = file_get_contents($url);
+$json = json_decode($doc);
+$localDoc = '[';
 
+if (str_contains($url, 'meteoplaza')) {
+    $base_url = 'https://cluster.api.meteoplaza.com/v3/nowcast/tiles/' . $type;
+    $index = 0;
+
+    foreach ($json as $time) {
+        $timeUrl = $base_url . '/' . $time->layername;
+        $localPath = $base_path . '/' . $time->layername . '.png';
+        $externalPath = '/data/' . $type . '/' . $time->layername . '.png';
+        $timeJson = '';
+
+        if (file_put_contents($localPath, file_get_contents($timeUrl))) {
+            $timeJson = '{"time":"' . $time->nicetime . '","path":"' . $externalPath . '"}';
+        }
+
+        if ($index < count($json) - 1) {
+            $timeJson .= ',';
+        }
+
+        $index++;
+        $localDoc .= $timeJson;
+    }
+} else {
+    $times = $json->times;
+    $index = 0;
+
+    foreach ($times as $time) {
+        $timeUrl = $time->url;
+        $localPath = $base_path . '/' . basename($time->url);
+        $externalPath = '/data/' . $type . '/' . basename($time->url);
+        $timeJson = '';
+
+        if (file_put_contents($localPath, file_get_contents($timeUrl))) {
+            $timeJson = '{"time":"' . $time->timestamp . '","path":"' . $externalPath . '"}';
+        }
+
+        if ($index < count($times) - 1) {
+            $timeJson .= ',';
+        }
+
+        $index++;
+        $localDoc .= $timeJson;
+    }
+}
+
+$localDoc .= ']';
+
+file_put_contents($localDoc_path, $localDoc);

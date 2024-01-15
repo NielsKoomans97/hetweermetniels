@@ -2,7 +2,7 @@
 
 function radaritem($host){
     echo '  <div class="radar-item">
-                <img>
+                <div class="radar-images"></div>
                 <div class="time-info-container">
                     <p class="time-heading"></p>
                     <p class="time-nice"></p>

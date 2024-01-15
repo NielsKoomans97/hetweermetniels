@@ -1,65 +1,72 @@
 export class Animator {
     constructor(type, element) {
-        this.Type = type;
-        this.Element = element;
-        this.Frames = [0];
-        this.Index = 0;
+        async function UpdateRadarDefinition(type) {
+            function BuildUri(host, path, params) {
+                let uri = '';
 
-        let radarPaused = false;
+                uri += host;
 
-        async function LoadManifest(type) {
-            console.log(this);
+                if (path != null && path != '') {
+                    uri += `/${path}`;
+                }
 
-            this.Frames = [];
+                if (params != null && params.length > 0) {
+                    var param = params[0];
+                    uri += `?${param['Key']}=${param['Value']}`;
 
-            const path = `data/${type}/${type}.json`;
+                    for (let i = 0; i < params.length; i++) {
+                        param = params[i];
+                        uri += `&${param['Key']}=${param['Value']}`;
+                    }
+                }
+
+                return uri;
+            }
+
+            const host = type['Host'];
+            const path = type['Type'];
+            const params = type['Parameters'];
+            const uri = BuildUri(host, path, params);
+
+            const formData = new FormData();
+            formData.append('type', path);
+            formData.append('url', uri);
+
+            const data = await fetch('/get-radar',
+                {
+                    method: 'post',
+                    body: formData
+                });
+            const text = await data.text();
+
+            console.log(text);
+        }
+
+        async function LoadRadarDefinition(type) {
+            let radarType = type['Type'];
+
+            const path = `/data/${radarType}/${radarType}.json`;
             const data = await fetch(path);
             const json = await data.json();
 
-            for (const item of json) {
-                this.Frames.push(item);
-            }
+            const radarImages = element.querySelector('.radar-images');
+            json.forEach(element => {
+                let radarItem = document.createElement('div');
+                radarItem.classList.add('radar-image');
 
-            this.Index = 0;
+                let radarImage = document.createElement('img');
+                radarImage.setAttribute('src', element['path']);
+                radarImage.setAttribute('data-time', element['time']);
+                radarItem.appendChild(radarImage);
+
+                radarImages.appendChild(radarItem);
+            });
+
+            element.classList.add(radarType);
         }
 
-        LoadManifest(this.Type);
+        UpdateRadarDefinition(type)
+            .then(() => LoadRadarDefinition(type));
 
-        setInterval(async () => {
-            {
-                const now = new Date();
-                const minute = now.getMinutes();
-
-                for (let i = 0; i < 6; i++) {
-                    if (minute == (i * 10)) {
-                        await LoadManifest(this.Type);
-                    }
-                }
-            }
-        }, 1000)
-
-        function SetFrame(index) {
-            const frame = this.Frames[index];
-            const image = element.querySelector('img');
-            const timeHeading = element.querySelector('.time-heading');
-            const timeNice = element.querySelector('.time-nice');
-
-            image.setAttribute('src', frame['path']);
-            timeHeading.innerText = this.Type;
-            timeNice.innerText = frame['time'];
-        }
-
-        setInterval(() => {
-            if (!radarPaused){
-                SetFrame(this.Index);
-
-                if (this.Index == (this.Frames.length - 1)) {
-                    this.Index = 0;
-                }
-                else {
-                    this.Index++;
-                }
-            }
-        }, 300);
     }
 }

@@ -2,6 +2,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "SatMapCombined15m",
+    "Description": "Satelliet gecombineerd",
     "Parameters": [
       {
         "Key": "history",
@@ -20,6 +21,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapActualTemperature10mNL",
+    "Description": "Actuele temperatuur",
     "Parameters": [
       {
         "Key": "history",
@@ -34,6 +36,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapWind10mNL",
+    "Description": "Actuele windkracht en richting",
     "Parameters": [
       {
         "Key": "history",
@@ -48,6 +51,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapRain24Hours10mNL",
+    "Description": "Neerslag laatste 24u",
     "Parameters": [
       {
         "Key": "history",
@@ -62,6 +66,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapWindGusts10mNL",
+    "Description": "Actuele windstoten",
     "Parameters": [
       {
         "Key": "history",
@@ -76,6 +81,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "RadarMapRain5mNL",
+    "Description": "Radarbeelden laatste 90 min",
     "Parameters": [
       {
         "Key": "history",
@@ -88,8 +94,9 @@
     ]
   },
   {
-    "Host": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations/",
-    "Type": "",
+    "Host": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles",
+    "Type": "radarnl-observations",
+    "Description": "Radarbeelden laatste 90 min",
     "Parameters": []
   }
 ]
