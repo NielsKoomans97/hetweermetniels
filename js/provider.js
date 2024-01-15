@@ -18,42 +18,39 @@ export class DataProvider {
         let uriPath = `${item['Host']}/${item['Type']}`;
 
         const parameters = item['Parameters'];
-        const param = parameters[0];
 
-        uriPath += `?${param['Key']}=${param['Value']}`;
+        if (parameters.length > 0){
+            const param = parameters[0];
 
-        for (let i = 1; i < parameters.length; i++) {
-            const param = parameters[i];
+            uriPath += `?${param['Key']}=${param['Value']}`;
 
-            uriPath += `&${param['Key']}=${param['Value']}`;
+            for (let i = 1; i < parameters.length; i++) {
+                const param = parameters[i];
+
+                uriPath += `&${param['Key']}=${param['Value']}`;
+            }
         }
 
-        const data = await fetch(uriPath);
-        const json = await data.json();
-        const times = json['times'];
-        var tempItemArr = [];
-
-        for(const time of times) {
+        if (item['Host'].indexOf('meteoplaza') < 0){
             const formData = new FormData();
-            formData.append('time', JSON.stringify(time));
-            formData.append('type', item['Type']);
+            formData.append('TYPE', item['Type']);
+            formData.append('URL',uriPath);
 
-            const data = await fetch('/get-radar', {
+            await fetch('/get-radar?host=buienradar', {
                 method: 'post',
                 body: formData
             });
-            const text = await data.json();
+        }
+        else{
+            const formData = new FormData();
+            formData.append('URL',uriPath);
 
-            tempItemArr.push(text);
-        };
+            await fetch('/get-radar?host=weerplaza', {
+                method: 'post',
+                body: formData
+            });
+        }
 
-        const formData = new FormData();
-        formData.append('manifest', JSON.stringify(tempItemArr));
-        formData.append('type', item['Type']);
 
-        await fetch('/save-manifest', {
-            method: 'post',
-            body: formData
-        });
     }
 }

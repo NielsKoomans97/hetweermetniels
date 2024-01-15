@@ -4,6 +4,6 @@
     <img class="map-tile no" src="data/MapTiles/nl_no.png">
     <img class="map-tile nw" src="data/MapTiles/nl_nw.png">
 </div>
-<img id="current-radar" src="data/MapTiles/worldradartestmap.png">
+<img id="current-radar" src="data/RadarMapRain5mNL/202401131300.png">
 
 <?= component('chartslider'); ?>

@@ -1,15 +1,28 @@
+import { Animator } from "./animator.js";
 import { DataProvider } from "./provider.js";
 
 const provider = new DataProvider();
 await provider.UpdateRadarItems();
 
-// setInterval(async () => {
-//     const date = new Date();
-//     const minute = date.getMinutes();
+await InitRadarItems();
 
-//     for(let i = 0; i < 6; i++){
-//         if (minute == (i * 10)){
-//             await provider.UpdateRadarItems();
-//         }
-//     }
-// }, 1000);
+async function InitRadarItems(){
+    const radarItems = document.querySelectorAll('.radar-item');
+
+    const data =await fetch('/../definitions.json');
+    const json = await data.json();
+
+    for(let i = 0;i < json.length; i++){
+        const radarItem = radarItems[i];
+        const definitionItem = json[i];
+
+        if (definitionItem['Type'] == ''){
+            const animator = new Animator('Observations',radarItem);
+        }
+        else{
+            const animator = new Animator(definitionItem['Type'],radarItem);
+
+        }
+
+    }
+}

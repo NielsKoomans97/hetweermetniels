@@ -86,5 +86,10 @@
         "Value": 0
       }
     ]
+  },
+  {
+    "Host": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles/radarnl-observations/",
+    "Type": "",
+    "Parameters": []
   }
 ]

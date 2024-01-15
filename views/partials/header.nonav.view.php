@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="public/css/style.css" rel="stylesheet">
-    <script src="public/js/main.js" type="module" defer></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/main.js" type="module" defer></script>
 </head>
 
 <body>
