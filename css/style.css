@@ -287,9 +287,53 @@ a:active, button:active {
 
 div.radar-item {
   position: relative;
+  width: 450px;
+  height: max-content;
+  display: grid;
+  background: linear-gradient(65deg, #ebf8ff, #bddef0);
+  border-radius: 16px;
+}
+div.radar-item.active {
+  display: grid;
+}
+div.radar-item.hidden {
+  display: none;
 }
 div.radar-item div.radar-images {
+  height: -webkit-fill-available;
+}
+div.radar-item div.radar-image.active {
+  display: grid;
+}
+div.radar-item div.radar-image.hidden {
+  display: none;
+}
+div.radar-item div.radar-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+div.radar-item div.time-info-container {
   position: absolute;
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding: 0px 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #ebf8ff;
+  border-bottom-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+div.radar-item img.logo {
+  position: absolute;
+  align-self: flex-end;
+  justify-self: flex-end;
+  border-bottom-right-radius: 16px;
+  border-top-left-radius: 16px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #ebf8ff;
 }
 
 .content .main-menu {

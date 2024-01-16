@@ -1,6 +1,12 @@
 export class Animator {
     constructor(type, element) {
+        var radarPaused = true;
+        var index = 0;
+
         async function UpdateRadarDefinition(type) {
+            index = 0;
+            radarPaused = true;
+
             function BuildUri(host, path, params) {
                 let uri = '';
 
@@ -52,7 +58,7 @@ export class Animator {
             const radarImages = element.querySelector('.radar-images');
             json.forEach(element => {
                 let radarItem = document.createElement('div');
-                radarItem.classList.add('radar-image');
+                radarItem.classList.add('radar-image', 'active');
 
                 let radarImage = document.createElement('img');
                 radarImage.setAttribute('src', element['path']);
@@ -63,10 +69,40 @@ export class Animator {
             });
 
             element.classList.add(radarType);
+
+            radarPaused = false;
+        }
+
+        function ClassListContains(el, key) {
+            for (let classKey of el.classList) {
+                if (classKey == key) {
+                    return true;
+                }
+            };
         }
 
         UpdateRadarDefinition(type)
             .then(() => LoadRadarDefinition(type));
 
+        setInterval(() => {
+            if (!radarPaused) {
+                const radarImages = element.querySelectorAll('.radar-image');
+                console.log(radarImages);
+
+                radarImages.forEach(el => {
+                    el.classList.replace('active', 'hidden');
+                }
+                );
+
+                radarImages[index].classList.replace('hidden', 'active');
+
+                if (index == (radarImages.length - 1)) {
+                    index = 0;
+                }
+                else {
+                    index++;
+                }
+            }
+        }, 200);
     }
 }
