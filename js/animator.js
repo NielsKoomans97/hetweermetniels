@@ -3,6 +3,9 @@ export class Animator {
         const backgroundImage = element.querySelector('.background-image');
         backgroundImage.setAttribute('src', type['BackgroundImage']);
 
+        const logoImage = element.querySelector('.logo');
+        logoImage.setAttribute('src', type['Logo']);
+
         var radarPaused = true;
         var index = 0;
 

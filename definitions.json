@@ -3,6 +3,7 @@
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "SatMapCombined15m",
     "Description": "Satelliet gecombineerd",
+    "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {
         "Key": "history",
@@ -22,6 +23,7 @@
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapActualTemperature10mNL",
     "Description": "Actuele temperatuur",
+    "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {
         "Key": "history",
@@ -37,6 +39,7 @@
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapWind10mNL",
     "Description": "Actuele windkracht en richting",
+    "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {
         "Key": "history",
@@ -52,6 +55,7 @@
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapRain24Hours10mNL",
     "Description": "Neerslag laatste 24u",
+    "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {
         "Key": "history",
@@ -67,6 +71,7 @@
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "WeatherMapWindGusts10mNL",
     "Description": "Actuele windstoten",
+    "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {
         "Key": "history",
@@ -83,6 +88,7 @@
     "BackgroundImage": "data/MapTiles/WebMercator.jpg",
     "Type": "RadarMapRain5mNL",
     "Description": "Radarbeelden laatste 90 min",
+    "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {
         "Key": "history",
@@ -99,6 +105,7 @@
     "BackgroundImage": "data/MapTiles/Radar-1050-v2.jpg",
     "Type": "radarnl-observations",
     "Description": "Radarbeelden laatste 90 min",
+    "Logo": "data/Logos/Weerplaza.png",
     "Parameters": []
   }
 ]

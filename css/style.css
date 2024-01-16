@@ -345,6 +345,8 @@ div.radar-item img.logo {
   position: absolute;
   align-self: flex-end;
   justify-self: flex-end;
+  width: 32px;
+  height: auto;
   border-bottom-right-radius: 16px;
   border-top-left-radius: 16px;
   margin: 5px;
