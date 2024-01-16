@@ -22,6 +22,18 @@ div.radar-item {
 
     div.radar-images {
         height: -webkit-fill-available;
+        z-index: 1;
+
+        border-radius: 16px;
+    }
+
+    img.background-image{
+        position: absolute;
+
+        width: auto;
+        height: -webkit-fill-available;
+
+        border-radius: 16px;
     }
 
     div.radar-image {
@@ -38,11 +50,15 @@ div.radar-item {
             height: auto;
 
             object-fit: contain;
+
+            border-radius: 16px;
         }
     }
 
     div.time-info-container {
         position: absolute;
+
+        z-index: 1;
 
         align-self: flex-start;
         justify-self: flex-start;
@@ -56,6 +72,14 @@ div.radar-item {
 
         border-bottom-right-radius: 16px;
         border-top-left-radius: 16px;
+
+        .time-heading{
+            font-weight: 500;
+        }
+
+        .time{
+            font-weight: 300;
+        }
     }
 
     img.logo {

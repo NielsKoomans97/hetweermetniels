@@ -1,5 +1,8 @@
 export class Animator {
     constructor(type, element) {
+        const backgroundImage = element.querySelector('.background-image');
+        backgroundImage.setAttribute('src', type['BackgroundImage']);
+
         var radarPaused = true;
         var index = 0;
 
@@ -62,7 +65,8 @@ export class Animator {
 
                 let radarImage = document.createElement('img');
                 radarImage.setAttribute('src', element['path']);
-                radarImage.setAttribute('data-time', element['time']);
+
+                radarItem.setAttribute('data-time', element['time']);
                 radarItem.appendChild(radarImage);
 
                 radarImages.appendChild(radarItem);
@@ -73,28 +77,25 @@ export class Animator {
             radarPaused = false;
         }
 
-        function ClassListContains(el, key) {
-            for (let classKey of el.classList) {
-                if (classKey == key) {
-                    return true;
-                }
-            };
-        }
-
         UpdateRadarDefinition(type)
             .then(() => LoadRadarDefinition(type));
 
         setInterval(() => {
             if (!radarPaused) {
                 const radarImages = element.querySelectorAll('.radar-image');
-                console.log(radarImages);
+                const currentImage = radarImages[index];
+
+                const timeHeading = element.querySelector('.time-heading');
+                const time = element.querySelector('.time-nice');
 
                 radarImages.forEach(el => {
                     el.classList.replace('active', 'hidden');
                 }
                 );
 
-                radarImages[index].classList.replace('hidden', 'active');
+                currentImage.classList.replace('hidden', 'active');
+                timeHeading.innerText = type['Description'];
+                time.innerText = currentImage.getAttribute('data-time');
 
                 if (index == (radarImages.length - 1)) {
                     index = 0;

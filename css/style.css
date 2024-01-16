@@ -301,6 +301,14 @@ div.radar-item.hidden {
 }
 div.radar-item div.radar-images {
   height: -webkit-fill-available;
+  z-index: 1;
+  border-radius: 16px;
+}
+div.radar-item img.background-image {
+  position: absolute;
+  width: auto;
+  height: -webkit-fill-available;
+  border-radius: 16px;
 }
 div.radar-item div.radar-image.active {
   display: grid;
@@ -312,9 +320,11 @@ div.radar-item div.radar-image img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  border-radius: 16px;
 }
 div.radar-item div.time-info-container {
   position: absolute;
+  z-index: 1;
   align-self: flex-start;
   justify-self: flex-start;
   padding: 0px 10px;
@@ -324,6 +334,12 @@ div.radar-item div.time-info-container {
   background-color: #ebf8ff;
   border-bottom-right-radius: 16px;
   border-top-left-radius: 16px;
+}
+div.radar-item div.time-info-container .time-heading {
+  font-weight: 500;
+}
+div.radar-item div.time-info-container .time {
+  font-weight: 300;
 }
 div.radar-item img.logo {
   position: absolute;

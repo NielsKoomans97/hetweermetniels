@@ -80,6 +80,7 @@
   },
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
+    "BackgroundImage": "data/MapTiles/WebMercator.jpg",
     "Type": "RadarMapRain5mNL",
     "Description": "Radarbeelden laatste 90 min",
     "Parameters": [
@@ -95,6 +96,7 @@
   },
   {
     "Host": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles",
+    "BackgroundImage": "data/MapTiles/Radar-1050-v2.jpg",
     "Type": "radarnl-observations",
     "Description": "Radarbeelden laatste 90 min",
     "Parameters": []
