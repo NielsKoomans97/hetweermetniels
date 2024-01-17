@@ -1,17 +1,24 @@
 import { Animator } from "./animator.js";
 
-InitRadarItems();
+const simulcast = document.querySelector('.content.simulcast');
 
-async function InitRadarItems() {
-    const radarItems = document.querySelectorAll('.radar-item');
+if (simulcast != null){
+    InitRadarItems();
 
-    const data = await fetch('/../definitions.json');
-    const json = await data.json();
+    async function InitRadarItems() {
+        const radarItems = document.querySelectorAll('.radar-item');
 
-    for (let i = 0; i < json.length; i++) {
-        const radarItem = radarItems[i];
-        const definitionItem = json[i];
+        const data = await fetch('/../definitions.json');
+        const json = await data.json();
 
-        const animator = new Animator(definitionItem, radarItem);
+        for (let i = 0; i < json.length; i++) {
+            const definitionItem = json[i];
+
+            radarItems.forEach(radarItem => {
+                if (radarItem.id == definitionItem['Type']) {
+                    new Animator(definitionItem, radarItem);
+                }
+            });
+        }
     }
 }

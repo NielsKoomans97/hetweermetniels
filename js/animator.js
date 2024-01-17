@@ -1,7 +1,14 @@
 export class Animator {
     constructor(type, element) {
-        const backgroundImage = element.querySelector('.background-image');
-        backgroundImage.setAttribute('src', type['BackgroundImage']);
+        if (type['BackgroundImage'] != null) {
+            const backgroundImage = element.querySelector('.background-image');
+            backgroundImage.setAttribute('src', type['BackgroundImage']);
+        }
+
+        if (type['ExtraLayer'] != null) {
+            const borderLayer = element.querySelector('.border-layer');
+            borderLayer.setAttribute('src', type['ExtraLayer']);
+        }
 
         const logoImage = element.querySelector('.logo');
         logoImage.setAttribute('src', type['Logo']);
@@ -85,6 +92,15 @@ export class Animator {
 
         setInterval(() => {
             if (!radarPaused) {
+                function FixInt(int) {
+                    if (int < 10) {
+                        return `0${int}`;
+                    }
+                    else {
+                        return `${int}`;
+                    }
+                }
+
                 const radarImages = element.querySelectorAll('.radar-image');
                 const currentImage = radarImages[index];
 
@@ -93,12 +109,22 @@ export class Animator {
 
                 radarImages.forEach(el => {
                     el.classList.replace('active', 'hidden');
-                }
-                );
+                });
 
                 currentImage.classList.replace('hidden', 'active');
                 timeHeading.innerText = type['Description'];
-                time.innerText = currentImage.getAttribute('data-time');
+
+                const timeData = currentImage.getAttribute('data-time');
+                if (timeData.indexOf('T') > 0) {
+                    const date = new Date(Date.parse(timeData));
+                    const dateString = `${FixInt(date.getHours())}:${FixInt(date.getMinutes())}`;
+                    console.log(dateString);
+
+                    time.innerText = dateString;
+                }
+                else {
+                    time.innerText = currentImage.getAttribute('data-time');
+                }
 
                 if (index == (radarImages.length - 1)) {
                     index = 0;
@@ -108,5 +134,20 @@ export class Animator {
                 }
             }
         }, 200);
+
+        setInterval(() => {
+            const date = new Date();
+            const minute = date.getMinutes();
+            const second = date.getSeconds();
+
+            for (let i = 0; i < 6; i++) {
+                if (minute == (i * 10) && second == 0) {
+                    console.log('update');
+
+                    UpdateRadarDefinition(type)
+                        .then(() => LoadRadarDefinition(type));
+                }
+            }
+        }, 1000)
     }
 }

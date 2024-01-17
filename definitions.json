@@ -103,6 +103,7 @@
   {
     "Host": "https://cluster.api.meteoplaza.com/v3/nowcast/tiles",
     "BackgroundImage": "data/MapTiles/Radar-1050-v2.jpg",
+    "ExtraLayer": "data/MapTiles/Radar-1050-borders-v2.png",
     "Type": "radarnl-observations",
     "Description": "Radarbeelden laatste 90 min",
     "Logo": "data/Logos/Weerplaza.png",

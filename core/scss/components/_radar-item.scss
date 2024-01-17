@@ -4,7 +4,7 @@
 div.radar-item {
     position: relative;
 
-    width: 450px;
+    width: auto;
     height: max-content;
 
     display: grid;
@@ -28,6 +28,15 @@ div.radar-item {
     }
 
     img.background-image{
+        position: absolute;
+
+        width: auto;
+        height: -webkit-fill-available;
+
+        border-radius: 16px;
+    }
+
+    img.border-layer{
         position: absolute;
 
         width: auto;
@@ -97,5 +106,7 @@ div.radar-item {
         margin: 5px;
         padding: 10px;
         background-color: map-get($map: $colors, $key: primary-color);
+
+        z-index: 2;
     }
 }

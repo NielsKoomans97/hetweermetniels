@@ -1,0 +1,39 @@
+@use "../variables" as *;
+@use "../helpers" as *;
+
+.content.simulcast {
+    display: grid;
+
+    grid-template-columns: repeat(32, calc(100vw / 32));
+    grid-template-rows: repeat(32, calc(100vh / 32));
+
+    div.sidebar{
+        grid-column: 26 / span 7;
+        grid-row: 1 / span 12;
+
+        div.radar-item{
+            &:last-child,
+            &:last-child .radar-images,
+            &:last-child img.background-image,
+            &:last-child .radar-image img,
+            &:last-child .time-info-container{
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            &:first-child,
+            &:first-child .radar-images,
+            &:first-child img.background-image,
+            &:first-child .radar-image img
+            {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+
+    div.slideshow{
+        grid-column: 1 / span 5;
+        grid-row: 19 / span 13;
+    }
+}
