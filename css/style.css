@@ -479,6 +479,9 @@ div.radar-item img.logo {
   align-self: flex-end;
   justify-self: flex-start;
 }
+.content.simulcast div.slideshow div.radar-item .time-info-container {
+  background-color: transparent;
+}
 
 * {
   font-family: "Jost", sans-serif;

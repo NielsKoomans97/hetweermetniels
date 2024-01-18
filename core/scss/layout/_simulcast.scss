@@ -38,5 +38,9 @@
 
         align-self: flex-end;
         justify-self: flex-start;
+
+        div.radar-item .time-info-container{
+            background-color: transparent;
+        }
     }
 }

@@ -89,6 +89,8 @@ export class Animator {
         }
 
         async function ReloadRadarDefinition(type){
+            let radarType = type['Type'];
+
             const path = `/data/${radarType}/${radarType}.json`;
             const data = await fetch(path);
             const json = await data.json();
