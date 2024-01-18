@@ -1,4 +1,5 @@
 import { Animator } from "./animator.js";
+import { Slideshow } from "./slideshow.js";
 
 const simulcast = document.querySelector('.content.simulcast');
 
@@ -21,4 +22,6 @@ if (simulcast != null){
             });
         }
     }
+
+    new Slideshow(document.querySelector('.slideshow'));
 }

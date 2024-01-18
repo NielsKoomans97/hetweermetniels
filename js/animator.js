@@ -69,20 +69,42 @@ export class Animator {
             const json = await data.json();
 
             const radarImages = element.querySelector('.radar-images');
-            json.forEach(element => {
+
+            json.forEach(item => {
                 let radarItem = document.createElement('div');
                 radarItem.classList.add('radar-image', 'active');
 
                 let radarImage = document.createElement('img');
-                radarImage.setAttribute('src', element['path']);
+                radarImage.setAttribute('src', item['path']);
 
-                radarItem.setAttribute('data-time', element['time']);
+                radarItem.setAttribute('data-time', item['time']);
                 radarItem.appendChild(radarImage);
 
                 radarImages.appendChild(radarItem);
             });
 
             element.classList.add(radarType);
+
+            radarPaused = false;
+        }
+
+        async function ReloadRadarDefinition(type){
+            const path = `/data/${radarType}/${radarType}.json`;
+            const data = await fetch(path);
+            const json = await data.json();
+
+            const radarImages = element.querySelectorAll('.radar-image');
+
+            json.forEach(item => {
+                radarImages.forEach(radarImage => {
+                    if (radarImage.classList.contains(type['Type'])){
+                        const img = radarImage.querySelector('img');
+                        img.setAttribute(item['path']);
+
+                        radarImage.setAttribute('data-time', item['time']);
+                    }
+                });
+            });
 
             radarPaused = false;
         }
@@ -118,7 +140,6 @@ export class Animator {
                 if (timeData.indexOf('T') > 0) {
                     const date = new Date(Date.parse(timeData));
                     const dateString = `${FixInt(date.getHours())}:${FixInt(date.getMinutes())}`;
-                    console.log(dateString);
 
                     time.innerText = dateString;
                 }
@@ -145,7 +166,7 @@ export class Animator {
                     console.log('update');
 
                     UpdateRadarDefinition(type)
-                        .then(() => LoadRadarDefinition(type));
+                        .then(() => ReloadRadarDefinition(type));
                 }
             }
         }, 1000)
