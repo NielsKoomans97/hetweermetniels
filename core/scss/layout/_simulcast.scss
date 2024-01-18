@@ -2,6 +2,9 @@
 @use "../helpers" as *;
 
 .content.simulcast {
+    background-color: transparent;
+    background: none;
+
     display: grid;
 
     grid-template-columns: repeat(32, calc(100vw / 32));
