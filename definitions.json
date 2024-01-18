@@ -24,6 +24,7 @@
     "Type": "WeatherMapActualTemperature10mNL",
     "Description": "Actuele temperatuur",
     "Logo": "data/Logos/Buienradar.png",
+    "Units": "C",
     "Parameters": [
       {
         "Key": "history",
@@ -40,6 +41,7 @@
     "Type": "WeatherMapWind10mNL",
     "Description": "Actuele windkracht en richting",
     "Logo": "data/Logos/Buienradar.png",
+    "Units": "bft",
     "Parameters": [
       {
         "Key": "history",
@@ -56,6 +58,7 @@
     "Type": "WeatherMapRain24Hours10mNL",
     "Description": "Neerslag laatste 24u",
     "Logo": "data/Logos/Buienradar.png",
+    "Units": "mm",
     "Parameters": [
       {
         "Key": "history",
@@ -72,6 +75,7 @@
     "Type": "WeatherMapWindGusts10mNL",
     "Description": "Actuele windstoten",
     "Logo": "data/Logos/Buienradar.png",
+    "Units": "km/h",
     "Parameters": [
       {
         "Key": "history",
@@ -105,7 +109,7 @@
     "BackgroundImage": "data/MapTiles/Radar-1050-v2.jpg",
     "ExtraLayer": "data/MapTiles/Radar-1050-borders-v2.png",
     "Type": "radarnl-observations",
-    "Description": "Radarbeelden laatste 90 min",
+    "Description": "Radarbeelden laatste 45 min",
     "Logo": "data/Logos/Weerplaza.png",
     "Parameters": []
   }

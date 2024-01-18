@@ -1,12 +1,32 @@
 <?php
 
-function component($name){
+function component($name)
+{
     $view_path = $_SERVER['DOCUMENT_ROOT'] . '/views';
-    $comp_path = $view_path . '/components/'. $name . '.view.php';
+    $comp_path = $view_path . '/components/' . $name . '.view.php';
 
-    if (file_exists($comp_path)){
+    if (file_exists($comp_path)) {
         require_once $comp_path;
     }
 }
 
-?>
+function radaritem($host, $type)
+{
+    echo '  <div class="radar-item" id="' . $type . '">
+
+                <div class="radar-images"></div>
+                <img class="background-image">
+                <img class="border-layer">
+                <div class="time-info-container">
+                    <p class="time-heading">Leeg</p>
+                    <p class="time-nice">00:00</p>
+                    <p class="radar-units"></p>
+                </div>
+                <img src="' . $host . '" class="logo">
+            </div>';
+}
+
+function iframe($src)
+{
+    echo '<iframe src="' . $src . '"></iframe>';
+}

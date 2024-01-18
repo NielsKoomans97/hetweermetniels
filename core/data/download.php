@@ -35,10 +35,10 @@ if (str_contains($url, 'meteoplaza')) {
         $timeJson = '';
 
         if (file_put_contents($localPath, file_get_contents($timeUrl))) {
-            $timeJson = '{"time":"' . $time->nicetime . '","path":"' . $externalPath . '"}';
+            $timeJson = '{"time":"' . $time->timestamp . '","path":"' . $externalPath . '"}';
         }
         else{
-            $timeJson = '{"time":"' . $time->nicetime . '","path":"' . $externalPathNotFound . '"}';
+            $timeJson = '{"time":"' . $time->timestamp . '","path":"' . $externalPathNotFound . '"}';
         }
 
         if ($index < count($json) - 1) {

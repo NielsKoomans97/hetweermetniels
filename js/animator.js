@@ -10,6 +10,15 @@ export class Animator {
             borderLayer.setAttribute('src', type['ExtraLayer']);
         }
 
+        if (type['Units'] != null){
+            const units = element.querySelector('.radar-units');
+            units.innerText = type['Units'];
+        }
+        else{
+            const units = element.querySelector('.radar-units');
+            units.classList.add('hidden');
+        }
+        
         const logoImage = element.querySelector('.logo');
         logoImage.setAttribute('src', type['Logo']);
 
@@ -141,12 +150,17 @@ export class Animator {
                 const timeData = currentImage.getAttribute('data-time');
                 if (timeData.indexOf('T') > 0) {
                     const date = new Date(Date.parse(timeData));
-                    const dateString = `${FixInt(date.getHours())}:${FixInt(date.getMinutes())}`;
+                    const dateString = `${FixInt(date.getHours() + 1)}:${FixInt(date.getMinutes())}`;
 
                     time.innerText = dateString;
                 }
                 else {
-                    time.innerText = currentImage.getAttribute('data-time');
+                    const date = new Date(0);
+                    date.setSeconds(parseInt(currentImage.getAttribute('data-time')));
+
+                    const dateString = `${FixInt(date.getHours())}:${FixInt(date.getMinutes())}`;
+
+                    time.innerText = dateString;
                 }
 
                 if (index == (radarImages.length - 1)) {
@@ -165,8 +179,6 @@ export class Animator {
 
             for (let i = 0; i < 6; i++) {
                 if (minute == (i * 10) && second == 0) {
-                    console.log('update');
-
                     UpdateRadarDefinition(type)
                         .then(() => ReloadRadarDefinition(type));
                 }

@@ -1,8 +1,7 @@
-<?php require_once('components/radaritem.view.php'); ?>
-
 <div class="sidebar">
     <?=
         radaritem('weerplaza', 'radarnl-observations');
+        iframe('https://map.blitzortung.org/');
         radaritem('buienradar', 'SatMapCombined15m');
     ?>
 </div>
