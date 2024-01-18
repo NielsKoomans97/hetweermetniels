@@ -5,57 +5,13 @@
 
     display: grid;
 
-    img#current-radar{
+    img{
         position: absolute;
 
-        height: 100vh;
+        width: 100vw;
         object-fit: cover;
 
         justify-self: center;
-    }
-
-    div.map-grid{
-        position: absolute;
-        display: grid;
-
-        grid-template-columns: repeat(2, 50vw);
-        grid-template-rows: repeat(2, 50vh);
-
-        img.map-tile{
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-            image-rendering:optimizeQuality;
-
-            &.zw, &.zo{
-                object-position: 0 0%;
-            }
-
-            &.zw{
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            &.zo{
-                grid-column: 2;
-                grid-row: 2;
-            }
-
-            &.no, &.nw{
-                object-position: 0% 100%;
-            }
-
-            &.no{
-                grid-column: 2;
-                grid-row: 1;
-            }
-
-            &.nw{
-                grid-column: 1;
-                grid-row: 1;
-            }
-        }
     }
 
     div.chart-slider{

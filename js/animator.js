@@ -85,7 +85,7 @@ export class Animator {
 
                 let radarImage = document.createElement('img');
                 radarImage.setAttribute('src', item['path']);
-
+            
                 radarItem.setAttribute('data-time', item['time']);
                 radarItem.appendChild(radarImage);
 

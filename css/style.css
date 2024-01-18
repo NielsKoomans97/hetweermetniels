@@ -407,45 +407,11 @@ div.radar-item img.logo {
   position: relative;
   display: grid;
 }
-.content.index img#current-radar {
+.content.index img {
   position: absolute;
-  height: 100vh;
+  width: 100vw;
   object-fit: cover;
   justify-self: center;
-}
-.content.index div.map-grid {
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(2, 50vw);
-  grid-template-rows: repeat(2, 50vh);
-}
-.content.index div.map-grid img.map-tile {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  image-rendering: optimizeQuality;
-}
-.content.index div.map-grid img.map-tile.zw, .content.index div.map-grid img.map-tile.zo {
-  object-position: 0 0%;
-}
-.content.index div.map-grid img.map-tile.zw {
-  grid-column: 1;
-  grid-row: 2;
-}
-.content.index div.map-grid img.map-tile.zo {
-  grid-column: 2;
-  grid-row: 2;
-}
-.content.index div.map-grid img.map-tile.no, .content.index div.map-grid img.map-tile.nw {
-  object-position: 0% 100%;
-}
-.content.index div.map-grid img.map-tile.no {
-  grid-column: 2;
-  grid-row: 1;
-}
-.content.index div.map-grid img.map-tile.nw {
-  grid-column: 1;
-  grid-row: 1;
 }
 .content.index div.chart-slider {
   position: absolute;
