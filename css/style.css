@@ -1,25 +1,25 @@
 h1 {
-  font-size: 2.2vh;
-}
-
-h2 {
   font-size: 2vh;
 }
 
-h3 {
+h2 {
   font-size: 1.8vh;
 }
 
-h4 {
+h3 {
   font-size: 1.6vh;
 }
 
-h5 {
+h4 {
   font-size: 1.4vh;
 }
 
-h6 {
+h5 {
   font-size: 1.2vh;
+}
+
+h6 {
+  font-size: 1vh;
 }
 
 /* cyrillic */
@@ -366,7 +366,7 @@ div.radar-item img.logo {
   position: absolute;
   align-self: flex-end;
   justify-self: flex-end;
-  width: 1vw;
+  width: 0.8vw;
   height: auto;
   border-bottom-right-radius: 16px;
   border-top-left-radius: 16px;
@@ -380,6 +380,12 @@ div.warning-overview {
   display: grid;
   grid-template-rows: repeat(2, 50%);
   border-radius: 16px;
+}
+div.warning-overview.active {
+  display: grid;
+}
+div.warning-overview.hidden {
+  display: none;
 }
 div.warning-overview div.warning-day-container {
   grid-row: 1;
@@ -512,10 +518,11 @@ div.warning-overview div.alert-card h4.alert-title {
   width: -webkit-fill-available;
   border: none;
   outline: none;
+  margin-bottom: -15px;
 }
 .content.simulcast div.slideshow {
-  grid-column: 1/span 6;
-  grid-row: 18/span 15;
+  grid-column: 1/span 5;
+  grid-row: 20/span 13;
   justify-self: flex-start;
 }
 .content.simulcast div.slideshow div.radar-item {
@@ -525,8 +532,8 @@ div.warning-overview div.alert-card h4.alert-title {
   background-color: transparent;
 }
 .content.simulcast div.warning-overview {
-  grid-column: 7/span 6;
-  grid-row: 18/span 15;
+  grid-column: 7/span56;
+  grid-row: 19/span 13;
 }
 
 * {
@@ -546,6 +553,7 @@ body {
 
 p {
   margin: 0;
+  font-size: 1vh;
 }
 
 /*# sourceMappingURL=style.css.map */

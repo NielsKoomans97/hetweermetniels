@@ -27,7 +27,7 @@ function radaritem($host, $type)
 
 function warningoverview()
 {
-    echo '  <div class="warning-overview">
+    echo '  <div class="warning-overview active">
                 <div class="warning-day-container">
                     <img class="warning-day">
                 </div>

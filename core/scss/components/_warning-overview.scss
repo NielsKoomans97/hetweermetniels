@@ -7,6 +7,14 @@ div.warning-overview{
     grid-template-rows: repeat(2, 50%);
     border-radius: 16px;
 
+    &.active{
+        display: grid;
+    }
+
+    &.hidden{
+        display: none;
+    }
+
     div.warning-day-container{
         grid-row: 1;
 

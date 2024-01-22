@@ -106,14 +106,16 @@ export class Animator {
 
             const radarImages = element.querySelectorAll('.radar-image');
 
-            for (let i = 0; i < json.length; i++) {
+            for (let i = 0; i < (json.length); i++) {
                 const node = json[i];
                 const radarImage = radarImages[i];
 
-                const img = radarImage.querySelector('img');
-                img.setAttribute('src', node['path']);
-
-                radarImage.setAttribute('data-time', node['time']);
+                if (radarImage != null){
+                    const img = radarImage.querySelector('img');
+                    img.setAttribute('src', node['path']);
+    
+                    radarImage.setAttribute('data-time', node['time']);
+                }
             }
 
             radarPaused = false;

@@ -56,9 +56,17 @@ export class Warnings {
             warningDayImage.setAttribute('src', json['warnings']['daySummaries']['day1']['image']);
 
             const locations = json['warnings']['locations'];
-            locations.forEach(location => {
-                BuildAlertCards(location);
-            });
+            console.log(locations.length);
+            
+            if (locations.length > 0) {
+                locations.forEach(location => {
+                    BuildAlertCards(location);
+                });    
+                warningOverview.classList.replace('hidden', 'active');
+            }
+            else{
+                warningOverview.classList.replace('active', 'hidden');
+            }
 
             slideshowPaused = false;
 
