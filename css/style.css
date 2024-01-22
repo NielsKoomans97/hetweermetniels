@@ -316,6 +316,10 @@ div.radar-item img.border-layer {
   height: -webkit-fill-available;
   border-radius: 16px;
 }
+div.radar-item div.radar-image {
+  height: 100%;
+  width: 100%;
+}
 div.radar-item div.radar-image.active {
   display: grid;
 }
@@ -326,6 +330,7 @@ div.radar-item div.radar-image img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  align-self: center;
   border-radius: 16px;
 }
 div.radar-item div.time-info-container {
@@ -374,17 +379,22 @@ div.radar-item img.logo {
 div.warning-overview {
   display: grid;
   grid-template-rows: repeat(2, 50%);
-  flex-direction: column;
   border-radius: 16px;
+}
+div.warning-overview div.warning-day-container {
+  grid-row: 1;
+  display: flex;
+  background-color: #bddef0;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
 }
 div.warning-overview img.warning-day {
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
-  height: 100%;
+  height: 90%;
   width: 100%;
   object-fit: scale-down;
   justify-self: center;
-  background-color: #ebf8ff;
 }
 div.warning-overview div.alert-card {
   display: grid;
@@ -396,6 +406,7 @@ div.warning-overview div.alert-card {
   border-radius: 16px;
   padding: 10px;
   transition: all 150ms;
+  margin-top: -10px;
 }
 div.warning-overview div.alert-card.YELLOW {
   background-color: #edfd0a;
@@ -414,10 +425,6 @@ div.warning-overview div.alert-card.active {
 }
 div.warning-overview div.alert-card h4.alert-title {
   font-weight: 500;
-}
-div.warning-overview div.alert-card p.alert-summary, div.warning-overview div.alert-card p.alert-time-window {
-  font-size: 1.8vh;
-  font-weight: 400;
 }
 
 .content .main-menu {

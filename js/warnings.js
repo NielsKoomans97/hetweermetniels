@@ -3,6 +3,7 @@ export class Warnings {
         const warningOverview = document.querySelector('.warning-overview');
         const warningDayImage = warningOverview.querySelector('.warning-day');
         const warningList = warningOverview.querySelector('.alert-list');
+        let index = 0;
         let slideshowPaused = true;
 
         UpdateWarnings();
@@ -19,7 +20,6 @@ export class Warnings {
             }
         }, 1000);
 
-        let index = 0;
         setInterval(() => {
             if (document.querySelectorAll('.alert-card') != null && slideshowPaused == false) {
                 const alerts = document.querySelectorAll('.alert-card');
@@ -45,6 +45,9 @@ export class Warnings {
         }
 
         async function UpdateWarnings() {
+            slideshowPaused = true;
+            index = 0;
+
             const data = await fetch('https://data.buienradar.nl/1.0/announcements/apps');
             const json = await data.json();
 
