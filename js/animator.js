@@ -19,6 +19,7 @@ export class Animator {
             units.classList.add('hidden');
         }
 
+        const loadIcon = element.querySelector('.loading-icon');
         const logoImage = element.querySelector('.logo');
         logoImage.setAttribute('src', type['Logo']);
 
@@ -28,6 +29,7 @@ export class Animator {
         async function UpdateRadarDefinition(type) {
             index = 0;
             radarPaused = true;
+            loadIcon.classList.replace('hidden','active');
 
             function BuildUri(host, path, params) {
                 let uri = '';
@@ -95,6 +97,7 @@ export class Animator {
             element.classList.add(radarType);
 
             radarPaused = false;
+            loadIcon.classList.replace('active', 'hidden');
         }
 
         async function ReloadRadarDefinition(type) {
@@ -119,6 +122,7 @@ export class Animator {
             }
 
             radarPaused = false;
+            loadIcon.classList.replace('active', 'hidden');
         }
 
         UpdateRadarDefinition(type)

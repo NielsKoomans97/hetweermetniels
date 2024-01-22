@@ -1,25 +1,25 @@
 h1 {
-  font-size: 2vh;
+  font-size: 2.2vh;
 }
 
 h2 {
-  font-size: 1.8vh;
+  font-size: 2vh;
 }
 
 h3 {
-  font-size: 1.6vh;
+  font-size: 1.8vh;
 }
 
 h4 {
-  font-size: 1.4vh;
+  font-size: 1.6vh;
 }
 
 h5 {
-  font-size: 1.2vh;
+  font-size: 1.4vh;
 }
 
 h6 {
-  font-size: 1vh;
+  font-size: 1.2vh;
 }
 
 /* cyrillic */
@@ -362,6 +362,12 @@ div.radar-item div.time-info-container .radar-units {
 div.radar-item div.time-info-container .radar-units.hidden {
   display: none;
 }
+div.radar-item div.time-info-container img.loading-icon.active {
+  display: block;
+}
+div.radar-item div.time-info-container img.loading-icon.hidden {
+  display: none;
+}
 div.radar-item img.logo {
   position: absolute;
   align-self: flex-end;
@@ -522,7 +528,7 @@ div.warning-overview div.alert-card h4.alert-title {
 }
 .content.simulcast div.slideshow {
   grid-column: 1/span 5;
-  grid-row: 20/span 13;
+  grid-row: 21/span 12;
   justify-self: flex-start;
 }
 .content.simulcast div.slideshow div.radar-item {
@@ -532,8 +538,8 @@ div.warning-overview div.alert-card h4.alert-title {
   background-color: transparent;
 }
 .content.simulcast div.warning-overview {
-  grid-column: 7/span56;
-  grid-row: 19/span 13;
+  grid-column: 7/span 5;
+  grid-row: 21/span 12;
 }
 
 * {
@@ -553,7 +559,7 @@ body {
 
 p {
   margin: 0;
-  font-size: 1vh;
+  font-size: 1.2vh;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -20,6 +20,7 @@ function radaritem($host, $type)
                     <p class="time-heading">Leeg</p>
                     <p class="time-nice">00:00</p>
                     <p class="radar-units"></p>
+                    <img class="loading-icon active" src="data/Static/refresh_icon.png">
                 </div>
                 <img src="' . $host . '" class="logo">
             </div>';

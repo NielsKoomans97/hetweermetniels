@@ -27,7 +27,7 @@ div.radar-item {
         border-radius: 16px;
     }
 
-    img.background-image{
+    img.background-image {
         position: absolute;
 
         width: auto;
@@ -36,7 +36,7 @@ div.radar-item {
         border-radius: 16px;
     }
 
-    img.border-layer{
+    img.border-layer {
         position: absolute;
 
         width: auto;
@@ -82,27 +82,37 @@ div.radar-item {
         align-items: flex-start;
         flex-direction: column;
 
-        background-color: transparentize($color: map-get($colors,primary-color), $amount: 0.25);
+        background-color: transparentize($color: map-get($colors, primary-color), $amount: 0.25);
 
         border-bottom-right-radius: 16px;
         border-top-left-radius: 16px;
 
-        .time-heading{
+        .time-heading {
             font-weight: 500;
         }
 
-        .time{
+        .time {
             font-weight: 300;
         }
 
-        .radar-units{
+        .radar-units {
             border-left: map-get($map: $colors, $key: secondary-color) 4px solid;
             padding-left: 10px;
             margin-top: 5px;
             color: map-get($map: $colors, $key: text-gray);
             font-weight: 500;
 
-            &.hidden{
+            &.hidden {
+                display: none;
+            }
+        }
+
+        img.loading-icon {
+            &.active {
+                display: block;
+            }
+
+            &.hidden {
                 display: none;
             }
         }
