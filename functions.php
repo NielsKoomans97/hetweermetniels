@@ -13,7 +13,6 @@ function component($name)
 function radaritem($host, $type)
 {
     echo '  <div class="radar-item" id="' . $type . '">
-
                 <div class="radar-images"></div>
                 <img class="background-image">
                 <img class="border-layer">
@@ -23,6 +22,15 @@ function radaritem($host, $type)
                     <p class="radar-units"></p>
                 </div>
                 <img src="' . $host . '" class="logo">
+            </div>';
+}
+
+function warningoverview()
+{
+    echo '  <div class="warning-overview">
+                <img class="warning-day">
+                <div class="alert-list">
+                </div>
             </div>';
 }
 

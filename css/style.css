@@ -337,7 +337,7 @@ div.radar-item div.time-info-container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  background-color: #ebf8ff;
+  background-color: rgba(235, 248, 255, 0.75);
   border-bottom-right-radius: 16px;
   border-top-left-radius: 16px;
 }
@@ -361,7 +361,7 @@ div.radar-item img.logo {
   position: absolute;
   align-self: flex-end;
   justify-self: flex-end;
-  width: 32px;
+  width: 1vw;
   height: auto;
   border-bottom-right-radius: 16px;
   border-top-left-radius: 16px;
@@ -369,6 +369,55 @@ div.radar-item img.logo {
   padding: 10px;
   background-color: #ebf8ff;
   z-index: 2;
+}
+
+div.warning-overview {
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  flex-direction: column;
+  border-radius: 16px;
+}
+div.warning-overview img.warning-day {
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
+  justify-self: center;
+  background-color: #ebf8ff;
+}
+div.warning-overview div.alert-card {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% 60% 20%;
+  justify-items: center;
+  align-items: center;
+  height: -webkit-fill-available;
+  border-radius: 16px;
+  padding: 10px;
+  transition: all 150ms;
+}
+div.warning-overview div.alert-card.YELLOW {
+  background-color: #edfd0a;
+}
+div.warning-overview div.alert-card.ORANGE {
+  background-color: #f89617;
+}
+div.warning-overview div.alert-card.RED {
+  background-color: #fa6331;
+}
+div.warning-overview div.alert-card.hidden {
+  display: none;
+}
+div.warning-overview div.alert-card.active {
+  display: grid;
+}
+div.warning-overview div.alert-card h4.alert-title {
+  font-weight: 500;
+}
+div.warning-overview div.alert-card p.alert-summary, div.warning-overview div.alert-card p.alert-time-window {
+  font-size: 1.8vh;
+  font-weight: 400;
 }
 
 .content .main-menu {
@@ -460,11 +509,17 @@ div.radar-item img.logo {
 .content.simulcast div.slideshow {
   grid-column: 1/span 6;
   grid-row: 18/span 15;
-  align-self: flex-end;
   justify-self: flex-start;
+}
+.content.simulcast div.slideshow div.radar-item {
+  height: -webkit-fill-available;
 }
 .content.simulcast div.slideshow div.radar-item .time-info-container {
   background-color: transparent;
+}
+.content.simulcast div.warning-overview {
+  grid-column: 7/span 6;
+  grid-row: 18/span 15;
 }
 
 * {

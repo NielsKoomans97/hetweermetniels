@@ -2,7 +2,7 @@
   {
     "Host": "https://image-lite.buienradar.nl/3.0/metadata",
     "Type": "SatMapCombined15m",
-    "Description": "Satelliet gecombineerd",
+    "Description": "Satelliet",
     "Logo": "data/Logos/Buienradar.png",
     "Parameters": [
       {

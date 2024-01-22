@@ -1,5 +1,6 @@
 import { Animator } from "./animator.js";
 import { Slideshow } from "./slideshow.js";
+import { Warnings } from "./warnings.js";
 
 const simulcast = document.querySelector('.content.simulcast');
 
@@ -24,4 +25,5 @@ if (simulcast != null){
     }
 
     new Slideshow(document.querySelector('.slideshow'));
+    new Warnings();
 }

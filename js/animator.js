@@ -10,15 +10,15 @@ export class Animator {
             borderLayer.setAttribute('src', type['ExtraLayer']);
         }
 
-        if (type['Units'] != null){
+        if (type['Units'] != null) {
             const units = element.querySelector('.radar-units');
             units.innerText = type['Units'];
         }
-        else{
+        else {
             const units = element.querySelector('.radar-units');
             units.classList.add('hidden');
         }
-        
+
         const logoImage = element.querySelector('.logo');
         logoImage.setAttribute('src', type['Logo']);
 
@@ -85,7 +85,7 @@ export class Animator {
 
                 let radarImage = document.createElement('img');
                 radarImage.setAttribute('src', item['path']);
-            
+
                 radarItem.setAttribute('data-time', item['time']);
                 radarItem.appendChild(radarImage);
 
@@ -97,7 +97,7 @@ export class Animator {
             radarPaused = false;
         }
 
-        async function ReloadRadarDefinition(type){
+        async function ReloadRadarDefinition(type) {
             let radarType = type['Type'];
 
             const path = `/data/${radarType}/${radarType}.json`;
@@ -106,16 +106,15 @@ export class Animator {
 
             const radarImages = element.querySelectorAll('.radar-image');
 
-            json.forEach(item => {
-                radarImages.forEach(radarImage => {
-                    if (radarImage.classList.contains(type['Type'])){
-                        const img = radarImage.querySelector('img');
-                        img.setAttribute('src', item['path']);
+            for (let i = 0; i < json.length; i++) {
+                const node = json[i];
+                const radarImage = radarImages[i];
 
-                        radarImage.setAttribute('data-time', item['time']);
-                    }
-                });
-            });
+                const img = radarImage.querySelector('img');
+                img.setAttribute('src', node['path']);
+
+                radarImage.setAttribute('data-time', node['time']);
+            }
 
             radarPaused = false;
         }
@@ -178,7 +177,7 @@ export class Animator {
             const second = date.getSeconds();
 
             for (let i = 0; i < 6; i++) {
-                if (minute == (i * 10) && second == 0) {
+                if (minute == ((i * 10) + 1) && second == 0) {
                     UpdateRadarDefinition(type)
                         .then(() => ReloadRadarDefinition(type));
                 }

@@ -47,11 +47,19 @@
         grid-column: 1 / span 6;
         grid-row: 18 / span 15;
 
-        align-self: flex-end;
         justify-self: flex-start;
+
+        div.radar-item{
+            height: -webkit-fill-available;
+        }
 
         div.radar-item .time-info-container{
             background-color: transparent;
         }
+    }
+
+    div.warning-overview{
+        grid-column: 7 / span 6;
+        grid-row: 18 / span 15;
     }
 }

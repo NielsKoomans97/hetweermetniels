@@ -1,0 +1,69 @@
+@use '../variables' as *;
+@use '../helpers' as *;
+
+div.warning-overview{
+    display: grid;
+
+    grid-template-rows: repeat(2, 50%);
+
+    flex-direction: column;
+    border-radius: 16px;
+
+    img.warning-day{
+
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+
+        height: 100%;
+        width: 100%;
+        object-fit: scale-down;
+
+        justify-self: center;
+
+        background-color: map-get($map: $colors, $key: primary-color);
+    }
+
+    div.alert-card{
+        display: grid;
+
+        grid-template-columns: auto;
+        grid-template-rows: 20% 60% 20%;
+        justify-items: center;
+        align-items: center;
+
+        height: -webkit-fill-available;
+        border-radius: 16px;
+        padding: 10px;
+
+        transition: all 150ms;
+
+        &.YELLOW{
+            background-color: map-get($map: $colors, $key: yellow-warning);
+        }
+
+        &.ORANGE{
+            background-color: map-get($map: $colors, $key: orange-warning);
+        }
+
+        &.RED{
+            background-color: map-get($map: $colors, $key: red-warning);
+        }
+
+        &.hidden{
+            display: none;
+        }
+
+        &.active{
+            display: grid;
+        }
+
+        h4.alert-title{
+            font-weight: 500;
+        }
+
+        p.alert-summary, p.alert-time-window{
+            font-size: map-get($map: $font-sizes, $key: h3);
+            font-weight: 400;
+        }
+    }
+}
