@@ -37,6 +37,12 @@ function warningoverview()
             </div>';
 }
 
+function consolelog(){
+    echo '<div class="console-log">
+            
+          </div>';
+}
+
 function iframe($src)
 {
     echo '<iframe src="' . $src . '"></iframe>';

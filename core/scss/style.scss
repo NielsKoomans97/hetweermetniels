@@ -23,3 +23,12 @@ p {
     margin: 0;
     font-size: map-get($map: $font-sizes, $key: base);
 }
+
+div.console-log{
+    display: flex;
+    flex-direction: column;
+
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

@@ -14,5 +14,6 @@
     ?>
 </div>
 <?= warningoverview();
+consolelog();
 ?>
 

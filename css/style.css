@@ -562,4 +562,12 @@ p {
   font-size: 1.2vh;
 }
 
+div.console-log {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 /*# sourceMappingURL=style.css.map */

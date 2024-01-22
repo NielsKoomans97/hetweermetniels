@@ -4,7 +4,7 @@ import { Warnings } from "./warnings.js";
 
 const simulcast = document.querySelector('.content.simulcast');
 
-if (simulcast != null){
+if (simulcast != null) {
     InitRadarItems();
 
     async function InitRadarItems() {
@@ -26,4 +26,18 @@ if (simulcast != null){
 
     new Slideshow(document.querySelector('.slideshow'));
     new Warnings();
+
+    const consoleLog = document.querySelector('.console-log');
+    console.log = (e) => {
+        consoleLog.innerHTML += e;
+    };
+
+    console.error = (e) => {
+        consoleLog.innerHTML += e;
+    };
 }
+
+
+
+
+
