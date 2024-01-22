@@ -538,7 +538,7 @@ div.warning-overview div.alert-card h4.alert-title {
   background-color: transparent;
 }
 .content.simulcast div.warning-overview {
-  grid-column: 7/span 5;
+  grid-column: 6/span 5;
   grid-row: 21/span 12;
 }
 
