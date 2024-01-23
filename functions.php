@@ -34,12 +34,13 @@ function warningoverview()
                 </div>
                 <div class="alert-list">
                 </div>
+                <i class="fa-solid fa-warning"></i>
             </div>';
 }
 
 function consolelog(){
     echo '<div class="console-log">
-            
+
           </div>';
 }
 

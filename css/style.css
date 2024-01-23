@@ -383,6 +383,7 @@ div.radar-item img.logo {
 }
 
 div.warning-overview {
+  position: relative;
   display: grid;
   grid-template-rows: repeat(2, 50%);
   border-radius: 16px;
@@ -393,10 +394,20 @@ div.warning-overview.active {
 div.warning-overview.hidden {
   display: none;
 }
+div.warning-overview i.fa-warning {
+  position: absolute;
+  border-bottom-right-radius: 16px;
+  border-top-left-radius: 16px;
+  margin: 5px;
+  padding: 10px;
+  align-self: flex-start;
+  justify-self: flex-start;
+  background-color: #bddef0;
+}
 div.warning-overview div.warning-day-container {
   grid-row: 1;
   display: flex;
-  background-color: #bddef0;
+  background-color: #ebf8ff;
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
 }
@@ -504,7 +515,7 @@ div.warning-overview div.alert-card p.alert-title {
   background-color: transparent;
   background: none;
   display: grid;
-  grid-template-columns: repeat(32, calc((100vw - 480px) / 32));
+  grid-template-columns: repeat(32, calc((100vw - 465px) / 32));
   grid-template-rows: repeat(32, 3.125vh);
   column-gap: 15px;
 }

@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="js/main.js" type="module" defer></script>
+    <script src="https://kit.fontawesome.com/9efe11bfbd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
