@@ -64,7 +64,7 @@ export class Warnings {
                 });
                 warningOverview.classList.replace('hidden', 'active');
             }
-            else{
+            else {
                 warningOverview.classList.replace('active', 'hidden');
             }
 
@@ -93,11 +93,15 @@ export class Warnings {
                 var startTimeParsed = new Date(Date.parse(alert['starttime']));
                 var endTimeParsed = new Date(Date.parse(alert['endtime']));
 
+                var alertDateWindow = document.createElement('p');
+                alertDateWindow.className = 'alert-date-window';
+                alertDateWindow.innerText = `${FixInt(startTimeParsed.getDate())}-${FixInt(startTimeParsed.getMonth())} tot ${FixInt(endTimeParsed.getDate())}-${FixInt(endTimeParsed.getMonth())}`;
+
                 var alertTimeWindow = document.createElement('p');
                 alertTimeWindow.className = 'alert-time-window';
                 alertTimeWindow.innerText = `van ${FixInt(startTimeParsed.getHours())}:${FixInt(startTimeParsed.getMinutes())} tot ${FixInt(endTimeParsed.getHours())}:${FixInt(endTimeParsed.getMinutes())}`;
 
-                alertCard.append(alertTitle, alertSummary, alertTimeWindow);
+                alertCard.append(alertTitle, alertSummary, alertDateWindow, alertTimeWindow);
 
                 return alertCard;
             }

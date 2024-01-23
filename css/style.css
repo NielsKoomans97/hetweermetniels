@@ -422,7 +422,7 @@ div.warning-overview img.warning-day {
 div.warning-overview div.alert-card {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 20% 60% 20%;
+  grid-template-rows: 20% 60% 10% 10%;
   justify-items: center;
   align-items: center;
   height: -webkit-fill-available;
@@ -447,6 +447,10 @@ div.warning-overview div.alert-card.active {
   display: grid;
 }
 div.warning-overview div.alert-card p.alert-title {
+  font-weight: 500;
+}
+div.warning-overview div.alert-card p.alert-date-window {
+  font-size: 1.2vh;
   font-weight: 500;
 }
 

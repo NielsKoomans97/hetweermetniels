@@ -26,15 +26,6 @@ if (simulcast != null) {
 
     new Slideshow(document.querySelector('.slideshow'));
     new Warnings();
-
-    const consoleLog = document.querySelector('.console-log');
-    console.log = (e) => {
-        consoleLog.innerHTML += e;
-    };
-
-    console.error = (e) => {
-        consoleLog.innerHTML += e;
-    };
 }
 
 
