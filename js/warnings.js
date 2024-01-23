@@ -57,11 +57,11 @@ export class Warnings {
 
             const locations = json['warnings']['locations'];
             console.log(locations.length);
-            
+
             if (locations.length > 0) {
                 locations.forEach(location => {
                     BuildAlertCards(location);
-                });    
+                });
                 warningOverview.classList.replace('hidden', 'active');
             }
             else{
@@ -82,7 +82,7 @@ export class Warnings {
                 var alertCard = document.createElement('div');
                 alertCard.classList.add('alert-card', 'active', alert['color']);
 
-                var alertTitle = document.createElement('h3');
+                var alertTitle = document.createElement('p');
                 alertTitle.className = 'alert-title';
                 alertTitle.innerText = location['name'];
 

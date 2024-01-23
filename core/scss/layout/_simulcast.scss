@@ -7,8 +7,10 @@
 
     display: grid;
 
-    grid-template-columns: repeat(32, calc(100vw / 32));
+    grid-template-columns: repeat(32, calc(calc(100vw - calc(15px * 32)) / 32));
     grid-template-rows: repeat(32, calc(100vh / 32));
+
+    column-gap: 15px;
 
     div.sidebar{
         grid-column: 28 / span 5;

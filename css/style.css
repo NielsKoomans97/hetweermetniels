@@ -403,7 +403,7 @@ div.warning-overview div.warning-day-container {
 div.warning-overview img.warning-day {
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
-  height: 90%;
+  height: 85%;
   width: 100%;
   object-fit: scale-down;
   justify-self: center;
@@ -418,7 +418,7 @@ div.warning-overview div.alert-card {
   border-radius: 16px;
   padding: 10px;
   transition: all 150ms;
-  margin-top: -10px;
+  margin-top: -20px;
 }
 div.warning-overview div.alert-card.YELLOW {
   background-color: #edfd0a;
@@ -435,7 +435,7 @@ div.warning-overview div.alert-card.hidden {
 div.warning-overview div.alert-card.active {
   display: grid;
 }
-div.warning-overview div.alert-card h4.alert-title {
+div.warning-overview div.alert-card p.alert-title {
   font-weight: 500;
 }
 
@@ -504,8 +504,9 @@ div.warning-overview div.alert-card h4.alert-title {
   background-color: transparent;
   background: none;
   display: grid;
-  grid-template-columns: repeat(32, 3.125vw);
+  grid-template-columns: repeat(32, calc((100vw - 480px) / 32));
   grid-template-rows: repeat(32, 3.125vh);
+  column-gap: 15px;
 }
 .content.simulcast div.sidebar {
   grid-column: 28/span 5;
@@ -559,7 +560,7 @@ body {
 
 p {
   margin: 0;
-  font-size: 1.2vh;
+  font-size: 1.4vh;
 }
 
 div.console-log {

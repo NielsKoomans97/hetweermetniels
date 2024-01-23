@@ -21,7 +21,7 @@ body {
 
 p {
     margin: 0;
-    font-size: map-get($map: $font-sizes, $key: base);
+    font-size: map-get($map: $font-sizes, $key: h5);
 }
 
 div.console-log{
