@@ -51,14 +51,20 @@ export class Warnings {
             const data = await fetch('https://data.buienradar.nl/1.0/announcements/apps');
             const json = await data.json();
 
-            warningList.innerHTML = '';
+            // warningList.innerHTML = '';
+            EmptyAlertList();
 
-            warningDayImage.setAttribute('src', json['warnings']['daySummaries']['day1']['image']);
+            if (json['warnings']['daySummaries'] != null){
+                warningDayImage.setAttribute('src', json['warnings']['daySummaries']['day1']['image']);
+            }
+            else{
+                warningDayImage.setAttribute('src', 'data/Static/notfound.png');
+            }
 
             const locations = json['warnings']['locations'];
             console.log(locations.length);
 
-            if (locations.length > 0) {
+            if (locations.length > 1) {
                 locations.forEach(location => {
                     BuildAlertCards(location);
                 });
@@ -69,6 +75,12 @@ export class Warnings {
             }
 
             slideshowPaused = false;
+
+            function EmptyAlertList(){
+                while(warningList.firstChild){
+                    warningList.removeChild(warningList.lastChild);
+                }
+            }
 
             function BuildAlertCards(location) {
                 const alerts = location['alerts'];
