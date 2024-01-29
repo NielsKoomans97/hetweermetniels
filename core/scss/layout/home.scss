@@ -1,40 +1,50 @@
 @use '../variables' as *;
 
 .content.index{
-    position: relative;
+    section#hero {
+        position: relative;
 
-    display: grid;
+        min-height: 500px;
 
-    img{
-        position: absolute;
+        div.container, img.banner{
+            position: absolute;
 
-        width: 100vw;
-        object-fit: cover;
-
-        justify-self: center;
-    }
-
-    div.chart-slider{
-        position: absolute;
-
-        justify-self: center;
-        align-self: flex-end;
-
-        display: grid;
-        grid-template-columns: 50px auto 35px;
-        column-gap: 5px;
-        align-items: center;
-        justify-items: center;
-
-        background-color: transparentize(map-get($colors,primary-color),0.2);
-
-        padding: 10px;
-        bottom: 25px;
-        min-width: 300px;
-        border-radius: 8px;
-
-        input[type="range"]{
             width: -webkit-fill-available;
+            height: -webkit-fill-available;
+        }
+
+        img.banner{
+            object-fit: cover;
+        }
+
+        div.container{
+            display: grid;
+        }
+
+        div.container div.more-info{
+            display: flex;
+            flex-direction: column;
+
+            align-self: center;
+            justify-self: center;
+
+            h1, p{
+                color: map-get($map: $colors, $key: primary-color);
+                font-weight: 400;
+            }
+
+            .row{
+                justify-content: flex-end;
+            }
+
+            .row a{
+                margin: 15px;
+
+                align-self: flex-end;
+
+                width: unset;
+                max-width: unset;
+            }
         }
     }
 }

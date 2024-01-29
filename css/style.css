@@ -454,6 +454,39 @@ div.warning-overview div.alert-card p.alert-date-window {
   font-weight: 500;
 }
 
+.primary-button, .secondary-button {
+  color: #000000;
+}
+.primary-button:hover, .primary-button:active, .secondary-button:hover, .secondary-button:active {
+  color: #ebf8ff;
+}
+
+.primary-button {
+  padding: 15px 20px;
+  border-radius: 2px;
+  background-color: #ebf8ff;
+  transition: all 150ms;
+}
+.primary-button:hover {
+  background-color: #3999cc;
+}
+.primary-button:active {
+  background-color: #3c7899;
+}
+
+.secondary-button {
+  padding: 15px 20px;
+  border-radius: 2px;
+  background-color: #ebf8ff;
+  transition: all 150ms;
+}
+.secondary-button:hover {
+  background-color: #4177ec;
+}
+.secondary-button:active {
+  background-color: #3c7899;
+}
+
 .content .main-menu {
   width: calc(100vw - 25px);
   min-height: 50px;
@@ -486,33 +519,39 @@ div.warning-overview div.alert-card p.alert-date-window {
   border-bottom-right-radius: 8px;
 }
 
-.content.index {
+.content.index section#hero {
   position: relative;
-  display: grid;
+  min-height: 500px;
 }
-.content.index img {
+.content.index section#hero div.container, .content.index section#hero img.banner {
   position: absolute;
-  width: 100vw;
-  object-fit: cover;
-  justify-self: center;
-}
-.content.index div.chart-slider {
-  position: absolute;
-  justify-self: center;
-  align-self: flex-end;
-  display: grid;
-  grid-template-columns: 50px auto 35px;
-  column-gap: 5px;
-  align-items: center;
-  justify-items: center;
-  background-color: rgba(235, 248, 255, 0.8);
-  padding: 10px;
-  bottom: 25px;
-  min-width: 300px;
-  border-radius: 8px;
-}
-.content.index div.chart-slider input[type=range] {
   width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+.content.index section#hero img.banner {
+  object-fit: cover;
+}
+.content.index section#hero div.container {
+  display: grid;
+}
+.content.index section#hero div.container div.more-info {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+}
+.content.index section#hero div.container div.more-info h1, .content.index section#hero div.container div.more-info p {
+  color: #ebf8ff;
+  font-weight: 400;
+}
+.content.index section#hero div.container div.more-info .row {
+  justify-content: flex-end;
+}
+.content.index section#hero div.container div.more-info .row a {
+  margin: 15px;
+  align-self: flex-end;
+  width: unset;
+  max-width: unset;
 }
 
 .content.simulcast {
