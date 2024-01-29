@@ -20,31 +20,9 @@
         div.container{
             display: grid;
         }
+    }
 
-        div.container div.more-info{
-            display: flex;
-            flex-direction: column;
-
-            align-self: center;
-            justify-self: center;
-
-            h1, p{
-                color: map-get($map: $colors, $key: primary-color);
-                font-weight: 400;
-            }
-
-            .row{
-                justify-content: flex-end;
-            }
-
-            .row a{
-                margin: 15px;
-
-                align-self: flex-end;
-
-                width: unset;
-                max-width: unset;
-            }
-        }
+    pre{
+        color: white;
     }
 }

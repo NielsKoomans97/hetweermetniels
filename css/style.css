@@ -534,24 +534,8 @@ div.warning-overview div.alert-card p.alert-date-window {
 .content.index section#hero div.container {
   display: grid;
 }
-.content.index section#hero div.container div.more-info {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-self: center;
-}
-.content.index section#hero div.container div.more-info h1, .content.index section#hero div.container div.more-info p {
-  color: #ebf8ff;
-  font-weight: 400;
-}
-.content.index section#hero div.container div.more-info .row {
-  justify-content: flex-end;
-}
-.content.index section#hero div.container div.more-info .row a {
-  margin: 15px;
-  align-self: flex-end;
-  width: unset;
-  max-width: unset;
+.content.index pre {
+  color: white;
 }
 
 .content.simulcast {

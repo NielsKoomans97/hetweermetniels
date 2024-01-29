@@ -1,0 +1,6 @@
+id              bigint
+post_title      text
+post_content    longtext
+post_date       datetime
+post_modified   datetime
+post_status     varchar(20)

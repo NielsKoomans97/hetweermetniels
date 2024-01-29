@@ -1,16 +1,25 @@
 <section id="hero">
     <img class="banner" src="data/Static/weather_JannekeGuenther.jpg">
     <div class="container">
-        <div class="more-info">
-            <p>Eerst deed ik altijd één plak ham op mijn boterham, nu twee</p>
-            <h1>Vind uit wat voor gevolgen dit heeft voor <u>UW LEVEN</u>.</h1>
-            <div class="row">
-                <a href="/about" class="primary-button">Over</a>
-                <a href="/stiching-sterf" class="secondary-button">Ik ga liever nu dood</a>
-            </div>
+        <h3>Recente berichten</h3>
+        <div class="posts-spotlight">
+            <?php
+            $posts = $params['posts'];
 
+            foreach ($posts as $post) {
+                ?>
+                <div class="post_spotlight">
+                    <img class="post_image" src="<?= $post['post_image']; ?>">
+                    <p class="post_title">
+                        <?= $post['post_title']; ?>
+                    </p>
+                    <p class="post_date">
+                        <?= $post['post_date']; ?>
+                    </p>
+                </div>
+                <?php
+            }
+            ?>
         </div>
-
     </div>
 </section>
-
