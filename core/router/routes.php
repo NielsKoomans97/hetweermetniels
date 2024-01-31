@@ -14,9 +14,23 @@ get('/simulcast', function () {
     CreateView('simulcast', false, [], false);
 });
 
-get('/posts', function () {
+get('/admin/edit/$id', function ($id) {
+    if (isset($_SESSION['id'])) {
+        $param['post'] = FetchPost($id);
 
+        CreateView('editor', true, $param, true);
+    }
+    else{
+        header("Location: /login?message=U was niet ingelogd");
+    }
+});
 
+get('/login', function(){
+    CreateView('login', false, [], true);
+});
+
+get('/register', function(){
+    CreateView('register', false, [], true);
 });
 
 post('/get-radar', $core_path . '/data/download.php');
@@ -26,13 +40,6 @@ function CreateView($name, $requireAdmin, $params, $showHeader)
     $view_path = $_SERVER['DOCUMENT_ROOT'] . '/views';
     $core_path = $_SERVER['DOCUMENT_ROOT'] . '/core';
 
-    if ($requireAdmin == true) {
-        if (!isset($_SESSION['ID']) || empty($_SESSION['ID'])) {
-            echo 'You are not logged in';
-            die();
-        }
-    }
-
     require_once 'functions.php';
 
     if ($showHeader) {
@@ -41,7 +48,13 @@ function CreateView($name, $requireAdmin, $params, $showHeader)
         require_once $view_path . '/partials/header.nonav.view.php';
     }
 
+    if ($requireAdmin == true) {
+        $view_path .= '/admin';
+    }
+
     require_once $view_path . '/' . $name . '.view.php';
+
+    $view_path = $_SERVER['DOCUMENT_ROOT'] . '/views';
 
     require_once $view_path . '/partials/footer.view.php';
 }

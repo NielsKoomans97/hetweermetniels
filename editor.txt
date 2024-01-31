@@ -1,0 +1,31 @@
+editor
+|---> insert image
+    --> from file
+    --> from url
+|---> insert link
+    --> soundcloud
+    --> youtube
+    --> spotify
+    --> other
+|---> headings
+    --> size
+        --> large
+        --> medium
+        --> small
+    --> weight
+        --> light
+        --> semilight
+        --> normal
+        --> semibold
+        --> bold
+|---> textual styling
+    --> color
+    --> weight
+    --> underline
+    --> strikethrough
+    --> italic
+
+class veranderen op verandering config per element
+
+events:
+https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event

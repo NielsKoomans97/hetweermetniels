@@ -455,6 +455,9 @@ div.warning-overview div.alert-card p.alert-date-window {
 }
 
 .primary-button, .secondary-button {
+  border: none;
+  outline: none;
+  text-decoration: none;
   color: #000000;
 }
 .primary-button:hover, .primary-button:active, .secondary-button:hover, .secondary-button:active {
@@ -464,34 +467,33 @@ div.warning-overview div.alert-card p.alert-date-window {
 .primary-button {
   padding: 15px 20px;
   border-radius: 2px;
-  background-color: #ebf8ff;
+  background-color: #d8e4ff;
   transition: all 150ms;
 }
 .primary-button:hover {
-  background-color: #3999cc;
+  background-color: #4177ec;
 }
 .primary-button:active {
-  background-color: #3c7899;
+  background-color: #2f5ab6;
 }
 
 .secondary-button {
   padding: 15px 20px;
   border-radius: 2px;
-  background-color: #ebf8ff;
+  background-color: #d8edff;
   transition: all 150ms;
 }
 .secondary-button:hover {
-  background-color: #4177ec;
+  background-color: #35a6e7;
 }
 .secondary-button:active {
-  background-color: #3c7899;
+  background-color: #2f6eb6;
 }
 
 .content .main-menu {
   width: calc(100vw - 25px);
   min-height: 50px;
   max-height: 70px;
-  margin: 5px auto;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -579,6 +581,56 @@ div.warning-overview div.alert-card p.alert-date-window {
 .content.simulcast div.warning-overview {
   grid-column: 6/span 5;
   grid-row: 21/span 12;
+}
+
+section.login-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+}
+section.login-section p.info-label {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ebf8ff;
+  border-radius: 6px;
+}
+section.login-section p.info-label i.fa-info {
+  font-size: 2.6vh;
+  margin-right: 10px;
+  padding: 5px;
+  color: #3999cc;
+}
+section.login-section form.login-form {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 30% 30% 40%;
+  height: 150px;
+}
+section.login-section form.login-form input.submit-button {
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+section.login-section form.login-form a.primary-button {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+section.login-section form.login-form input[type=text], section.login-section form.login-form input[type=password] {
+  border: none;
+  outline: none;
+  border-radius: 4px;
+}
+section.login-section form.login-form label[for=txtPassword], section.login-section form.login-form label[for=txtUsername] {
+  margin-right: 10px;
+  text-align: end;
 }
 
 * {

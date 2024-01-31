@@ -1,6 +1,11 @@
 @use "../variables" as *;
 
 .primary-button, .secondary-button{
+    border: none;
+    outline: none;
+
+    text-decoration: none;
+
     color: map-get($map: $colors, $key: text-black);
 
     &:hover, &:active{
@@ -12,16 +17,16 @@
     padding: 15px 20px;
     border-radius: 2px;
 
-    background-color: map-get($map: $colors, $key: primary-color);
+    background-color: map-get($map: $primary-button, $key: default);
 
     transition: all 150ms;
 
     &:hover {
-        background-color: map-get($map: $colors, $key: hover-color);
+        background-color: map-get($map: $primary-button, $key: hover);
     }
 
     &:active {
-        background-color: map-get($colors, active-color);
+        background-color: map-get($primary-button, active);
     }
 }
 
@@ -29,16 +34,16 @@
     padding: 15px 20px;
     border-radius: 2px;
 
-    background-color: map-get($map: $colors, $key: primary-color);
+    background-color: map-get($map: $secondary-button, $key: default);
 
     transition: all 150ms;
 
     &:hover {
-        background-color: map-get($map: $colors, $key: hover-color-2);
+        background-color: map-get($map: $secondary-button, $key: hover);
     }
 
     &:active {
-        background-color: map-get($colors, active-color);
+        background-color: map-get($secondary-button, active);
     }
 }
 
