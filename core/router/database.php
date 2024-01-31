@@ -55,7 +55,7 @@ function Login($userName, $passWord)
 
         $password = $result['pass'];
         if (password_verify($passWord, $password)) {
-            return true;
+            return $result;
         } else {
             return false;
         }
@@ -63,6 +63,10 @@ function Login($userName, $passWord)
         var_dump('<pre>', $e);
         die();
     }
+}
+
+function SendRegistrationMail($userName){
+    
 }
 
 function Register($userName, $email, $passWord)
