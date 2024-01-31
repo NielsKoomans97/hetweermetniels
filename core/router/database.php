@@ -1,14 +1,21 @@
 <?php
-function FetchPosts()
+function Connect()
 {
     $db_host = 'localhost';
     $db_name = 'hetweermetniels';
     $db_user = 'root';
     $db_pass = '';
 
+    $conn = new PDO("mysql:host=$db_host; dbname=$db_name", $db_user, $db_pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    return $conn;
+}
+
+function FetchPosts()
+{
     try {
-        $conn = new PDO("mysql:host=$db_host; dbname=$db_name", $db_user, $db_pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = Connect();
 
         $query = "SELECT * FROM `posts`;";
         $statement = $conn->query($query);
@@ -23,14 +30,8 @@ function FetchPosts()
 
 function FetchPost($id)
 {
-    $db_host = 'localhost';
-    $db_name = 'hetweermetniels';
-    $db_user = 'root';
-    $db_pass = '';
-
     try {
-        $conn = new PDO("mysql:host=$db_host; dbname=$db_name", $db_user, $db_pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = Connect();
 
         $query = "SELECT * FROM `posts` WHERE id=$id;";
         $statement = $conn->query($query);
@@ -45,22 +46,26 @@ function FetchPost($id)
 
 function Login($userName, $passWord)
 {
-    $db_host = 'localhost';
-    $db_name = 'hetweermetniels';
-    $db_user = 'root';
-    $db_pass = '';
-
     try {
-        $conn = new PDO("mysql:host=$db_host; dbname=$db_name", $db_user, $db_pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $conn = Connect();
 
         $query = "SELECT * FROM `users` WHERE name=$userName;";
         $statement = $conn->query($query);
         $result = $statement->fetch();
 
-        return $result;
+        $password = $result['pass'];
+        if (password_verify($passWord, $password)) {
+            return true;
+        } else {
+            return false;
+        }
     } catch (PDOException $e) {
         var_dump('<pre>', $e);
         die();
     }
+}
+
+function Register($userName, $email, $passWord)
+{
+    
 }

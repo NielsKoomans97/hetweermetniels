@@ -1,0 +1,7 @@
+register
+|--->   email sturen met verificatielink
+    --->    verificatielink is 10 minuten geldig
+    --->    wanneer er op de link geklikt wordt, wordt er naar /register/process/$code genavigeerd
+    --->    binnen de route wordt er gecontroleerd of de actuele tijd binnen de 10 minuten valt na de aangegeven datetime binnen de row
+    --->    als de actuele tijd buiten de 10 minuten valt, automatisch navigeren naar /register
+    --->    als de actuele tijd binnen de 10 minuten valt, gebruikersnaam, email en wachtwoord verwerken in de 'users' table.
