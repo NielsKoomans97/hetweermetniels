@@ -608,7 +608,22 @@ section.login-section form.login-form {
   align-items: center;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: 30% 30% 40%;
-  height: 150px;
+  height: 200px;
+  width: 200px;
+}
+section.login-section form.login-form div.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+section.login-section form.login-form div.form-field#field_username {
+  grid-row: 1;
+}
+section.login-section form.login-form div.form-field#field_password {
+  grid-row: 2;
+}
+section.login-section form.login-form div.form-field#field_username, section.login-section form.login-form div.form-field#field_password {
+  grid-column: 1/span 2;
 }
 section.login-section form.login-form input.submit-button {
   grid-column: 2;
@@ -628,9 +643,85 @@ section.login-section form.login-form input[type=text], section.login-section fo
   outline: none;
   border-radius: 4px;
 }
-section.login-section form.login-form label[for=txtPassword], section.login-section form.login-form label[for=txtUsername] {
+
+section.register-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+}
+section.register-section p.info-label {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ebf8ff;
+  border-radius: 6px;
+}
+section.register-section p.info-label i.fa-info {
+  font-size: 2.6vh;
   margin-right: 10px;
-  text-align: end;
+  padding: 5px;
+  color: #3999cc;
+}
+section.register-section form.register-form {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto;
+  height: 350px;
+  width: 300px;
+}
+section.register-section form.register-form div.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+section.register-section form.register-form div.form-field#field_username {
+  grid-row: 1;
+}
+section.register-section form.register-form div.form-field#field_password {
+  grid-row: 2;
+}
+section.register-section form.register-form div.form-field#field_passwordConfirm {
+  grid-row: 3;
+}
+section.register-section form.register-form div.form-field#field_username, section.register-section form.register-form div.form-field#field_password, section.register-section form.register-form div.form-field#field_passwordConfirm {
+  grid-column: 1/span 2;
+}
+section.register-section form.register-form div.form-field p {
+  margin: 0;
+}
+section.register-section form.register-form div.form-field p.form-field-description {
+  margin-top: 2px;
+}
+section.register-section form.register-form div.form-field p.field-description-item {
+  font-size: 1vh;
+}
+section.register-section form.register-form div.form-field p.field-description-item i {
+  margin-right: 5px;
+}
+section.register-section form.register-form div.form-field p.field-description-item.allowed {
+  color: #68b36d;
+}
+section.register-section form.register-form input.submit-button {
+  grid-column: 2;
+  grid-row: 4;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+section.register-section form.register-form a.primary-button {
+  grid-column: 1;
+  grid-row: 4;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+section.register-section form.register-form input[type=text], section.register-section form.register-form input[type=password] {
+  border: none;
+  outline: none;
+  border-radius: 4px;
 }
 
 * {

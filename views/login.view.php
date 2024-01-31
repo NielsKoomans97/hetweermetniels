@@ -1,11 +1,16 @@
 <section class="login-section">
-    <p class="info-label"><i class="fa-solid fa-info"></i><?= $_GET['message']; ?></p>
+    <h2>Inloggen</h2>
+    <?php if (isset($_GET['message'])) { ?> <p class="info-label"><i class="fa-solid fa-info"></i><?= $_GET['message'] ?? ''; ?></p> <?php } ?>
     <form class="login-form" action="/login/process" method="post">
-        <label for="txtUsername">Gebruikersnaam:</label>
-        <input type="text" id="txtUsername" name="txtUsername">
+    <div class="form-field" id="field_username">
+            <label for="txtUsername">Gebruikersnaam:</label>
+            <input type="text" id="txtUsername" name="txtUsername">
+        </div>
 
-        <label for="txtPassword">Wachtwoord:</label>
-        <input type="password" id="txtPassword" name="txtPassword">
+        <div class="form-field" id="field_password">
+            <label for="txtPassword">Wachtwoord:</label>
+            <input type="password" id="txtPassword" name="txtPassword">
+        </div>
 
         <a class="primary-button" href="/register">Registreren</a>
         <input class="secondary-button submit-button" type="submit" value="Inloggen">

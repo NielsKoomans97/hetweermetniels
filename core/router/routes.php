@@ -29,6 +29,10 @@ get('/login', function(){
     CreateView('login', false, [], true);
 });
 
+post('/login/process', function() {
+    
+});
+
 get('/register', function(){
     CreateView('register', false, [], true);
 });

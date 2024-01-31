@@ -1,7 +1,7 @@
 @use "../variables" as *;
 @use "../helpers" as *;
 
-section.login-section {
+section.register-section {
     display: flex;
     flex-direction: column;
 
@@ -27,16 +27,16 @@ section.login-section {
         }
     }
 
-    form.login-form {
+    form.register-form {
         display: grid;
 
         align-items: center;
 
         grid-template-columns: repeat(2, 50%);
-        grid-template-rows: 30% 30% 40%;
+        grid-template-rows: auto;
 
-        height: 200px;
-        width: 200px;
+        height: 350px;
+        width: 300px;
 
         div.form-field{
             display: flex;
@@ -52,24 +52,50 @@ section.login-section {
                 grid-row: 2;
             }
 
+            &#field_passwordConfirm{
+                grid-row: 3;
+            }
+
             &#field_username,
-            &#field_password
-            {
+            &#field_password,
+            &#field_passwordConfirm{
                 grid-column: 1 / span 2;
+            }
+
+            p{
+                margin: 0;
+
+                &.form-field-description{
+                    margin-top: 2px;
+                }
+
+                &.field-description-item{
+                    font-size: map-get($map: $font-sizes, $key: field-description-item);
+
+                    i{
+                        margin-right: 5px;
+                    }
+
+                    &.allowed{
+                        color: map-get($map: $colors, $key: green-warning);
+                    }
+                }
             }
         }
 
         input.submit-button {
             grid-column: 2;
-            grid-row: 3;
+            grid-row: 4;
 
             margin-top: 10px;
             padding: 5px 10px;
+
+            text-align: center;
         }
 
         a.primary-button{
             grid-column: 1;
-            grid-row: 3;
+            grid-row: 4;
 
             margin-top: 10px;
             padding: 5px 10px;
