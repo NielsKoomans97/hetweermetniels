@@ -12,7 +12,7 @@
             <input type="password" id="txtPassword" name="txtPassword">
         </div>
 
-        <a class="primary-button" href="/register">Registreren</a>
-        <input class="secondary-button submit-button" type="submit" value="Inloggen">
+        <a class="secondary-button" href="/register">Registreren</a>
+        <input class="primary-button submit-button" type="submit" value="Inloggen">
     </form>
 </section>

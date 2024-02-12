@@ -7,19 +7,26 @@ h2 {
 }
 
 h3 {
-  font-size: 1.8vh;
+  font-size: 1.9vh;
 }
 
 h4 {
-  font-size: 1.6vh;
+  font-size: 1.8vh;
 }
 
 h5 {
-  font-size: 1.4vh;
+  font-size: 1.7vh;
 }
 
 h6 {
-  font-size: 1.2vh;
+  font-size: 1.6vh;
+}
+
+p,
+label,
+a,
+input {
+  font-size: 1.6vh !important;
 }
 
 /* cyrillic */
@@ -450,7 +457,7 @@ div.warning-overview div.alert-card p.alert-title {
   font-weight: 500;
 }
 div.warning-overview div.alert-card p.alert-date-window {
-  font-size: 1.2vh;
+  font-size: 1.6vh;
   font-weight: 500;
 }
 
@@ -467,7 +474,7 @@ div.warning-overview div.alert-card p.alert-date-window {
 .primary-button {
   padding: 15px 20px;
   border-radius: 2px;
-  background-color: #d8e4ff;
+  background-color: #cbdaff;
   transition: all 150ms;
 }
 .primary-button:hover {
@@ -480,7 +487,7 @@ div.warning-overview div.alert-card p.alert-date-window {
 .secondary-button {
   padding: 15px 20px;
   border-radius: 2px;
-  background-color: #d8edff;
+  background-color: #c1ddf8;
   transition: all 150ms;
 }
 .secondary-button:hover {
@@ -608,8 +615,8 @@ section.login-section form.login-form {
   align-items: center;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: 30% 30% 40%;
-  height: 200px;
-  width: 200px;
+  height: 22vh;
+  width: 18vw;
 }
 section.login-section form.login-form div.form-field {
   display: flex;
@@ -631,7 +638,7 @@ section.login-section form.login-form input.submit-button {
   margin-top: 10px;
   padding: 5px 10px;
 }
-section.login-section form.login-form a.primary-button {
+section.login-section form.login-form a.secondary-button {
   grid-column: 1;
   grid-row: 3;
   margin-top: 10px;
@@ -651,6 +658,9 @@ section.register-section {
   justify-content: center;
   height: calc(100vh - 70px);
 }
+section.register-section h2 {
+  text-decoration: underline;
+}
 section.register-section p.info-label {
   display: flex;
   align-items: center;
@@ -669,8 +679,8 @@ section.register-section form.register-form {
   align-items: center;
   grid-template-columns: repeat(2, 50%);
   grid-template-rows: auto;
-  height: 350px;
-  width: 300px;
+  height: 45vh;
+  width: 25vw;
 }
 section.register-section form.register-form div.form-field {
   display: flex;
@@ -680,13 +690,16 @@ section.register-section form.register-form div.form-field {
 section.register-section form.register-form div.form-field#field_username {
   grid-row: 1;
 }
-section.register-section form.register-form div.form-field#field_password {
+section.register-section form.register-form div.form-field#field_email {
   grid-row: 2;
 }
-section.register-section form.register-form div.form-field#field_passwordConfirm {
+section.register-section form.register-form div.form-field#field_password {
   grid-row: 3;
 }
-section.register-section form.register-form div.form-field#field_username, section.register-section form.register-form div.form-field#field_password, section.register-section form.register-form div.form-field#field_passwordConfirm {
+section.register-section form.register-form div.form-field#field_passwordConfirm {
+  grid-row: 4;
+}
+section.register-section form.register-form div.form-field#field_username, section.register-section form.register-form div.form-field#field_email, section.register-section form.register-form div.form-field#field_password, section.register-section form.register-form div.form-field#field_passwordConfirm {
   grid-column: 1/span 2;
 }
 section.register-section form.register-form div.form-field p {
@@ -696,24 +709,27 @@ section.register-section form.register-form div.form-field p.form-field-descript
   margin-top: 2px;
 }
 section.register-section form.register-form div.form-field p.field-description-item {
-  font-size: 1vh;
+  display: flex;
+  align-items: center;
+  font-size: 1.2vh;
+  color: #fa6331;
 }
 section.register-section form.register-form div.form-field p.field-description-item i {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 section.register-section form.register-form div.form-field p.field-description-item.allowed {
   color: #68b36d;
 }
 section.register-section form.register-form input.submit-button {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 5;
   margin-top: 10px;
   padding: 5px 10px;
   text-align: center;
 }
-section.register-section form.register-form a.primary-button {
+section.register-section form.register-form a.secondary-button {
   grid-column: 1;
-  grid-row: 4;
+  grid-row: 5;
   margin-top: 10px;
   padding: 5px 10px;
   text-align: center;
@@ -722,6 +738,11 @@ section.register-section form.register-form input[type=text], section.register-s
   border: none;
   outline: none;
   border-radius: 4px;
+  padding: 10px;
+}
+section.register-section form.register-form input[type=password] {
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 * {
@@ -741,7 +762,7 @@ body {
 
 p {
   margin: 0;
-  font-size: 1.4vh;
+  font-size: 1.7vh;
 }
 
 div.console-log {

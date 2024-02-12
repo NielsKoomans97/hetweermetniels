@@ -65,11 +65,45 @@ function Login($userName, $passWord)
     }
 }
 
-function SendRegistrationMail($userName){
-    
+function randHash($len = 64)
+{
+    return substr(hash('sha256', openssl_random_pseudo_bytes(20)), -$len);
 }
 
 function Register($userName, $email, $passWord)
 {
-    
+    try {
+        $conn = Connect();
+
+        $hashedPassword = substr(password_hash($passWord, 'argon2i'), 0, 32);
+        $registrationCode = randHash(16);
+        $registrationTime = date('Y-m-d H:m:s');
+
+        $query = "INSERT INTO `registrations` (`id`, `username`, `email`, `password`, `registration_code`, `registration_time`) VALUES (NULL,'" . $userName . "','" . $email . "','" . $hashedPassword . "','" . $registrationCode . "','" . $registrationTime . "');";
+        $statement = $conn->query($query);
+        $statement->execute();
+
+        $emailContent = 'Dit is jouw activatie-email. Klik op de onderstaande link om de registratie te voltooien. <a href="http://hetweermetniels.test/register/process/'.$registrationCode.'"></a>';
+
+        mail($email, 'Activatielink Hetweermetniels', $emailContent);
+    } catch (PDOException $e) {
+        var_dump('<pre>', $e);
+        die();
+    }
+}
+
+function Activate($registrationCode)
+{
+    try {
+        $conn = Connect();
+
+        $query = "INSERT INTO `users` (`username`, `password`, `email`) SELECT username, email, password FROM `registrations` WHERE registration_code='".$registrationCode."';";
+        $statement = $conn->query($query);
+        $statement->execute();
+
+        header('Location: /');
+    } catch (PDOException $e) {
+        var_dump('<pre>', $e);
+        die();
+    }
 }

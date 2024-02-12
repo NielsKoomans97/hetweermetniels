@@ -19,22 +19,31 @@ get('/admin/edit/$id', function ($id) {
         $param['post'] = FetchPost($id);
 
         CreateView('editor', true, $param, true);
-    }
-    else{
-        header("Location: /login?message=U was niet ingelogd");
+    } else {
+        header('Location: /login?message=U was niet ingelogd');
     }
 });
 
-get('/login', function(){
+get('/login', function () {
     CreateView('login', false, [], true);
 });
 
-post('/login/process', function() {
-    
+post('/login/process', function () {});
+
+get('/register', function () {
+    CreateView('register', false, [], true);
 });
 
-get('/register', function(){
-    CreateView('register', false, [], true);
+post('/register/process', function () {
+    $userName = $_POST['txtUsername'];
+    $email = $_POST['txtEmail'];
+    $passWord = $_POST['txtPassword'];
+
+    Register($userName, $email, $passWord);
+});
+
+get('/register/process/$code', function($code){
+    Activate($code);
 });
 
 post('/get-radar', $core_path . '/data/download.php');

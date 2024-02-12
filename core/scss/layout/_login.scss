@@ -35,8 +35,8 @@ section.login-section {
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: 30% 30% 40%;
 
-        height: 200px;
-        width: 200px;
+        height: 22vh;
+        width: 18vw;
 
         div.form-field{
             display: flex;
@@ -67,7 +67,7 @@ section.login-section {
             padding: 5px 10px;
         }
 
-        a.primary-button{
+        a.secondary-button{
             grid-column: 1;
             grid-row: 3;
 

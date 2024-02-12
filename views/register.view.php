@@ -7,6 +7,11 @@
             <input type="text" id="txtUsername" name="txtUsername">
         </div>
 
+        <div class="form-field" id="field_email">
+            <label for="txtEmail">Emailadres:</label>
+            <input type="text" id="txtEmail" name="txtEmail">
+        </div>
+
         <div class="form-field" id="field_password">
             <label for="txtPassword">Wachtwoord:</label>
             <input type="password" id="txtPassword" name="txtPassword">
@@ -23,8 +28,8 @@
             <input type="password" id="txtPasswordConfirm" name="txtPasswordConfirm">
         </div>
 
-        <a class="primary-button" href="/login">Inloggen</a>
-        <input class="secondary-button submit-button" type="submit" value="Registreren">
+        <a class="secondary-button" href="/login">Inloggen</a>
+        <input class="primary-button submit-button" type="submit" value="Registreren">
     </form>
     <script src="js/password_securitycheck.js"></script>
 </section>

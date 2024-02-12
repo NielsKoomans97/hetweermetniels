@@ -15,24 +15,24 @@ $colors: (
 $primary-button:(
     "hover":#4177ec,
     "active": #2f5ab6,
-    "default": #d8e4ff
+    "default": #cbdaff
 );
 $secondary-button:(
     "hover":#35a6e7,
     "active": #2f6eb6,
-    "default": #d8edff
+    "default": #c1ddf8
 );
 $typo: (
     "font-family": ('Jost', sans-serif),
 );
 $font-sizes: (
-    "base": 1.2vh,
-    "h6": 1.2vh,
-    "h5": 1.4vh,
-    "h4": 1.6vh,
-    "h3": 1.8vh,
+    "base": 1.6vh,
+    "h6": 1.6vh,
+    "h5": 1.7vh,
+    "h4": 1.8vh,
+    "h3": 1.9vh,
     "h2": 2.0vh,
     "h1": 2.2vh,
     "info-icon":2.6vh,
-    "field-description-item": 1vh,
+    "field-description-item": 1.2vh,
 );
