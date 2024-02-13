@@ -73,7 +73,7 @@ class SqlClient implements ISqlClient
     {
         $query = "SELECT " . $this->BuildArrayString($columns, BuildMode::OnlyKeys) . " 
                 FROM `" . $this->Credentials->Table . "` 
-                WHERE EXISTS (" . $this->BuildArrayString($conditions) . ");";
+                " . !empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : "";
 
         return $this->Fetch($query);
     }
@@ -82,8 +82,9 @@ class SqlClient implements ISqlClient
     {
         $query = "INSERT INTO " . $this->Credentials->Table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ") 
                 VALUES (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ") 
-                WHERE (" . $this->BuildArrayString($conditions) . ");";
+                " . !empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : "";
 
+                
         return $this->Execute($query);
     }
 
