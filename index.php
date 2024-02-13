@@ -1,3 +1,3 @@
-<?php require_once 'core/router/routes.php';
+<?php require_once 'core/routing/routes.php';
 
 ?>
