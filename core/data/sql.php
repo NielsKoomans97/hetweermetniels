@@ -2,8 +2,8 @@
 
 interface ISqlClient
 {
-    public function Select($columns = [], $conditions = []);
-    public function Insert($values, $conditions = []);
+    public function Select($table, $columns = [], $conditions = []);
+    public function Insert($table, $values, $conditions = []);
     public function Move($columns, $to, $condition = '');
     public function Delete($condition = '');
 }
@@ -24,7 +24,7 @@ class SqlClient implements ISqlClient
     {
         $this->Credentials = $credentials_;
 
-
+        $this->Connection = new PDO("mysql:host=" . $this->Credentials->Host . "; dbname=" . $this->Credentials->DatabaseName, $this->Credentials->Username, $this->Credentials->Password);
     }
 
     private function Execute($query)
@@ -33,6 +33,7 @@ class SqlClient implements ISqlClient
             $statement = $this->Connection->query($query);
             return $statement->execute();
         } catch (PDOException $exc) {
+            echo $exc;
             return false;
         }
     }
@@ -43,6 +44,7 @@ class SqlClient implements ISqlClient
             $statement = $this->Connection->query($query);
             return $statement->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $exc) {
+            echo $exc;
             return false;
         }
     }
@@ -71,20 +73,20 @@ class SqlClient implements ISqlClient
         return $result;
     }
 
-    public function Select($columns = [], $conditions = [])
+    public function Select($table, $columns = [], $conditions = [])
     {
-        $query = "SELECT " . $this->BuildArrayString($columns, BuildMode::OnlyKeys) . "
-                FROM `" . $this->Credentials->Table . "`
-                " . !empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : "";
+        $query = "SELECT " . (!empty($columns) ? $this->BuildArrayString($columns, BuildMode::OnlyKeys) : '*') . "
+                FROM `" . $table . "`
+                " . (!empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : ";");
 
         return $this->Fetch($query);
     }
 
-    public function Insert($values, $conditions = [])
+    public function Insert($table, $values, $conditions = [])
     {
-        $query = "INSERT INTO " . $this->Credentials->Table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ")
+        $query = "INSERT INTO " . $table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ")
                 VALUES (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ")
-                " . !empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : "";
+                " . (!empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : ";");
 
 
         return $this->Execute($query);
@@ -103,15 +105,13 @@ class SqlCredentials
 {
     public string $Host;
     public string $DatabaseName;
-    public string $Table;
     public string $Username;
     public string $Password;
 
-    public function __construct($host_, $databaseName_, $table_, $username_, $password_)
+    public function __construct($host_, $databaseName_, $username_, $password_)
     {
         $this->Host = $host_;
         $this->DatabaseName = $databaseName_;
-        $this->Table = $table_;
         $this->Username = $username_;
         $this->Password = $password_;
     }

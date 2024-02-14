@@ -25,7 +25,7 @@ function view($name, $params, $admin, $include_header = true)
         require_once $header_path;
     }
 
-    require_once $document_root . '/core/data/database.php';
+    require_once $document_root . '/core/data/sql.php';
 
 
     require_once $file_name;
