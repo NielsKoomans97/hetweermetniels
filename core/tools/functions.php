@@ -35,6 +35,7 @@ function view($name, $admin, $params = [], $include_header = true)
 function component($name, $params = [])
 {
     $document_root = $_SERVER['DOCUMENT_ROOT'];
+    require_once $document_root . '/core/data/SqlClient.php';
 
     require_once $document_root . '/partials/components/' . $name . '.view.php';
 }

@@ -1,5 +1,6 @@
 $colors: (
     'background-color': #dbedff,
+    'exclamation-background': #c8e3ff,
 );
 
 $border-radius: (
@@ -10,4 +11,10 @@ $border-radius: (
     '500': 32px,
     '600': 64px,
     '700': 128px,
+);
+
+$typo: (
+    'exclamation': 2.6vh,
+    'h1': 3vh,
+    'h2': 2vh,
 );
