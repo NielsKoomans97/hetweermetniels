@@ -4,11 +4,11 @@
     section.info-section .container .col-md-6{
         display: grid;
 
-        grid-template-columns: 90% 10%;
+        grid-template-columns: auto 56px;
         grid-template-rows: repeat(2, 50%);
 
         margin: auto;
-        padding: 15px;
+        padding: 10px;
 
         background-color: map-get($map: $colors, $key: background-color);
         border-radius: map-get($map: $border-radius, $key: '200');
@@ -35,7 +35,8 @@
 
             border-radius: map-get($map: $border-radius, $key: '200');
 
-            background-color: map-get($map: $colors, $key: exclamation-background);
+            background-color: map-get($map: $colors, $key: link-hover);
+            color: map-get($map: $colors, $key: exclamation-background);
         }
 
         h1{

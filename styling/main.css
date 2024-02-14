@@ -2,6 +2,15 @@ body {
   font-family: "Jost", sans-serif !important;
 }
 
+a {
+  text-decoration: none !important;
+  transition: 180ms all;
+  color: #5a4cdd !important;
+}
+a:hover {
+  color: #282071 !important;
+}
+
 div.content {
   height: 100vh;
   width: 100vw;
@@ -12,16 +21,16 @@ h1 {
 }
 
 h2 {
-  font-size: 2vh !important;
+  font-size: 1.8vh !important;
 }
 
 .content.not_found section.info-section .container .col-md-6 {
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: auto 56px;
   grid-template-rows: repeat(2, 50%);
   margin: auto;
-  padding: 15px;
-  background-color: #dbedff;
+  padding: 10px;
+  background-color: #c8c9ff;
   border-radius: 4px;
 }
 .content.not_found section.info-section .container .col-md-6 h1, .content.not_found section.info-section .container .col-md-6 h2, .content.not_found section.info-section .container .col-md-6 i {
@@ -39,7 +48,8 @@ h2 {
   height: 100%;
   width: 100%;
   border-radius: 4px;
-  background-color: #a0ceff;
+  background-color: #282071;
+  color: #f2fdff;
 }
 .content.not_found section.info-section .container .col-md-6 h1 {
   grid-column: 1;
