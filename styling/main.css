@@ -1,3 +1,7 @@
+body {
+  font-family: "Jost", sans-serif !important;
+}
+
 div.content {
   height: 100vh;
   width: 100vw;
@@ -13,26 +17,29 @@ h2 {
 
 .content.not_found section.info-section .container .col-md-6 {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 90% 10%;
   grid-template-rows: repeat(2, 50%);
   margin: auto;
-  padding: 10px;
+  padding: 15px;
   background-color: #dbedff;
   border-radius: 4px;
+}
+.content.not_found section.info-section .container .col-md-6 h1, .content.not_found section.info-section .container .col-md-6 h2, .content.not_found section.info-section .container .col-md-6 i {
+  width: fit-content;
+  align-self: center;
+  margin: 5px;
 }
 .content.not_found section.info-section .container .col-md-6 i {
   grid-column: 2;
   grid-row: 1;
   justify-self: flex-end;
+  text-align: center;
   font-size: 2.6vh;
   font-weight: 800;
-  padding: 3px 12px;
+  height: 100%;
+  width: 100%;
   border-radius: 4px;
-  background-color: #c8e3ff;
-}
-.content.not_found section.info-section .container .col-md-6 h1, .content.not_found section.info-section .container .col-md-6 h2, .content.not_found section.info-section .container .col-md-6 i {
-  width: fit-content;
-  align-self: center;
+  background-color: #a0ceff;
 }
 .content.not_found section.info-section .container .col-md-6 h1 {
   grid-column: 1;
@@ -42,7 +49,7 @@ h2 {
 .content.not_found section.info-section .container .col-md-6 h2 {
   grid-column: 1;
   grid-row: 2;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=main.css.map */
