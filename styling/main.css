@@ -1,0 +1,12 @@
+div.content {
+  height: 100vh;
+  width: 100vw;
+}
+
+.content.not_found section.info-section .container .col-md-6 {
+  margin: auto;
+  background-color: #dbedff;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=main.css.map */

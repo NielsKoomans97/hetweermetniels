@@ -43,7 +43,7 @@ function route($route, $path_to_include)
 		}
 	}
 	if ($route == "/404") {
-		include_once __DIR__ . "/$path_to_include";
+		include_once $_SERVER['DOCUMENT_ROOT'] . "/views/404.view.php";
 		exit();
 	}
 	$request_url = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);

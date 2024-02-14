@@ -1,0 +1,10 @@
+@use '../variables' as *;
+
+.content.not_found {
+    section.info-section .container .col-md-6{
+        margin: auto;
+
+        background-color: map-get($map: $colors, $key: background-color);
+        border-radius: map-get($map: $border-radius, $key: '200');
+    }
+}

@@ -1,11 +1,11 @@
 <?php
 
-function view($name, $params, $admin, $include_header = true)
+function view($name, $admin, $params = [], $include_header = true)
 {
     $document_root = $_SERVER['DOCUMENT_ROOT'];
 
     if ($admin) {
-        if (!isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+        if (!isset($_SESSION['id']) && empty($_SESSION['id'])) {
             header('Location: /login');
             die();
         }
@@ -17,7 +17,7 @@ function view($name, $params, $admin, $include_header = true)
 
     if (!is_file($file_name)) {
         header('Location: /404');
-        die();
+        exit();
     }
 
     if ($include_header) {
@@ -25,15 +25,14 @@ function view($name, $params, $admin, $include_header = true)
         require_once $header_path;
     }
 
-    require_once $document_root . '/core/data/sql.php';
-
+    require_once $document_root . '/core/data/SqlClient.php';
 
     require_once $file_name;
 
     require_once $document_root . '/partials/footer.view.php';
 }
 
-function component($name, $params)
+function component($name, $params = [])
 {
     $document_root = $_SERVER['DOCUMENT_ROOT'];
 

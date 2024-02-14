@@ -1,7 +1,8 @@
 <?php
-$database = new Database('localhost', 'hetweermetniels', 'root', '');
-$posts = $database->FetchPosts();
+$sqlCreds = new SqlCredentials('localhost', 'hetweermetniels', 'root', '');
+$sqlClient = new SqlClient($sqlCreds);
 
+$posts = $sqlClient->Select('posts');
 ?>
 
 <div class="container">
@@ -9,10 +10,6 @@ $posts = $database->FetchPosts();
         <?php
 
         var_dump('<pre>', $posts);
-
-        foreach ($posts as $post) {
-            var_dump($post);
-        }
         ?>
     </div>
 </div>
