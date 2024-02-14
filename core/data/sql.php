@@ -2,8 +2,8 @@
 
 interface ISqlClient
 {
-    public function Select($columns = '');
-    public function Insert($values, $condition = '');
+    public function Select($columns = [], $conditions = []);
+    public function Insert($values, $conditions = []);
     public function Move($columns, $to, $condition = '');
     public function Delete($condition = '');
 }
@@ -23,6 +23,8 @@ class SqlClient implements ISqlClient
     public function __construct($credentials_)
     {
         $this->Credentials = $credentials_;
+
+
     }
 
     private function Execute($query)
@@ -71,8 +73,8 @@ class SqlClient implements ISqlClient
 
     public function Select($columns = [], $conditions = [])
     {
-        $query = "SELECT " . $this->BuildArrayString($columns, BuildMode::OnlyKeys) . " 
-                FROM `" . $this->Credentials->Table . "` 
+        $query = "SELECT " . $this->BuildArrayString($columns, BuildMode::OnlyKeys) . "
+                FROM `" . $this->Credentials->Table . "`
                 " . !empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : "";
 
         return $this->Fetch($query);
@@ -80,11 +82,11 @@ class SqlClient implements ISqlClient
 
     public function Insert($values, $conditions = [])
     {
-        $query = "INSERT INTO " . $this->Credentials->Table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ") 
-                VALUES (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ") 
+        $query = "INSERT INTO " . $this->Credentials->Table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ")
+                VALUES (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ")
                 " . !empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : "";
 
-                
+
         return $this->Execute($query);
     }
 
@@ -100,13 +102,15 @@ class SqlClient implements ISqlClient
 class SqlCredentials
 {
     public string $Host;
+    public string $DatabaseName;
     public string $Table;
     public string $Username;
     public string $Password;
 
-    public function __construct($host_, $table_, $username_, $password_)
+    public function __construct($host_, $databaseName_, $table_, $username_, $password_)
     {
         $this->Host = $host_;
+        $this->DatabaseName = $databaseName_;
         $this->Table = $table_;
         $this->Username = $username_;
         $this->Password = $password_;
