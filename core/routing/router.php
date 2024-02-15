@@ -66,13 +66,26 @@ function route($route, $path_to_include)
 		return;
 	}
 	$parameters = [];
-	for ($__i__ = 0; $__i__ < count($route_parts); $__i__++) {
-		$route_part = $route_parts[$__i__];
+	var_dump('<pre>', $request_url_parts);
+
+	if (count($route_parts) > 1) {
+		for ($__i__ = 0; $__i__ < count($route_parts); $__i__++) {
+			$route_part = $route_parts[$__i__];
+			if (preg_match("/^[$]/", $route_part)) {
+				$route_part = ltrim($route_part, '$');
+				array_push($parameters, $request_url_parts[$__i__]);
+				$$route_part = $request_url_parts[$__i__];
+			} else if ($route_parts[$__i__] != $request_url_parts[$__i__]) {
+				return;
+			}
+		}
+	} else {
+		$route_part = $route_parts[0];
 		if (preg_match("/^[$]/", $route_part)) {
 			$route_part = ltrim($route_part, '$');
-			array_push($parameters, $request_url_parts[$__i__]);
-			$$route_part = $request_url_parts[$__i__];
-		} else if ($route_parts[$__i__] != $request_url_parts[$__i__]) {
+			array_push($parameters, $request_url_parts[0]);
+			$$route_part = $request_url_parts[0];
+		} else if ($route_parts[0] != $request_url_parts[0]) {
 			return;
 		}
 	}

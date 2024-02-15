@@ -7,6 +7,7 @@ get('/', function () {
     view('index', [], false);
 });
 
-get('/$path', function ($path) {
-    view($path, [], false);
+any('*', function () {
+    var_dump('<pre>',$_SERVER);
+    // view($path, [], false);
 });
