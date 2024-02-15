@@ -24,7 +24,7 @@ h2 {
   font-size: 1.8vh !important;
 }
 
-.content.not_found section.info-section .container .col-md-6 {
+.content.not-found section.info-section .container .col-md-6 {
   display: grid;
   grid-template-columns: auto 56px;
   grid-template-rows: repeat(2, 50%);
@@ -33,12 +33,12 @@ h2 {
   background-color: #c8c9ff;
   border-radius: 4px;
 }
-.content.not_found section.info-section .container .col-md-6 h1, .content.not_found section.info-section .container .col-md-6 h2, .content.not_found section.info-section .container .col-md-6 i {
+.content.not-found section.info-section .container .col-md-6 h1, .content.not-found section.info-section .container .col-md-6 h2, .content.not-found section.info-section .container .col-md-6 i {
   width: fit-content;
   align-self: center;
   margin: 5px;
 }
-.content.not_found section.info-section .container .col-md-6 i {
+.content.not-found section.info-section .container .col-md-6 i {
   grid-column: 2;
   grid-row: 1;
   justify-self: flex-end;
@@ -52,12 +52,12 @@ h2 {
   background-color: #282071;
   color: #f2fdff;
 }
-.content.not_found section.info-section .container .col-md-6 h1 {
+.content.not-found section.info-section .container .col-md-6 h1 {
   grid-column: 1;
   grid-row: 1;
   font-weight: 200;
 }
-.content.not_found section.info-section .container .col-md-6 h2 {
+.content.not-found section.info-section .container .col-md-6 h2 {
   grid-column: 1;
   grid-row: 2;
   font-weight: 600;

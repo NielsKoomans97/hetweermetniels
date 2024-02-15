@@ -15,4 +15,4 @@
 
 <body>
     <div class="content <?php echo substr(($_SERVER['REQUEST_URI'] != '/' ? (str_contains($_SERVER['REQUEST_URI'],'404') ? '/not_found' : $_SERVER['REQUEST_URI']) : 'index'), 1) ?>">
-        <?= component('menu') ?>
+
