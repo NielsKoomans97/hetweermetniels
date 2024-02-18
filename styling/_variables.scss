@@ -1,8 +1,12 @@
 $colors: (
     'background-color': #c8c9ff,
     'exclamation-background': #f2fdff,
-    'link-color': #5a4cdd,
-    'link-hover': #282071,
+    'link-color': #3072b0,
+    'link-hover': #06285c,
+    'text-white': #ffffff,
+    'text-shadow': #4392d6,
+    'text-shadow-2': #149797,
+    'button-shadow': #000000,
 );
 
 $border-radius: (
@@ -16,7 +20,11 @@ $border-radius: (
 );
 
 $typo: (
+    'hero-title': 3.4vh,
+    'hero-description': 3.2vh,
     'exclamation': 2.6vh,
     'h1': 3vh,
     'h2': 1.8vh,
+    'a': 1.2vh,
+    'menu-item': 1.4vh,
 );

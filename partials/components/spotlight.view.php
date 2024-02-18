@@ -2,7 +2,7 @@
 $sqlCreds = new SqlCredentials('localhost', 'hetweermetniels', 'root', '');
 $sqlClient = new SqlClient($sqlCreds);
 
-$posts = $sqlClient->Select('posts');
+$posts = $sqlClient->Select('posts', [], ['post_spotlight' => 1])[0];
 ?>
 
 <div class="container">

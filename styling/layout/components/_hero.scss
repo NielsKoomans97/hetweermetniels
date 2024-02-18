@@ -1,0 +1,63 @@
+@use '../../variables' as *;
+
+section.hero-section{
+    position: relative;
+
+    height: 40vh;
+
+    img#hero-bg{
+        position: absolute;
+
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+
+        object-fit: cover;
+    }
+
+    .mask-layer{
+        position: absolute;
+
+        height: -webkit-fill-available;
+        width: 60vw;
+
+        border-bottom-right-radius: 155%;
+
+        background-color: transparentize($color: map-get($colors, link-hover), $amount: .3);
+        border-right: transparentize($color: map-get($colors, link-color), $amount: 0.5) 2px solid;
+    }
+
+    .container{
+        position: relative;
+
+        display: grid;
+
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+
+        .col-md-6{
+            position: absolute;
+
+            align-self: center;
+            justify-self: flex-start;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: baseline;
+
+
+        }
+
+        .col-md-6 .title{
+            font-size: map-get($map: $typo, $key: hero-title);
+        }
+
+        .col-md-6 .title, .description{
+            font-weight: 400;
+
+            color: map-get($map: $colors, $key: text-white);
+            text-shadow: 2px 2px map-get($map: $colors, $key: link-color),
+                        4px 4px map-get($map: $colors, $key: link-hover);
+        }
+    }
+}

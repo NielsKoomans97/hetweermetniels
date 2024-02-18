@@ -49,13 +49,13 @@ class SqlClient implements ISqlClient
         $result = '';
         $index = 0;
 
-        foreach ($array as $item) {
+        foreach ($array as $key => $item) {
             if ($buildMode == BuildMode::Both) {
-                $result .= `$item=$array[$item]`;
+                $result .= $key . '=\'' . $item . '\'';
             } elseif ($buildMode == BuildMode::OnlyKeys) {
-                $result .= `$item`;
+                $result .= $key;
             } else {
-                $result .= `$array[$item]`;
+                $result .= $item;
             }
 
             if ($index < (count($array) - 1)) {
@@ -70,19 +70,18 @@ class SqlClient implements ISqlClient
 
     public function Select($table, $columns = [], $conditions = [])
     {
-        $query = "SELECT " . (!empty($columns) ? $this->BuildArrayString($columns, BuildMode::OnlyKeys) : '*') . "
+        $query = "SELECT " . (isset($columns) && !empty($columns) ? $this->BuildArrayString($columns, BuildMode::OnlyValues) : '*') . "
                 FROM `" . $table . "`
-                " . (!empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : ";");
+                " . (!empty($conditions) ? "WHERE " . $this->BuildArrayString($conditions) . ";" : ";");
 
         return $this->Fetch($query);
     }
 
     public function Insert($table, $values, $conditions = [])
     {
-        $query = "INSERT INTO " . $table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ")
+        $query = "INSERT INTO " . $table . " (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ")
                 VALUES (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ")
-                " . (!empty($conditions) ? "WHERE (" . $this->BuildArrayString($conditions) . ");" : ";");
-
+                " . (!empty($conditions) ? "WHERE " . $this->BuildArrayString($conditions) . ";" : ";");
 
         return $this->Execute($query);
     }

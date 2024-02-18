@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+section.nav-section {
+    .container {
+        padding: unset;
+        display: flex;
+
+        align-items: center;
+
+        margin: 5px auto;
+    }
+
+    .container .site-logo-link {
+        background-color: unset;
+        padding: unset;
+        box-shadow: unset;
+        border-radius: unset;
+
+        border-bottom: #ffffff 3px solid;
+
+        &:hover {
+            background-color: unset;
+
+            border-bottom: map-get($map: $colors, $key: link-hover) 3px solid;
+        }
+    }
+
+    .container #site-logo {
+        max-height: 4vh;
+    }
+
+    .container nav {
+        display: flex;
+        margin-left: 20px;
+
+        height: -webkit-fill-available;
+
+        // :last-child {
+        //     border-top-right-radius: map-get($map: $border-radius, $key: "200");
+        //     border-bottom-right-radius: map-get($map: $border-radius, $key: "200");
+        // }
+
+        // :first-child {
+        //     border-top-left-radius: map-get($map: $border-radius, $key: "200");
+        //     border-bottom-left-radius: map-get($map: $border-radius, $key: "200");
+        // }
+    }
+
+    .container nav a {
+        border-radius: unset;
+    }
+}
