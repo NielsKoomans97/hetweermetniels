@@ -11,6 +11,12 @@ SimpleRouter::get('/', function () {
     view('index', false);
 });
 
+SimpleRouter::get('/data/observations/{id}', function($id){
+     $text = file_get_contents('https://observations.buienradar.nl/1.0/actual/weatherstation/'. $id);
+
+     return $text;
+});
+
 SimpleRouter::get('/not-found', function () {
     view('404', false);
 });

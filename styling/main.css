@@ -1,7 +1,14 @@
 body {
   font-family: "Jost", sans-serif !important;
+  padding: 0;
+  margin: 0;
 }
 
+@media (min-width: 1600px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1560px !important;
+  }
+}
 a {
   background-color: #3072b0;
   color: #f2fdff !important;
@@ -9,22 +16,11 @@ a {
   padding: 10px;
   transition: 180ms all;
   text-decoration: none !important;
-  font-size: 1.2vh;
+  font-size: 1.4vh;
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
 }
 a:hover {
   background-color: #06285c;
-}
-a.nav-button {
-  color: #000000 !important;
-  background-color: #ffffff;
-  border-bottom: 3px solid transparent;
-  border-radius: 0;
-  box-shadow: unset;
-  font-size: 1.4vh;
-}
-a.nav-button:hover {
-  border-bottom: 3px solid #06285c;
 }
 
 div.content {
@@ -33,7 +29,7 @@ div.content {
 }
 
 h1 {
-  font-size: 3vh !important;
+  font-size: 2.6vh !important;
 }
 
 h2 {
@@ -44,6 +40,7 @@ section.nav-section .container {
   padding: unset;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 5px auto;
 }
 section.nav-section .container .site-logo-link {
@@ -55,7 +52,7 @@ section.nav-section .container .site-logo-link {
 }
 section.nav-section .container .site-logo-link:hover {
   background-color: unset;
-  border-bottom: #06285c 3px solid;
+  border-bottom: #3072b0 3px solid;
 }
 section.nav-section .container #site-logo {
   max-height: 4vh;
@@ -65,8 +62,37 @@ section.nav-section .container nav {
   margin-left: 20px;
   height: -webkit-fill-available;
 }
-section.nav-section .container nav a {
-  border-radius: unset;
+section.nav-section .container nav .nav-button {
+  color: #000000 !important;
+  background-color: #ffffff;
+  border-radius: 0;
+  box-shadow: unset;
+  font-size: 1.4vh;
+}
+section.nav-section .container nav .nav-button:hover {
+  color: #ffffff !important;
+  background-color: #3072b0;
+}
+section.nav-section .container .observations.small {
+  border-radius: 16px;
+  background-color: #e8e9fd;
+  padding: 5px 10px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 15px;
+  align-items: center;
+}
+section.nav-section .container .observations.small p {
+  margin: 0;
+  font-size: 1.4vh;
+}
+section.nav-section .container .observations.small .icon {
+  grid-column: 1;
+  height: auto;
+  width: 48px;
+}
+section.nav-section .container .observations.small .temperature {
+  font-weight: 600;
 }
 
 .content.not-found section.info-section .container .col-md-6 {
@@ -75,7 +101,7 @@ section.nav-section .container nav a {
   grid-template-rows: repeat(2, 50%);
   margin: auto;
   padding: 10px;
-  background-color: #c8c9ff;
+  background-color: #e8e9fd;
   border-radius: 4px;
 }
 .content.not-found section.info-section .container .col-md-6 h1, .content.not-found section.info-section .container .col-md-6 h2, .content.not-found section.info-section .container .col-md-6 i {
@@ -120,11 +146,12 @@ section.hero-section img#hero-bg {
 }
 section.hero-section .mask-layer {
   position: absolute;
+  display: flex;
   height: -webkit-fill-available;
-  width: 60vw;
-  border-bottom-right-radius: 155%;
-  background-color: rgba(6, 40, 92, 0.7);
-  border-right: rgba(48, 114, 176, 0.5) 2px solid;
+  width: 90vw;
+  border-bottom-right-radius: 95%;
+  background-color: rgba(6, 40, 92, 0.9);
+  border-right: rgba(48, 114, 176, 0.3) 10vw solid;
 }
 section.hero-section .container {
   position: relative;
@@ -136,17 +163,44 @@ section.hero-section .container .col-md-6 {
   position: absolute;
   align-self: center;
   justify-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, auto);
+  align-items: center;
+  justify-items: flex-start;
+  column-gap: 20px;
 }
-section.hero-section .container .col-md-6 .title {
-  font-size: 3.4vh;
-}
-section.hero-section .container .col-md-6 .title, section.hero-section .container .description {
+section.hero-section .container .col-md-6 .title,
+section.hero-section .container .col-md-6 .description {
   font-weight: 400;
   color: #ffffff;
   text-shadow: 2px 2px #3072b0, 4px 4px #06285c;
+}
+section.hero-section .container .col-md-6 .spotlight-label {
+  font-size: 1.8vh;
+  color: #ffffff;
+  grid-row: 1;
+  grid-column: 1/span 2;
+}
+section.hero-section .container .col-md-6 .image {
+  grid-column: 1;
+  grid-row: 2/span 2;
+  height: auto;
+  width: 100%;
+  border-radius: 4px;
+}
+section.hero-section .container .col-md-6 .title {
+  font-size: 3.2vh;
+  grid-row: 2;
+  grid-column: 2;
+}
+section.hero-section .container .col-md-6 .description {
+  grid-row: 3;
+  grid-column: 2;
+}
+section.hero-section .container .col-md-6 a {
+  grid-row: 4;
+  grid-column: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

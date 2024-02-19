@@ -1,30 +1,32 @@
 $colors: (
-    'background-color': #c8c9ff,
-    'exclamation-background': #f2fdff,
-    'link-color': #3072b0,
-    'link-hover': #06285c,
-    'text-white': #ffffff,
-    'text-shadow': #4392d6,
-    'text-shadow-2': #149797,
-    'button-shadow': #000000,
+    "background-color": #e8e9fd,
+    "exclamation-background": #f2fdff,
+    "link-color": #3072b0,
+    "link-hover": #06285c,
+    "text-white": #ffffff,
+    "text-shadow": #4392d6,
+    "text-shadow-2": #149797,
+    "button-shadow": #000000
 );
 
 $border-radius: (
-    '100': 2px,
-    '200': 4px,
-    '300': 8px,
-    '400': 16px,
-    '500': 32px,
-    '600': 64px,
-    '700': 128px,
+    "100": 2px,
+    "200": 4px,
+    "300": 8px,
+    "400": 16px,
+    "500": 32px,
+    "600": 64px,
+    "700": 128px
 );
 
 $typo: (
-    'hero-title': 3.4vh,
-    'hero-description': 3.2vh,
-    'exclamation': 2.6vh,
-    'h1': 3vh,
-    'h2': 1.8vh,
-    'a': 1.2vh,
-    'menu-item': 1.4vh,
+    "hero-title": 3.2vh,
+    "hero-description": 3.2vh,
+    "hero-spotlight-label": 1.8vh,
+    "exclamation": 2.6vh,
+    "h1": 2.6vh,
+    "h2": 1.8vh,
+    "a": 1.4vh,
+    "menu-item": 1.4vh,
+    'temperature': 1.4vh,
 );

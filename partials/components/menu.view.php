@@ -1,7 +1,7 @@
 <?php
 $sqlCreds = new SqlCredentials('localhost', 'hetweermetniels', 'root', '');
 $sqlClient = new SqlClient($sqlCreds);
-$menuItems = $sqlClient->Select('menu-items');
+$menuItems = $sqlClient->Select('menu-items', [], ['visible' => 1]);
 $icon = $sqlClient->Select('config', ['PropertyName', 'PropertyValue'], ['PropertyName' => 'SiteLogo'])[0]['PropertyValue'];
 ?>
 
@@ -13,5 +13,10 @@ $icon = $sqlClient->Select('config', ['PropertyName', 'PropertyValue'], ['Proper
                 <a class="nav-button" href="<?= $menuItem['link'] ?>"><?= $menuItem['name'] ?></a>
             <?php } ?>
         </nav>
+        <div class="observations small">
+            <img class="icon" src="/assets/icon.png">
+            <p class="location">Dinteloord</p>
+            <p class="temperature">5°</p>
+        </div>
     </div>
 </section>
