@@ -14,7 +14,9 @@ $posts = $sqlClient->Select('posts', [], ['post_spotlight' => 1])[0];
     <div class="container">
         <div class="col-md-6">
             <p class="spotlight-label">Spotlight</p>
-            <img src="<?= $posts['post_image']; ?>" class="image">
+            <div class="image-container">
+                <img src="<?= $posts['post_image']; ?>" class="image">
+            </div>
             <p class="title"><?= $posts['post_title']; ?></p>
             <p class="description"><?= substr($posts['post_content'], 0, 105); ?>...</p>
             <a href="/meer-info">Lees verder</a>

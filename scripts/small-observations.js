@@ -5,15 +5,13 @@ export class SmallObservations {
         const location = widget.querySelector('.location');
         const temperature = widget.querySelector('.temperature');
 
-        // FetchObservations();
-        location.innerText = 'fiets';
+        FetchObservations();
 
         async function FetchObservations(){
             const data = await fetch('/data/observations/6350');
             const json = await data.json();
 
-            console.log(json);
-
+            icon.setAttribute('src',`https://cdn.buienradar.nl/resources/images/icons/weather/116x116/${json['iconcode']}.png`);
             location.innerText = json['regio'];
             temperature.innerText = `${json['temperature']}°`;
         }

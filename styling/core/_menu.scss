@@ -30,13 +30,6 @@ section.nav-section {
         max-height: 4vh;
     }
 
-    .container nav {
-        display: flex;
-        margin-left: 20px;
-
-        height: -webkit-fill-available;
-    }
-
     .container nav .nav-button {
         color: map-get($map: $colors, $key: button-shadow) !important;
         background-color: map-get($map: $colors, $key: text-white);
@@ -51,8 +44,25 @@ section.nav-section {
         }
     }
 
+    .container nav {
+        display: flex;
+        margin-left: 20px;
+
+        height: -webkit-fill-available;
+
+        a:first-child{
+            border-top-left-radius: map-get($map: $border-radius, $key: '200');
+            border-bottom-left-radius: map-get($map: $border-radius, $key: '200');
+        }
+
+        a:last-child{
+            border-top-right-radius: map-get($map: $border-radius, $key: '200');
+            border-bottom-right-radius: map-get($map: $border-radius, $key: '200');
+        }
+    }
+
     .container .observations.small{
-        border-radius: 16px;
+        border-radius: map-get($map: $border-radius, $key: '300');
         background-color: map-get($map: $colors, $key: background-color);
 
         padding: 5px 10px;
@@ -72,8 +82,8 @@ section.nav-section {
     .container .observations.small .icon{
         grid-column: 1;
 
-        height: auto;
-        width: 48px;
+        height: 3vh;
+        width: auto;
     }
 
     .container .observations.small .temperature{

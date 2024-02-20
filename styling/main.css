@@ -2,6 +2,7 @@ body {
   font-family: "Jost", sans-serif !important;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 @media (min-width: 1600px) {
@@ -57,11 +58,6 @@ section.nav-section .container .site-logo-link:hover {
 section.nav-section .container #site-logo {
   max-height: 4vh;
 }
-section.nav-section .container nav {
-  display: flex;
-  margin-left: 20px;
-  height: -webkit-fill-available;
-}
 section.nav-section .container nav .nav-button {
   color: #000000 !important;
   background-color: #ffffff;
@@ -73,8 +69,21 @@ section.nav-section .container nav .nav-button:hover {
   color: #ffffff !important;
   background-color: #3072b0;
 }
+section.nav-section .container nav {
+  display: flex;
+  margin-left: 20px;
+  height: -webkit-fill-available;
+}
+section.nav-section .container nav a:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+section.nav-section .container nav a:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
 section.nav-section .container .observations.small {
-  border-radius: 16px;
+  border-radius: 8px;
   background-color: #e8e9fd;
   padding: 5px 10px;
   display: grid;
@@ -88,8 +97,8 @@ section.nav-section .container .observations.small p {
 }
 section.nav-section .container .observations.small .icon {
   grid-column: 1;
-  height: auto;
-  width: 48px;
+  height: 3vh;
+  width: auto;
 }
 section.nav-section .container .observations.small .temperature {
   font-weight: 600;
@@ -165,10 +174,11 @@ section.hero-section .container .col-md-6 {
   justify-self: flex-start;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: auto 10vh 10vh auto;
   align-items: center;
   justify-items: flex-start;
   column-gap: 20px;
+  row-gap: 20px;
 }
 section.hero-section .container .col-md-6 .title,
 section.hero-section .container .col-md-6 .description {
@@ -182,17 +192,22 @@ section.hero-section .container .col-md-6 .spotlight-label {
   grid-row: 1;
   grid-column: 1/span 2;
 }
-section.hero-section .container .col-md-6 .image {
+section.hero-section .container .col-md-6 .image-container {
   grid-column: 1;
   grid-row: 2/span 2;
-  height: auto;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+section.hero-section .container .col-md-6 .image {
   width: 100%;
+  height: 100%;
   border-radius: 4px;
 }
 section.hero-section .container .col-md-6 .title {
   font-size: 3.2vh;
   grid-row: 2;
   grid-column: 2;
+  line-height: 50px;
 }
 section.hero-section .container .col-md-6 .description {
   grid-row: 3;

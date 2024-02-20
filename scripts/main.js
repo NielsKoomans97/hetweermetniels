@@ -1,8 +1,6 @@
-import { SmallObservations } from "./small-observations";
+import { SmallObservations } from "./small-observations.js";
 
 if (CheckElement('.observations')){
-    console.log('weer');
-
     new SmallObservations();
 }
 
