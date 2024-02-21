@@ -11,10 +11,37 @@ SimpleRouter::get('/', function () {
     view('index', false);
 });
 
-SimpleRouter::get('/data/observations/{id}', function($id){
-     $text = file_get_contents('https://observations.buienradar.nl/1.0/actual/weatherstation/'. $id);
+SimpleRouter::get('/data/observations/{id}', function ($id) {
+    $text = file_get_contents('https://observations.buienradar.nl/1.0/actual/weatherstation/' . $id);
 
-     return $text;
+    return $text;
+});
+
+SimpleRouter::get('/data/radar/{id}', function ($id) {
+    $text = file_get_contents('https://cluster.api.meteoplaza.com/v3/nowcast/tiles/' . $id . '');
+    $json = json_decode($text);
+    $resultJson = [];
+
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $id;
+    if (!is_dir($path)) {
+        mkdir($path);
+    }
+
+    foreach ($json as $item) {
+        $itemPath = $path . '/' . $item->layername . '.png';
+        $niceTime = $item->nicetime;
+
+        if (file_put_contents($itemPath, file_get_contents('https://cluster.api.meteoplaza.com/v3/nowcast/tiles/' . $id . '/' . $item->layername))) {
+            $resultJson[] =
+
+                [
+                    'path' => $itemPath,
+                    'time' => $niceTime,
+                ];
+        }
+    }
+
+    return json_encode($resultJson);
 });
 
 SimpleRouter::get('/not-found', function () {

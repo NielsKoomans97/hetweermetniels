@@ -72,16 +72,16 @@ class SqlClient implements ISqlClient
     {
         $query = "SELECT " . (isset($columns) && !empty($columns) ? $this->BuildArrayString($columns, BuildMode::OnlyValues) : '*') . "
                 FROM `" . $table . "`
-                " . (!empty($conditions) ? "WHERE " . $this->BuildArrayString($conditions) . ";" : ";");
+                " . (!empty($conditions) ? "WHERE " . $this->BuildArrayString($conditions, BuildMode::OnlyValues) . ";" : ";");
 
         return $this->Fetch($query);
     }
 
     public function Insert($table, $values, $conditions = [])
     {
-        $query = "INSERT INTO " . $table . " (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ")
+        $query = "INSERT INTO " . $table . " (" . $this->BuildArrayString($values, BuildMode::OnlyKeys) . ")
                 VALUES (" . $this->BuildArrayString($values, BuildMode::OnlyValues) . ")
-                " . (!empty($conditions) ? "WHERE " . $this->BuildArrayString($conditions) . ";" : ";");
+                " . (!empty($conditions) ? "WHERE " . $this->BuildArrayString($conditions, BuildMode::OnlyValues) . ";" : ";");
 
         return $this->Execute($query);
     }

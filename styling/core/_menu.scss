@@ -68,7 +68,7 @@ section.nav-section {
         padding: 5px 10px;
 
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto auto auto;
         column-gap: 15px;
         align-items: center;
     }
@@ -88,5 +88,9 @@ section.nav-section {
 
     .container .observations.small .temperature{
         font-weight: 600;
+    }
+
+    .container .observations.small .bi-gear{
+        padding: 8px;
     }
 }
