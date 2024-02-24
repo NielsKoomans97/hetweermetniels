@@ -5,7 +5,7 @@ if (CheckElement('.observations')){
     new SmallObservations();
 }
 
-if (CheckElement('#small-radar')){
+if (CheckElement('#sm-radar-container')){
     new SmallRadar();
 }
 

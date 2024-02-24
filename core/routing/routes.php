@@ -29,13 +29,13 @@ SimpleRouter::get('/data/radar/{id}', function ($id) {
 
     foreach ($json as $item) {
         $itemPath = $path . '/' . $item->layername . '.png';
+        $externPath = '/assets/radar/' . $id . '/' . $item->layername . '.png';
         $niceTime = $item->nicetime;
 
         if (file_put_contents($itemPath, file_get_contents('https://cluster.api.meteoplaza.com/v3/nowcast/tiles/' . $id . '/' . $item->layername))) {
             $resultJson[] =
-
                 [
-                    'path' => $itemPath,
+                    'path' => $externPath,
                     'time' => $niceTime,
                 ];
         }

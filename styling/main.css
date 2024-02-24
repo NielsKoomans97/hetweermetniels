@@ -242,5 +242,10 @@ section.hero-section .container #spotlight-container a {
   grid-row: 4;
   grid-column: 1;
 }
+section.hero-section .container #sm-radar-container {
+  position: absolute;
+  align-self: center;
+  justify-self: flex-end;
+}
 
 /*# sourceMappingURL=main.css.map */

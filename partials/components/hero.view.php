@@ -34,9 +34,9 @@ $posts = $sqlClient->Select(
             <a href="/meer-info">Lees verder</a>
         </div>
 
-        <div class="col-lg-6 col-xl-6" id="small-radar">
-            <img class="country-border-layer" src="/assets/Radar-1050-borders-v2.png">
+        <div class="col-lg-5 col-xl-4" id="sm-radar-container">
             <img class="country-map-layer" src="/assets/Radar-1050-v2.jpg">
+            <img class="country-border-layer" src="/assets/Radar-1050-borders-v2.png">
             <img class="radar-layer">
             <div class="meta-container">
                 <p class="meta-time"></p>

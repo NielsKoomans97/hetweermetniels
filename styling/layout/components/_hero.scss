@@ -124,5 +124,12 @@ section.hero-section {
                 grid-column: 1;
             }
         }
+
+        #sm-radar-container{
+            position: absolute;
+
+            align-self: center;
+            justify-self: flex-end;
+        }
     }
 }
