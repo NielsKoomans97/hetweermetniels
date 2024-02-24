@@ -1,9 +1,0 @@
-SqlClient
-[Prop]  Connection
-[Prop]  Credentials
-
-[Function]  Select  ($filter = '')
-[Function]  Insert  ($columns, $condition = '')
-[Function]  Move    ($columns, $to, $condition = '')
-[Function]  Delete  ($condition)
-[Function]  

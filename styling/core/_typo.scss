@@ -1,9 +1,0 @@
-@use '../variables' as *;
-
-h1{
-    font-size: map-get($map: $typo, $key: h1) !important;
-}
-
-h2{
-    font-size: map-get($map: $typo, $key: h2) !important;
-}
