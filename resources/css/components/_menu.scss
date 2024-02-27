@@ -1,0 +1,22 @@
+@use "../variables" as *;
+
+section.nav {
+    nav {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    a.nav-button {
+        padding: 15px;
+
+        text-decoration: none;
+        color: map-get($map: $link-colors, $key: 'black');
+
+        transition: all 150ms;
+
+        &:hover{
+            background-color: map-get($map: $link-colors, $key: 'black');
+            color: map-get($map: $link-colors, $key: 'white');
+        }
+    }
+}

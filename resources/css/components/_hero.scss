@@ -1,0 +1,24 @@
+section.hero{
+    position: relative;
+
+    div.container{
+        position: relative;
+        display: flex;
+        height: 500px;
+
+        div.message-container{
+            position: absolute;
+
+            align-self: center;
+            justify-self: flex-start;
+        }
+    }
+
+    img{
+        position: absolute;
+        object-fit: cover;
+
+        height: 500px;
+        width: 100vw;
+    }
+}

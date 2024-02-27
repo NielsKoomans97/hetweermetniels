@@ -1,1 +1,7 @@
 @use 'sections';
+@use 'components/menu';
+
+body{
+    padding: 0;
+    margin: 0;
+}

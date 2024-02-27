@@ -1,6 +1,6 @@
 <section class="hero">
+    <img src="{{ $backgroundimage }}" class="hero-banner">
     <div class="container">
-        <img src="{{ $backgroundimage }}" class="hero-banner">
         <div class="message-container">
             <p class="hero-message">{{ $message }}</p>
         </div>
