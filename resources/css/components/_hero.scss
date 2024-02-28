@@ -1,20 +1,26 @@
-section.hero{
+@use "../variables" as *;
+
+section.hero {
     position: relative;
 
-    div.container{
+    div.container {
         position: relative;
         display: flex;
         height: 500px;
 
-        div.message-container{
+        div.message-container {
             position: absolute;
 
             align-self: center;
             justify-self: flex-start;
+
+            padding: 4px;
+            background-color: transparentize($color: map-get($link-colors, "white"), $amount: 0.75);
+            border-radius: 4px;
         }
     }
 
-    img{
+    img {
         position: absolute;
         object-fit: cover;
 
