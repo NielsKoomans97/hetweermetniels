@@ -21,38 +21,95 @@ section.hero img {
   width: 100vw;
 }
 
+section.nav div.container {
+  display: flex;
+  justify-content: space-between;
+}
+section.nav img {
+  object-fit: contain;
+}
 section.nav nav {
   display: flex;
   margin: 10px 0;
 }
-section.nav a.nav-button {
+section.nav a {
+  cursor: pointer;
   padding: 15px;
-  text-decoration: none;
-  color: #000000;
-  background-color: #8fbaff;
+  text-decoration: none !important;
+  color: #000000 !important;
+  background-color: #d2e3ff;
   transition: all 180ms;
   margin: 0;
 }
-section.nav a.nav-button:first-child {
+section.nav a:hover {
+  background-color: #478dff;
+  color: #ffffff !important;
+}
+section.nav a:active {
+  background-color: #2579ff;
+  color: #ffffff !important;
+}
+section.nav a:first-child {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-section.nav a.nav-button:last-child {
+section.nav a:last-child {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-section.nav a.nav-button:hover {
-  background-color: #478dff;
-  color: #ffffff;
+section.nav a i {
+  margin-right: 10px;
 }
-section.nav a.nav-button:active {
+section.nav div.small-obs {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  column-gap: 20px;
+  background-color: #6da5ff;
+  padding: 0 20px;
+}
+section.nav div.small-obs .cur-ico {
+  height: 64px;
+  object-fit: contain;
+  border-radius: 4px;
+  padding: 5px;
+}
+section.nav div.small-obs .cur-temp {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+section.nav div.small-obs a {
+  cursor: pointer;
+  padding: 15px;
+  text-decoration: none !important;
+  color: #000000 !important;
+  background-color: #d2e3ff;
+  transition: all 180ms;
+  margin: 0;
+  background-color: #6da5ff;
+}
+section.nav div.small-obs a:hover {
+  background-color: #478dff;
+  color: #ffffff !important;
+}
+section.nav div.small-obs a:active {
   background-color: #2579ff;
-  color: #ffffff;
+  color: #ffffff !important;
+}
+section.nav div.small-obs a i {
+  margin: 0;
 }
 
 body {
   padding: 0;
   margin: 0;
+}
+
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1560px !important;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

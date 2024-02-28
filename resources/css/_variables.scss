@@ -10,4 +10,13 @@ $primary-color: (
     '450': #8fbaff,
     '300': #b2d0ff,
     '150': #d2e3ff,
+    '0':#e7f0ff,
+);
+
+$misc-color:(
+    'weather-icon': #959595,
+);
+
+$typo: (
+    'current-temperature': 1.2em,
 );

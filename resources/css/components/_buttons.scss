@@ -1,0 +1,24 @@
+@use '../variables' as *;
+
+@mixin button {
+    cursor: pointer;
+    padding: 15px;
+
+    text-decoration: none !important;
+    color: map-get($map: $link-colors, $key: "black") !important;
+    background-color: map-get($map: $primary-color, $key: "150");
+
+    transition: all 180ms;
+
+    margin: 0;
+
+    &:hover {
+        background-color: map-get($map: $primary-color, $key: "850");
+        color: map-get($map: $link-colors, $key: "white") !important;
+    }
+
+    &:active {
+        background-color: map-get($map: $primary-color, $key: "1000");
+        color: map-get($map: $link-colors, $key: "white") !important;
+    }
+}

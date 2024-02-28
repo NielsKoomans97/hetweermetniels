@@ -1,7 +1,14 @@
 @use 'sections';
 @use 'components/menu';
+@use 'helpers/screens' as *;
 
 body{
     padding: 0;
     margin: 0;
+}
+
+@include screen-xxl{
+    .container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
+        max-width: 1560px !important;
+    }
 }
