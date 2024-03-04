@@ -5,7 +5,7 @@
         <div class="message-container">
             <p class="hero-message">{{ $message }}</p>
         </div>
-        <x-radar-item host="weerplaza" radar-type="radarnl-observations" history="" forecast="" />
-        <x-radar-item host="buienradar" radar-type="RadarMapRain15mNL" history="18" forecast="" />
+        <x-radar-item host="weerplaza" radar-type="radarnl-observations" history="0" forecast="0" />
+        <x-radar-item host="buienradar" radar-type="WeatherMapActualTemperature10mNL" history="18" forecast="0" />
     </div>
 </section>

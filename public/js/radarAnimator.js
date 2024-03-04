@@ -8,13 +8,15 @@ export class RadarAnimator {
         const host = frameList.getAttribute('data-host');
         const type = frameList.getAttribute('data-type');
         const history = frameList.getAttribute('data-hist');
-        const forecast = framelist.getAttribute('data-fcast');
+        const forecast = frameList.getAttribute('data-fcast');
 
         let def = '';
         let updating = false;
         let index = 0;
 
         def = GetDefinition(type);
+
+        UpdateFrames();
 
         setInterval(() => {
             if (!updating) {
@@ -57,7 +59,7 @@ export class RadarAnimator {
         }
 
         async function UpdateFrames() {
-            const data = await fetch(`/radar/${host.innerText}/${type.innerText}`);
+            const data = await fetch(`/radar/${host}/${type}`);
             const json = await data.json();
 
             ClearFrameList();
@@ -80,7 +82,7 @@ export class RadarAnimator {
             frame.appendChild(frameImage);
 
             frame.appendChild(frameImage);
-            framelist.appendChild(frame);
+            frameList.appendChild(frame);
         }
 
         function ClearFrameList() {
@@ -90,7 +92,7 @@ export class RadarAnimator {
         }
 
         function SetFrame(index) {
-            const frames = framelist.querySelectorAll('.frame');
+            const frames = frameList.querySelectorAll('.frame');
 
             if (frames == null)
                 return;
