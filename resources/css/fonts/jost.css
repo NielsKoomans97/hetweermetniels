@@ -1,396 +1,243 @@
-section.hero {
-  position: relative;
-}
-section.hero div.banner-overlay {
-  position: absolute;
-  width: 75vw;
-  height: -webkit-fill-available;
-  z-index: 1;
-  background-color: rgba(143, 186, 255, 0.45);
-  border-right: rgba(109, 165, 255, 0.25) 10vw solid;
-  border-bottom-right-radius: 95%;
-}
-section.hero div.container {
-  position: relative;
-  display: flex;
-  height: 500px;
-}
-section.hero div.container div.message-container {
-  position: absolute;
-  z-index: 1;
-  align-self: center;
-  justify-self: flex-start;
-  padding: 4px;
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-}
-section.hero img {
-  position: absolute;
-  object-fit: cover;
-  height: 500px;
-  width: 100vw;
-}
-
-section.nav {
-  background-color: #fffef4;
-}
-section.nav div.container {
-  display: flex;
-  justify-content: space-between;
-}
-section.nav img {
-  object-fit: contain;
-}
-section.nav nav {
-  display: flex;
-}
-section.nav a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 10px;
-  text-decoration: none !important;
-  color: #000000 !important;
-  background-color: #d2e3ff;
-  transition: all 180ms;
-  margin: 0;
-  font-weight: 500;
-  font-size: 0.9em;
-  height: 100%;
-  background-color: #fffef4;
-}
-section.nav a:hover {
-  background-color: #478dff;
-  color: #ffffff !important;
-}
-section.nav a:active {
-  background-color: #2579ff;
-  color: #ffffff !important;
-}
-section.nav a i {
-  margin-right: 10px;
-}
-section.nav div.small-obs {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  align-items: center;
-  column-gap: 20px;
-  grid-auto-flow: column;
-  background-color: transparent;
-  padding-left: 20px;
-  height: 100%;
-}
-section.nav div.small-obs .cur-ico {
-  grid-column: 2;
-  height: 64px;
-  width: auto;
-  object-fit: contain;
-  padding: 5px;
-}
-section.nav div.small-obs .cur-temp {
-  grid-column: 3;
-  margin: 0;
-  font-weight: 500;
-  font-size: 1.5em;
-}
-section.nav div.small-obs .cur-loc {
-  grid-column: 1;
-  font-size: 0.9em;
-  margin: 0;
-}
-section.nav div.small-obs a.config-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 10px;
-  text-decoration: none !important;
-  color: #000000 !important;
-  background-color: #d2e3ff;
-  transition: all 180ms;
-  margin: 0;
-  display: flex;
-  background-color: transparent;
-  border-radius: 0;
-  grid-column: 4;
-  height: 100%;
-}
-section.nav div.small-obs a.config-button:hover {
-  background-color: #478dff;
-  color: #ffffff !important;
-}
-section.nav div.small-obs a.config-button:active {
-  background-color: #2579ff;
-  color: #ffffff !important;
-}
-section.nav div.small-obs a i {
-  margin: 0;
-  align-self: center;
-}
-
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: "Jost";
+  font-family: 'Jost';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format("woff2");
+  src: url(fonts/92zatBhPNqw73oTd4jQmfxI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Jost", sans-serif !important;
-}
-
-.bi {
-  font-weight: 800;
-}
-
-@media (min-width: 2000px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 1960px !important;
-  }
-}
-@media (min-width: 1400px) and (max-width: 2000px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 1560px !important;
-  }
-}
-
-/*# sourceMappingURL=app.css.map */

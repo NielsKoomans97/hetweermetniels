@@ -1,10 +1,25 @@
+@use 'variables' as *;
 @use 'sections';
 @use 'components/menu';
 @use 'helpers/screens' as *;
+@use 'fonts/jost.css';
 
 body{
     padding: 0;
     margin: 0;
+
+    font-family: 'Jost', sans-serif !important;
+
+}
+
+.bi{
+    font-weight: 800;
+}
+
+@include screen-xxxl{
+    .container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl {
+        max-width: 1960px !important;
+    }
 }
 
 @include screen-xxl{

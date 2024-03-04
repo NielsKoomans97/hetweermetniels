@@ -1,8 +1,12 @@
 @use '../variables' as *;
 
 @mixin button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
 
     text-decoration: none !important;
     color: map-get($map: $link-colors, $key: "black") !important;

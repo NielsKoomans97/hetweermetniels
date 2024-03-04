@@ -3,6 +3,19 @@
 section.hero {
     position: relative;
 
+    div.banner-overlay {
+        position: absolute;
+
+        width: 75vw;
+        height: -webkit-fill-available;
+        z-index: 1;
+
+        background-color: transparentize($color: map-get($primary-color, "450"), $amount: 0.55);
+        border-right: transparentize($color: map-get($primary-color, "600"), $amount: 0.75) 10vw solid;
+
+        border-bottom-right-radius: 95%;
+    }
+
     div.container {
         position: relative;
         display: flex;
@@ -11,6 +24,7 @@ section.hero {
         div.message-container {
             position: absolute;
 
+            z-index: 1;
             align-self: center;
             justify-self: flex-start;
 

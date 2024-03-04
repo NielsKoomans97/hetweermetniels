@@ -2,13 +2,16 @@
     <div class="container">
         <img src="assets/favicon.png">
         <nav>
-            <a class="nav-button" href="/"><i class="bi bi-house"></i>Home</a>
-            <a class="nav-button" href="/radar"><i class="bi bi-radar"></i>Radarbeelden</a>
+            <x-button type="link" style="nav-button" icon="bi bi-house" href="/">Home</x-button>
+            <x-button type="link" style="nav-button" icon="bi bi-car-front" href="/">Verkeer</x-button>
+            <x-button type="link" style="nav-button" icon="bi bi-graph-down-arrow" href="/">Weerkaarten</x-button>
+            <x-button type="link" style="nav-button" icon="bi bi-radar" href="/">Radarbeelden</x-button>
         </nav>
         <div class="small-obs">
             <img class="cur-ico">
             <p class="cur-temp"></p>
-            <a><i class="bi bi-gear"></i></a>
+            <p class="cur-loc"></p>
+            <x-button type="link" style="config-button" icon="bi bi-gear" />
         </div>
     </div>
 </section>

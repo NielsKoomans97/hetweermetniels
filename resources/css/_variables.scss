@@ -1,22 +1,25 @@
 $link-colors: (
-    'black':#000000,
-    'white':#ffffff,
+    "black": #000000,
+    "white": #ffffff
 );
 
 $primary-color: (
-    '1000': #2579ff,
-    '850': #478dff,
-    '600': #6da5ff,
-    '450': #8fbaff,
-    '300': #b2d0ff,
-    '150': #d2e3ff,
-    '0':#e7f0ff,
+    "1000": #2579ff,
+    "850": #478dff,
+    "600": #6da5ff,
+    "450": #8fbaff,
+    "300": #b2d0ff,
+    "150": #d2e3ff,
+    "0": #e7f0ff
 );
 
-$misc-color:(
-    'weather-icon': #959595,
+$misc-color: (
+    "weather-icon": #ebf7ff,
+    "body": #fffef4,
 );
 
 $typo: (
-    'current-temperature': 1.2em,
+    "current-temperature": 1.5em,
+    "current-location": 0.9em,
+    "menu-item": 0.9em
 );
