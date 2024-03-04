@@ -1,0 +1,10 @@
+[
+    {
+        "type": "WeatherMapActualTemperature10mNL",
+        "description": "Temperatuur laatste 3u",
+        "version": "3",
+        "source": "buienradar",
+        "history": "18",
+        "forecast": "0"
+    }
+]

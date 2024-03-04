@@ -10,8 +10,11 @@ export class RadarAnimator {
         const history = frameList.getAttribute('data-hist');
         const forecast = framelist.getAttribute('data-fcast');
 
+        let def = '';
         let updating = false;
         let index = 0;
+
+        def = GetDefinition(type);
 
         setInterval(() => {
             if (!updating) {
@@ -25,6 +28,34 @@ export class RadarAnimator {
             }
         }, 300);
 
+        setInterval(async () => {
+            const date = new Date();
+            const minute = date.getMinutes();
+            const second = date.getSeconds();
+            const milliSecond = date.getMilliseconds();
+
+            for (let i = 0; i < 6; i++) {
+                if (minute == (i * 10) && second == 0 && milliSecond == 0) {
+                    updating = true;
+                    await UpdateFrames();
+                }
+            }
+        }, 1000);
+
+        async function GetDefinition(name) {
+            const data = await fetch('/assets/radar/definitions.json');
+            const json = await data.json();
+            let foundDef = '';
+
+            json.forEach(definition => {
+                if (definition['type'] == name) {
+                    foundDef = definition;
+                }
+            });
+
+            return foundDef;
+        }
+
         async function UpdateFrames() {
             const data = await fetch(`/radar/${host.innerText}/${type.innerText}`);
             const json = await data.json();
@@ -34,6 +65,8 @@ export class RadarAnimator {
             json.forEach(element => {
                 CreateFrame(element);
             });
+
+            updating = false;
         }
 
         function CreateFrame(element) {
@@ -50,8 +83,8 @@ export class RadarAnimator {
             framelist.appendChild(frame);
         }
 
-        function ClearFrameList(){
-            while(frameList.firstChild){
+        function ClearFrameList() {
+            while (frameList.firstChild) {
                 frameList.remove(frameList.lastChild);
             }
         }

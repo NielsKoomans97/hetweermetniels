@@ -17,17 +17,25 @@ class RadarData
 
     private static function GetBuienradar($type, $params)
     {
-        $host = ($params['version'] == '3.0' ? 'image-lite.buienradar.nl' : 'image.buienradar.nl');
-        $path = ($params['version'] == '3.0' ? '/3.0/metadata/'  : '/2.0/metadata/sprite/') . $type;
+        $base_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $type);
+        $doc_path = $base_path . '/' . $type . '.json';
+        $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/updating');
+
+        if (is_file($updating_path)){
+            return file_get_contents($doc_path);
+        }
+        else{
+            file_put_contents($updating_path, '');
+        }
+
+        $host = ($params['version'] == '3' ? 'image-lite.buienradar.nl' : 'image.buienradar.nl');
+        $path = ($params['version'] == '3' ? '/3.0/metadata/'  : '/2.0/metadata/sprite/') . $type;
         $uri = RadarData::CreateUri('https://', $host, $path, [
             'renderText' => 'false',
             'renderBackground' => 'false',
             'history' => $params['history'],
             'forecast' => $params['forecast'],
         ]);
-
-        $base_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $type);
-        $doc_path = $base_path . '/' . $type . '.json';
 
         RadarData::PrepareDir($base_path);
 
@@ -60,14 +68,25 @@ class RadarData
 
         file_put_contents($doc_path, $localDoc);
 
+        unlink($updating_path);
+
         return $localDoc;
     }
 
     private static function GetWeerplaza($type)
     {
-        $uri  = RadarData::CreateUri('https://', 'cluster.api.meteoplaza.com', '/v3/nowcast/tiles/' . $type);
         $base_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $type);
         $doc_path = $base_path . '/' . $type . '.json';
+        $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/updating');
+
+        if (is_file($updating_path)){
+            return file_get_contents($doc_path);
+        }
+        else{
+            file_put_contents($updating_path, '');
+        }
+
+        $uri  = RadarData::CreateUri('https://', 'cluster.api.meteoplaza.com', '/v3/nowcast/tiles/' . $type);
 
         RadarData::PrepareDir($base_path);
 
@@ -101,6 +120,8 @@ class RadarData
         $localDoc .= ']';
 
         file_put_contents($doc_path, $localDoc);
+
+        unlink($updating_path);
 
         return $localDoc;
     }
