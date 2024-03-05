@@ -14,8 +14,10 @@ class radarItem extends Component
     public function __construct(
         public string $host,
         public string $radarType,
+        public string $radarDescription,
         public string $history,
         public string $forecast,
+        public string $version = '',
         public string $mapBackground = '',
         public string $mapBorderLayer = '',
     )

@@ -9,6 +9,7 @@ export class RadarAnimator {
         const type = frameList.getAttribute('data-type');
         const history = frameList.getAttribute('data-hist');
         const forecast = frameList.getAttribute('data-fcast');
+        const version = frameList.getAttribute('data-version');
 
         let def = '';
         let updating = false;
@@ -23,8 +24,9 @@ export class RadarAnimator {
                 SetFrame(index);
 
                 index++;
+                const frames = frameList.querySelectorAll('.frame');
 
-                if (index == (framelist.children.length - 1)) {
+                if (index == (frames.length)) {
                     index = 0;
                 }
             }
@@ -59,7 +61,7 @@ export class RadarAnimator {
         }
 
         async function UpdateFrames() {
-            const data = await fetch(`/radar/${host}/${type}`);
+            const data = await fetch(uri());
             const json = await data.json();
 
             ClearFrameList();
@@ -69,6 +71,16 @@ export class RadarAnimator {
             });
 
             updating = false;
+        }
+
+        function uri() {
+            switch (host) {
+                case 'weerplaza': 
+                    return `/radar/weerplaza/${type}`;
+
+                case 'buienradar': 
+                    return `/radar/buienradar/${type}/${version}/${history}/${forecast}`;
+            }
         }
 
         function CreateFrame(element) {
@@ -86,7 +98,7 @@ export class RadarAnimator {
         }
 
         function ClearFrameList() {
-            while (frameList.firstChild) {
+            while (!frameList.firstChild) {
                 frameList.remove(frameList.lastChild);
             }
         }
@@ -101,8 +113,30 @@ export class RadarAnimator {
                 frame.classList.replace('visible', 'hidden');
             });
 
-            const frame = frames[index];
+            const frame = GetFrame(index);
             frame.classList.replace('hidden', 'visible');
+
+            const image = frame.querySelector('.frame-image');
+            const date = image.getAttribute('data-time');
+
+            if (date.indexOf('T') > 0){
+                const dateParsed = new Date(Date.parse(date));
+                timeStamp.innerText = `${dateParsed.getHours()}:${dateParsed.getMinutes()}`;
+            }
+            else{
+                const dateParsed = new Date(date);
+                timeStamp.innerText = `${dateParsed.getHours()}:${dateParsed.getMinutes()}`;
+            }
+        }
+
+        function GetFrame(index){
+            const frames = frameList.querySelectorAll('.frame');
+
+            for(let i = 0; i < frames.length; i++){
+                if (i == index){
+                    return frames[i];
+                }
+            }
         }
     }
 }

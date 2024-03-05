@@ -21,10 +21,9 @@ class RadarData
         $doc_path = $base_path . '/' . $type . '.json';
         $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/updating');
 
-        if (is_file($updating_path)){
-            return file_get_contents($doc_path);
-        }
-        else{
+        if (is_file($updating_path)) {
+            return file_get_contents(str_replace('/', '\\', $doc_path));
+        } else {
             file_put_contents($updating_path, '');
         }
 
@@ -49,7 +48,7 @@ class RadarData
         foreach ($times as $time) {
             $timeUrl = $time->url;
             $localPath = $base_path . '/' . basename($time->url);
-            $externalPath = '/data/' . $type . '/' . basename($time->url);
+            $externalPath = '/assets/radar/' . $type . '/' . basename($time->url);
             $timeJson = '';
 
             if (file_put_contents($localPath, file_get_contents($timeUrl))) {
@@ -79,10 +78,9 @@ class RadarData
         $doc_path = $base_path . '/' . $type . '.json';
         $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/updating');
 
-        if (is_file($updating_path)){
-            return file_get_contents($doc_path);
-        }
-        else{
+        if (is_file($updating_path)) {
+            return file_get_contents(str_replace('/', '\\', $doc_path));
+        } else {
             file_put_contents($updating_path, '');
         }
 
@@ -98,7 +96,7 @@ class RadarData
         foreach ($json as $time) {
             $timeUrl = $uri . '/' . $time->layername;
             $localPath = $base_path . '/' . $time->layername . '.png';
-            $externalPath = '/data/' . $type . '/' . $time->layername . '.png';
+            $externalPath = '/assets/radar/' . $type . '/' . $time->layername . '.png';
             $externalPathNotFound = '/data/Static/notfound.png';
 
             $timeJson = '';

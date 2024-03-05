@@ -6,13 +6,14 @@ section.hero div.banner-overlay {
   width: 75vw;
   height: -webkit-fill-available;
   z-index: 1;
-  background-color: rgba(143, 186, 255, 0.45);
-  border-right: rgba(109, 165, 255, 0.25) 10vw solid;
+  background-color: rgba(143, 186, 255, 0.85);
+  border-right: rgba(109, 165, 255, 0.35) 10vw solid;
   border-bottom-right-radius: 95%;
 }
 section.hero div.container {
   position: relative;
   display: flex;
+  justify-content: flex-start;
   height: 500px;
 }
 section.hero div.container div.message-container {
@@ -24,11 +25,51 @@ section.hero div.container div.message-container {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 4px;
 }
-section.hero img {
+section.hero img.hero-banner {
   position: absolute;
   object-fit: cover;
   height: 500px;
   width: 100vw;
+}
+
+div.radar-item {
+  height: -webkit-fill-available;
+  display: flex;
+  background-color: rgba(109, 165, 255, 0.25);
+}
+div.radar-item .map-background[src=""],
+div.radar-item .map-border-layer[src=""] {
+  display: none;
+}
+div.radar-item .frame {
+  height: 100%;
+  width: fit-content;
+}
+div.radar-item .frame.hidden {
+  display: none;
+}
+div.radar-item .frame.visible {
+  display: flex;
+}
+div.radar-item .frame img {
+  height: 100%;
+  width: inherit;
+}
+div.radar-item .frame-misc {
+  position: absolute;
+  align-self: flex-start;
+  justify-self: flex-start;
+  background-color: #fffef4;
+  border-bottom-right-radius: 16px;
+}
+div.radar-item .frame-misc p {
+  margin: 0;
+}
+div.radar-item .frame-misc .frame-timestamp {
+  font-weight: 600;
+}
+div.radar-item:has(.frame-list[data-type=WeatherMapActualTemperature10mNL]), div.radar-item:has(.frame-list[data-type=radarnl-observations]) {
+  z-index: 1;
 }
 
 section.nav {

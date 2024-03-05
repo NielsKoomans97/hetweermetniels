@@ -1,0 +1,55 @@
+@use "../variables" as *;
+
+div.radar-item {
+    height: -webkit-fill-available;
+    display: flex;
+
+    background-color: transparentize($color: map-get($primary-color,'600'), $amount: .75);
+    
+    .map-background[src=""],
+    .map-border-layer[src=""] {
+        display: none;
+    }
+
+    .frame {
+        height: 100%;
+        width: fit-content;
+
+        &.hidden {
+            display: none;
+        }
+
+        &.visible {
+            display: flex;
+        }
+
+        img {
+            height: 100%;
+            width: inherit;
+        } 
+        
+      
+    }
+
+    .frame-misc{
+        position: absolute;
+        align-self: flex-start;
+        justify-self: flex-start;
+        
+        background-color: map-get($map: $misc-color, $key: body);
+        border-bottom-right-radius: 16px;
+
+        p{
+            margin: 0;
+        }
+        
+        .frame-timestamp{
+            font-weight: 600;
+        }
+    }
+
+    &:has(.frame-list[data-type="WeatherMapActualTemperature10mNL"]),
+    &:has(.frame-list[data-type="radarnl-observations"]) {
+        z-index: 1;
+    }
+}

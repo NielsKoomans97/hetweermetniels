@@ -10,8 +10,8 @@ section.hero {
         height: -webkit-fill-available;
         z-index: 1;
 
-        background-color: transparentize($color: map-get($primary-color, "450"), $amount: 0.55);
-        border-right: transparentize($color: map-get($primary-color, "600"), $amount: 0.75) 10vw solid;
+        background-color: transparentize($color: map-get($primary-color, "450"), $amount: 0.15);
+        border-right: transparentize($color: map-get($primary-color, "600"), $amount: 0.65) 10vw solid;
 
         border-bottom-right-radius: 95%;
     }
@@ -19,6 +19,7 @@ section.hero {
     div.container {
         position: relative;
         display: flex;
+        justify-content: flex-start;
         height: 500px;
 
         div.message-container {
@@ -34,7 +35,7 @@ section.hero {
         }
     }
 
-    img {
+    img.hero-banner {
         position: absolute;
         object-fit: cover;
 
