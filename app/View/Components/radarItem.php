@@ -17,6 +17,7 @@ class radarItem extends Component
         public string $radarDescription,
         public string $history,
         public string $forecast,
+        public string $button,
         public string $version = '',
         public string $mapBackground = '',
         public string $mapBorderLayer = '',

@@ -63,6 +63,7 @@ export class RadarAnimator {
         async function UpdateFrames() {
             const data = await fetch(uri());
             const json = await data.json();
+            console.log(json);
 
             ClearFrameList();
 
@@ -114,18 +115,29 @@ export class RadarAnimator {
             });
 
             const frame = GetFrame(index);
-            frame.classList.replace('hidden', 'visible');
+            if (frame != null){
+                frame.classList.replace('hidden', 'visible');
 
-            const image = frame.querySelector('.frame-image');
-            const date = image.getAttribute('data-time');
-
-            if (date.indexOf('T') > 0){
-                const dateParsed = new Date(Date.parse(date));
-                timeStamp.innerText = `${dateParsed.getHours()}:${dateParsed.getMinutes()}`;
-            }
-            else{
-                const dateParsed = new Date(date);
-                timeStamp.innerText = `${dateParsed.getHours()}:${dateParsed.getMinutes()}`;
+                const image = frame.querySelector('.frame-image');
+                const date = image.getAttribute('data-time');
+    
+                if (date.indexOf('T') > 0){
+                    const dateParsed = new Date(Date.parse(date));
+                    timeStamp.innerText = `${fixInt(dateParsed.getHours())}:${fixInt(dateParsed.getMinutes())}`;
+                }
+                else{
+                    const dateParsed = new Date(date);
+                    timeStamp.innerText = `${fixInt(dateParsed.getHours())}:${fixInt(dateParsed.getMinutes())}`;
+                }
+    
+                function fixInt(int){
+                    if (int < 10){
+                        return `0${int}`;
+                    }
+                    else{
+                        return `${int}`;
+                    }
+                }
             }
         }
 

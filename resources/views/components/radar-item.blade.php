@@ -7,4 +7,6 @@
     </div>
     <div class="frame-list" data-host="{{ $host }}" data-version="{{ $version }}" data-type="{{ $radarType }}" data-hist="{{ $history }}" data-fcast="{{ $forecast }}">
     </div>
+   <x-button direction="left" type="link" style="nav-button" icon="bi bi-arrow-right" href="/">{{ $button }}</x-button>
+
 </div>

@@ -19,7 +19,9 @@ class RadarData
     {
         $base_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $type);
         $doc_path = $base_path . '/' . $type . '.json';
-        $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/updating');
+        $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $type . '/updating');
+
+        RadarData::PrepareDir($base_path);
 
         if (is_file($updating_path)) {
             return file_get_contents(str_replace('/', '\\', $doc_path));
@@ -35,8 +37,6 @@ class RadarData
             'history' => $params['history'],
             'forecast' => $params['forecast'],
         ]);
-
-        RadarData::PrepareDir($base_path);
 
         $doc = file_get_contents($uri);
         $json = json_decode($doc);
@@ -76,7 +76,9 @@ class RadarData
     {
         $base_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/' . $type);
         $doc_path = $base_path . '/' . $type . '.json';
-        $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/updating');
+        $updating_path = str_replace('/', '\\', $_SERVER['DOCUMENT_ROOT'] . '/assets/radar/'. $type. '/updating');
+
+        RadarData::PrepareDir($base_path);
 
         if (is_file($updating_path)) {
             return file_get_contents(str_replace('/', '\\', $doc_path));
@@ -85,8 +87,6 @@ class RadarData
         }
 
         $uri  = RadarData::CreateUri('https://', 'cluster.api.meteoplaza.com', '/v3/nowcast/tiles/' . $type);
-
-        RadarData::PrepareDir($base_path);
 
         $doc = file_get_contents($uri);
         $json = json_decode($doc);

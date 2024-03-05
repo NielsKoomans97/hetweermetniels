@@ -16,6 +16,7 @@ class button extends Component
         public string $type,
         public string $style,
         public string $icon,
+        public string $direction,
         public string $extraClass = '',
     )
     {

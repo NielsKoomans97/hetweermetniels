@@ -26,10 +26,6 @@ section.nav {
         height: 100%;
 
         background-color: map-get($map: $misc-color, $key: body);
-
-        i {
-            margin-right: 10px;
-        }
     }
 
     div.small-obs {
